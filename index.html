@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axion Regulus - AI-Powered Compliance Intelligence</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- GSAP & ScrollTrigger CND Hooks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            background-color: #030712;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        /* Compliance Pipeline Widget Keyframe Animations */
+        @keyframes scan-line {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.6; }
+        }
+        .animate-scan {
+            annotation-line: select;
+            animation: scan-line 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* Custom Keyframes for Multi-Language Tags Float */
+        @keyframes tag-float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-8px); }
+        }
+        .animate-tag-float {
+            animation: tag-float 3s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body class="text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-900">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 w-full glass-panel border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 relative h-full">
+                <div class="flex items-center h-full py-2">
+                    <img src="AxionLogo.png" alt="Axion Regulus Logo" class="h-36 w-auto object-contain rounded-md transform origin-left" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                </div>
+                <span class="hidden text-xl font-bold tracking-wider text-white uppercase">Axion <span class="text-cyan-400">Regulus</span></span>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#challenge" data-i18n="nav-challenge" class="hover:text-cyan-400 transition">The Challenge</a>
+                <a href="#solution" data-i18n="nav-solution" class="hover:text-cyan-400 transition">Our Solution</a>
+                <a href="#how-it-works" data-i18n="nav-workflow" class="hover:text-cyan-400 transition">Workflow</a>
+                <a href="#industries" data-i18n="nav-industries" class="hover:text-cyan-400 transition">Industries</a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                <!-- Language Selector Dropdown -->
+                <div class="relative inline-block text-left">
+                    <select id="lang-selector" class="bg-slate-900/80 text-xs font-semibold text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-cyan-500 cursor-pointer transition">
+                        <option value="en">EN</option>
+                        <option value="ru">RU</option>
+                        <option value="uk">UK</option>
+                        <option value="de">DE</option>
+                        <option value="pl">PL</option>
+                        <option value="fr">FR</option>
+                        <option value="es">ES</option>
+                        <option value="pt">PT</option>
+                    </select>
+                </div>
+                
+                <a href="#demo" data-i18n="btn-schedule-demo" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:opacity-95 transition">
+                    Schedule Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[calc(100vh-5rem)] flex items-center justify-center px-6 py-20 overflow-hidden">
+        <!-- Subtle radial background glow centered on the product title -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.08)_0%,transparent_60%)] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Massive high-visibility product title -->
+            <h1 class="text-6xl md:text-8xl font-black tracking-tight text-white mb-4 leading-none select-none" id="hero-title">
+                AXION <span class="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent filter drop-shadow-[0_0_30px_rgba(34,211,238,0.3)]">REGULUS</span>
+            </h1>
+            
+            <!-- Secondary strategic value anchor -->
+            <h2 data-i18n="hero-subtitle" class="text-xl md:text-2xl font-bold tracking-wide text-slate-200 uppercase mb-8 max-w-3xl mx-auto">
+                AI-Powered Compliance Intelligence
+            </h2>
+
+            <p data-i18n="hero-desc" class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                Automate Compliance. Reduce Risk. Accelerate Business. Automatically validate global business content against local and state regulatory requirements.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#demo" data-i18n="btn-request-demo" class="px-8 py-4 bg-cyan-500 text-slate-950 font-bold rounded-xl shadow-xl shadow-cyan-500/20 hover:bg-cyan-400 transition text-center">
+                    Request Free Demo
+                </a>
+                <a href="#solution" data-i18n="btn-explore" class="px-8 py-4 glass-panel text-white font-semibold rounded-xl hover:bg-slate-800/50 transition text-center">
+                    Explore Platform
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge Section (Enhanced with Split Scroll Visual Animation Showcase) -->
+    <section id="challenge" class="py-24 max-w-7xl mx-auto px-6 border-t border-slate-900">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 data-i18n="challenge-title" class="text-3xl md:text-4xl font-bold text-white mb-4">The Challenge</h2>
+            <p data-i18n="challenge-desc" class="text-slate-400">Compliance is becoming increasingly complex. Modern companies struggle to balance fast publishing with bulletproof safety.</p>
+        </div>
+
+        <!-- NEW: Split Screen Interactive Scroll Panel Blueprint -->
+        <div class="flex flex-col lg:flex-row relative gap-8 lg:gap-16 w-full items-start">
+            
+            <!-- LEFT CANVAS: Sticky Graphic Presenter Window -->
+            <div class="w-full lg:w-[45%] sticky top-28 h-[40vh] lg:h-[65vh] flex items-center justify-center glass-panel rounded-2xl border border-slate-800/60 overflow-hidden bg-slate-950/40 z-20">
+                <div class="relative w-64 h-64 flex items-center justify-center">
+                    
+                    <!-- Feature Visual 1: Real-Time Scanner Core -->
+                    <div id="feat-v1" class="absolute inset-0 flex flex-col items-center justify-center gap-4 opacity-100 scale-100 transition-all duration-500 pointer-events-auto">
+                        <div class="absolute left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scan"></div>
+                        <svg class="w-24 h-24 text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.2)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <span class="text-xs font-mono tracking-widest text-cyan-400/80 uppercase">Scanning Live Assets</span>
+                    </div>
+
+                    <!-- Feature Visual 2: Automated Risk Meter -->
+                    <div id="feat-v2" class="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-0 scale-90 transition-all duration-500 pointer-events-none">
+                        <svg class="w-20 h-20 text-emerald-400 drop-shadow-[0_0_15px_rgba(74,222,128,0.2)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <div class="text-center font-mono">
+                            <span class="text-xs text-slate-400 block tracking-wider uppercase">Risk Score Assessment</span>
+                            <span id="feat-score-display" class="text-4xl font-black text-emerald-400">100</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature Visual 3: Multi-Language Guardrails Shield -->
+                    <div id="feat-v3" class="absolute inset-0 flex flex-col items-center justify-center opacity-0 scale-100 transition-all duration-500 pointer-events-none">
+                        <span class="absolute top-4 left-2 text-[11px] font-semibold bg-slate-800 border border-slate-700 rounded-full px-2.5 py-0.5 text-slate-300 animate-tag-float">Asia</span>
+                        <span class="absolute bottom-6 left-6 text-[11px] font-semibold bg-slate-800 border border-slate-700 rounded-full px-2.5 py-0.5 text-slate-300 animate-tag-float" style="animation-delay: 0.6s;">Middle East</span>
+                        <span class="absolute bottom-6 right-0 text-[11px] font-semibold bg-slate-800 border border-slate-700 rounded-full px-2.5 py-0.5 text-slate-300 animate-tag-float" style="animation-delay: 1.2s;">Europe</span>
+<span class="absolute top-1 right-4 text-[11px] font-semibold bg-slate-800 border border-slate-700 rounded-full px-2.5 py-0.5 text-slate-300 animate-tag-float" style="animation-delay: 1.2s;">Africa</span>
+<span class="absolute top-25 left-4 text-[11px] font-semibold bg-slate-800 border border-slate-700 rounded-full px-2.5 py-0.5 text-slate-300 animate-tag-float" style="animation-delay: 1.2s;">APAC</span>
+
+
+                        <svg class="w-24 h-24 text-purple-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.2)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+
+                    <!-- Feature Visual 4: Audit Report Matrix Generator -->
+                    <div id="feat-v4" class="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-0 scale-90 transition-all duration-500 pointer-events-none">
+                        <svg class="w-24 h-24 text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.2)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span class="text-[10px] font-mono tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded uppercase">Verified Audit PDF</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT MODULE: Native Scroll Features Pipeline -->
+            <div class="w-full lg:w-[55%] flex flex-col gap-4">
+                
+                <!-- Feature Card 1 -->
+                <div class="feat-scroll-card min-h-[50vh] flex flex-col justify-center border-b border-slate-900/60 pb-8 opacity-35 transform translate-y-6 transition-all duration-500" data-feat="v1">
+                    <span class="text-xs font-bold tracking-widest text-cyan-400 uppercase mb-2">Feature 01</span>
+                    <h3 data-i18n="ch-card1-title" class="text-2xl font-bold text-white mb-3">Slow Manual Reviews</h3>
+                    <p data-i18n="ch-card1-desc" class="text-slate-400 leading-relaxed max-w-xl">
+                        Compliance reviews are bottlenecked by slow, repetitive manual validation. Regulus bypasses this barrier using real-time parsing layers that catch compliance flags instantenously.
+                    </p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="feat-scroll-card min-h-[50vh] flex flex-col justify-center border-b border-slate-900/60 pb-8 opacity-35 transform translate-y-6 transition-all duration-500" data-feat="v2">
+                    <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-2">Feature 02</span>
+                    <h3 data-i18n="ch-card2-title" class="text-2xl font-bold text-white mb-3">Dynamic Regulations</h3>
+                    <p data-i18n="ch-card2-desc" class="text-slate-400 leading-relaxed max-w-xl">
+                        Laws & compliance rules change constantly across states and industries. Our system maps out dynamic rules directly to calculate clear quantitative threat levels instantly.
+                    </p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="feat-scroll-card min-h-[50vh] flex flex-col justify-center border-b border-slate-900/60 pb-8 opacity-35 transform translate-y-6 transition-all duration-500" data-feat="v3">
+                    <span class="text-xs font-bold tracking-widest text-purple-400 uppercase mb-2">Feature 03</span>
+                    <h3 data-i18n="ch-card3-title" class="text-2xl font-bold text-white mb-3">Risk of Severe Fines</h3>
+                    <p data-i18n="ch-card3-desc" class="text-slate-400 leading-relaxed max-w-xl">
+                        Human oversights trigger costly fines and irreversible damage to reputation. Guard rails process multiple global configurations across cross-border scripts natively to secure content deployment.
+                    </p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div class="feat-scroll-card min-h-[50vh] flex flex-col justify-center pb-8 opacity-35 transform translate-y-6 transition-all duration-500" data-feat="v4">
+                    <span class="text-xs font-bold tracking-widest text-blue-400 uppercase mb-2">Feature 04</span>
+                    <h3 data-i18n="ch-card4-title" class="text-2xl font-bold text-white mb-3">Siloed Collaboration</h3>
+                    <p data-i18n="ch-card4-desc" class="text-slate-400 leading-relaxed max-w-xl">
+                        Marketing, Legal, and Compliance departments operate in fragmented environments. Generate unified audit outcomes and verified reporting layouts directly via simple integrations.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution Section (Featuring Compliance Pipeline Animation Widget) -->
+    <section id="solution" class="py-24 bg-slate-950/40 border-t border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <span data-i18n="sol-badge" class="text-xs font-semibold tracking-widest text-cyan-400 uppercase block mb-3">Our Solution</span>
+                <h2 data-i18n="sol-title" class="text-3xl md:text-4xl font-bold text-white mb-6">Meet Axion Regulus</h2>
+                <p data-i18n="sol-desc" class="text-slate-400 leading-relaxed mb-8">
+                    An advanced, AI-powered compliance platform engineered to effortlessly protect your organization. We seamlessly parse and validate deep documents against intricate rule frameworks.
+                </p>
+                <div class="space-y-4 mb-8">
+                    <div class="flex gap-4 items-start">
+                        <div class="text-cyan-400 text-lg mt-0.5">✓</div>
+                        <div>
+                            <h4 data-i18n="sol-feat1-title" class="text-white font-medium">Document Intelligence</h4>
+                            <p data-i18n="sol-feat1-desc" class="text-sm text-slate-400">Deep extraction and comprehension of structured text assets.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="text-cyan-400 text-lg mt-0.5">✓</div>
+                        <div>
+                            <h4 data-i18n="sol-feat2-title" class="text-white font-medium">Seamless Integration</h4>
+                            <p data-i18n="sol-feat2-desc" class="text-sm text-slate-400">Reduce manual risk and accelerate speed-to-market.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extra feature bullet summary boxes -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="glass-panel p-4 rounded-xl">
+                        <h4 data-i18n="sol-grid1-title" class="text-cyan-400 font-bold mb-1 uppercase tracking-wider text-xs">Marketing Drafts</h4>
+                        <p data-i18n="sol-grid1-desc" class="text-xs text-slate-300">Ad Copy, Creative assets, and Web landings.</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl">
+                        <h4 data-i18n="sol-grid2-title" class="text-cyan-400 font-bold mb-1 uppercase tracking-wider text-xs">Corporate Policies</h4>
+                        <p data-i18n="sol-grid2-desc" class="text-xs text-slate-300">Internal Audits and Regulatory frameworks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- High-Fidelity Interactive Compliance Pipeline Widget Layout -->
+            <div class="lg:col-span-7 flex flex-col gap-4">
+                <div class="glass-panel rounded-2xl overflow-hidden border border-slate-800 shadow-2xl relative bg-slate-950/60">
+                    <!-- Top Window bar -->
+                    <div class="bg-slate-900/80 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-rose-500 block"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500 block"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 block"></span>
+                            <span data-i18n="widget-title" class="text-xs font-mono text-slate-400 ml-2">axion regulus</span>
+                        </div>
+                        <button id="replay-pipeline-btn" class="text-xs bg-slate-800 hover:bg-slate-700 text-cyan-400 font-semibold px-3 py-1 rounded-md transition border border-cyan-500/20 hover:border-cyan-400 flex items-center gap-1.5">
+                            <span>↻</span> <span data-i18n="widget-replay">Replay Demo</span>
+                        </button>
+                    </div>
+
+                    <!-- Pipeline Content Area -->
+                    <div class="p-6 space-y-4 min-h-[360px] relative flex flex-col justify-between">
+                        <!-- Step 1: Raw Input Box -->
+                        <div id="pipeline-input-box" class="glass-panel p-4 rounded-xl border border-rose-500/20 relative transition-all duration-500">
+                            <div class="flex items-center justify-between mb-2">
+                                <span data-i18n="widget-step1-label" class="text-[10px] font-bold uppercase tracking-widest text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded">Stage 01: Raw Draft Asset</span>
+                                <span id="input-status" class="text-[11px] font-mono text-rose-400">● Non-Compliant</span>
+                            </div>
+                            <p id="pipeline-input-text" data-i18n="widget-input-text" class="text-sm text-slate-300 font-mono italic">"Get 100% guaranteed dramatic results in only 2 days with zero lifestyle adjustments!"</p>
+                        </div>
+
+                        <!-- Step 2: Processing Scanner Module -->
+                        <div id="pipeline-scan-box" class="h-16 border border-slate-800 rounded-xl relative overflow-hidden bg-slate-900/30 flex items-center justify-center transition-all duration-500">
+                            <div id="scan-bar" class="absolute left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0"></div>
+                            <div id="pipeline-scan-text" data-i18n="widget-scan-idle" class="text-xs font-mono text-slate-500 tracking-wider uppercase transition-all">Updated suggestion</div>
+                        </div>
+
+                        <!-- Step 3: Validated Output Box -->
+                        <div id="pipeline-output-box" class="glass-panel p-4 rounded-xl border border-slate-800 opacity-40 transition-all duration-500">
+                            <div class="flex items-center justify-between mb-2">
+                                <span data-i18n="widget-step3-label" class="text-[10px] font-bold uppercase tracking-widest text-slate-500 px-2 py-0.5 rounded transition-all" id="output-stage-badge">Stage 03: Optimized Outcome</span>
+                                <span id="output-status" class="text-[11px] font-mono text-slate-500">○ Awaiting Scan</span>
+                            </div>
+                            <p id="pipeline-output-text" data-i18n="widget-output-placeholder" class="text-sm text-slate-500 font-mono">...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 data-i18n="how-title" class="text-3xl md:text-4xl font-bold text-white mb-4">How It Operates</h2>
+            <p data-i18n="how-desc" class="text-slate-400">Four structural steps to automated operational safety.</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8 relative">
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-400 mx-auto mb-4 shadow-lg shadow-cyan-500/5">01</div>
+                <h3 data-i18n="how-step1-title" class="text-white font-bold mb-2">Upload Rules</h3>
+                <p data-i18n="how-step1-desc" class="text-xs text-slate-400 leading-relaxed">Import regulatory PDFs, internal rulebooks, or corporate mandates into our engine.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-400 mx-auto mb-4 shadow-lg shadow-cyan-500/5">02</div>
+                <h3 data-i18n="how-step2-title" class="text-white font-bold mb-2">AI Ingests Data</h3>
+                <p data-i18n="how-step2-desc" class="text-xs text-slate-400 leading-relaxed">The platform instantly extracts key intelligence, setting robust validation checkpoints.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-400 mx-auto mb-4 shadow-lg shadow-cyan-500/5">03</div>
+                <div class="text-white font-bold mb-2">Validate Drafts</div>
+                <p data-i18n="how-step3-desc" class="text-xs text-slate-400 leading-relaxed">Upload any draft, webpage, or media campaign for comprehensive rule comparison.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center text-xl font-bold text-cyan-400 mx-auto mb-4 shadow-lg shadow-cyan-500/5">04</div>
+                <h3 data-i18n="how-step4-title" class="text-white font-bold mb-2">Get Clear Insights</h3>
+                <p data-i18n="how-step4-desc" class="text-xs text-slate-400 leading-relaxed">Receive risk scores, clear rule violations, and precise AI remedies immediately.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Supported Section -->
+    <section id="industries" class="py-24 bg-slate-950/40 border-t border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 data-i18n="ind-title" class="text-3xl md:text-4xl font-bold text-white mb-4">Campuses Supported</h2>
+                <p data-i18n="ind-desc" class="text-slate-400">Engineered for highly complex performance environments.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <!-- Cell 1: Highly Regulated -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </svg>
+                    <span data-i18n="ind-item1">Highly Regulated</span>
+                </div>
+                <!-- Cell 2: Healthcare & Biotech -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    </svg>
+                    <span data-i18n="ind-item2">Healthcare & Biotech</span>
+                </div>
+                <!-- Cell 3: Pharmaceuticals -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span data-i18n="ind-item3">Pharmaceuticals</span>
+                </div>
+                <!-- Cell 4: Financial Services -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.5h-15V21h15z" />
+                    </svg>
+                    <span data-i18n="ind-item4">Financial Services</span>
+                </div>
+                <!-- Cell 5: Insurance Portfolios -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A10.5 10.5 0 0112 1.5h.75A10.5 10.5 0 0123 12v.75m-21 0h21m-21 0a2.25 2.25 0 002.25 2.25h16.5A2.25 2.25 0 0021 12.75m-18 0v4.499a2.25 2.25 0 002.25 2.25h13.5a2.25 2.25 0 002.25-2.25v-4.499" />
+                    </svg>
+                    <span data-i18n="ind-item5">Insurance Portfolios</span>
+                </div>
+                <!-- Cell 6: Retail & E-commerce -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+                    </svg>
+                    <span data-i18n="ind-item6">Retail & E-commerce</span>
+                </div>
+                <!-- Cell 7: Food & Beverage -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v13.01c0 .612-.278 1.164-.725 1.536a4.5 4.5 0 01-5.795 0c-.447-.372-.725-.924-.725-1.536V3.104c0-.574.466-1.04 1.04-1.04h5.16c.574 0 1.04.466 1.04 1.04zM21 7.5c0 3.79-3.04 6.877-6.78 6.996v5.254c0 .69-.56 1.25-1.25 1.25h-1.5c-.69 0-1.25-.56-1.25-1.25v-5.254C6.48 14.377 3.44 11.29 3.44 7.5c0-.69.56-1.25 1.25-1.25h15.06c.69 0 1.25.56 1.25 1.25z" />
+                    </svg>
+                    <span data-i18n="ind-item7">Food & Beverage</span>
+                </div>
+                <!-- Cell 8: Real Estate Operations -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v16.5m16.5-16.5v16.5m-13.5-13.5h3.75m-3.75 3h3.75m-3.75 3h3.75m3-6h3.75m-3.75 3h3.75m-3.75 3h3.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M16.5 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21" />
+                    </svg>
+                    <span data-i18n="ind-item8">Real Estate Operations</span>
+                </div>
+                <!-- Cell 9: Advanced Manufacturing -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0a7.5 7.5 0 01-15 0m5.78-3.78l-.92-.92m9.84 9.84l-.92-.92m0-8l.92-.92m-9.84 9.84l.92-.92M10.5 6.75V5.25m3 13.5v-1.5m-3 0v1.5m3-13.5V5.25" />
+                    </svg>
+                    <span data-i18n="ind-item9">Advanced Manufacturing</span>
+                </div>
+                <!-- Cell 10: Government Agencies -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" />
+                    </svg>
+                    <span data-i18n="ind-item10">Government Agencies</span>
+                </div>
+                <!-- Cell 11: Telecom & Media -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                    </svg>
+                    <span data-i18n="ind-item11">Telecom & Media</span>
+                </div>
+                <!-- Cell 12: Consumer Dynamic -->
+                <div class="glass-panel p-5 rounded-xl flex flex-col items-center justify-center gap-3 text-sm font-semibold text-white">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94-3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                    </svg>
+                    <span data-i18n="ind-item12">Consumer Dynamic</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Pillars / Why Choose Section -->
+    <section class="py-24 max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+        <div class="glass-panel p-8 rounded-2xl">
+            <h3 data-i18n="pil-card1-title" class="text-xl font-bold text-white mb-3">Native Integration</h3>
+            <p data-i18n="pil-card1-desc" class="text-sm text-slate-400 leading-relaxed">Easily integrates with existing corporate document storage, CMS, and internal workflows with zero-friction APIs.</p>
+        </div>
+        <div class="glass-panel p-8 rounded-2xl">
+            <h3 data-i18n="pil-card2-title" class="text-xl font-bold text-white mb-3">Global Regulations</h3>
+            <p data-i18n="pil-card2-desc" class="text-sm text-slate-400 leading-relaxed">Supports cross-border rulesets and multi-regulation mappings, handling localized and international demands.</p>
+        </div>
+        <div class="glass-panel p-8 rounded-2xl">
+            <h3 data-i18n="pil-card3-title" class="text-xl font-bold text-white mb-3">Trust & Security</h3>
+            <p data-i18n="pil-card3-desc" class="text-sm text-slate-400 leading-relaxed">Secure enterprise-grade architecture. Tailored rulesets and complete data sovereignty for absolute control.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action / Demo Section -->
+    <section id="demo" class="py-20 max-w-5xl mx-auto px-6 mb-24">
+        <div class="glass-panel p-12 rounded-3xl text-center border border-cyan-500/20 relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950">
+            <div class="absolute -top-24 -left-24 w-48 h-48 bg-cyan-500/10 blur-3xl rounded-full"></div>
+            <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-blue-500/10 blur-3xl rounded-full"></div>
+             
+            <h2 data-i18n="demo-title" class="text-3xl md:text-4xl font-bold text-white mb-4">Schedule a Live Demo</h2>
+            <p data-i18n="demo-desc" class="text-slate-400 max-w-xl mx-auto mb-8">
+                See Axion Regulus in Action. Discover how modern enterprise-grade compliance intelligence simplifies operations and reduces manual risk.
+            </p>
+             
+            <div class="flex flex-col items-center justify-center gap-6 glass-panel p-6 rounded-2xl border border-slate-800 max-w-xl mx-auto">
+                <div class="w-full h-24 relative flex items-center justify-center overflow-hidden">
+                    <img src="AxionLogo.png" alt="Axion Consultancy Services" class="w-full h-full object-contain scale-[2.5] transform origin-center">
+                </div>
+                <div class="w-full h-px bg-slate-800"></div>
+                <div>
+                    <p data-i18n="demo-action" class="text-sm text-slate-400 uppercase tracking-widest">Request a free 20-minute live demonstration</p>
+                    <p class="text-xl font-bold text-cyan-400 mt-1">info@axionast.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 py-12 bg-slate-950 text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <span class="text-sm font-semibold tracking-wider text-slate-300 uppercase">Axion Consultancy Services</span>
+            </div>
+            <div class="flex gap-6 text-slate-400">
+                <a href="http://www.axionast.com" target="_blank" class="hover:text-cyan-400 transition">www.axionast.com</a>
+            </div>
+            <p data-i18n="footer-copy">&copy; 2026 Axion Consultancy Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Multi-Language Optimization Engine -->
+    <script>
+        const translations = {
+            en: {
+                "nav-challenge": "The Challenge",
+                "nav-solution": "Our Solution",
+                "nav-workflow": "Workflow",
+                "nav-industries": "Industries",
+                "btn-schedule-demo": "Schedule Demo",
+                "hero-subtitle": "AI-Powered Compliance Intelligence",
+                "hero-desc": "Automate Compliance. Reduce Risk. Accelerate Business. Automatically validate global business content against local and state regulatory requirements.",
+                "btn-request-demo": "Request Free Demo",
+                "btn-explore": "Explore Platform",
+                "challenge-title": "The Challenge",
+                "challenge-desc": "Compliance is becoming increasingly complex. Modern companies struggle to balance fast publishing with bulletproof safety.",
+                "ch-card1-title": "Slow Manual Reviews",
+                "ch-card1-desc": "Compliance reviews are bottlenecked by slow, repetitive manual validation. Regulus bypasses this barrier using real-time parsing layers that catch compliance flags instantenously.",
+                "ch-card2-title": "Dynamic Regulations",
+                "ch-card2-desc": "Laws & compliance rules change constantly across states and industries. Our system maps out dynamic rules directly to calculate clear quantitative threat levels instantly.",
+                "ch-card3-title": "Risk of Severe Fines",
+                "ch-card3-desc": "Human oversights trigger costly fines and irreversible damage to reputation. Guard rails process multiple global configurations across cross-border scripts natively to secure content deployment.",
+                "ch-card4-title": "Siloed Collaboration",
+                "ch-card4-desc": "Marketing, Legal, and Compliance departments operate in fragmented environments. Generate unified audit outcomes and verified reporting layouts directly via simple integrations.",
+                "sol-badge": "Our Solution",
+                "sol-title": "Meet Axion Regulus",
+                "sol-desc": "An advanced, AI-powered compliance platform engineered to effortlessly protect your organization. We seamlessly parse and validate deep documents against intricate rule frameworks.",
+                "sol-feat1-title": "Document Intelligence",
+                "sol-feat1-desc": "Deep extraction and comprehension of structured text assets.",
+                "sol-feat2-title": "Seamless Integration",
+                "sol-feat2-desc": "Reduce manual risk and accelerate speed-to-market.",
+                "sol-grid1-title": "Marketing Drafts",
+                "sol-grid1-desc": "Ad Copy, Creative assets, and Website landing components.",
+                "sol-grid2-title": "Corporate Policies",
+                "sol-grid2-desc": "Internal Audits, Rulebooks, and Regulatory frameworks.",
+                "how-title": "How It Operates",
+                "how-desc": "Four structural steps to automated operational safety.",
+                "how-step1-title": "Upload Rules",
+                "how-step1-desc": "Import regulatory PDFs, internal rulebooks, or corporate mandates into our engine.",
+                "how-step2-title": "AI Ingests Data",
+                "how-step2-desc": "The platform instantly extracts key intelligence, setting robust validation checkpoints.",
+                "how-step3-title": "Validate Drafts",
+                "how-step3-desc": "Upload any draft, webpage, or media campaign for comprehensive rule comparison.",
+                "how-step4-title": "Get Clear Insights",
+                "how-step4-desc": "Receive risk scores, clear rule violations, and precise AI remedies immediately.",
+                "ind-title": "Campuses Supported",
+                "ind-desc": "Engineered for highly complex performance environments.",
+                "ind-item1": "Highly Regulated", "ind-item2": "Healthcare & Biotech", "ind-item3": "Pharmaceuticals", "ind-item4": "Financial Services",
+                "ind-item5": "Insurance Portfolios", "ind-item6": "Retail & E-commerce", "ind-item7": "Food & Beverage", "ind-item8": "Real Estate Operations",
+                "ind-item9": "Advanced Manufacturing", "ind-item10": "Government Agencies", "ind-item11": "Telecom & Media", "ind-item12": "Consumer Dynamic",
+                "pil-card1-title": "Native Integration",
+                "pil-card1-desc": "Easily integrates with existing corporate document storage, CMS, and internal workflows with zero-friction APIs.",
+                "pil-card2-title": "Global Regulations",
+                "pil-card2-desc": "Supports cross-border rulesets and multi-regulation mappings, handling localized and international demands.",
+                "pil-card3-title": "Trust & Security",
+                "pil-card3-desc": "Secure enterprise-grade architecture. Tailored rulesets and complete data sovereignty for absolute control.",
+                "demo-title": "Schedule a Live Demo",
+                "demo-desc": "See Axion Regulus in Action. Discover how modern enterprise-grade compliance intelligence simplifies operations and reduces manual risk.",
+                "demo-action": "Request a free 20-minute live demonstration",
+                "footer-copy": "&copy; 2026 Axion Consultancy Services. All rights reserved.",
+                
+                /* Pipeline Widget English Mappings */
+                "widget-title": "regulus v1.0",
+                "widget-replay": "Replay Demo",
+                "widget-step1-label": "Stage 01: Raw Draft Asset",
+                "widget-input-text": "\"Get 100% guaranteed dramatic results in only 2 days with zero lifestyle adjustments!\"",
+                "widget-scan-idle": "Pipeline Idle",
+                "widget-step3-label": "Stage 03: Optimized Outcome",
+                "widget-output-placeholder": "..."
+            },
+            ru: {
+                "nav-challenge": "Проблема",
+                "nav-solution": "Наше решение",
+                "nav-workflow": "Процесс",
+                "nav-industries": "Отрасли",
+                "btn-schedule-demo": "Демо-версия",
+                "hero-subtitle": "Интеллектуальный комплаенс на базе ИИ",
+                "hero-desc": "Автоматизируйте комплаенс. Снижайте риски. Ускоряйте бизнес. Автоматическая проверка глобального бизнес-контента на соответствие местным и государственным нормативным требованиям.",
+                "btn-request-demo": "Запросить демо",
+                "btn-explore": "Обзор платформы",
+                "challenge-title": "Проблема",
+                "challenge-desc": "Комплаенс становится всё более сложным. Современные компании изо всех сил пытаются сбалансировать скорость публикаций с абсолютной безопасностью.",
+                "ch-card1-title": "Медленные ручные проверки",
+                "ch-card1-desc": "Комплаенс-контроль тормозится из-за медленной, рутинной ручной валидации. Regulus обходит этот барьер, используя аналитические слои в реальном времени.",
+                "ch-card2-title": "Динамичное регулирование",
+                "ch-card2-desc": "Законы и правила комплаенса постоянно меняются. Наша система преобразует правила напрямую для мгновенного расчета уровня угроз.",
+                "ch-card3-title": "Риск крупных штрафов",
+                "ch-card3-desc": "Человеческий фактор приводит к штрафам. Защитные барьеры обрабатывают несколько глобальных конфигураций на разных языках.",
+                "ch-card4-title": "Изолированная совместная работа",
+                "ch-card4-desc": "Отделы маркетинга, юристов и комплаенса работают разрозненно. Генерируйте единые результаты аудита с помощью простых интеграций.",
+                "sol-badge": "Наше решение",
+                "sol-title": "Знакомьтесь с Axion Regulus",
+                "sol-desc": "Передовая платформа комплаенса на базе ИИ, разработанная для надежной защиты вашей организации. Мы детально анализируем и сопоставляем сложные документы со сводами правил.",
+                "sol-feat1-title": "Анализ документов",
+                "sol-feat1-desc": "Глубокое извлечение данных и понимание структуры текстовых активов.",
+                "sol-feat2-title": "Бесшовная интеграция",
+                "sol-feat2-desc": "Минимизация ручных рисков и ускорение вывода продуктов на рынок.",
+                "sol-grid1-title": "Маркетинговые черновики",
+                "sol-grid1-desc": "Рекламные тексты, креативы и элементы целевых страниц сайтов.",
+                "sol-grid2-title": "Корпоративная политика",
+                "sol-grid2-desc": "Внутренний аудит, регламенты и нормативно-правовые базы.",
+                "how-title": "Принцип работы",
+                "how-desc": "Четыре шага к автоматизированной операционной безопасности компании.",
+                "how-step1-title": "Загрузка правил",
+                "how-step1-desc": "Импортируйте нормативные PDF, внутренние регламенты или корпоративные требования.",
+                "how-step2-title": "ИИ обрабатывает данные",
+                "how-step2-desc": "Платформа мгновенно извлекает суть, формируя надежные контрольные точки валидации.",
+                "how-step3-title": "Проверка черновиков",
+                "how-step3-desc": "Загружайте любые тексты, веб-страницы или медиа-кампании для сверки с правилами.",
+                "how-step4-title": "Получение инсайтов",
+                "how-step4-desc": "Мгновенно получайте оценку рисков, списки нарушений и точные рекомендации ИИ по их устранению.",
+                "ind-title": "Поддерживаемые направления",
+                "ind-desc": "Разработано для высокоэффективных и сложных нормативных сред.",
+                "ind-item1": "Строго регулируемые сферы", "ind-item2": "Здравоохранение и биотехнологии", "ind-item3": "Фармацевтика", "ind-item4": "Финансовые услуги",
+                "ind-item5": "Страховые портфели", "ind-item6": "Ритейл и e-commerce", "ind-item7": "Продукты питания и напитки", "ind-item8": "Операции с недвижимостью",
+                "ind-item9": "Высокотехнологичное производство", "ind-item10": "Государственные учреждения", "ind-item11": "Телеком и медиа", "ind-item12": "Потребительская динамика",
+                "pil-card1-title": "Нативная интеграция",
+                "pil-card1-desc": "Легко встраивается в текущие корпоративные хранилища документов, CMS и рабочие процессы благодаря бесшовным API.",
+                "pil-card2-title": "Глобальное регулирование",
+                "pil-card2-desc": "Поддерживает международные своды правил и кросс-нормативное сопоставление для локальных и мировых рынков.",
+                "pil-card3-title": "Доверие и безопасность",
+                "pil-card3-desc": "Надежная архитектура корпоративного класса. Индивидуальные правила и абсолютный суверенитет над вашими данными.",
+                "demo-title": "Запланировать демо-презентацию",
+                "demo-desc": "Посмотрите Axion Regulus в действии. Узнайте, как современные интеллектуальные комплаенс-системы упрощают процессы и снижают риски.",
+                "demo-action": "Запросите бесплатную 20-минутную живую демонстрацию",
+                "footer-copy": "&copy; 2026 Axion Consultancy Services. Все права защищены.",
+                
+                /* Pipeline Widget Russian Mappings */
+                "widget-title": "axion-комплаенс-конвейер v1.0",
+                "widget-replay": "Повторить демо",
+                "widget-step1-label": "Этап 01: Исходный рекламный черновик",
+                "widget-input-text": "\"Получите 100% гарантированный впечатляющий результат всего за 2 дня без изменения стиля жизни!\"",
+                "widget-scan-idle": "Конвейер ожидает запуска",
+                "widget-step3-label": "Этап 03: Оптимизированный безопасный результат",
+                "widget-output-placeholder": "..."
+            },
+            uk: {
+                "nav-challenge": "Проблема",
+                "nav-solution": "Наше рішення",
+                "nav-workflow": "Процес",
+                "nav-industries": "Галузі",
+                "btn-schedule-demo": "Демо-версія",
+                "hero-subtitle": "Інтелектуальний комплаєнс на базі ШІ",
+                "hero-desc": "Автоматизуйте комплаєнс. Знижуйте ризики. Прискорюйте бізнес. Автоматична перевірка глобального бізнес-контента на відповідність місцевим та державним регуляторним вимогам.",
+                "btn-request-demo": "Замовити демо",
+                "btn-explore": "Огляд платформи",
+                "challenge-title": "Проблема",
+                "challenge-desc": "Комплаєнс стає дедалі складнішим. Сучасні компанії намагаються збалансувати швидкість публікацій з абсолютною безпекою.",
+                "ch-card1-title": "Повільні ручні перевірки",
+                "ch-card1-desc": "Комплаєнс-контроль гальмується через повільну ручну валідацію. Платформа Regulus прискорює цей процес за допомогою ШІ-аналізу.",
+                "ch-card2-title": "Динамічне регулювання",
+                "ch-card2-desc": "Закони постійно змінюються. Наша система миттєво інтерпретує правила та прораховує загрози.",
+                "ch-card3-title": "Ризик великих штрафів",
+                "ch-card3-desc": "Людські помилки призводять до штрафів. Захисні алгоритми працюють одночасно на кількох глобальних мовах.",
+                "ch-card4-title": "Ізольована спільна робота",
+                "ch-card4-desc": "Маркетинг, юристи та комплаєнс працюють розрізнено. Створюйте єдині звіти за допомогою простих інтеграцій.",
+                "sol-badge": "Наше рішення",
+                "sol-title": "Meet Axion Regulus",
+                "sol-desc": "Передова комплаєнс-платформа на базі ШІ, створена для надійного захисту вашої організації. Ми детально аналізуємо та зіставляємо складні документи зі зводами правил.",
+                "sol-feat1-title": "Аналіз документів",
+                "sol-feat1-desc": "Глубоке вилучення данных та розуміння структури текстових активів.",
+                "sol-feat2-title": "Безшовна інтеграція",
+                "sol-feat2-desc": "Мінімізація ручних ризиків та прискорення виходу продуктів на ринок.",
+                "sol-grid1-title": "Маркетингові чернетки",
+                "sol-grid1-desc": "Рекламні тексти, креативи та елементи цільових сторінок сайтів.",
+                "sol-grid2-title": "Корпоративна політика",
+                "sol-grid2-desc": "Внутрішій аудит, регламенти та нормативно-правоaxes бази.",
+                "how-title": "Принцип роботи",
+                "how-desc": "Чотири кроки до автоматизованої операційної безпеки компанії.",
+                "how-step1-title": "Завантаження правил",
+                "how-step1-desc": "Імпортуйте нормативні PDF, внутрішні регламенти або корпоративні вимоги.",
+                "how-step2-title": "ШІ обробляє дані",
+                "how-step2-desc": "Платформа миттєво витягує суть, формируя надійні контрольні точки валідації.",
+                "how-step3-title": "Перевірка чернеток",
+                "how-step3-desc": "Завантажуйте будь-які тексти, веб-сторінки або медіа-кампанії для звірки з правилами.",
+                "how-step4-title": "Отримання інсайтів",
+                "how-step4-desc": "Миттєво отримуйте оцінку ризиків, списки порушень та точні рекомендації ШІ щодо їх усунення.",
+                "ind-title": "Напрямки, що підтримуються",
+                "ind-desc": "Розроблено для високоефективних та складних нормативних середовищ.",
+                "ind-item1": "Суворо регульовані сфери", "ind-item2": "Охорона здоров'я та біотехнології", "ind-item3": "Фармацевтика", "ind-item4": "Фінансові послуги",
+                "ind-item5": "Страхові портфелі", "ind-item6": "Рітейл та e-commerce", "ind-item7": "Продукти харчування та напої", "ind-item8": "Операції з нерухомістю",
+                "ind-item9": "Високотехнологичне виробництво", "ind-item10": "Державні установи", "ind-item11": "Телеком і медіа", "ind-item12": "Споживча динаміка",
+                "pil-card1-title": "Нативна інтеграція",
+                "pil-card1-desc": "Легко вбудовується в поточні корпоративні сховища документів, CMS та рабочі процеси завдяки безшовним API.",
+                "pil-card2-title": "Глобальне регулювання",
+                "pil-card2-desc": "Подтримує міжнародні зводи правил та крос-нормативне зіставлення для локальних і світових ринків.",
+                "pil-card3-title": "Довіра та безпека",
+                "pil-card3-desc": "Надежная архітектура корпоративного класу. Індивідуальні правила та абсолютний суверенитет над вашими даними.",
+                "demo-title": "Запланировать демо-презентацию",
+                "demo-desc": "Подивіться Axion Regulus у дії. Дізнайтеся, як сучасні інтелектуальні комплаєнс-системи спрощують процеси та знижують ризики.",
+                "demo-action": "Запитайте безкоштовну 20-хвилинну живу демонстрацію",
+                "footer-copy": "&copy; 2026 Axion Consultancy Services. Всі права захищені.",
+                
+                /* Pipeline Widget Ukrainian Mappings */
+                "widget-title": "axion-комплаєнс-конвейер v1.0",
+                "widget-replay": "Повторити демо",
+                "widget-step1-label": "Етап 01: Вихідний рекламний чернетка",
+                "widget-input-text": "\"Отримайте 100% гарантований вражаючий результат всього за 2 дня без зміни стилю життя!\"",
+                "widget-scan-idle": "Конвеєр очікує запуску",
+                "widget-step3-label": "Етап 03: Оптимізований безпечний результат",
+                "widget-output-placeholder": "..."
+            },
+            de: {
+                "nav-challenge": "Herausforderung",
+                "nav-solution": "Unsere Lösung",
+                "nav-workflow": "Workflow",
+                "nav-industries": "Branchen",
+                "btn-schedule-demo": "Demo Buchen",
+                "hero-subtitle": "KI-Gestützte Compliance-Intelligenz",
+                "hero-desc": "Compliance automatisieren. Risiken minimieren. Geschäft beschleunigen. Validieren Sie globale Unternehmensinhalte automatisch gegen lokale und staatliche regulatorische Anforderungen.",
+                "btn-request-demo": "Kostenlose Demo anfordern",
+                "btn-explore": "Plattform erkunden",
+                "challenge-title": "Die Herausforderung",
+                "challenge-desc": "Compliance wird immer komplexer. Moderne Unternehmen kämpfen damit, schnelle Veröffentlichungen mit absoluter Sicherheit in Einklang zu bringen.",
+                "ch-card1-title": "Langsame manuelle Prüfungen",
+                "ch-card1-desc": "Compliance-Prüfungen blockieren den Workflow. Regulus umgeht dies durch Echtzeit-Parsing-Layer.",
+                "ch-card2-title": "Dynamische Vorschriften",
+                "ch-card2-desc": "Gesetze ändern sich ständig. Unser System berechnet quantitative Bedrohungsstufen sofort.",
+                "ch-card3-title": "Risiko schwerer Strafen",
+                "ch-card3-desc": "Menschliche Versehen führen zu Bußgeldern. Die Plattform verarbeitet mehrere globale Sprachen nativ.",
+                "ch-card4-title": "Isolierte Zusammenarbeit",
+                "ch-card4-desc": "Abteilungen agieren fragmentiert. Generieren Sie einheitliche Audit-Ergebnisse direkt über einfache Integrationen.",
+                "sol-badge": "Unsere Lösung",
+                "sol-title": "Das ist Axion Regulus",
+                "sol-desc": "Eine fortschrittliche, KI-gestützte Compliance-Plattform, die entwickelt wurde, um Ihr Unternehmen mühelos zu schützen. Wir analysieren und validieren komplexe Dokumente anhand komplizierter Regelwerke.",
+                "sol-feat1-title": "Dokumenten-Intelligenz",
+                "sol-feat1-desc": "Tiefengehende Extraktion und Erfassung strukturierter Textressourcen.",
+                "sol-feat2-title": "Nahtlose Integration",
+                "sol-feat2-desc": "Manuelle Risiken reduzieren und die Markteinführung beschleunigen.",
+                "sol-grid1-title": "Marketing-Entwürfe",
+                "sol-grid1-desc": "Werbetexte, kreative Assets und Landingpage-Komponenten für Webseiten.",
+                "sol-grid2-title": "Unternehmensrichtlinien",
+                "sol-grid2-desc": "Interne Audits, Regelbücher und regulatorische Rahmenbedingungen.",
+                "how-title": "Wie es funktioniert",
+                "how-desc": "Vier strukturelle Schritte zur automatisierten betrieblichen Sicherheit.",
+                "how-step1-title": "Regeln hochladen",
+                "how-step1-desc": "Importieren Sie regulatorische PDFs, interne Regelbücher oder Unternehmensmandate in unsere Engine.",
+                "how-step2-title": "KI erfasst Daten",
+                "how-step2-desc": "Die Plattform extrahiert sofort wichtige Erkenntnisse und setzt robuste Validierungspunkte.",
+                "how-step3-title": "Entwürfe validieren",
+                "how-step3-desc": "Laden Sie Entwürfe, Webseiten oder Medienkampagnen für einen umfassenden Regelvergleich hoch.",
+                "how-step4-title": "Klare Einblicke erhalten",
+                "how-step4-desc": "Erhalten Sie sofort Risikobewertungen, klare Regelverstöße und präzise KI-Abhilfemaßnahmen.",
+                "ind-title": "Unterstützte Branchen",
+                "ind-desc": "Entwickelt für hochkomplexe Regulierungsumgebungen.",
+                "ind-item1": "Stark reguliert", "ind-item2": "Gesundheitswesen & Biotech", "ind-item3": "Pharmazeutika", "ind-item4": "Finanzdienstleistungen",
+                "ind-item5": "Versicherungsportfolios", "ind-item6": "Einzelhandel & E-Commerce", "ind-item7": "Lebensmittel & Getränke", "ind-item8": "Immobiliengeschäfte",
+                "ind-item9": "Erweiterte Fertigung", "ind-item10": "Regierungsbehörden", "ind-item11": "Telekommunikation & Medien", "ind-item12": "Konsumdynamik",
+                "pil-card1-title": "Native Integration",
+                "pil-card1-desc": "Integriert sich über reibungslose APIs nahtlos in bestehende Dokumentenspeicher, CMS und interne Workflows.",
+                "pil-card2-title": "Globale Vorschriften",
+                "pil-card2-desc": "Unterstützt grenzüberschreitende Regelwerke und Multi-Regulierungs-Mappings für lokale und globale Märkte.",
+                "pil-card3-title": "Vertrauen & Sicherheit",
+                "pil-card3-desc": "Sichere Architektur auf Unternehmensebene. Maßgeschneiderte Regelwerke und vollständige Datensouveränität.",
+                "demo-title": "Live-Demo vereinbaren",
+                "demo-desc": "Erleben Sie Axion Regulus in Aktion. Entdecken Sie, wie moderne Compliance-Intelligenz Abläufe vereinfacht und manuelle Risiken senkt.",
+                "demo-action": "Fordern Sie eine kostenlose 20-minütige Live-Demonstration an",
+                "footer-copy": "&copy; 2026 Axion Consultancy Services. Alle Rechte vorbehalten.",
+                
+                /* Pipeline Widget German Mappings */
+                "widget-title": "axion-compliance-pipeline v1.0",
+                "widget-replay": "Demo wiederholen",
+                "widget-step1-label": "Stufe 01: Unbearbeiteter Textentwurf",
+                "widget-input-text": "\"Erhalten Sie in nur 2 Tagen 100% garantiert dramatische Ergebnisse bei absolut null Lebensstiländerungen!\"",
+                "widget-scan-idle": "Pipeline bereit",
+                "widget-step3-label": "Stufe 03: Optimiertes sicheres Ergebnis",
+                "widget-output-placeholder": "..."
+            },
+            pl: {
+                "nav-challenge": "Wyzwanie",
+                "nav-solution": "Nasze rozwiązanie",
+                "nav-workflow": "Procedura",
+                "nav-industries": "Branże",
+                "btn-schedule-demo": "Umów Demo",
+                "hero-subtitle": "Inteligencja Zgodności Oparta na SI",
+                "hero-desc": "Automatyzuj zgodność. Redukuj ryzyko. Przyspieszaj biznes. Automatycznie waliduj globalne treści biznesowe pod kątem lokalnych i państwowych wymogów regulacyjnych.",
+                "btn-request-demo": "Zamów bezpłatne demo",
+                "btn-explore": "Odkryj platformę",
+                "challenge-title": "Wyzwanie",
+                "challenge-desc": "Zgodność z przepisami staje się coraz bardziej skomplikowana. Nowoczesne firmy walczą o równowagę między szybką publikacją a absolutnym bezpieczeństwem.",
+                "ch-card1-title": "Powolne ręczne weryfikacje",
+                "ch-card1-desc": "Ręczne przeglądy blokują procesy. Regulus usuwa te bariery dzięki analizie danych w czasie rzeczywistym.",
+                "ch-card2-title": "Dynamiczne regulacje",
+                "ch-card2-desc": "Przepisy zmieniają się nieustannie. Nasz system automatycznie oblicza poziomy zagrożeń w oparciu o ramy prawne.",
+                "ch-card3-title": "Ryzyko wysokich kar",
+                "ch-card3-desc": "Przeoczenia generują kosztowne kary. Nasze algorytmy zabezpieczające obsługują wiele języków globalnych.",
+                "ch-card4-title": "Odizolowana współpraca",
+                "ch-card4-desc": "Działy marketingu i zgodności działają oddzielnie. Generuj spójne audyty za pomocą prostych API.",
+                "sol-badge": "Nasze rozwiązanie",
+                "sol-title": "Poznaj Axion Regulus",
+                "sol-desc": "Zaawansowana platforma zgodności zasilana przez SI, zaprojektowana by bez wysiłku chronić Twoją organizację. Płynnie analizujemy i walidujemy obszerne dokumenty z ramami prawnymi.",
+                "sol-feat1-title": "Analiza dokumentów",
+                "sol-feat1-desc": "Głębokie wydobywanie danych i zrozumienie struktury aktywów tekstowych.",
+                "sol-feat2-title": "Bezproblemowa integracja",
+                "sol-feat2-desc": "Zmniejsz ryzyko ręczne i przyspiesz czas wprowadzenia produktu na rynek.",
+                "sol-grid1-title": "Projekty marketingowe",
+                "sol-grid1-desc": "Teksty reklamowe, materiały kreatywne i komponenty stron docelowych.",
+                "sol-grid2-title": "Polityka korporacyjna",
+                "sol-grid2-desc": "Audyty wewnętrzne, regulaminy i ramy regulacyjne.",
+                "how-title": "Jak to działa",
+                "how-desc": "Cztere strukturalne kroki do zautomatyzowanego bezpieczeństwa operacyjnego.",
+                "how-step1-title": "Prześlij zasady",
+                "how-step1-desc": "Importuj regulacyjne pliki PDF, wewnętrzne regulaminy lub mandaty korporacyjne do naszego silnika.",
+                "how-step2-title": "Wyszukiwanie SI",
+                "how-step2-desc": "Platforma błyskawicznie wyciąga kluczowe informacje, ustanawiając solidne punkty kontrolne.",
+                "how-step3-title": "Waliduj projekty",
+                "how-step3-desc": "Prześlij dowolny szkic, stronę internetową lub kampanię medialną do wszechstronnej analizy porównawczej.",
+                "how-step4-title": "Zyskaj jasne wnioski",
+                "how-step4-desc": "Natychmiast otrzymuj oceny ryzyka, wykazy naruszeń reguł oraz precyzyjne środki zaradcze SI.",
+                "ind-title": "Obsługiwane branże",
+                "ind-desc": "Zaprojektowane dla wysoce złożonych środowisk regulacyjnych.",
+                "ind-item1": "Wysoce regulowane", "ind-item2": "Opieka zdrowotna i biotechnologia", "ind-item3": "Farmaceutyki", "ind-item4": "Usługi finansowe",
+                "ind-item5": "Portfele ubezpieczeniowe", "ind-item6": "Handel detaliczny i e-commerce", "ind-item7": "Żywność i napoje", "ind-item8": "Operacje na nieruchomościach",
+                "ind-item9": "Zaawansowana produkcja", "ind-item10": "Agencje rządowe", "ind-item11": "Telekomunikacja i media", "ind-item12": "Dynamika konsumencka",
+                "pil-card1-title": "Natywna integracja",
+                "pil-card1-desc": "Łatwo integruje się z istniejącymi korporacyjnymi magazynami dokumentów, CMS i wewnętrznymi procesami poprzez bezproblemowe API.",
+                "pil-card2-title": "Globalne regulacje",
+                "pil-card2-desc": "Obsługuje międzynarodowe zbiory reguł i mapowanie wielu regulacji jednocześnie, spełniając wymogi lokalne i światowe.",
+                "pil-card3-title": "Zaufanie i bezpieczeństwo",
+                "pil-card3-desc": "Bezpieczna architektura klasy korporacyjnej. Dopasowane reguły i kompletna suwerenność danych dla pełnej kontroli.",
+                "demo-title": "Umów pokaz na żywo",
+                "demo-desc": "Zobacz Axion Regulus w akcji. Dowiedz się, jak nowoczesna inteligencja zgodności upraszcza operacje i zmniejsza ryzyko manualne.",
+                "demo-action": "Zamów darmową 20-minutową demonstrację na żywo",
+                "footer-copy": "&copy; 2026 Axion Consultancy Services. Wszelkie prawa zastrzeżone.",
+                
+                /* Pipeline Widget Polish Mappings */
+                "widget-title": "axion-potok-zgodnosci v1.0",
+                "widget-replay": "Powtórz demo",
+                "widget-step1-label": "Etap 01: Surowy projekt reklamowy",
+                "widget-input-text": "\"Zyskaj 100% gwarantowane dramatyczne rezultaty w zaledwie 2 dni bez żadnych zmian stylu życia!\"",
+                "widget-scan-idle": "Potok gotowy do pracy",
+                "widget-step3-label": "Etap 03: Zoptymalizowany bezpieczny wynik",
+                "widget-output-placeholder": "..."
+            },
+            fr: {
+                "nav-challenge": "Le Défi",
+                "nav-solution": "Notre Solution",
+                "nav-workflow": "Flux de travail",
+                "nav-industries": "Secteurs",
+                "btn-schedule-demo": "Planifier Démo",
+                "hero-subtitle": "Intelligence de Conformité Propulsée par l'IA",
+                "hero-desc": "Automatisez la conformité. Réduisez les risques. Accélérez les affaires. Validez automatiquement le contenu commercial mondial par rapport aux exigences réglementaires locales et étatiques.",
+                "btn-request-demo": "Demander une démo gratuite",
+                "btn-explore": "Explorer la plateforme",
+                "challenge-title": "Le Défi",
+                "challenge-desc": "La conformité devient de plus en plus complexe. Les entreprises modernes luttent pour équilibrer publication rapide et sécurité absolue.",
+                "ch-card1-title": "Examens manuels lents",
+                "ch-card1-desc": "Les validations manuelles créent des goulots d'étranglement. Regulus élimine ces barrières grâce à l'analyse sémantique continue.",
+                "ch-card2-title": "Réglementations dynamiques",
+                "ch-card2-desc": "Les lois changent continuellement. Notre plateforme calcule des indices de menace quantitative de manière autonome.",
+                "ch-card3-title": "Risque d'amendes sévères",
+                "ch-card3-desc": "Les oublis humains déclenchent des sanctions financières. Notre moteur gère nativement plusieurs configurations multilingues.",
+                "ch-card4-title": "Collaboration cloisonnée",
+                "ch-card4-desc": "Les départements opèrent de manière politique et fragmentée. Générez des rapports d'audit unifiés via des API fluides.",
+                "sol-badge": "Notre Solution",
+                "sol-title": "Découvrez Axion Regulus",
+                "sol-desc": "Une plateforme de conformité avancée, propulsée par l'IA, conçue pour protéger sans effort votre organisation. Nous analysons et validons en continu les documents denses par rapport à des cadres de règles complexes.",
+                "sol-feat1-title": "Intelligence documentaire",
+                "sol-feat1-desc": "Extraction approfondie et compréhension des actifs textuels structurés.",
+                "sol-feat2-title": "Intégration transparente",
+                "sol-feat2-desc": "Réduisez les risques manuels et accélérez la mise sur le marché.",
+                "sol-grid1-title": "Projets marketing",
+                "sol-grid1-desc": "Textes publicitaires, éléments créatifs et composants de pages d'atterrissage de sites Web.",
+                "sol-grid2-title": "Politiques d'entreprise",
+                "sol-grid2-desc": "Audits internes, manuels de règles et cadres réglementaires.",
+                "how-title": "Comment ça fonctionne",
+                "how-desc": "Quatre étapes structurelles pour une sécurité opérationnelle automatisée.",
+                "how-step1-title": "Télécharger les règles",
+                "how-step1-desc": "Importez des PDF réglementaires, des manuels de règles internes ou des mandats d'entreprise dans notre moteur.",
+                "how-step2-title": "L'IA ingère les données",
+                "how-step2-desc": "La plateforme extrait instantanément les informations clés, définissant des points de contrôle de validation robuste.",
+                "how-step3-title": "Valider les projets",
+                "how-step3-desc": "Téléchargez n'importe quel projet, page Web ou campagne médiatique pour une comparaison complète des règles.",
+                "how-step4-title": "Obtenir des aperçus clairs",
+                "how-step4-desc": "Recevez immédiatement des scores de risque, des violations de règles claires et des remèdes précis de l'IA.",
+                "ind-title": "Secteurs pris en charge",
+                "ind-desc": "Conçu pour des environnements de performance hautement complexes.",
+                "ind-item1": "Hautement réglementé", "ind-item2": "Santé & Biotech", "ind-item3": "Pharmaceutique", "ind-item4": "Services financiers",
+                "ind-item5": "Portfeuilles d'assurance", "ind-item6": "Commerce de détail & E-commerce", "ind-item7": "Alimentation & Boissons", "ind-item8": "Opérations immobilières",
+                "ind-item9": "Fabrication avancée", "ind-item10": "Agences gouvernementales", "ind-item11": "Télécoms & Médias", "ind-item12": "Dynamique de consommation",
+                "pil-card1-title": "Intégration native",
+                "pil-card1-desc": "S'intègre facilement au stockage de documents matériel existant, aux CMS et aux flux internes avec des API sans friction.",
+                "pil-card2-title": "Réglementations mondiales",
+                "pil-card2-desc": "Prend en charge les ensembles de règles transfrontaliers et les mappages multi-réglementations pour les demandes locales et mondiales.",
+                "pil-card3-title": "Confiance & Sécurité",
+                "pil-card3-desc": "Architecture sécurisée de classe entreprise. Ensembles de règles personnalisés et souveraineté complète des données.",
+                "demo-title": "Planifier une démo en direct",
+                "demo-desc": "Découvrez Axion Regulus en action. Voyez comment l'intelligence de conformité moderne simplifie les opérations et réduit le risque manuel.",
+                "demo-action": "Demandez une démonstration en direct gratuite de 20 minutes",
+                "footer-copy": "&copy; 2026 Axion Consultancy Services. Tous droits réservés.",
+                
+                /* Pipeline Widget French Mappings */
+                "widget-title": "axion-pipeline-conformite v1.0",
+                "widget-replay": "Rejouer la démo",
+                "widget-step1-label": "Étape 01 : Projet de texte brut",
+                "widget-input-text": "\"Obtenez 100% de résultats spectaculaires garantis en seulement 2 jours sans aucun changement de mode de vie !\"",
+                "widget-scan-idle": "Pipeline en attente",
+                "widget-step3-label": "Étape 03 : Résultat optimisé et sécurisé",
+                "widget-output-placeholder": "..."
+            },
+            es: {
+                "nav-challenge": "El Desafío",
+                "nav-solution": "Nuestra Solución",
+                "nav-workflow": "Flujo de trabajo",
+                "nav-industries": "Industrias",
+                "btn-schedule-demo": "Agendar Demo",
+                "hero-subtitle": "Inteligencia de Cumplimiento Impulsada por IA",
+                "hero-desc": "Automatice el cumplimiento. Reduzca el riesgo. Acelere el negocio. Valide automáticamente el contenido comercial global frente a los requisitos regulatorios locales y estatales.",
+                "btn-request-demo": "Solicitar demo gratuita",
+                "btn-explore": "Explorar plataforma",
+                "challenge-title": "El Desafío",
+                "challenge-desc": "El cumplimiento normativo es cada vez más complejo. Las empresas modernas luchan por equilibrar publicaciones rápidas con una seguridad a prueba de balas.",
+                "ch-card1-title": "Revisiones manuales lentas",
+                "ch-card1-desc": "Las revisiones manuales crean retrasos críticos. Regulus agiliza el rendimiento mediante motores de análisis sémantico automáticos.",
+                "ch-card2-title": "Regulaciones dinámicas",
+                "ch-card2-desc": "Las leyes y normativas cambian constantemente. Nuestra arquitectura calcula y categoriza niveles cuantitativos de riesgo en tiempo real.",
+                "ch-card3-title": "Riesgo de multas severas",
+                "ch-card3-desc": "Los descuidos humanos causan multas severas. El sistema admite múltiples idiomas cruzados nativos de forma segura.",
+                "ch-card4-title": "Colaboración aislada",
+                "ch-card4-desc": "Los departamentos legales y operativos trabajan de forma fragmentada. Produzca auditorías integrales centralizadas con integraciones directas.",
+                "sol-badge": "Nuestra Solución",
+                "sol-title": "Conozca Axion Regulus",
+                "sol-desc": "Una plataforma avanzada de cumplimiento impulsada por IA, diseñada para proteger sin esfuerzo a su organización. Analizamos y validamos en profundidad documentos frente a marcos de reglas complejos.",
+                "sol-feat1-title": "Inteligencia documental",
+                "sol-feat1-desc": "Extracción profunda y comprensión de activos de texto estructurados.",
+                "sol-feat2-title": "Integración perfecta",
+                "sol-feat2-desc": "Reduzca el riesgo manual y acople la velocidad de introducción al mercado.",
+                "sol-grid1-title": "Borradores de marketing",
+                "sol-grid1-desc": "Textos publicitarios, activos creativos y componentes de páginas de destino de sitios web.",
+                "sol-grid2-title": "Políticas corporativas",
+                "sol-grid2-desc": "Auditorías internas, libros de reglas y marcos regulatorios.",
+                "how-title": "Cómo funciona",
+                "how-desc": "Cuatro pasos estructurales hacia la seguridad operativa automatizada.",
+                "how-step1-title": "Cargar reglas",
+                "how-step1-desc": "Importe PDFs regulatorios, libros de reglas internos o mandatos corporativos en nuestro motor.",
+                "how-step2-title": "La IA ingiere datos",
+                "how-step2-desc": "La plataforma extrae instantáneamente información clave, estableciendo puntos de control de validación sólidos.",
+                "how-step3-title": "Validar borradores",
+                "how-step3-desc": "Cargue cualquier borrador, página web o campaña de medios para una comparación completa de reglas.",
+                "how-step4-title": "Obtener perspectivas claras",
+                "how-step4-desc": "Reciba puntuaciones de riesgo, violaciones claras de reglas y soluciones precisas de IA de inmediato.",
+                "ind-title": "Sectores respaldados",
+                "ind-desc": "Diseñado para entornos de rendimiento altamente complejos.",
+                "ind-item1": "Altamente regulado", "ind-item2": "Salud y biotecnología", "ind-item3": "Farmacéutica", "ind-item4": "Servicios financieros",
+                "ind-item5": "Portafolios de seguros", "ind-item6": "Venta al por menor y e-commerce", "ind-item7": "Alimentos y bebidas", "ind-item8": "Operaciones inmobiliarias",
+                "ind-item9": "Manufactura avanzada", "ind-item10": "Agencias gubernamentales", "ind-item11": "Telecomunicaciones y medios", "ind-item12": "Dinámica del consumidor",
+                "pil-card1-title": "Integración nativa",
+                "pil-card1-desc": "Se integra fácilmente con el almacenamiento de documentos existente, CMS y flujos internos con APIs sin fricciones.",
+                "pil-card2-title": "Regulaciones globales",
+                "pil-card2-desc": "Soporta conjuntos de reglas transfronterizos y mapeos multirregulatorios para demandas locales e internacionales.",
+                "pil-card3-title": "Confianza y seguridad",
+                "pil-card3-desc": "Arquitectura segura de nivel empresarial. Conjuntos de reglas a medida y soberanía de datos completa.",
+                "demo-title": "Programar una demo en vivo",
+                "demo-desc": "Vea Axion Regulus en acción. Descubra cómo la inteligencia de cumplimiento moderna simplifica las operaciones y reduce el riesgo manual.",
+                "demo-action": "Solicite una demostración en vivo gratuita de 20 minutos",
+                "footer-copy": "&copy; 2026 Axion Consultancy Services. Todos los derechos reservados.",
+                
+                /* Pipeline Widget Spanish Mappings */
+                "widget-title": "axion-ley-cumplimiento v1.0",
+                "widget-replay": "Repetir demo",
+                "widget-step1-label": "Etapa 01: Borrador de texto sin procesar",
+                "widget-input-text": "\"¡Obtenga resultados dramáticos 100% garantizados en solo 2 días con absolutamente cero cambios de estilo de vida!\"",
+                "widget-scan-idle": "Línea de producción lista",
+                "widget-step3-label": "Etapa 03: Resultado optimizado seguro",
+                "widget-output-placeholder": "..."
+            },
+            pt: {
+                "nav-challenge": "O Desafio",
+                "nav-solution": "Nossa Solução",
+                "nav-workflow": "Fluxo de trabalho",
+                "nav-industries": "Indústrias",
+                "btn-schedule-demo": "Agendar Demo",
+                "hero-subtitle": "Inteligência de Conformidade Alimentada por IA",
+                "hero-desc": "Automatize a conformidade. Reduza riscos. Acelere os negócios. Valide automaticamente o conteúdo de negócios global em relação aos requisitos regulatórios locais e nacionais.",
+                "btn-request-demo": "Solicitar demonstração gratuita",
+                "btn-explore": "Explorar plataforma",
+                "challenge-title": "O Desafio",
+                "challenge-desc": "A conformidade regulatória está cada vez mais complexa. As empresas modernas lutam para equilibrar publicações rápidas com segurança absoluta.",
+                "ch-card1-title": "Revisões manuais lentas",
+                "ch-card1-desc": "Processos de validação manuais criam gargalos. O ecossistema Regulus resolve isso através de fluxos automatizados de análise contextual.",
+                "ch-card2-title": "Regulamentações dinâmicas",
+                "ch-card2-desc": "Regras legais mudam constantemente. Nossa estrutura quantifica ameaças de riscos estruturais dinamicamente.",
+                "ch-card3-title": "Riesgo de multas graves",
+                "ch-card3-desc": "Falhas manuais causam multas caras. Os guardiões processam nativamente múltiplas configurações idiomáticas.",
+                "ch-card4-title": "Colaboração isolada",
+                "ch-card4-desc": "Equipes de marketing e conformidade trabalham de forma fragmentada. Produza auditorias unificadas e relatórios centralizados.",
+                "sol-badge": "Nuestra Solução",
+                "sol-title": "Conheça o Axion Regulus",
+                "sol-desc": "Uma plataforma avançada de conformidade alimentada por IA, projetada para proteger sua organização sem esforço. Analisamos e validamos profundamente documentos complexos.",
+                "sol-feat1-title": "Inteligência documental",
+                "sol-feat1-desc": "Extração profunda e compreensão de ativos de texto estruturados.",
+                "sol-feat2-title": "Integração perfeita",
+                "sol-feat2-desc": "Reduz o risco manual e acelere o tempo de lançamento no mercado.",
+                "sol-grid1-title": "Rascunhos de marketing",
+                "sol-grid1-desc": "Textos publicitários, ativos criativos e componentes de páginas de destino de sites.",
+                "sol-grid2-title": "Políticas corporativas",
+                "sol-grid2-desc": "Auditorias internas, livros de regras e estruturas regulatórias.",
+                "how-title": "Como funciona",
+                "how-desc": "Quatro etapas estruturais para a segurança operacional automatizada.",
+                "how-step1-title": "Carregar regras",
+                "how-step1-desc": "Importe PDFs regulatórios, livros de regras internos ou mandatos corporativos em nosso motor.",
+                "how-step2-title": "A IA ingere dados",
+                "how-step2-desc": "A plataforma extrai instantaneamente informações importantes, estabelecendo pontos de controle robustos.",
+                "how-step3-title": "Validar rascunhos",
+                "how-step3-desc": "Carregue qualquer rascunho, página web ou campanha de mídia para uma comparação completa das regras.",
+                "how-step4-title": "Obter insights claros",
+                "how-step4-desc": "Receba pontuações de risco, violações de regras óbvias e correções precisas da IA de imediato.",
+                "ind-title": "Setores suportados",
+                "ind-desc": "Projetado para ambientes de desempenho altamente complexos.",
+                "ind-item1": "Altamente regulado", "ind-item2": "Saúde e biotecnologia", "ind-item3": "Farmacêutica", "ind-item4": "Services financeiros",
+                "ind-item5": "Portfólios de seguros", "ind-item6": "Varejo e e-commerce", "ind-item7": "Alimentos e bebidas", "ind-item8": "Operações imobiliárias",
+                "ind-item9": "Manufatura avançada", "ind-item10": "Agências governamentais", "ind-item11": "Telecomunicações e mídia", "ind-item12": "Dinâmica do consumidor",
+                "pil-card1-title": "Integração nativa",
+                "pil-card1-desc": "Integra-se facilmente com armazenamento de documentos existente, CMS e fluxos internos com APIs sem atrito.",
+                "pil-card2-title": "Regulamentações globais",
+                "pil-card2-desc": "Suporta conjuntos de regras transfronteiriços e mapeamentos multiregulatórios para demandas locais e internacionais.",
+                "pil-card3-title": "Confiança e segurança",
+                "pil-card3-desc": "Arquitetura segura de nível empresarial. Conjuntos de regras sob medida e soberania de dados completa.",
+                "demo-title": "Agendar demonstração ao vivo",
+                "demo-desc": "Veja o Axion Regulus em ação. Descubra como a inteligência de conformidade moderna simplifica operações e reduz o risco manual.",
+                "demo-action": "Solicite uma demonstração ao vivo gratuita de 20 minutes",
+                "footer-copy": "&copy; 2026 Axion Consultancy Services. Todos os direitos reservados.",
+                
+                /* Pipeline Widget Portuguese Mappings */
+                "widget-title": "axion-fluxo-conformidade v1.0",
+                "widget-replay": "Repetir demonstração",
+                "widget-step1-label": "Estágio 01: Rascunho de texto bruto",
+                "widget-input-text": "\"Obtenha resultados dramáticos 100% garantizados em apenas 2 dias com absolutamente zero alterações no estilo de vida!\"",
+                "widget-scan-idle": "Fluxo aguardando início",
+                "widget-step3-label": "Estágio 03: Resultado seguro otimizado",
+                "widget-output-placeholder": "..."
+            }
+        };
+
+        const langSelector = document.getElementById('lang-selector');
+
+        function updateLanguage(lang) {
+            // Set element language attribute
+            document.documentElement.lang = lang;
+            
+            // Loop through string elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Re-trigger visual snapshot state updates inside current language pipeline cycle
+            if(window.currentLanguagePipelineReset) {
+                window.currentLanguagePipelineReset(lang);
+            }
+        }
+
+        langSelector.addEventListener('change', (e) => {
+            updateLanguage(e.target.value);
+        });
+
+        // Optional initialization check for system preference default parameters
+        window.addEventListener('DOMContentLoaded', () => {
+            updateLanguage('en');
+        });
+    </script>
+
+    <!-- NEW: GSAP Scroll-Driven Interaction Manager -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const cards = document.querySelectorAll('.feat-scroll-card');
+        const scoreDisplay = document.getElementById('feat-score-display');
+
+        cards.forEach((card) => {
+            const currentFeat = card.getAttribute('data-feat');
+            const visualTarget = document.getElementById(`feat-${currentFeat}`);
+
+            ScrollTrigger.create({
+                trigger: card,
+                start: "top 65%",
+                end: "bottom 35%",
+                onEnter: () => transitionFeature(card, visualTarget, currentFeat),
+                onEnterBack: () => transitionFeature(card, visualTarget, currentFeat)
+            });
+        });
+
+        function transitionFeature(activeCard, activeVisual, featureId) {
+            // 1. Reset text cards visibility weights
+            cards.forEach(c => c.classList.add('opacity-35', 'translate-y-6'));
+            activeCard.classList.remove('opacity-35', 'translate-y-6');
+
+            // 2. Cross-fade display frames inside the sticky window
+            const panels = ['v1', 'v2', 'v3', 'v4'];
+            panels.forEach(p => {
+                const el = document.getElementById(`feat-${p}`);
+                el.style.opacity = '0';
+                el.style.transform = 'scale(0.9)';
+                el.style.pointerEvents = 'none';
+            });
+
+            activeVisual.style.opacity = '1';
+            activeVisual.style.transform = 'scale(1)';
+            activeVisual.style.pointerEvents = 'auto';
+
+            // 3. Kick off counter loop explicitly if User hits Feature 2 panel
+            if (featureId === 'v2') {
+                const riskObject = { score: 100 };
+                gsap.to(riskObject, {
+                    score: 14,
+                    duration: 1.4,
+                    ease: "power3.out",
+                    onUpdate: function () {
+                        if (scoreDisplay) {
+                            scoreDisplay.textContent = Math.floor(riskObject.score);
+                            if (riskObject.score < 35) {
+                                scoreDisplay.className = "text-4xl font-black text-emerald-400";
+                            } else {
+                                scoreDisplay.className = "text-4xl font-black text-rose-400";
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+
+    <!-- Interactive Compliance Pipeline Engine Logic Script -->
+    <script>
+        (function() {
+            const scanBar = document.getElementById('scan-bar');
+            const scanText = document.getElementById('pipeline-scan-text');
+            const inputBox = document.getElementById('pipeline-input-box');
+            const outputBox = document.getElementById('pipeline-output-box');
+            
+            const inputStatus = document.getElementById('input-status');
+            const outputStatus = document.getElementById('output-status');
+            const outputText = document.getElementById('pipeline-output-text');
+            const outputBadge = document.getElementById('output-stage-badge');
+            const replayBtn = document.getElementById('replay-pipeline-btn');
+
+            const optimizedOutputs = {
+                en: "● [Optimized Framework Variant]: \"Achieve your dynamic fitness and personal wellness goals effectively alongside a structured, nutritionally balanced lifestyle roadmap.\"",
+                ru: "● [Оптимизированный вариант]: \"Эффективно достигайте своих личных целей в фитнесе и здоровом образе жизни с помощью сбалансированной программы питания.\"",
+                uk: "● [Оптимізований варіант]: \"Ефективно досягайте своїх особистих цілей у фітнесі та здоровому способі життя за допомогою збалансованої програми харчування.\"",
+                de: "● [Optimierte Version]: \"Erreichen Sie Ihre Fitness- und Wellnessziele effektiv mit einem strukturierten, ernährungsphysiologisch ausgewogenen Lebensstil-Plan.\"",
+                pl: "● [Wariant Zoptymalizowany]: \"Skutecznie osiągaj swoje cele fitness i dobrego samopoczucia dzięki zbilansowanemu programowi żywieniowemu.\"",
+                fr: "● [Version optimisée] : \"Atteignez vos objectifs de forme et de bien-être de manière efficace grâce à un programme nutritionnel équilibré et structuré.\"",
+                es: "● [Variante Optimizada]: \"Alance sus objetivos de fitness y bienestar personal de manera efectiva junto con un plan de estilo de vida nutricionalmente equilibrado.\"",
+                pt: "● [Variante Otimizada]: \"Alcance seus objetivos de condicionamento físico e bem-estar de forma eficaz com um plan de estilo de vida nutricionalmente equilibrado.\""
+            };
+
+            const scanningLabels = {
+                en: "Scanning against local database frameworks...",
+                ru: "Проверка по базам нормативных требований...",
+                uk: "Перевірка за базами нормативних вимог...",
+                de: "Überprüfung gegen regulatorische Frameworks...",
+                pl: "Sprawdzanie struktury przepisów lokalnych...",
+                fr: "Analyse par rapport aux cadres réglementaires...",
+                es: "Analizando frente a marcos normativos...",
+                pt: "Analisando em relação às estruturas regulatórias..."
+            };
+
+            const statusLabels = {
+                en: { verified: "● Verified & Safe", checking: "○ Checking Content..." },
+                ru: { verified: "● Проверено и безопасно", checking: "○ Анализ контента..." },
+                uk: { verified: "● Перевірено та безпечно", checking: "○ Аналіз контенту..." },
+                de: { verified: "● Verifiziert & Sicher", checking: "○ Prüfe Inhalt..." },
+                pl: { verified: "● Zweryfikowane i bezpieczne", checking: "○ Sprawdzanie..." },
+                fr: { verified: "● Vérifié & Sécurisé", checking: "○ Analyse..." },
+                es: { verified: "● Verificado y Seguro", checking: "○ Verificando..." },
+                pt: { verified: "● Verificado e Seguro", checking: "○ Verificando..." }
+            };
+
+            let pipelineTimeout;
+
+            function triggerPipelineSequence() {
+                const currentLang = document.documentElement.lang || 'en';
+                clearTimeout(pipelineTimeout);
+                
+                // State 01: Reset view to starting positions
+                scanBar.style.opacity = '0';
+                scanBar.classList.remove('animate-scan');
+                scanText.innerText = scanningLabels[currentLang];
+                scanText.classList.add('text-cyan-400', 'animate-pulse-glow');
+                scanText.classList.remove('text-slate-500');
+
+                inputBox.classList.remove('border-rose-500/20');
+                inputBox.classList.add('border-cyan-500/40', 'bg-slate-900/40');
+                
+                outputBox.classList.remove('border-emerald-500/30', 'bg-slate-900/20', 'opacity-100');
+                outputBox.classList.add('border-slate-800', 'opacity-40');
+                outputBadge.classList.remove('text-emerald-400', 'bg-emerald-500/10');
+                outputBadge.classList.add('text-slate-500');
+                
+                outputStatus.innerText = statusLabels[currentLang].checking;
+                outputStatus.className = "text-[11px] font-mono text-cyan-400 animate-pulse";
+                outputText.innerText = "...";
+                outputText.className = "text-sm text-slate-500 font-mono";
+
+                // Fast activation layer of the laser animation line
+                setTimeout(() => {
+                    scanBar.style.opacity = '1';
+                    scanBar.classList.add('animate-scan');
+                }, 50);
+
+                // State 02: Processing delay simulation completes
+                pipelineTimeout = setTimeout(() => {
+                    scanBar.style.opacity = '0';
+                    scanBar.classList.remove('animate-scan');
+                    scanText.classList.remove('text-cyan-400', 'animate-pulse-glow');
+                    scanText.classList.add('text-slate-500');
+                    scanText.innerText = document.getElementById('lang-selector').value === 'en' ? "Updated suggestion" : translations[currentLang]["widget-scan-idle"];
+
+                    inputBox.classList.remove('border-cyan-500/40', 'bg-slate-900/40');
+                    inputBox.classList.add('border-rose-500/20');
+
+                    outputBox.classList.remove('opacity-40', 'border-slate-800');
+                    outputBox.classList.add('border-emerald-500/30', 'bg-slate-900/20', 'opacity-100');
+                    
+                    outputBadge.classList.remove('text-slate-500');
+                    outputBadge.classList.add('text-emerald-400', 'bg-emerald-500/10');
+                    
+                    outputStatus.innerText = statusLabels[currentLang].verified;
+                    outputStatus.className = "text-[11px] font-mono text-emerald-400";
+                    
+                    outputText.innerText = optimizedOutputs[currentLang];
+                    outputText.className = "text-sm text-emerald-400 font-mono transition-all duration-300";
+                }, 2800);
+            }
+
+            // Expose specific handler for structural global execution chains
+            window.currentLanguagePipelineReset = function(lang) {
+                triggerPipelineSequence();
+            };
+
+            replayBtn.addEventListener('click', triggerPipelineSequence);
+            
+            // Initialization trigger loop mapping
+            setTimeout(triggerPipelineSequence, 600);
+        })();
+    </script>
+</body>
+</html>
