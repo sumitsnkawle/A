@@ -130,12 +130,12 @@
       </nav>
       <div class="hidden md:flex items-center gap-3">
         <select id="lang-selector" class="bg-white/5 border border-[var(--border)] text-slate-300 text-xs font-semibold rounded-lg pl-2 pr-1 py-2 cursor-pointer focus:outline-none focus:border-cyan-400 transition" aria-label="Select language">
-          <option value="en">🌐 EN</option>
-          <option value="de">🌐 DE</option>
-          <option value="fr">🌐 FR</option>
-          <option value="es">🌐 ES</option>
-          <option value="ru">🌐 RU</option>
-          <option value="ar">🌐 AR</option>
+          <option value="ar">🇦🇪 AR</option>
+          <option value="de">🇩🇪 DE</option>
+          <option value="en">🇬🇧 EN</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="ru">🇷🇺 RU</option>
         </select>
         <a href="#contact" class="btn-ghost text-white text-sm font-medium px-4 py-2 rounded-lg transition" data-i18n="nav.talk">Talk to Axion</a>
         <a href="#demo" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition" data-i18n="nav.demo">Request a Demo</a>
@@ -155,12 +155,12 @@
     <a href="#contact" class="block hover:text-white" data-i18n="nav.contact">Contact</a>
     <a href="#demo" class="block btn-primary text-white font-semibold px-4 py-2.5 rounded-lg text-center mt-2" data-i18n="nav.demo">Request a Demo</a>
     <select id="lang-selector-mobile" class="w-full bg-white/5 border border-[var(--border)] text-slate-300 text-xs font-semibold rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-cyan-400 transition" aria-label="Select language">
-      <option value="en">🌐 EN</option>
-      <option value="de">🌐 DE</option>
-      <option value="fr">🌐 FR</option>
-      <option value="es">🌐 ES</option>
-      <option value="ru">🌐 RU</option>
-      <option value="ar">🌐 AR</option>
+      <option value="ar">🇦🇪 AR</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="es">🇪🇸 ES</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="ru">🇷🇺 RU</option>
     </select>
   </div>
 </header>
@@ -984,6 +984,12 @@ document.getElementById('menuBtn').addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('hidden');
 });
 
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('hidden');
+  });
+});
+
 // Icon set: small, self-contained line icons (24x24) — no external assets
 const ICONS = {
   shieldCheck: '<path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12.5l2 2 4-4.5"/>',
@@ -1711,7 +1717,10 @@ function applyLanguage(lang) {
 }
 
 document.getElementById('lang-selector').addEventListener('change', (e) => applyLanguage(e.target.value));
-document.getElementById('lang-selector-mobile').addEventListener('change', (e) => applyLanguage(e.target.value));
+document.getElementById('lang-selector-mobile').addEventListener('change', (e) => {
+  applyLanguage(e.target.value);
+  document.getElementById('mobileMenu').classList.add('hidden');
+});
 
 let savedLang = 'en';
 try { savedLang = localStorage.getItem('axion-lang') || 'en'; } catch (e) {}
