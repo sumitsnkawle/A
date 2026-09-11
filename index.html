@@ -10,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -91,6 +91,14 @@
   .noise-overlay{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.035; mix-blend-mode:overlay;}
   .icon-badge{width:2.75rem; height:2.75rem; border-radius:.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
   .icon-badge svg{width:1.4rem; height:1.4rem;}
+
+  /* Arabic / RTL support */
+  [dir="rtl"] body, [dir="rtl"]{font-family:'Noto Sans Arabic','Inter',sans-serif;}
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] .font-display{font-family:'Noto Sans Arabic','Manrope',sans-serif;}
+  [dir="rtl"] body{text-align:right;}
+  [dir="rtl"] .rtl-row{flex-direction:row-reverse;}
+  [dir="rtl"] .rtl-flip{transform:scaleX(-1);}
+  [dir="rtl"] .ltr-diagram{direction:ltr; text-align:left;}
 </style>
 </head>
 <body class="bg-[var(--bg)] antialiased">
@@ -103,7 +111,7 @@
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
   <div class="glass border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between py-3">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between py-3 rtl-row">
       <a href="#top" class="flex items-center gap-3">
         <img src="AxionLogo.png" alt="Axion" class="h-9 w-9 rounded-lg object-cover">
         <div class="leading-tight">
@@ -127,6 +135,7 @@
           <option value="fr">🌐 FR</option>
           <option value="es">🌐 ES</option>
           <option value="ru">🌐 RU</option>
+          <option value="ar">🌐 AR</option>
         </select>
         <a href="#contact" class="btn-ghost text-white text-sm font-medium px-4 py-2 rounded-lg transition" data-i18n="nav.talk">Talk to Axion</a>
         <a href="#demo" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition" data-i18n="nav.demo">Request a Demo</a>
@@ -151,6 +160,7 @@
       <option value="fr">🌐 FR</option>
       <option value="es">🌐 ES</option>
       <option value="ru">🌐 RU</option>
+      <option value="ar">🌐 AR</option>
     </select>
   </div>
 </header>
@@ -181,14 +191,14 @@
         </a>
       </div>
       <div class="mt-12 flex items-center gap-6 text-xs text-[var(--muted)]">
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span data-i18n="hero.trust1">AI with Human Supervision</span></div>
-        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span><span data-i18n="hero.trust2">Enterprise-Ready Architecture</span></div>
+        <div class="flex items-center gap-2 rtl-row"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span data-i18n="hero.trust1">AI with Human Supervision</span></div>
+        <div class="flex items-center gap-2 rtl-row"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span><span data-i18n="hero.trust2">Enterprise-Ready Architecture</span></div>
       </div>
     </div>
 
     <!-- Hero visual: regulation -> AI -> rules -> validation -> risk -> confidence -->
     <div class="relative fade-up" data-fade>
-      <div class="glass rounded-2xl p-6 lg:p-8 relative overflow-hidden">
+      <div class="glass rounded-2xl p-6 lg:p-8 relative overflow-hidden ltr-diagram">
         <div class="absolute inset-0 bg-grid opacity-30"></div>
         <div class="relative flex flex-col items-center gap-2">
           <div class="w-full flex justify-between text-[11px] text-[var(--muted)] kicker mb-2">
@@ -322,9 +332,9 @@
         Compliance managers, risk professionals, legal and governance teams, and marketing reviewers use Axion Regulus to move through regulatory review faster — with structured evidence and a shared view of what needs attention.
       </p>
       <ul class="mt-7 space-y-4">
-        <li class="flex gap-3 text-slate-300"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li1">Structured, centralized regulatory knowledge instead of scattered documents</span></li>
-        <li class="flex gap-3 text-slate-300"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li2">Consistent evaluation criteria across reviewers and teams</span></li>
-        <li class="flex gap-3 text-slate-300"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li3">Clear evidence trails that support confident decisions</span></li>
+        <li class="flex gap-3 text-slate-300 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li1">Structured, centralized regulatory knowledge instead of scattered documents</span></li>
+        <li class="flex gap-3 text-slate-300 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li2">Consistent evaluation criteria across reviewers and teams</span></li>
+        <li class="flex gap-3 text-slate-300 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li3">Clear evidence trails that support confident decisions</span></li>
       </ul>
     </div>
   </div>
@@ -408,7 +418,7 @@
       <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="sol.title">From regulatory documents to actionable compliance</h2>
     </div>
 
-    <div class="mt-10 lg:mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5">
+    <div class="mt-10 lg:mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 ltr-diagram">
       <!-- Step template -->
       <div class="fade-up" data-fade>
         <div class="glass rounded-xl p-5 h-full card-hover relative">
@@ -579,12 +589,12 @@
 
     <div class="mt-10 lg:mt-14 grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
       <div class="fade-up" data-fade>
-        <div class="flex flex-wrap gap-2 text-[11px] text-[var(--muted)] kicker mb-6">
+        <div class="flex flex-wrap gap-2 text-[11px] text-[var(--muted)] kicker mb-6 ltr-diagram">
           <span class="glass rounded-full px-3 py-1.5" data-i18n="see.step1">1. UPLOAD REGULATION</span>
           <span>→</span><span class="glass rounded-full px-3 py-1.5" data-i18n="see.step2">2. EXTRACT REQUIREMENTS</span>
           <span>→</span><span class="glass rounded-full px-3 py-1.5" data-i18n="see.step3">3. RULES CREATED</span>
         </div>
-        <div class="flex flex-wrap gap-2 text-[11px] text-[var(--muted)] kicker mb-8">
+        <div class="flex flex-wrap gap-2 text-[11px] text-[var(--muted)] kicker mb-8 ltr-diagram">
           <span class="glass rounded-full px-3 py-1.5" data-i18n="see.step4">4. UPLOAD CONTENT</span>
           <span>→</span><span class="glass rounded-full px-3 py-1.5" data-i18n="see.step5">5. AI VALIDATION</span>
           <span>→</span><span class="glass rounded-full px-3 py-1.5" data-i18n="see.step6">6. REPORT &amp; ACTIONS</span>
@@ -692,14 +702,14 @@
       <p class="kicker text-cyan-400 text-xs font-semibold mb-3" data-i18n="sec.kicker">SECURITY &amp; ENTERPRISE TRUST</p>
       <h2 class="font-display text-3xl lg:text-4xl font-bold text-white leading-tight" data-i18n="sec.title">Built for enterprise compliance workflows</h2>
       <div class="mt-8 grid grid-cols-2 gap-3 sm:gap-4 text-sm text-slate-300">
-        <div class="flex gap-2"><span class="text-blue-300">•</span><span data-i18n="sec.i1">Controlled &amp; role-based access</span></div>
-        <div class="flex gap-2"><span class="text-blue-300">•</span><span data-i18n="sec.i2">Secure document processing</span></div>
-        <div class="flex gap-2"><span class="text-blue-300">•</span><span data-i18n="sec.i3">Auditability &amp; compliance evidence</span></div>
-        <div class="flex gap-2"><span class="text-blue-300">•</span><span data-i18n="sec.i4">Data governance controls</span></div>
-        <div class="flex gap-2"><span class="text-blue-300">•</span><span data-i18n="sec.i5">Configurable workflows</span></div>
-        <div class="flex gap-2"><span class="text-blue-300">•</span><span data-i18n="sec.i6">Enterprise deployment options</span></div>
-        <div class="flex gap-2"><span class="text-blue-300">•</span><span data-i18n="sec.i7">AI supervision</span></div>
-        <div class="flex gap-2"><span class="text-blue-300">•</span><span data-i18n="sec.i8">Human review at every stage</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i1">Controlled &amp; role-based access</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i2">Secure document processing</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i3">Auditability &amp; compliance evidence</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i4">Data governance controls</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i5">Configurable workflows</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i6">Enterprise deployment options</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i7">AI supervision</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i8">Human review at every stage</span></div>
       </div>
     </div>
     <div class="relative fade-up" data-fade>
@@ -726,7 +736,7 @@
     <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="ai.title">AI that assists. Humans that decide.</h2>
     <p class="mt-5 text-slate-300 max-w-2xl mx-auto leading-relaxed" data-i18n="ai.desc">Axion Regulus combines AI-powered analysis with human supervision to help organizations evaluate regulatory requirements, identify risks and make informed compliance decisions.</p>
 
-    <div class="mt-10 lg:mt-14 max-w-3xl mx-auto grid grid-cols-2 sm:flex sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
+    <div class="mt-10 lg:mt-14 max-w-3xl mx-auto grid grid-cols-2 sm:flex sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 ltr-diagram">
       <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-cyan-300 text-xs kicker mb-1" data-i18n="ai.stepLabel1">STEP 1</div><div class="text-white font-semibold text-sm" data-i18n="ai.v1">AI Analysis</div></div>
       <span class="text-slate-500 hidden sm:block">→</span>
       <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-blue-300 text-xs kicker mb-1" data-i18n="ai.stepLabel2">STEP 2</div><div class="text-white font-semibold text-sm" data-i18n="ai.v2">Risk Identification</div></div>
@@ -745,12 +755,12 @@
       <p class="kicker text-blue-400 text-xs font-semibold mb-3" data-i18n="mgmt.kicker">FOR LEADERSHIP</p>
       <h2 class="font-display text-3xl lg:text-4xl font-bold text-white leading-tight" data-i18n="mgmt.title">Compliance intelligence for leadership</h2>
       <ul class="mt-7 space-y-3 text-sm text-slate-300">
-        <li class="flex gap-2"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li1">Overall compliance score &amp; trends</span></li>
-        <li class="flex gap-2"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li2">High-risk areas &amp; open issues</span></li>
-        <li class="flex gap-2"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li3">Resolution status across teams</span></li>
-        <li class="flex gap-2"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li4">Business-unit performance</span></li>
-        <li class="flex gap-2"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li5">Regulatory frameworks in scope</span></li>
-        <li class="flex gap-2"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li6">Review activity, time &amp; effort indicators</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li1">Overall compliance score &amp; trends</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li2">High-risk areas &amp; open issues</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li3">Resolution status across teams</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li4">Business-unit performance</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li5">Regulatory frameworks in scope</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li6">Review activity, time &amp; effort indicators</span></li>
       </ul>
     </div>
     <div class="glass rounded-2xl p-6 fade-up" data-fade>
@@ -830,7 +840,7 @@
         <ellipse cx="300" cy="100" rx="220" ry="60" fill="none" stroke="#22d3ee" stroke-width="1"/>
       </svg>
       <div class="relative text-center text-[11px] kicker text-[var(--muted)] mb-8" data-i18n="inv.seeking">SEEKING SEED INVESTORS &amp; STRATEGIC VENTURE PARTNERS</div>
-      <div class="relative flex items-center justify-between max-w-2xl mx-auto">
+      <div class="relative flex items-center justify-between max-w-2xl mx-auto ltr-diagram">
         <div class="text-center">
           <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-cyan-300 font-semibold mx-auto">UAE</div>
         </div>
@@ -1569,6 +1579,109 @@ ru: {
 "footer.tagline":"Корпоративный комплаенс-интеллект на основе ИИ — ИИ под контролем человека.","footer.productHeading":"Продукт",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"Руководство пользователя","footer.companyHeading":"Компания","footer.connectHeading":"Связаться","footer.linkedin":"LinkedIn",
 "footer.aiSupervision":"ИИ ПОД КОНТРОЛЕМ ЧЕЛОВЕКА","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Все права защищены.","footer.privacy":"Политика конфиденциальности","footer.terms":"Условия"
+},
+ar: {
+"nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"المنتج","nav.features":"المزايا","nav.industries":"القطاعات","nav.partners":"الشركاء","nav.investors":"المستثمرون","nav.about":"من نحن","nav.contact":"تواصل معنا","nav.talk":"تحدث مع Axion","nav.demo":"اطلب عرضاً تجريبياً",
+"hero.badge":"ذكاء الامتثال المؤسسي","hero.title1":"حوّل اللوائح التنظيمية إلى","hero.titleGrad":"ذكاء امتثال آلي",
+"hero.desc":"‏Axion Regulus هي منصة ذكاء امتثال مؤسسي مدعومة بالذكاء الاصطناعي، تحوّل الوثائق التنظيمية إلى أنظمة تحقق آلية لضمان امتثال الأعمال في الوقت الفعلي.",
+"hero.cta1":"اطلب عرضاً تجريبياً","hero.cta2":"استكشف Axion Regulus","hero.cta3":"الشراكة والاستثمار","hero.trust1":"ذكاء اصطناعي تحت إشراف بشري","hero.trust2":"بنية جاهزة للمؤسسات",
+"hero.regulations":"اللوائح التنظيمية","hero.confidence":"ثقة الأعمال","hero.doc2":"تحديث السياسة","hero.doc3":"الدليل الإرشادي v2","hero.aiEngine1":"محرك تحليل","hero.aiEngine2":"الذكاء الاصطناعي",
+"hero.scoreLabel":"درجة الامتثال","hero.riskLabel":"المخاطر المكتشفة","hero.rulesLabel":"القواعد المُقيَّمة","hero.confLabel":"موثوقية الذكاء الاصطناعي","hero.rules":"القواعد","hero.validation":"التحقق","hero.confidenceShort":"الثقة",
+"hb.kicker":"عمل يدوي أقل. قرارات أسرع.","hb.title":"امنح فرق الامتثال والأعمال وقتهم مجدداً",
+"hb.desc":"يعتمد مديرو الامتثال، ومتخصصو المخاطر، وفرق الشؤون القانونية والحوكمة، ومراجعو التسويق على Axion Regulus لتسريع المراجعة التنظيمية — بأدلة موثقة ورؤية مشتركة لما يحتاج إلى اهتمام.",
+"hb.li1":"معرفة تنظيمية مركزية ومنظَّمة بدلاً من وثائق متفرقة","hb.li2":"معايير تقييم متسقة بين جميع المراجعين والفرق","hb.li3":"مسارات أدلة واضحة تدعم اتخاذ قرارات واثقة",
+"hb.reviewLabel":"Axion Regulus — مراجعة الفريق","hb.reviewing":"مراجعة المحتوى المُعلَّم هذا الأسبوع","hb.onTrack":"وفق الخطة",
+"prob.kicker":"مشكلة الامتثال","prob.title":"الامتثال لا ينبغي أن يبطئ أعمالك",
+"prob.c1":"تتغير اللوائح التنظيمية باستمرار عبر الولايات القضائية والقطاعات","prob.c2":"يستغرق التفسير اليدوي للوثائق وقتاً وجهداً كبيرين","prob.c3":"قد يحتوي محتوى الأعمال على مخاطر تنظيمية خفية",
+"prob.c4":"قد تفسّر فرق مختلفة نفس القواعد بشكل مختلف","prob.c5":"يصعب الحفاظ على أدلة الامتثال واسترجاعها","prob.c6":"تزيد المراجعات اليدوية التكلفة التشغيلية عند التوسع",
+"prob.queue":"قائمة مراجعة مُثقَلة","prob.pdfs":"ملفات PDF","prob.emails":"رسائل بريد إلكتروني","prob.policies":"سياسات","prob.marketing":"مواد تسويقية","prob.risk":"خطر؟","prob.sheets":"جداول بيانات","prob.manualReview":"مراجعة يدوية",
+"sol.kicker":"حل Axion Regulus","sol.title":"من الوثائق التنظيمية إلى امتثال قابل للتنفيذ",
+"sol.s1t":"الاستيعاب","sol.s1d":"ارفع الوثائق التنظيمية والسياسات والإرشادات.","sol.s2t":"الفهم","sol.s2d":"يحلل الذكاء الاصطناعي المعلومات التنظيمية وينظّمها.",
+"sol.s3t":"إنشاء القواعد","sol.s3d":"تُحوَّل المتطلبات إلى قواعد تحقق منظَّمة.","sol.s4t":"التحقق","sol.s4d":"يُقيَّم محتوى الأعمال في ضوء القواعد المعمول بها.",
+"sol.s5t":"كشف المخاطر","sol.s5d":"يتم إبراز المخالفات والثغرات والمخاطر المحتملة.","sol.s6t":"التصرف","sol.s6d":"تحصل الفرق على توصيات وأدلة وخطوات تالية.",
+"feat.kicker":"مزايا المنتج","feat.title":"كل ما تحتاجه وظيفة الامتثال، في منصة واحدة",
+"feat.f1t":"تحقق امتثال مدعوم بالذكاء الاصطناعي","feat.f1d":"قيّم محتوى الأعمال تلقائياً في ضوء المتطلبات التنظيمية.",
+"feat.f2t":"قاعدة معرفة تنظيمية","feat.f2d":"احتفظ بالوثائق التنظيمية وقواعد الامتثال المنظَّمة في بيئة مركزية.",
+"feat.f3t":"إنشاء قواعد آلي","feat.f3d":"حوّل المتطلبات التنظيمية إلى قواعد تحقق قابلة للتنفيذ.",
+"feat.f4t":"تقييم الامتثال","feat.f4d":"درجة مفهومة توضح الحالة العامة للمحتوى المُقدَّم.",
+"feat.f5t":"كشف المخاطر","feat.f5d":"حدد مشكلات الامتثال المحتملة ورتّب أولويات المجالات التي تحتاج اهتماماً.",
+"feat.f6t":"درجة موثوقية الذكاء الاصطناعي","feat.f6d":"تُظهر مستوى الثقة المرتبط بالتقييمات المولَّدة بالذكاء الاصطناعي.",
+"feat.f7t":"التوصيات","feat.f7d":"توصيات قابلة للتنفيذ لمعالجة مخاطر الامتثال المكتشفة.",
+"feat.f8t":"أدلة التدقيق","feat.f8d":"احتفظ بالأدلة الداعمة لقرارات ومراجعات الامتثال.",
+"feat.f9t":"إدارة اتفاقيات مستوى الخدمة وسير العمل","feat.f9d":"تتبّع مهام الامتثال والمواعيد النهائية وسير عمليات الحل.",
+"feat.f10t":"إدارة النزاعات","feat.f10d":"تتيح للمستخدمين الاعتراض على نتائج الامتثال أو مراجعتها عند الحاجة.",
+"feat.f11t":"الوصول القائم على الأدوار","feat.f11d":"وصول متحكَّم به للمسؤولين وفرق الامتثال والمراجعين ومستخدمي الأعمال.",
+"feat.f12t":"لوحة المعلومات والتقارير","feat.f12d":"رؤية على مستوى الإدارة لأداء الامتثال والمخاطر والاتجاهات.",
+"feat.f13t":"امتثال متعدد اللغات","feat.f13d":"يدعم المحتوى التنظيمي والتجاري بعدة لغات.",
+"feat.f14t":"ذكاء الصور والوثائق","feat.f14d":"يحلل النصوص والمعلومات ذات الصلة في وثائق وصور الأعمال.",
+"feat.f15t":"ذكاء التغيرات التنظيمية","feat.f15d":"يحدد التغيرات في المتطلبات التنظيمية ويديرها بمرور الوقت.",
+"dash.kicker":"لوحة معلومات المنتج","dash.title":"ذكاء الامتثال في صورة مرئية","dash.label":"Axion Regulus — لوحة معلومات الامتثال",
+"dash.complianceScore":"درجة الامتثال","dash.aiConfidence":"موثوقية الذكاء الاصطناعي","dash.rulesEvaluated":"القواعد المُقيَّمة","dash.issuesDetected":"المشكلات المكتشفة","dash.criticalRisks":"المخاطر الحرجة","dash.resolved":"تم الحل",
+"dash.trend":"اتجاه الامتثال","dash.riskDist":"توزيع المخاطر","dash.high":"مرتفع","dash.med":"متوسط","dash.low":"منخفض","dash.openResolved":"مفتوح مقابل محلول","dash.resolvedStat":"72% تم حله",
+"dash.byUnit":"الامتثال حسب وحدة الأعمال","dash.marketing":"التسويق","dash.legal":"الشؤون القانونية","dash.product":"المنتج",
+"ind.kicker":"حالات الاستخدام","ind.title":"مصمَّمة للقطاعات المنظَّمة عالية المخاطر",
+"ind.i1t":"الخدمات المالية","ind.i1d":"المتطلبات التنظيمية والاتصالات المالية والسياسات وسير عمل مكافحة غسل الأموال والحوكمة.",
+"ind.i2t":"الرعاية الصحية والأدوية","ind.i2d":"تحقق من معلومات المنتج والمحتوى الترويجي والاتصالات الصحية.",
+"ind.i3t":"الأغذية والمكملات الغذائية","ind.i3d":"قيّم الادعاءات الإعلانية وأوصاف المنتجات والمتطلبات التنظيمية.",
+"ind.i4t":"مستحضرات التجميل","ind.i4d":"تحقق من ادعاءات المنتج والمحتوى التسويقي والمتطلبات التنظيمية.",
+"ind.i5t":"التسويق والإعلان","ind.i5d":"راجع الإعلانات ومنشورات التواصل الاجتماعي والحملات والمحتوى الترويجي.",
+"ind.i6t":"حوكمة الشركات","ind.i6d":"قيّم السياسات والإجراءات والعقود والوثائق الداخلية.",
+"ind.i7t":"المخاطر المؤسسية والامتثال","ind.i7d":"ذكاء امتثال مركزي عبر جميع وحدات الأعمال.",
+"see.kicker":"شاهده أثناء العمل","see.title":"من ادعاء واحد إلى قرار امتثال",
+"see.step1":"1. رفع اللائحة التنظيمية","see.step2":"2. استخراج المتطلبات","see.step3":"3. إنشاء القواعد","see.step4":"4. رفع المحتوى","see.step5":"5. التحقق بالذكاء الاصطناعي","see.step6":"6. التقرير والإجراءات",
+"see.desc":"يُفحص محتوى الأعمال في ضوء قواعد منظَّمة مستمدة من اللوائح — مع سبب واضح وإجراء تالٍ موصى به لكل تنبيه.",
+"see.submitted":"المحتوى المُقدَّم","see.claim":"«يعزز المناعة ويمنع الإصابة بالأمراض.»","see.aiAnalysis":"تحليل الذكاء الاصطناعي ↓","see.riskTitle":"مخاطرة تنظيمية محتملة","see.riskHigh":"المخاطرة: مرتفعة",
+"see.reasonLabel":"السبب: ","see.reasonText":"ادعاء صحي قد يكون غير مدعوم بأدلة.","see.recLabel":"التوصية: ","see.recText":"راجع الادعاء أو عدّله وفقاً للإطار التنظيمي المعمول به.",
+"bv.kicker":"القيمة التجارية","bv.title":"ذكاء امتثال يخلق قيمة تجارية",
+"bv.v1t":"توفير الوقت","bv.v1d":"قلّل من المراجعات اليدوية المتكررة للامتثال.","bv.v2t":"تقليل الجهد","bv.v2d":"أتمتة التحليل التنظيمي والتحقق من المحتوى.",
+"bv.v3t":"تقليل المخاطر","bv.v3d":"حدد المشكلات المحتملة قبل وصول المحتوى إلى العملاء.","bv.v4t":"تعزيز الثقة","bv.v4d":"امنح الفرق ثقة أكبر عند اتخاذ قرارات الأعمال والامتثال.",
+"hs.title":"امنح فريق الامتثال لديك وقتاً أكبر للتركيز على ما يهم","hs.desc":"مصمَّم للفرق المسؤولة عن الحفاظ على امتثال الشركات الحديثة.",
+"hs.h1t":"التحكم","hs.h1d":"تحتفظ الفرق بالتحكم في كل قرار امتثال، بدعم من الذكاء الاصطناعي في كل خطوة.",
+"hs.h2t":"الإنتاجية","hs.h2d":"تساعد سير العمل المنظَّمة الفرق على الانتقال من المراجعة إلى الحل بشكل أسرع.",
+"hs.h3t":"راحة البال","hs.h3d":"أدلة وتفسيرات واضحة وراء كل تقييم امتثال.",
+"sec.kicker":"الأمان وثقة المؤسسات","sec.title":"مصمَّم لسير عمل الامتثال المؤسسي",
+"sec.i1":"وصول متحكَّم به وقائم على الأدوار","sec.i2":"معالجة آمنة للوثائق","sec.i3":"قابلية التدقيق وأدلة الامتثال","sec.i4":"ضوابط حوكمة البيانات",
+"sec.i5":"سير عمل قابل للتخصيص","sec.i6":"خيارات نشر مؤسسية","sec.i7":"إشراف الذكاء الاصطناعي","sec.i8":"مراجعة بشرية في كل مرحلة",
+"sec.vaultDesc":"بيئة آمنة للوثائق التنظيمية وذكاء الامتثال — يتم التحكم في الوصول إليها وهي قابلة للتدقيق الكامل.",
+"ai.kicker":"عامل تمايز أساسي","ai.title":"الذكاء الاصطناعي يساعد. والبشر يقررون.",
+"ai.desc":"يجمع Axion Regulus بين التحليل المدعوم بالذكاء الاصطناعي والإشراف البشري لمساعدة المؤسسات على تقييم المتطلبات التنظيمية وتحديد المخاطر واتخاذ قرارات امتثال مدروسة.",
+"ai.stepLabel1":"الخطوة 1","ai.stepLabel2":"الخطوة 2","ai.stepLabel3":"الخطوة 3","ai.stepLabel4":"الخطوة 4",
+"ai.v1":"تحليل الذكاء الاصطناعي","ai.v2":"تحديد المخاطر","ai.v3":"المراجعة البشرية","ai.v4":"الموافقة / الإجراء",
+"mgmt.kicker":"للقيادة التنفيذية","mgmt.title":"ذكاء الامتثال للقيادة التنفيذية",
+"mgmt.li1":"درجة الامتثال الإجمالية والاتجاهات","mgmt.li2":"المجالات عالية المخاطر والمشكلات المفتوحة","mgmt.li3":"حالة الحل عبر الفرق",
+"mgmt.li4":"الأداء حسب وحدة الأعمال","mgmt.li5":"الأطر التنظيمية ذات الصلة","mgmt.li6":"نشاط المراجعة ومؤشرات الوقت والجهد",
+"mgmt.overallScore":"الدرجة الإجمالية","mgmt.highRiskAreas":"المجالات عالية المخاطر","mgmt.frameworkCoverage":"تغطية الأطر التنظيمية",
+"mgmt.fw1":"معايير الإعلان","mgmt.fw2":"حماية البيانات","mgmt.fw3":"ادعاءات المنتج",
+"part.kicker":"الشراكات","part.title":"ابنِ مستقبل ذكاء الامتثال معنا",
+"part.desc":"‏Axion منفتحة على شراكات استراتيجية مع شركات التقنية واستشارات تقنية المعلومات ومستشاري الامتثال ومكاملي الأنظمة وشركات البرمجيات المؤسسية وشركاء التقنية التنظيمية.",
+"part.p1t":"التبني المؤسسي","part.p1d":"قدّم Axion Regulus لقاعدة عملائك من المؤسسات.","part.p2t":"التكامل التقني","part.p2d":"ادمج ذكاء الامتثال في المنصات القائمة.",
+"part.p3t":"التوسع في الأسواق","part.p3d":"وسّع نطاق الوصول إلى مناطق وقطاعات جديدة.","part.p4t":"فرص إعادة البيع","part.p4d":"مثّل Axion Regulus في سوقك.",
+"part.p5t":"شراكات التنفيذ","part.p5d":"قدّم عمليات نشر Axion Regulus للعملاء.","part.p6t":"حلول مخصصة للقطاعات","part.p6d":"شارك في بناء حلول للقطاعات المنظَّمة.",
+"part.cta":"كن شريكاً استراتيجياً",
+"inv.kicker":"للمستثمرين","inv.title":"توسيع الجيل القادم من ذكاء الامتثال",
+"inv.desc":"تسعى Axion Consultancy Services بنشاط للحصول على استثمار تأسيسي وشركاء استثمار جريء استراتيجيين لتسريع تطوير المنتج وتوسيع التبني المؤسسي ونشر Axion Regulus في أسواق جديدة.",
+"inv.v1t":"تطوير المنتج","inv.v1d":"توسيع قدرات الذكاء الاصطناعي وذكاء الامتثال والأتمتة والمزايا المؤسسية.",
+"inv.v2t":"التوسع في الأسواق","inv.v2d":"التوسع عبر دولة الإمارات ومجلس التعاون الخليجي والأسواق الدولية.",
+"inv.v3t":"التبني المؤسسي","inv.v3d":"بناء الشراكات وتسريع التبني في القطاعات المنظَّمة.",
+"inv.seeking":"نبحث عن مستثمرين تأسيسيين وشركاء استثمار جريء استراتيجيين","inv.cta1":"ناقش فرص الاستثمار","inv.cta2":"اطلب ملف المستثمر",
+"about.kicker":"عن Axion","about.title":"نبني ذكاءً اصطناعياً عملياً لامتثال الأعمال",
+"about.desc":"تطوّر Axion Consultancy Services تقنيات مصمَّمة لمساعدة المؤسسات على تفسير المتطلبات التنظيمية والتحقق من محتوى الأعمال وتحسين سير عمل الامتثال من خلال ذكاء مدعوم بالذكاء الاصطناعي.",
+"about.a1t":"المهمة","about.a1d":"جعل الامتثال التنظيمي أسرع وأوضح وأكثر اتساقاً لفرق المؤسسات.",
+"about.a2t":"الرؤية","about.a2d":"عالم يكون فيه ذكاء الامتثال جزءاً من كل قرار تجاري.",
+"about.a3t":"المنتج","about.a3d":"‏Axion Regulus — منصة ذكاء امتثال مؤسسي مدعومة بالذكاء الاصطناعي.",
+"about.a4t":"القيادة","about.a4d":"فريق مركَّز يبني حلولاً للقطاعات المنظَّمة والتبني المؤسسي.",
+"about.a5t":"التقنية","about.a5d":"تحليل مدعوم بالذكاء الاصطناعي مقترن بمراجعة وإشراف بشريين منظَّمين.",
+"about.a6t":"الشراكات","about.a6d":"منفتحون على شركاء استراتيجيين في التقنية والاستشارات والقطاعات المنظَّمة.",
+"cta.title":"هل أنت مستعد لجعل الامتثال أكثر ذكاءً؟","cta.desc":"اكتشف كيف يمكن لـ Axion Regulus مساعدة مؤسستك على تحويل المتطلبات التنظيمية إلى ذكاء امتثال قابل للتنفيذ.",
+"cta.b1":"اطلب عرضاً تجريبياً","cta.b2":"تحدث مع Axion","cta.b3":"كن شريكاً معنا","cta.b4":"استثمر في Axion",
+"contact.kicker":"تواصل معنا","contact.title":"تحدث مع Axion","contact.desc":"طلبات العروض التجريبية واستفسارات الشراكة ومحادثات المستثمرين تبدأ جميعها من هنا.",
+"contact.name":"الاسم الكامل","contact.email":"البريد الإلكتروني للعمل","contact.company":"الشركة",
+"contact.opt1":"أرغب في طلب عرض تجريبي","contact.opt2":"مهتم بالشراكة","contact.opt3":"أنا مستثمر / شريك استثمار جريء","contact.opt4":"استفسار عام",
+"contact.message":"أخبرنا عن احتياجاتك في مجال الامتثال","contact.send":"إرسال","contact.sending":"جارٍ الإرسال…",
+"contact.success":"شكراً لك — تم إرسال رسالتك إلى فريقنا.","contact.error":"حدث خطأ ما. يُرجى مراسلتنا مباشرة على info@axionast.com.",
+"footer.tagline":"ذكاء امتثال مؤسسي مدعوم بالذكاء الاصطناعي — ذكاء اصطناعي تحت إشراف.","footer.productHeading":"المنتج",
+"footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"دليل المستخدم","footer.companyHeading":"الشركة","footer.connectHeading":"تواصل","footer.linkedin":"LinkedIn",
+"footer.aiSupervision":"ذكاء اصطناعي تحت إشراف","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. جميع الحقوق محفوظة.","footer.privacy":"سياسة الخصوصية","footer.terms":"الشروط"
 }
 };
 
@@ -1581,6 +1694,7 @@ function applyLanguage(lang) {
   if (!translations[lang]) lang = 'en';
   currentLang = lang;
   document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
   document.querySelectorAll('[data-i18n]').forEach(el => {
     el.textContent = t(lang, el.getAttribute('data-i18n'));
   });
