@@ -85,9 +85,18 @@
   input,textarea{background:rgba(255,255,255,.03); border:1px solid var(--border); color:var(--ink);}
   input:focus,textarea:focus{outline:none; border-color:rgba(59,130,246,.6);}
   input::placeholder,textarea::placeholder{color:#5b6478;}
+
+  .noise-overlay{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.035; mix-blend-mode:overlay;}
+  .icon-badge{width:2.75rem; height:2.75rem; border-radius:.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .icon-badge svg{width:1.4rem; height:1.4rem;}
 </style>
 </head>
 <body class="bg-[var(--bg)] antialiased">
+
+<svg class="noise-overlay" aria-hidden="true">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter>
+  <rect width="100%" height="100%" filter="url(#grain)"/>
+</svg>
 
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
@@ -234,34 +243,58 @@
 <section class="section-pad bg-[var(--bg2)] border-y border-white/5">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
     <div class="order-2 lg:order-1 fade-up" data-fade>
-      <div class="relative glass rounded-2xl p-5 card-hover">
-        <div class="rounded-xl overflow-hidden bg-[#0a1120] border border-white/5">
+      <div class="relative glass rounded-2xl p-5 card-hover overflow-hidden">
+        <div class="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-blue-500/10 blur-3xl"></div>
+        <div class="absolute -bottom-16 -right-16 w-56 h-56 rounded-full bg-violet-500/10 blur-3xl"></div>
+        <div class="relative rounded-xl overflow-hidden bg-[#0a1120] border border-white/5">
           <div class="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/5">
             <span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-emerald-400/60"></span>
             <span class="ml-3 text-[11px] text-[var(--muted)]">Axion Regulus — Team Review</span>
           </div>
-          <div class="p-6 grid grid-cols-3 gap-4">
-            <div class="col-span-2 space-y-3">
-              <div class="h-24 rounded-lg bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border border-white/5 flex items-center justify-center">
-                <svg width="70%" height="60%" viewBox="0 0 200 60"><polyline points="0,45 30,30 60,38 90,15 120,25 150,8 180,18 200,5" fill="none" stroke="#22d3ee" stroke-width="2.5"/></svg>
-              </div>
-              <div class="grid grid-cols-3 gap-3">
-                <div class="h-14 rounded-lg bg-white/5 border border-white/5"></div>
-                <div class="h-14 rounded-lg bg-white/5 border border-white/5"></div>
-                <div class="h-14 rounded-lg bg-white/5 border border-white/5"></div>
-              </div>
+          <!-- Illustrated scene: team reviewing the dashboard together -->
+          <svg viewBox="0 0 400 260" class="w-full h-auto">
+            <defs>
+              <linearGradient id="figGradA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+              <linearGradient id="figGradB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#0891b2"/></linearGradient>
+              <linearGradient id="figGradC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+            </defs>
+            <rect width="400" height="260" fill="#0a1120"/>
+            <!-- floor -->
+            <rect x="0" y="222" width="400" height="2" fill="#1b2438"/>
+            <!-- monitor -->
+            <rect x="130" y="38" width="160" height="102" rx="8" fill="#0d1526" stroke="#243149" stroke-width="1.5"/>
+            <rect x="140" y="48" width="140" height="82" rx="3" fill="#0a1120"/>
+            <rect x="150" y="98" width="12" height="24" fill="url(#figGradA)" opacity="0.85"/>
+            <rect x="168" y="82" width="12" height="40" fill="url(#figGradB)" opacity="0.85"/>
+            <rect x="186" y="90" width="12" height="32" fill="url(#figGradA)" opacity="0.85"/>
+            <rect x="204" y="70" width="12" height="52" fill="url(#figGradC)" opacity="0.85"/>
+            <polyline points="150,64 168,58 186,66 204,50 222,58 240,44 258,52" fill="none" stroke="#22d3ee" stroke-width="2"/>
+            <rect x="196" y="140" width="8" height="14" fill="#243149"/>
+            <rect x="176" y="154" width="48" height="6" rx="3" fill="#243149"/>
+            <!-- person left (seated, viewing screen) -->
+            <circle cx="72" cy="132" r="17" fill="#f2c9a0"/>
+            <path d="M55 132a17 17 0 0 1 34 0" fill="#1e293b"/>
+            <path d="M35 222c0-38 14-58 37-58s37 20 37 58z" fill="url(#figGradA)"/>
+            <path d="M96 176l30-14" stroke="#60a5fa" stroke-width="7" stroke-linecap="round"/>
+            <!-- person right (standing, presenting) -->
+            <circle cx="330" cy="104" r="17" fill="#c68a5e"/>
+            <path d="M313 104a17 17 0 0 1 34 0" fill="#1e293b"/>
+            <path d="M294 222c0-46 16-70 36-70s36 24 36 70z" fill="url(#figGradC)"/>
+            <path d="M300 158l-28-20" stroke="#a78bfa" stroke-width="7" stroke-linecap="round"/>
+            <!-- person center-back (standing, holding tablet) -->
+            <circle cx="205" cy="176" r="14" fill="#e8b08a"/>
+            <path d="M191 176a14 14 0 0 1 28 0" fill="#1e293b"/>
+            <path d="M180 224c0-28 11-42 25-42s25 14 25 42z" fill="url(#figGradB)"/>
+            <rect x="196" y="196" width="18" height="13" rx="2" fill="#0d1526" stroke="#22d3ee" stroke-width="1"/>
+          </svg>
+          <div class="p-5 flex items-center justify-between border-t border-white/5">
+            <div class="flex -space-x-3">
+              <div class="w-8 h-8 rounded-full avatar-ring p-[2px]"><div class="w-full h-full rounded-full bg-[#0a1120] flex items-center justify-center text-[10px] text-white font-semibold">AK</div></div>
+              <div class="w-8 h-8 rounded-full avatar-ring p-[2px]"><div class="w-full h-full rounded-full bg-[#0a1120] flex items-center justify-center text-[10px] text-white font-semibold">RS</div></div>
+              <div class="w-8 h-8 rounded-full avatar-ring p-[2px]"><div class="w-full h-full rounded-full bg-[#0a1120] flex items-center justify-center text-[10px] text-white font-semibold">MJ</div></div>
             </div>
-            <div class="space-y-3">
-              <div class="flex -space-x-3">
-                <div class="w-9 h-9 rounded-full avatar-ring p-[2px]"><div class="w-full h-full rounded-full bg-[#0a1120] flex items-center justify-center text-[10px] text-white font-semibold">AK</div></div>
-                <div class="w-9 h-9 rounded-full avatar-ring p-[2px]"><div class="w-full h-full rounded-full bg-[#0a1120] flex items-center justify-center text-[10px] text-white font-semibold">RS</div></div>
-                <div class="w-9 h-9 rounded-full avatar-ring p-[2px]"><div class="w-full h-full rounded-full bg-[#0a1120] flex items-center justify-center text-[10px] text-white font-semibold">MJ</div></div>
-              </div>
-              <div class="text-[11px] text-slate-400 leading-relaxed">Compliance &amp; risk team reviewing this week's flagged content together.</div>
-              <div class="glass rounded-lg p-3 text-[11px]">
-                <div class="flex justify-between text-slate-300"><span>Review status</span><span class="text-emerald-400">On track</span></div>
-              </div>
-            </div>
+            <div class="text-[11px] text-slate-400">Reviewing this week's flagged content</div>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 font-medium">On track</span>
           </div>
         </div>
       </div>
@@ -321,12 +354,24 @@
         <div class="relative h-72 flex items-center justify-center">
           <div class="absolute w-40 h-40 rounded-full bg-red-500/10 blur-2xl"></div>
           <div class="grid grid-cols-3 gap-4 relative z-10">
-            <div class="glass rounded-lg p-3 text-center text-[11px] text-slate-300 rotate-[-6deg] float">PDFs</div>
-            <div class="glass rounded-lg p-3 text-center text-[11px] text-slate-300 rotate-[4deg] float float-delay">Emails</div>
-            <div class="glass rounded-lg p-3 text-center text-[11px] text-slate-300 rotate-[-3deg] float">Policies</div>
-            <div class="glass rounded-lg p-3 text-center text-[11px] text-slate-300 rotate-[5deg] float float-delay">Marketing</div>
-            <div class="glass rounded-lg p-3 text-center text-[11px] text-amber-300 border-amber-400/30 rotate-[-4deg] float">⚠ Risk?</div>
-            <div class="glass rounded-lg p-3 text-center text-[11px] text-slate-300 rotate-[3deg] float float-delay">Spreadsheets</div>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[-6deg] float">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#67e8f9" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#67e8f9" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg>PDFs
+            </div>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[4deg] float float-delay">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#93c5fd" stroke-width="1.6" d="M3 5h18v14H3z"/><path stroke="#93c5fd" stroke-width="1.6" d="M3 6l9 7 9-7"/></svg>Emails
+            </div>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[-3deg] float">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#c4b5fd" stroke-width="1.6" d="M6 3h12v18H6z"/><path stroke="#c4b5fd" stroke-width="1.6" d="M9 8h6M9 12h6M9 16h3"/></svg>Policies
+            </div>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[5deg] float float-delay">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#f0abfc" stroke-width="1.6" d="M3 10v4h3l7 4V6l-7 4z"/><path stroke="#f0abfc" stroke-width="1.6" d="M13 9a3 3 0 0 1 0 6"/></svg>Marketing
+            </div>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-amber-300 border-amber-400/30 rotate-[-4deg] float">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#fbbf24" stroke-width="1.6" d="M12 4l9 15H3z"/><path stroke="#fbbf24" stroke-width="1.6" d="M12 10v4"/><circle cx="12" cy="17" r="0.8" fill="#fbbf24" stroke="none"/></svg>Risk?
+            </div>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[3deg] float float-delay">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#86efac" stroke-width="1.6" d="M4 4h16v16H4z"/><path stroke="#86efac" stroke-width="1.6" d="M4 9h16M9 9v11"/></svg>Sheets
+            </div>
           </div>
         </div>
         <div class="flex items-center justify-center gap-3 mt-4">
@@ -594,11 +639,14 @@
 
     <div class="mt-14 grid md:grid-cols-3 gap-6">
       <div class="glass rounded-2xl p-6 card-hover fade-up" data-fade>
-        <div class="h-36 rounded-lg bg-gradient-to-br from-blue-500/15 to-transparent border border-white/5 flex items-center justify-center mb-4">
-          <div class="flex -space-x-3">
-            <div class="w-10 h-10 rounded-full avatar-ring p-[2px]"><div class="w-full h-full rounded-full bg-[#0a1120]"></div></div>
-            <div class="w-10 h-10 rounded-full avatar-ring p-[2px]"><div class="w-full h-full rounded-full bg-[#0a1120]"></div></div>
-          </div>
+        <div class="h-36 rounded-lg bg-gradient-to-br from-blue-500/15 to-transparent border border-white/5 flex items-center justify-center mb-4 overflow-hidden">
+          <svg viewBox="0 0 160 100" class="w-full h-full">
+            <rect x="52" y="14" width="56" height="38" rx="4" fill="#0d1526" stroke="#243149"/>
+            <rect x="60" y="34" width="6" height="12" fill="#60a5fa"/><rect x="70" y="26" width="6" height="20" fill="#22d3ee"/><rect x="80" y="30" width="6" height="16" fill="#a78bfa"/>
+            <circle cx="34" cy="66" r="10" fill="#f2c9a0"/><path d="M22 96c0-18 6-24 12-24s12 6 12 24z" fill="#3b82f6"/>
+            <circle cx="126" cy="66" r="10" fill="#c68a5e"/><path d="M114 96c0-18 6-24 12-24s12 6 12 24z" fill="#8b5cf6"/>
+            <path d="M46 78l14-8M100 70l14 8" stroke="#67e8f9" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
         </div>
         <h3 class="text-white font-semibold">Control</h3>
         <p class="text-xs text-slate-400 mt-2">Teams stay in control of every compliance decision, with AI support at each step.</p>
@@ -756,9 +804,17 @@
     </div>
 
     <!-- Investor visual: global expansion -->
-    <div class="mt-14 glass rounded-2xl p-8 fade-up" data-fade>
-      <div class="text-center text-[11px] kicker text-[var(--muted)] mb-8">SEEKING SEED INVESTORS &amp; STRATEGIC VENTURE PARTNERS</div>
-      <div class="flex items-center justify-between max-w-2xl mx-auto">
+    <div class="mt-14 glass rounded-2xl p-8 fade-up relative overflow-hidden" data-fade>
+      <svg viewBox="0 0 600 200" class="absolute inset-0 w-full h-full opacity-[0.18] pointer-events-none">
+        <ellipse cx="300" cy="100" rx="220" ry="85" fill="none" stroke="#3b82f6" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="150" ry="85" fill="none" stroke="#3b82f6" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="80" ry="85" fill="none" stroke="#3b82f6" stroke-width="1"/>
+        <line x1="80" y1="100" x2="520" y2="100" stroke="#3b82f6" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="220" ry="30" fill="none" stroke="#22d3ee" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="220" ry="60" fill="none" stroke="#22d3ee" stroke-width="1"/>
+      </svg>
+      <div class="relative text-center text-[11px] kicker text-[var(--muted)] mb-8">SEEKING SEED INVESTORS &amp; STRATEGIC VENTURE PARTNERS</div>
+      <div class="relative flex items-center justify-between max-w-2xl mx-auto">
         <div class="text-center">
           <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-cyan-300 font-semibold mx-auto">UAE</div>
         </div>
@@ -902,45 +958,73 @@ document.getElementById('menuBtn').addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('hidden');
 });
 
+// Icon set: small, self-contained line icons (24x24) — no external assets
+const ICONS = {
+  shieldCheck: '<path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12.5l2 2 4-4.5"/>',
+  database: '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>',
+  cogArrow: '<circle cx="10" cy="12" r="3"/><path d="M10 5v2M10 17v2M3 12h2M15 12h2M5.3 6.3l1.4 1.4M13.3 16.3l1.4 1.4M5.3 17.7l1.4-1.4M13.3 7.7l1.4-1.4"/><path d="M17 15l3 1-1 3"/>',
+  gauge: '<path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/>',
+  alertTriangle: '<path d="M12 4l8 14H4z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"/>',
+  target: '<circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3.6"/><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"/>',
+  bulb: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9v.2h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/>',
+  auditGlass: '<rect x="5" y="3" width="10" height="14" rx="1"/><path d="M8 7h4M8 10h4"/><circle cx="16" cy="16" r="3"/><path d="M18.1 18.1L21 21"/>',
+  stopwatch: '<circle cx="12" cy="13" r="7"/><path d="M12 13V9M9 3h6"/>',
+  scaleBalance: '<path d="M12 3v18M6 7h12"/><path d="M4 7l-2 5a3 3 0 0 0 6 0z"/><path d="M20 7l-2 5a3 3 0 0 0 6 0z"/>',
+  lockUser: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"/>',
+  barChart: '<rect x="4" y="12" width="3" height="8"/><rect x="10.5" y="7" width="3" height="13"/><rect x="17" y="14" width="3" height="6"/>',
+  globe: '<circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path d="M12 4c3 2.5 3 13.5 0 16"/><path d="M12 4c-3 2.5-3 13.5 0 16"/>',
+  imageScan: '<rect x="4" y="5" width="16" height="14" rx="1"/><circle cx="9" cy="10" r="1.6"/><path d="M5 17l4.5-4.5L12 15l3-3 4 4"/>',
+  refreshDoc: '<path d="M7 3h7l4 4v14H7z"/><path d="M9 3v4h4"/><path d="M9.3 15.3a2.3 2.3 0 1 1 .5 3.2"/><path d="M9.3 13.8v1.7h1.7"/>',
+  bank: '<path d="M4 10l8-5 8 5"/><rect x="5" y="10" width="14" height="8"/><path d="M3 20h18"/><path d="M8 10v8M12 10v8M16 10v8"/>',
+  pulse: '<path d="M3 12h4l2-6 3 12 2-9 2 3h5"/><circle cx="18" cy="6" r="2.6"/><path d="M18 4.8v2.4M16.8 6h2.4"/>',
+  leaf: '<path d="M6 18C6 9 12 4 20 4c0 8-5 14-14 14z"/><path d="M6 18C9 14 12 11 16 9"/>',
+  flask: '<path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 14h8"/>',
+  megaphone: '<path d="M3 10v4h3l7 4V6l-7 4z"/><path d="M13 9a3 3 0 0 1 0 6"/><path d="M6 14v4a1 1 0 0 0 1 1h1v-5"/>',
+  briefcase: '<rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/>',
+  shieldNet: '<path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><circle cx="9" cy="11" r="1"/><circle cx="15" cy="11" r="1"/><circle cx="12" cy="15" r="1"/><path d="M9 11l3 4 3-4"/>'
+};
+const iconSvg = (key, color) => `<svg viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICONS[key]}</svg>`;
+
 // Feature grid data
 const features = [
-  ["AI-Powered Compliance Validation","Automatically evaluate business content against regulatory requirements."],
-  ["Regulatory Knowledge Base","Maintain regulatory documents and structured compliance rules in a centralized environment."],
-  ["Automated Rule Generation","Convert regulatory requirements into actionable validation rules."],
-  ["Compliance Scoring","An understandable score showing the overall status of submitted content."],
-  ["Risk Detection","Identify potential compliance issues and prioritize areas requiring attention."],
-  ["AI Confidence Score","Show the confidence level associated with AI-generated assessments."],
-  ["Recommendations","Actionable recommendations for addressing identified compliance risks."],
-  ["Audit Evidence","Maintain evidence supporting compliance decisions and reviews."],
-  ["SLA & Workflow Management","Track compliance tasks, deadlines and resolution workflows."],
-  ["Dispute Management","Allow users to challenge or review compliance findings when necessary."],
-  ["Role-Based Access","Controlled access for admins, compliance teams, reviewers and business users."],
-  ["Dashboard & Reporting","Management-level visibility into compliance performance, risks and trends."],
-  ["Multilingual Compliance","Support regulatory and business content in multiple languages."],
-  ["Image & Document Intelligence","Analyze text and relevant information in business documents and images."],
-  ["Regulatory Change Intelligence","Identify and manage changes to regulatory requirements over time."]
+  ["shieldCheck","AI-Powered Compliance Validation","Automatically evaluate business content against regulatory requirements.","#67e8f9"],
+  ["database","Regulatory Knowledge Base","Maintain regulatory documents and structured compliance rules in a centralized environment.","#93c5fd"],
+  ["cogArrow","Automated Rule Generation","Convert regulatory requirements into actionable validation rules.","#c4b5fd"],
+  ["gauge","Compliance Scoring","An understandable score showing the overall status of submitted content.","#86efac"],
+  ["alertTriangle","Risk Detection","Identify potential compliance issues and prioritize areas requiring attention.","#fbbf24"],
+  ["target","AI Confidence Score","Show the confidence level associated with AI-generated assessments.","#67e8f9"],
+  ["bulb","Recommendations","Actionable recommendations for addressing identified compliance risks.","#f0abfc"],
+  ["auditGlass","Audit Evidence","Maintain evidence supporting compliance decisions and reviews.","#93c5fd"],
+  ["stopwatch","SLA & Workflow Management","Track compliance tasks, deadlines and resolution workflows.","#c4b5fd"],
+  ["scaleBalance","Dispute Management","Allow users to challenge or review compliance findings when necessary.","#fbbf24"],
+  ["lockUser","Role-Based Access","Controlled access for admins, compliance teams, reviewers and business users.","#86efac"],
+  ["barChart","Dashboard & Reporting","Management-level visibility into compliance performance, risks and trends.","#67e8f9"],
+  ["globe","Multilingual Compliance","Support regulatory and business content in multiple languages.","#93c5fd"],
+  ["imageScan","Image & Document Intelligence","Analyze text and relevant information in business documents and images.","#f0abfc"],
+  ["refreshDoc","Regulatory Change Intelligence","Identify and manage changes to regulatory requirements over time.","#c4b5fd"]
 ];
-document.getElementById('featureGrid').innerHTML = features.map(([t,d]) => `
+document.getElementById('featureGrid').innerHTML = features.map(([icon,t,d,color]) => `
   <div class="glass rounded-xl p-5 card-hover fade-up" data-fade>
-    <div class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-cyan-300 mb-4">◆</div>
+    <div class="icon-badge mb-4" style="background:${color}1a; border:1px solid ${color}33;">${iconSvg(icon, color)}</div>
     <h3 class="text-white font-semibold text-sm">${t}</h3>
     <p class="text-xs text-slate-400 mt-2 leading-relaxed">${d}</p>
   </div>`).join('');
 
 // Industry grid data
 const industries = [
-  ["Financial Services","Regulatory requirements, financial communications, policies, AML-related workflows and governance.","#3b82f6"],
-  ["Healthcare & Pharmaceutical","Validate product information, promotional content and healthcare communications.","#22d3ee"],
-  ["Food & Nutraceutical","Evaluate advertising claims, product descriptions and regulatory requirements.","#8b5cf6"],
-  ["Cosmetics","Validate product claims, marketing content and regulatory requirements.","#f472b6"],
-  ["Marketing & Advertising","Check advertisements, social posts, campaigns and promotional content.","#f59e0b"],
-  ["Corporate Governance","Evaluate policies, procedures, contracts and internal documentation.","#10b981"],
-  ["Enterprise Risk & Compliance","Centralized compliance intelligence across business units.","#60a5fa"]
+  ["bank","Financial Services","Regulatory requirements, financial communications, policies, AML-related workflows and governance.","#3b82f6"],
+  ["pulse","Healthcare & Pharmaceutical","Validate product information, promotional content and healthcare communications.","#22d3ee"],
+  ["leaf","Food & Nutraceutical","Evaluate advertising claims, product descriptions and regulatory requirements.","#8b5cf6"],
+  ["flask","Cosmetics","Validate product claims, marketing content and regulatory requirements.","#f472b6"],
+  ["megaphone","Marketing & Advertising","Check advertisements, social posts, campaigns and promotional content.","#f59e0b"],
+  ["briefcase","Corporate Governance","Evaluate policies, procedures, contracts and internal documentation.","#10b981"],
+  ["shieldNet","Enterprise Risk & Compliance","Centralized compliance intelligence across business units.","#60a5fa"]
 ];
-document.getElementById('industryGrid').innerHTML = industries.map(([t,d,c]) => `
+document.getElementById('industryGrid').innerHTML = industries.map(([icon,t,d,c]) => `
   <div class="glass rounded-xl overflow-hidden card-hover fade-up" data-fade>
-    <div class="h-28 flex items-center justify-center" style="background:linear-gradient(135deg, ${c}22, transparent)">
-      <span class="w-3 h-3 rounded-full" style="background:${c}; box-shadow:0 0 20px 4px ${c}66"></span>
+    <div class="h-28 flex items-center justify-center relative overflow-hidden" style="background:linear-gradient(135deg, ${c}22, transparent)">
+      <div class="absolute w-24 h-24 rounded-full blur-2xl" style="background:${c}33"></div>
+      <div class="icon-badge relative w-14 h-14" style="background:${c}1a; border:1px solid ${c}44;">${iconSvg(icon, c).replace('viewBox="0 0 24 24"', 'viewBox="0 0 24 24" width="28" height="28"')}</div>
     </div>
     <div class="p-5">
       <h3 class="text-white font-semibold text-sm">${t}</h3>
