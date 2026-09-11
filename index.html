@@ -90,6 +90,10 @@
   input::placeholder,textarea::placeholder{color:#94a3b8;}
 
   .noise-overlay{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.035; mix-blend-mode:overlay;}
+  .nav-blue{
+    background:linear-gradient(90deg,#1e3a8a 0%,#2563eb 55%,#0891b2 100%);
+    box-shadow:0 1px 2px rgba(15,23,42,.06);
+  }
   .icon-badge{width:2.75rem; height:2.75rem; border-radius:.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
   .icon-badge svg{width:1.4rem; height:1.4rem;}
 
@@ -111,69 +115,69 @@
 
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-  <div class="glass border-b border-slate-900/8">
+  <div class="nav-blue border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between py-3 rtl-row">
       <a href="#top" class="flex items-center gap-3">
         <img src="AxionLogo.png" alt="Axion" class="h-9 w-9 rounded-lg object-cover">
         <div class="leading-tight">
-          <div class="font-display font-bold text-slate-900 tracking-tight">Axion Regulus</div>
-          <div class="text-[10px] text-[var(--muted)] kicker">AXION CONSULTANCY SERVICES</div>
+          <div class="font-display font-bold text-white tracking-tight">Axion Regulus</div>
+          <div class="text-[10px] text-blue-100/80 kicker">AXION CONSULTANCY SERVICES</div>
         </div>
       </a>
-      <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-600">
-        <a href="#product" class="hover:text-slate-900 transition" data-i18n="nav.product">Product</a>
-        <a href="#features" class="hover:text-slate-900 transition" data-i18n="nav.features">Features</a>
-        <a href="#industries" class="hover:text-slate-900 transition" data-i18n="nav.industries">Industries</a>
-        <a href="#partners" class="hover:text-slate-900 transition" data-i18n="nav.partners">Partners</a>
-        <a href="#investors" class="hover:text-slate-900 transition" data-i18n="nav.investors">Investors</a>
-        <a href="#about" class="hover:text-slate-900 transition" data-i18n="nav.about">About</a>
-        <a href="#contact" class="hover:text-slate-900 transition" data-i18n="nav.contact">Contact</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm text-blue-50/85">
+        <a href="#product" class="hover:text-white transition" data-i18n="nav.product">Product</a>
+        <a href="#features" class="hover:text-white transition" data-i18n="nav.features">Features</a>
+        <a href="#industries" class="hover:text-white transition" data-i18n="nav.industries">Industries</a>
+        <a href="#partners" class="hover:text-white transition" data-i18n="nav.partners">Partners</a>
+        <a href="#investors" class="hover:text-white transition" data-i18n="nav.investors">Investors</a>
+        <a href="#about" class="hover:text-white transition" data-i18n="nav.about">About</a>
+        <a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="hidden md:flex items-center gap-3">
-        <select id="lang-selector" class="bg-slate-900/[0.03] border border-[var(--border)] text-slate-600 text-xs font-semibold rounded-lg pl-2 pr-1 py-2 cursor-pointer focus:outline-none focus:border-cyan-400 transition" aria-label="Select language">
-          <option value="ar">🇦🇪 AR</option>
-          <option value="de">🇩🇪 DE</option>
-          <option value="en">🇬🇧 EN</option>
-          <option value="es">🇪🇸 ES</option>
-          <option value="fr">🇫🇷 FR</option>
-          <option value="hi">🇮🇳 HI</option>
-          <option value="it">🇮🇹 IT</option>
-          <option value="ja">🇯🇵 JA</option>
-          <option value="ko">🇰🇷 KO</option>
-          <option value="pt">🇵🇹 PT</option>
-          <option value="ru">🇷🇺 RU</option>
-          <option value="zh">🇨🇳 ZH</option>
+        <select id="lang-selector" class="bg-white/10 border border-white/25 text-white text-xs font-semibold rounded-lg pl-2 pr-1 py-2 cursor-pointer focus:outline-none focus:border-white/50 transition" aria-label="Select language">
+          <option value="ar" class="text-slate-900">🇦🇪 AR</option>
+          <option value="de" class="text-slate-900">🇩🇪 DE</option>
+          <option value="en" class="text-slate-900">🇬🇧 EN</option>
+          <option value="es" class="text-slate-900">🇪🇸 ES</option>
+          <option value="fr" class="text-slate-900">🇫🇷 FR</option>
+          <option value="hi" class="text-slate-900">🇮🇳 HI</option>
+          <option value="it" class="text-slate-900">🇮🇹 IT</option>
+          <option value="ja" class="text-slate-900">🇯🇵 JA</option>
+          <option value="ko" class="text-slate-900">🇰🇷 KO</option>
+          <option value="pt" class="text-slate-900">🇵🇹 PT</option>
+          <option value="ru" class="text-slate-900">🇷🇺 RU</option>
+          <option value="zh" class="text-slate-900">🇨🇳 ZH</option>
         </select>
-        <a href="#contact" class="btn-ghost text-slate-900 text-sm font-medium px-4 py-2 rounded-lg transition" data-i18n="nav.talk">Talk to Axion</a>
-        <a href="#demo" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition" data-i18n="nav.demo">Request a Demo</a>
+        <a href="#contact" class="border border-white/40 text-white text-sm font-medium px-4 py-2 rounded-lg transition hover:bg-white/10" data-i18n="nav.talk">Talk to Axion</a>
+        <a href="#demo" class="bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-lg transition hover:bg-blue-50" data-i18n="nav.demo">Request a Demo</a>
       </div>
-      <button id="menuBtn" class="lg:hidden text-slate-900 p-2">
+      <button id="menuBtn" class="lg:hidden text-white p-2">
         <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
-  <div id="mobileMenu" class="hidden lg:hidden glass border-b border-slate-900/8 px-6 py-4 space-y-3 text-slate-600 text-sm">
-    <a href="#product" class="block hover:text-slate-900" data-i18n="nav.product">Product</a>
-    <a href="#features" class="block hover:text-slate-900" data-i18n="nav.features">Features</a>
-    <a href="#industries" class="block hover:text-slate-900" data-i18n="nav.industries">Industries</a>
-    <a href="#partners" class="block hover:text-slate-900" data-i18n="nav.partners">Partners</a>
-    <a href="#investors" class="block hover:text-slate-900" data-i18n="nav.investors">Investors</a>
-    <a href="#about" class="block hover:text-slate-900" data-i18n="nav.about">About</a>
-    <a href="#contact" class="block hover:text-slate-900" data-i18n="nav.contact">Contact</a>
-    <a href="#demo" class="block btn-primary text-white font-semibold px-4 py-2.5 rounded-lg text-center mt-2" data-i18n="nav.demo">Request a Demo</a>
-    <select id="lang-selector-mobile" class="w-full bg-slate-900/[0.03] border border-[var(--border)] text-slate-600 text-xs font-semibold rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-cyan-400 transition" aria-label="Select language">
-      <option value="ar">🇦🇪 AR</option>
-      <option value="de">🇩🇪 DE</option>
-      <option value="en">🇬🇧 EN</option>
-      <option value="es">🇪🇸 ES</option>
-      <option value="fr">🇫🇷 FR</option>
-      <option value="hi">🇮🇳 HI</option>
-      <option value="it">🇮🇹 IT</option>
-      <option value="ja">🇯🇵 JA</option>
-      <option value="ko">🇰🇷 KO</option>
-      <option value="pt">🇵🇹 PT</option>
-      <option value="ru">🇷🇺 RU</option>
-      <option value="zh">🇨🇳 ZH</option>
+  <div id="mobileMenu" class="hidden lg:hidden nav-blue border-b border-white/10 px-6 py-4 space-y-3 text-blue-50/85 text-sm">
+    <a href="#product" class="block hover:text-white" data-i18n="nav.product">Product</a>
+    <a href="#features" class="block hover:text-white" data-i18n="nav.features">Features</a>
+    <a href="#industries" class="block hover:text-white" data-i18n="nav.industries">Industries</a>
+    <a href="#partners" class="block hover:text-white" data-i18n="nav.partners">Partners</a>
+    <a href="#investors" class="block hover:text-white" data-i18n="nav.investors">Investors</a>
+    <a href="#about" class="block hover:text-white" data-i18n="nav.about">About</a>
+    <a href="#contact" class="block hover:text-white" data-i18n="nav.contact">Contact</a>
+    <a href="#demo" class="block bg-white text-blue-700 font-semibold px-4 py-2.5 rounded-lg text-center mt-2" data-i18n="nav.demo">Request a Demo</a>
+    <select id="lang-selector-mobile" class="w-full bg-white/10 border border-white/25 text-white text-xs font-semibold rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-white/50 transition" aria-label="Select language">
+      <option value="ar" class="text-slate-900">🇦🇪 AR</option>
+      <option value="de" class="text-slate-900">🇩🇪 DE</option>
+      <option value="en" class="text-slate-900">🇬🇧 EN</option>
+      <option value="es" class="text-slate-900">🇪🇸 ES</option>
+      <option value="fr" class="text-slate-900">🇫🇷 FR</option>
+      <option value="hi" class="text-slate-900">🇮🇳 HI</option>
+      <option value="it" class="text-slate-900">🇮🇹 IT</option>
+      <option value="ja" class="text-slate-900">🇯🇵 JA</option>
+      <option value="ko" class="text-slate-900">🇰🇷 KO</option>
+      <option value="pt" class="text-slate-900">🇵🇹 PT</option>
+      <option value="ru" class="text-slate-900">🇷🇺 RU</option>
+      <option value="zh" class="text-slate-900">🇨🇳 ZH</option>
     </select>
   </div>
 </header>
