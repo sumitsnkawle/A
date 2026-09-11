@@ -949,6 +949,36 @@
   </div>
 </footer>
 
+<!-- CHATBOT WIDGET -->
+<div id="chatWidget" class="fixed bottom-5 right-5 z-[60] flex flex-col items-end">
+  <div id="chatPanel" class="hidden mb-3 w-[92vw] max-w-[360px] h-[70vh] max-h-[520px] glass rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+    <div class="nav-blue flex items-center justify-between px-4 py-3 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-white/15 border border-white/25 flex items-center justify-center text-white text-sm font-bold">A</div>
+        <div class="leading-tight">
+          <div class="text-white text-sm font-semibold" data-i18n="chat.title">Axion Assistant</div>
+          <div class="text-[10px] text-blue-100/80 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-300"></span><span data-i18n="chat.status">Usually replies instantly</span></div>
+        </div>
+      </div>
+      <button id="chatClose" class="text-white/80 hover:text-white p-1" aria-label="Close chat">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div id="chatMessages" class="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-white"></div>
+    <div id="chatQuickReplies" class="px-3 pb-2 flex flex-wrap gap-1.5 bg-white shrink-0"></div>
+    <form id="chatForm" class="border-t border-slate-900/8 p-2.5 flex items-center gap-2 bg-white shrink-0">
+      <input id="chatInput" type="text" autocomplete="off" data-i18n-placeholder="chat.placeholder" placeholder="Ask about Axion Regulus…" class="flex-1 rounded-lg px-3 py-2.5 text-sm">
+      <button type="submit" class="shrink-0 w-10 h-10 rounded-lg btn-primary text-white flex items-center justify-center" aria-label="Send">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 20l16-8L4 4v6l10 2-10 2z"/></svg>
+      </button>
+    </form>
+  </div>
+  <button id="chatFab" class="w-14 h-14 rounded-full nav-blue flex items-center justify-center shadow-2xl relative" aria-label="Open chat">
+    <span id="chatFabDot" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-white"></span>
+    <svg id="chatIconOpen" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </button>
+</div>
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1144,7 +1174,8 @@ en: {
 "contact.success":"Thank you — your message has been sent to our team.","contact.error":"Something went wrong. Please email us directly at info@axionast.com.",
 "footer.tagline":"AI-powered Enterprise Compliance Intelligence — AI with Supervision.","footer.productHeading":"Product",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"User Handbook","footer.companyHeading":"Company","footer.connectHeading":"Connect","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"AI WITH SUPERVISION","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"Privacy Policy","footer.terms":"Terms"
+"footer.aiSupervision":"AI WITH SUPERVISION","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"Privacy Policy","footer.terms":"Terms",
+"chat.title":"Axion Assistant","chat.status":"Usually replies instantly","chat.placeholder":"Ask about Axion Regulus…"
 },
 de: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"Produkt","nav.features":"Funktionen","nav.industries":"Branchen","nav.partners":"Partner","nav.investors":"Investoren","nav.about":"Über uns","nav.contact":"Kontakt","nav.talk":"Kontakt aufnehmen","nav.demo":"Demo anfordern",
@@ -1247,7 +1278,8 @@ de: {
 "contact.success":"Vielen Dank — Ihre Nachricht wurde an unser Team gesendet.","contact.error":"Etwas ist schiefgelaufen. Bitte schreiben Sie uns direkt an info@axionast.com.",
 "footer.tagline":"KI-gestützte Enterprise-Compliance-Intelligenz — KI mit Aufsicht.","footer.productHeading":"Produkt",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"Benutzerhandbuch","footer.companyHeading":"Unternehmen","footer.connectHeading":"Vernetzen","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"KI MIT AUFSICHT","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Alle Rechte vorbehalten.","footer.privacy":"Datenschutz","footer.terms":"AGB"
+"footer.aiSupervision":"KI MIT AUFSICHT","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Alle Rechte vorbehalten.","footer.privacy":"Datenschutz","footer.terms":"AGB",
+"chat.title":"Axion-Assistent","chat.status":"Antwortet meist sofort","chat.placeholder":"Frag etwas zu Axion Regulus…"
 },
 fr: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"Produit","nav.features":"Fonctionnalités","nav.industries":"Secteurs","nav.partners":"Partenaires","nav.investors":"Investisseurs","nav.about":"À propos","nav.contact":"Contact","nav.talk":"Contacter Axion","nav.demo":"Demander une démo",
@@ -1350,7 +1382,8 @@ fr: {
 "contact.success":"Merci — votre message a été envoyé à notre équipe.","contact.error":"Une erreur s'est produite. Veuillez nous écrire directement à info@axionast.com.",
 "footer.tagline":"Intelligence de conformité d'entreprise propulsée par l'IA — l'IA sous supervision.","footer.productHeading":"Produit",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"Guide utilisateur","footer.companyHeading":"Entreprise","footer.connectHeading":"Suivez-nous","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"IA SOUS SUPERVISION","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Tous droits réservés.","footer.privacy":"Politique de confidentialité","footer.terms":"Conditions"
+"footer.aiSupervision":"IA SOUS SUPERVISION","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Tous droits réservés.","footer.privacy":"Politique de confidentialité","footer.terms":"Conditions",
+"chat.title":"Assistant Axion","chat.status":"Répond généralement instantanément","chat.placeholder":"Posez une question sur Axion Regulus…"
 },
 es: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"Producto","nav.features":"Funciones","nav.industries":"Sectores","nav.partners":"Socios","nav.investors":"Inversores","nav.about":"Acerca de","nav.contact":"Contacto","nav.talk":"Hablar con Axion","nav.demo":"Solicitar una demo",
@@ -1453,7 +1486,8 @@ es: {
 "contact.success":"Gracias — su mensaje ha sido enviado a nuestro equipo.","contact.error":"Algo salió mal. Escríbanos directamente a info@axionast.com.",
 "footer.tagline":"Inteligencia de cumplimiento empresarial impulsada por IA — IA con supervisión.","footer.productHeading":"Producto",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"Manual de usuario","footer.companyHeading":"Empresa","footer.connectHeading":"Conecte","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"IA CON SUPERVISIÓN","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Todos los derechos reservados.","footer.privacy":"Política de privacidad","footer.terms":"Términos"
+"footer.aiSupervision":"IA CON SUPERVISIÓN","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Todos los derechos reservados.","footer.privacy":"Política de privacidad","footer.terms":"Términos",
+"chat.title":"Asistente de Axion","chat.status":"Suele responder al instante","chat.placeholder":"Pregunta sobre Axion Regulus…"
 },
 ru: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"Продукт","nav.features":"Возможности","nav.industries":"Отрасли","nav.partners":"Партнёры","nav.investors":"Инвесторам","nav.about":"О компании","nav.contact":"Контакты","nav.talk":"Связаться с Axion","nav.demo":"Запросить демо",
@@ -1556,7 +1590,8 @@ ru: {
 "contact.success":"Спасибо — ваше сообщение отправлено нашей команде.","contact.error":"Что-то пошло не так. Пожалуйста, напишите нам напрямую на info@axionast.com.",
 "footer.tagline":"Корпоративный комплаенс-интеллект на основе ИИ — ИИ под контролем человека.","footer.productHeading":"Продукт",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"Руководство пользователя","footer.companyHeading":"Компания","footer.connectHeading":"Связаться","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"ИИ ПОД КОНТРОЛЕМ ЧЕЛОВЕКА","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Все права защищены.","footer.privacy":"Политика конфиденциальности","footer.terms":"Условия"
+"footer.aiSupervision":"ИИ ПОД КОНТРОЛЕМ ЧЕЛОВЕКА","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Все права защищены.","footer.privacy":"Политика конфиденциальности","footer.terms":"Условия",
+"chat.title":"Ассистент Axion","chat.status":"Обычно отвечает мгновенно","chat.placeholder":"Задайте вопрос об Axion Regulus…"
 },
 ar: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"المنتج","nav.features":"المزايا","nav.industries":"القطاعات","nav.partners":"الشركاء","nav.investors":"المستثمرون","nav.about":"من نحن","nav.contact":"تواصل معنا","nav.talk":"تحدث مع Axion","nav.demo":"اطلب عرضاً تجريبياً",
@@ -1659,7 +1694,8 @@ ar: {
 "contact.success":"شكراً لك — تم إرسال رسالتك إلى فريقنا.","contact.error":"حدث خطأ ما. يُرجى مراسلتنا مباشرة على info@axionast.com.",
 "footer.tagline":"ذكاء امتثال مؤسسي مدعوم بالذكاء الاصطناعي — ذكاء اصطناعي تحت إشراف.","footer.productHeading":"المنتج",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"دليل المستخدم","footer.companyHeading":"الشركة","footer.connectHeading":"تواصل","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"ذكاء اصطناعي تحت إشراف","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. جميع الحقوق محفوظة.","footer.privacy":"سياسة الخصوصية","footer.terms":"الشروط"
+"footer.aiSupervision":"ذكاء اصطناعي تحت إشراف","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. جميع الحقوق محفوظة.","footer.privacy":"سياسة الخصوصية","footer.terms":"الشروط",
+"chat.title":"مساعد Axion","chat.status":"عادةً ما يرد فورًا","chat.placeholder":"اسأل عن Axion Regulus…"
 },
 it: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"Prodotto","nav.features":"Funzionalità","nav.industries":"Settori","nav.partners":"Partner","nav.investors":"Investitori","nav.about":"Chi siamo","nav.contact":"Contatti","nav.talk":"Contatta Axion","nav.demo":"Richiedi una demo",
@@ -1762,7 +1798,8 @@ it: {
 "contact.success":"Grazie — il tuo messaggio è stato inviato al nostro team.","contact.error":"Qualcosa è andato storto. Scrivici direttamente a info@axionast.com.",
 "footer.tagline":"Intelligenza di conformità aziendale basata sull'IA — IA con supervisione.","footer.productHeading":"Prodotto",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"Manuale utente","footer.companyHeading":"Azienda","footer.connectHeading":"Connettiti","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"IA CON SUPERVISIONE","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Tutti i diritti riservati.","footer.privacy":"Informativa sulla privacy","footer.terms":"Termini"
+"footer.aiSupervision":"IA CON SUPERVISIONE","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Tutti i diritti riservati.","footer.privacy":"Informativa sulla privacy","footer.terms":"Termini",
+"chat.title":"Assistente Axion","chat.status":"Di solito risponde all'istante","chat.placeholder":"Chiedi informazioni su Axion Regulus…"
 },
 pt: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"Produto","nav.features":"Funcionalidades","nav.industries":"Setores","nav.partners":"Parceiros","nav.investors":"Investidores","nav.about":"Sobre","nav.contact":"Contato","nav.talk":"Fale com a Axion","nav.demo":"Solicitar demonstração",
@@ -1865,7 +1902,8 @@ pt: {
 "contact.success":"Obrigado — sua mensagem foi enviada à nossa equipe.","contact.error":"Algo deu errado. Escreva diretamente para info@axionast.com.",
 "footer.tagline":"Inteligência de conformidade empresarial baseada em IA — IA com supervisão.","footer.productHeading":"Produto",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"Manual do usuário","footer.companyHeading":"Empresa","footer.connectHeading":"Conecte-se","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"IA COM SUPERVISÃO","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Todos os direitos reservados.","footer.privacy":"Política de privacidade","footer.terms":"Termos"
+"footer.aiSupervision":"IA COM SUPERVISÃO","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Todos os direitos reservados.","footer.privacy":"Política de privacidade","footer.terms":"Termos",
+"chat.title":"Assistente Axion","chat.status":"Normalmente responde instantaneamente","chat.placeholder":"Pergunte sobre a Axion Regulus…"
 },
 zh: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"产品","nav.features":"功能","nav.industries":"行业","nav.partners":"合作伙伴","nav.investors":"投资者","nav.about":"关于我们","nav.contact":"联系我们","nav.talk":"联系 Axion","nav.demo":"申请演示",
@@ -1968,7 +2006,8 @@ zh: {
 "contact.success":"谢谢——您的信息已发送至我们的团队。","contact.error":"出现问题，请直接发送邮件至 info@axionast.com。",
 "footer.tagline":"基于 AI 的企业合规智能——AI 辅以人工监督。","footer.productHeading":"产品",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"用户手册","footer.companyHeading":"公司","footer.connectHeading":"关注我们","footer.linkedin":"领英（LinkedIn）",
-"footer.aiSupervision":"AI 辅以人工监督","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services。保留所有权利。","footer.privacy":"隐私政策","footer.terms":"条款"
+"footer.aiSupervision":"AI 辅以人工监督","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services。保留所有权利。","footer.privacy":"隐私政策","footer.terms":"条款",
+"chat.title":"Axion 助手","chat.status":"通常即时回复","chat.placeholder":"咨询有关 Axion Regulus 的问题…"
 },
 ja: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"製品","nav.features":"機能","nav.industries":"業界","nav.partners":"パートナー","nav.investors":"投資家","nav.about":"会社概要","nav.contact":"お問い合わせ","nav.talk":"Axionに相談する","nav.demo":"デモを申し込む",
@@ -2071,7 +2110,8 @@ ja: {
 "contact.success":"ありがとうございます — メッセージが弊社チームに送信されました。","contact.error":"エラーが発生しました。info@axionast.com まで直接ご連絡ください。",
 "footer.tagline":"AIを活用したエンタープライズ・コンプライアンス・インテリジェンス — 人的監督付きのAI。","footer.productHeading":"製品",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"ユーザーハンドブック","footer.companyHeading":"会社情報","footer.connectHeading":"つながる","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"人的監督付きのAI","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"プライバシーポリシー","footer.terms":"利用規約"
+"footer.aiSupervision":"人的監督付きのAI","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"プライバシーポリシー","footer.terms":"利用規約",
+"chat.title":"Axionアシスタント","chat.status":"通常はすぐに返信します","chat.placeholder":"Axion Regulusについて質問する…"
 },
 hi: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"उत्पाद","nav.features":"विशेषताएं","nav.industries":"उद्योग","nav.partners":"साझेदार","nav.investors":"निवेशक","nav.about":"हमारे बारे में","nav.contact":"संपर्क करें","nav.talk":"Axion से बात करें","nav.demo":"डेमो का अनुरोध करें",
@@ -2174,7 +2214,8 @@ hi: {
 "contact.success":"धन्यवाद — आपका संदेश हमारी टीम को भेज दिया गया है।","contact.error":"कुछ गलत हो गया। कृपया सीधे info@axionast.com पर हमें लिखें।",
 "footer.tagline":"AI-संचालित एंटरप्राइज़ कंप्लायंस इंटेलिजेंस — निगरानी के साथ AI।","footer.productHeading":"उत्पाद",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"उपयोगकर्ता हैंडबुक","footer.companyHeading":"कंपनी","footer.connectHeading":"जुड़ें","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"निगरानी के साथ AI","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. सर्वाधिकार सुरक्षित।","footer.privacy":"गोपनीयता नीति","footer.terms":"नियम व शर्तें"
+"footer.aiSupervision":"निगरानी के साथ AI","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. सर्वाधिकार सुरक्षित।","footer.privacy":"गोपनीयता नीति","footer.terms":"नियम व शर्तें",
+"chat.title":"Axion सहायक","chat.status":"आमतौर पर तुरंत जवाब देता है","chat.placeholder":"Axion Regulus के बारे में पूछें…"
 },
 ko: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"제품","nav.features":"기능","nav.industries":"산업","nav.partners":"파트너","nav.investors":"투자자","nav.about":"회사 소개","nav.contact":"문의하기","nav.talk":"Axion에 문의하기","nav.demo":"데모 신청",
@@ -2277,7 +2318,8 @@ ko: {
 "contact.success":"감사합니다 — 메시지가 저희 팀에 전달되었습니다.","contact.error":"문제가 발생했습니다. info@axionast.com으로 직접 문의해 주세요.",
 "footer.tagline":"AI 기반 엔터프라이즈 컴플라이언스 인텔리전스 — 사람의 감독을 받는 AI.","footer.productHeading":"제품",
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"사용자 핸드북","footer.companyHeading":"회사","footer.connectHeading":"연결하기","footer.linkedin":"LinkedIn",
-"footer.aiSupervision":"사람의 감독을 받는 AI","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"개인정보처리방침","footer.terms":"이용약관"
+"footer.aiSupervision":"사람의 감독을 받는 AI","footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"개인정보처리방침","footer.terms":"이용약관",
+"chat.title":"Axion 어시스턴트","chat.status":"보통 즉시 답변합니다","chat.placeholder":"Axion Regulus에 대해 질문하세요…"
 }
 };
 
@@ -2375,6 +2417,128 @@ window.addEventListener('load', () => {
     document.querySelectorAll('[data-fade]').forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; });
   }
 });
+
+// Chatbot: simple keyword-matched FAQ assistant (no backend, no external service)
+(function () {
+  const FAQ = [
+    { id: 'greeting', keywords: ['hello','hi','hey','good morning','good afternoon'],
+      answer: "Hi! I'm the Axion Assistant. I can answer questions about Axion Regulus — try asking about features, pricing, demos, security, industries, partnerships or investing." },
+    { id: 'what', keywords: ['what is axion','what does axion regulus do','what is regulus','about axion','what is this product','tell me about'],
+      answer: "Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform. It converts regulatory documents into automated validation systems, so your team can check business content against real regulatory requirements — with AI analysis paired with human review at every step." },
+    { id: 'demo', keywords: ['demo','trial','try it','see it in action','walkthrough'],
+      answer: 'You can request a live demo any time — just click "Request a Demo" in the menu, or use the contact form below and mention you\'d like a demo. Our team will follow up directly.', link: { href: '#demo', label: 'Request a Demo' } },
+    { id: 'pricing', keywords: ['price','pricing','cost','how much','plans','subscription'],
+      answer: "We don't publish fixed pricing since deployments vary by organization size and requirements. The fastest way to get a quote is to request a demo — our team will walk through your needs and pricing together.", link: { href: '#demo', label: 'Request a Demo' } },
+    { id: 'features', keywords: ['feature','features','capabilities','what can it do','functionality'],
+      answer: "Key features include AI-powered compliance validation, a regulatory knowledge base, automated rule generation, compliance scoring, risk detection, audit evidence, role-based access, dashboards & reporting, multilingual support, and regulatory change tracking.", link: { href: '#features', label: 'See all features' } },
+    { id: 'industries', keywords: ['industry','industries','sector','healthcare','pharma','financial','cosmetics','food','nutraceutical','marketing','governance'],
+      answer: "Axion Regulus is built for regulated, high-stakes industries: Financial Services, Healthcare & Pharmaceutical, Food & Nutraceutical, Cosmetics, Marketing & Advertising, Corporate Governance, and Enterprise Risk & Compliance.", link: { href: '#industries', label: 'View industries' } },
+    { id: 'security', keywords: ['security','secure','data protection','privacy','gdpr','encryption','safe'],
+      answer: "Security is core to the platform: controlled role-based access, secure document processing, full auditability, data governance controls, and configurable enterprise deployment options." },
+    { id: 'ai', keywords: ['ai','human','supervision','automation','autonomous','accuracy','trust the ai'],
+      answer: '"AI that assists, humans that decide" — Axion Regulus combines AI analysis with human review at every stage. The AI never replaces your compliance team; it helps them work faster and with more confidence.' },
+    { id: 'partners', keywords: ['partner','partnership','integrate','integration','reseller','system integrator'],
+      answer: "We're open to strategic partnerships with technology companies, IT consultancies, compliance consultants, system integrators and regtech partners — for enterprise adoption, integration, market expansion or reselling.", link: { href: '#partners', label: 'Partnership details' } },
+    { id: 'invest', keywords: ['invest','investor','investment','funding','seed','venture'],
+      answer: "Axion Consultancy Services is actively seeking seed investment and strategic venture partners to accelerate product development and expand into new markets. Use the contact form and select \"I'm an investor / venture partner\" and our team will follow up.", link: { href: '#investors', label: 'Investor information' } },
+    { id: 'languages', keywords: ['language','languages','translate','multilingual'],
+      answer: "The site and product support 12 languages: English, German, French, Spanish, Russian, Arabic, Italian, Portuguese, Chinese, Japanese, Hindi and Korean. Use the language selector in the top menu to switch." },
+    { id: 'contact', keywords: ['contact','email','phone','reach you','talk to someone','human','support'],
+      answer: "You can reach us at info@axionast.com, or fill out the contact form on this page and our team will get back to you.", link: { href: '#contact', label: 'Go to contact form' } }
+  ];
+  const FALLBACK = "I don't have a specific answer for that yet — but our team can help directly. Try the contact form, or email info@axionast.com.";
+  const QUICK_REPLIES = [
+    ['demo', 'Book a demo'], ['features', 'Features'], ['industries', 'Industries'], ['security', 'Security'], ['contact', 'Contact us']
+  ];
+
+  function scoreMatch(text) {
+    const q = text.toLowerCase();
+    let best = null, bestScore = 0;
+    for (const item of FAQ) {
+      for (const kw of item.keywords) {
+        if (q.includes(kw) && kw.length > bestScore) { best = item; bestScore = kw.length; }
+      }
+    }
+    return best;
+  }
+
+  const panel = document.getElementById('chatPanel');
+  const fab = document.getElementById('chatFab');
+  const fabDot = document.getElementById('chatFabDot');
+  const closeBtn = document.getElementById('chatClose');
+  const messages = document.getElementById('chatMessages');
+  const quickRepliesEl = document.getElementById('chatQuickReplies');
+  const form = document.getElementById('chatForm');
+  const input = document.getElementById('chatInput');
+  let opened = false;
+
+  function addMessage(html, sender) {
+    const wrap = document.createElement('div');
+    wrap.className = sender === 'user' ? 'flex justify-end' : 'flex justify-start';
+    const bubble = document.createElement('div');
+    bubble.className = sender === 'user'
+      ? 'max-w-[80%] bg-blue-600 text-white text-sm rounded-2xl rounded-br-sm px-3.5 py-2.5'
+      : 'max-w-[85%] bg-slate-100 text-slate-800 text-sm rounded-2xl rounded-bl-sm px-3.5 py-2.5';
+    bubble.innerHTML = html;
+    wrap.appendChild(bubble);
+    messages.appendChild(wrap);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function renderQuickReplies() {
+    quickRepliesEl.innerHTML = QUICK_REPLIES.map(([id, label]) =>
+      `<button type="button" data-qr="${id}" class="text-xs px-2.5 py-1.5 rounded-full border border-slate-900/10 text-slate-600 hover:border-blue-400 hover:text-blue-600 transition">${label}</button>`
+    ).join('');
+  }
+
+  function answerFor(item) {
+    let html = item.answer;
+    if (item.link) {
+      html += ` <a href="${item.link.href}" class="text-blue-600 font-medium underline underline-offset-2">${item.link.label} →</a>`;
+    }
+    return html;
+  }
+
+  function respond(text) {
+    const match = scoreMatch(text);
+    setTimeout(() => {
+      addMessage(match ? answerFor(match) : FALLBACK, 'bot');
+    }, 400 + Math.random() * 300);
+  }
+
+  function openChat() {
+    panel.classList.remove('hidden');
+    fabDot.classList.add('hidden');
+    opened = true;
+    if (!messages.children.length) {
+      addMessage(FAQ[0].answer, 'bot');
+      renderQuickReplies();
+    }
+    input.focus();
+  }
+  function closeChat() { panel.classList.add('hidden'); }
+
+  fab.addEventListener('click', () => { panel.classList.contains('hidden') ? openChat() : closeChat(); });
+  closeBtn.addEventListener('click', closeChat);
+
+  quickRepliesEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-qr]');
+    if (!btn) return;
+    const item = FAQ.find(f => f.id === btn.dataset.qr);
+    if (!item) return;
+    addMessage(btn.textContent, 'user');
+    respond(item.keywords[0]);
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage(text.replace(/</g, '&lt;'), 'user');
+    input.value = '';
+    respond(text);
+  });
+})();
 </script>
 </body>
 </html>
