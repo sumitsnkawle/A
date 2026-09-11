@@ -18,46 +18,47 @@
 
 <style>
   :root{
-    --bg:#04060c; --bg2:#070b16; --surface:rgba(18,25,45,.55); --border:rgba(148,163,184,.14);
-    --blue:#3b82f6; --cyan:#22d3ee; --violet:#8b5cf6; --ink:#e6ebf5; --muted:#8a94ad;
+    --bg:#ffffff; --bg2:#f5f7fa; --surface:rgba(255,255,255,.72); --border:rgba(15,23,42,.1);
+    --blue:#2563eb; --cyan:#0891b2; --violet:#7c3aed; --ink:#0f172a; --muted:#64748b;
   }
   *{box-sizing:border-box;}
   html,body{background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; scroll-behavior:smooth;}
   h1,h2,h3,h4,.font-display{font-family:'Manrope',sans-serif;}
-  ::selection{background:rgba(59,130,246,.35);}
+  ::selection{background:rgba(59,130,246,.2);}
   ::-webkit-scrollbar{width:10px;}
   ::-webkit-scrollbar-track{background:var(--bg);}
-  ::-webkit-scrollbar-thumb{background:#1b2438; border-radius:8px;}
+  ::-webkit-scrollbar-thumb{background:#cbd5e1; border-radius:8px;}
 
   .bg-grid{
-    background-image:linear-gradient(rgba(148,163,184,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.06) 1px, transparent 1px);
+    background-image:linear-gradient(rgba(15,23,42,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,.05) 1px, transparent 1px);
     background-size:44px 44px;
   }
   .bg-radial-glow{
-    background:radial-gradient(60% 50% at 50% 0%, rgba(59,130,246,.16) 0%, rgba(4,6,12,0) 70%);
+    background:radial-gradient(60% 50% at 50% 0%, rgba(59,130,246,.1) 0%, rgba(255,255,255,0) 70%);
   }
   .glass{
     background:var(--surface);
     backdrop-filter:blur(16px);
     -webkit-backdrop-filter:blur(16px);
     border:1px solid var(--border);
+    box-shadow:0 1px 2px rgba(15,23,42,.04);
   }
   .grad-text{
-    background:linear-gradient(90deg,#93c5fd,#67e8f9 45%,#c4b5fd);
+    background:linear-gradient(90deg,#1d4ed8,#0e7490 45%,#6d28d9);
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .btn-primary{
     background:linear-gradient(90deg,#2563eb,#0891b2);
-    box-shadow:0 0 0 1px rgba(59,130,246,.4), 0 8px 30px -8px rgba(37,99,235,.6);
+    box-shadow:0 0 0 1px rgba(37,99,235,.15), 0 8px 24px -8px rgba(37,99,235,.45);
   }
-  .btn-primary:hover{filter:brightness(1.1);}
+  .btn-primary:hover{filter:brightness(1.08);}
   .btn-ghost{
-    border:1px solid var(--border); background:rgba(255,255,255,.02);
+    border:1px solid var(--border); background:rgba(15,23,42,.02); color:#0f172a;
   }
-  .btn-ghost:hover{background:rgba(255,255,255,.06); border-color:rgba(148,163,184,.3);}
+  .btn-ghost:hover{background:rgba(15,23,42,.05); border-color:rgba(15,23,42,.2);}
   .card-hover{transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;}
-  .card-hover:hover{transform:translateY(-4px); border-color:rgba(59,130,246,.4); box-shadow:0 20px 60px -20px rgba(37,99,235,.35);}
-  .glow-dot{box-shadow:0 0 16px 3px currentColor;}
+  .card-hover:hover{transform:translateY(-4px); border-color:rgba(37,99,235,.35); box-shadow:0 20px 45px -20px rgba(15,23,42,.18);}
+  .glow-dot{box-shadow:0 0 10px 2px currentColor;}
 
   @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   .float{animation:float 5s ease-in-out infinite;}
@@ -78,15 +79,15 @@
   @media (min-width:1024px){ .section-pad{padding-top:6.5rem; padding-bottom:6.5rem;} }
   .kicker{letter-spacing:.18em;}
 
-  .avatar-ring{background:conic-gradient(from 180deg,#3b82f6,#22d3ee,#8b5cf6,#3b82f6);}
+  .avatar-ring{background:conic-gradient(from 180deg,#2563eb,#0891b2,#7c3aed,#2563eb);}
 
   .fade-up{opacity:0; transform:translateY(24px);}
 
   .bar{transition:height 1.2s cubic-bezier(.16,1,.3,1);}
 
-  input,textarea{background:rgba(255,255,255,.03); border:1px solid var(--border); color:var(--ink);}
-  input:focus,textarea:focus{outline:none; border-color:rgba(59,130,246,.6);}
-  input::placeholder,textarea::placeholder{color:#5b6478;}
+  input,textarea,select{background:rgba(15,23,42,.02); border:1px solid var(--border); color:var(--ink);}
+  input:focus,textarea:focus,select:focus{outline:none; border-color:rgba(37,99,235,.5);}
+  input::placeholder,textarea::placeholder{color:#94a3b8;}
 
   .noise-overlay{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.035; mix-blend-mode:overlay;}
   .icon-badge{width:2.75rem; height:2.75rem; border-radius:.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
@@ -110,26 +111,26 @@
 
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-  <div class="glass border-b border-white/5">
+  <div class="glass border-b border-slate-900/8">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between py-3 rtl-row">
       <a href="#top" class="flex items-center gap-3">
         <img src="AxionLogo.png" alt="Axion" class="h-9 w-9 rounded-lg object-cover">
         <div class="leading-tight">
-          <div class="font-display font-bold text-white tracking-tight">Axion Regulus</div>
+          <div class="font-display font-bold text-slate-900 tracking-tight">Axion Regulus</div>
           <div class="text-[10px] text-[var(--muted)] kicker">AXION CONSULTANCY SERVICES</div>
         </div>
       </a>
-      <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-300">
-        <a href="#product" class="hover:text-white transition" data-i18n="nav.product">Product</a>
-        <a href="#features" class="hover:text-white transition" data-i18n="nav.features">Features</a>
-        <a href="#industries" class="hover:text-white transition" data-i18n="nav.industries">Industries</a>
-        <a href="#partners" class="hover:text-white transition" data-i18n="nav.partners">Partners</a>
-        <a href="#investors" class="hover:text-white transition" data-i18n="nav.investors">Investors</a>
-        <a href="#about" class="hover:text-white transition" data-i18n="nav.about">About</a>
-        <a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Contact</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-600">
+        <a href="#product" class="hover:text-slate-900 transition" data-i18n="nav.product">Product</a>
+        <a href="#features" class="hover:text-slate-900 transition" data-i18n="nav.features">Features</a>
+        <a href="#industries" class="hover:text-slate-900 transition" data-i18n="nav.industries">Industries</a>
+        <a href="#partners" class="hover:text-slate-900 transition" data-i18n="nav.partners">Partners</a>
+        <a href="#investors" class="hover:text-slate-900 transition" data-i18n="nav.investors">Investors</a>
+        <a href="#about" class="hover:text-slate-900 transition" data-i18n="nav.about">About</a>
+        <a href="#contact" class="hover:text-slate-900 transition" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="hidden md:flex items-center gap-3">
-        <select id="lang-selector" class="bg-white/5 border border-[var(--border)] text-slate-300 text-xs font-semibold rounded-lg pl-2 pr-1 py-2 cursor-pointer focus:outline-none focus:border-cyan-400 transition" aria-label="Select language">
+        <select id="lang-selector" class="bg-slate-900/[0.03] border border-[var(--border)] text-slate-600 text-xs font-semibold rounded-lg pl-2 pr-1 py-2 cursor-pointer focus:outline-none focus:border-cyan-400 transition" aria-label="Select language">
           <option value="ar">🇦🇪 AR</option>
           <option value="de">🇩🇪 DE</option>
           <option value="en">🇬🇧 EN</option>
@@ -137,24 +138,24 @@
           <option value="fr">🇫🇷 FR</option>
           <option value="ru">🇷🇺 RU</option>
         </select>
-        <a href="#contact" class="btn-ghost text-white text-sm font-medium px-4 py-2 rounded-lg transition" data-i18n="nav.talk">Talk to Axion</a>
+        <a href="#contact" class="btn-ghost text-slate-900 text-sm font-medium px-4 py-2 rounded-lg transition" data-i18n="nav.talk">Talk to Axion</a>
         <a href="#demo" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition" data-i18n="nav.demo">Request a Demo</a>
       </div>
-      <button id="menuBtn" class="lg:hidden text-white p-2">
+      <button id="menuBtn" class="lg:hidden text-slate-900 p-2">
         <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
-  <div id="mobileMenu" class="hidden lg:hidden glass border-b border-white/5 px-6 py-4 space-y-3 text-slate-300 text-sm">
-    <a href="#product" class="block hover:text-white" data-i18n="nav.product">Product</a>
-    <a href="#features" class="block hover:text-white" data-i18n="nav.features">Features</a>
-    <a href="#industries" class="block hover:text-white" data-i18n="nav.industries">Industries</a>
-    <a href="#partners" class="block hover:text-white" data-i18n="nav.partners">Partners</a>
-    <a href="#investors" class="block hover:text-white" data-i18n="nav.investors">Investors</a>
-    <a href="#about" class="block hover:text-white" data-i18n="nav.about">About</a>
-    <a href="#contact" class="block hover:text-white" data-i18n="nav.contact">Contact</a>
+  <div id="mobileMenu" class="hidden lg:hidden glass border-b border-slate-900/8 px-6 py-4 space-y-3 text-slate-600 text-sm">
+    <a href="#product" class="block hover:text-slate-900" data-i18n="nav.product">Product</a>
+    <a href="#features" class="block hover:text-slate-900" data-i18n="nav.features">Features</a>
+    <a href="#industries" class="block hover:text-slate-900" data-i18n="nav.industries">Industries</a>
+    <a href="#partners" class="block hover:text-slate-900" data-i18n="nav.partners">Partners</a>
+    <a href="#investors" class="block hover:text-slate-900" data-i18n="nav.investors">Investors</a>
+    <a href="#about" class="block hover:text-slate-900" data-i18n="nav.about">About</a>
+    <a href="#contact" class="block hover:text-slate-900" data-i18n="nav.contact">Contact</a>
     <a href="#demo" class="block btn-primary text-white font-semibold px-4 py-2.5 rounded-lg text-center mt-2" data-i18n="nav.demo">Request a Demo</a>
-    <select id="lang-selector-mobile" class="w-full bg-white/5 border border-[var(--border)] text-slate-300 text-xs font-semibold rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-cyan-400 transition" aria-label="Select language">
+    <select id="lang-selector-mobile" class="w-full bg-slate-900/[0.03] border border-[var(--border)] text-slate-600 text-xs font-semibold rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-cyan-400 transition" aria-label="Select language">
       <option value="ar">🇦🇪 AR</option>
       <option value="de">🇩🇪 DE</option>
       <option value="en">🇬🇧 EN</option>
@@ -174,19 +175,19 @@
 
   <div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <div class="fade-up" data-fade>
-      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-cyan-300 kicker mb-7">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs text-cyan-600 kicker mb-7">
         <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 glow-dot"></span> <span data-i18n="hero.badge">ENTERPRISE COMPLIANCE INTELLIGENCE</span>
       </div>
-      <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] text-white tracking-tight">
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] text-slate-900 tracking-tight">
         <span data-i18n="hero.title1">Turn Regulations Into</span> <span class="grad-text" data-i18n="hero.titleGrad">Automated Compliance Intelligence</span>
       </h1>
-      <p class="mt-6 text-lg text-slate-300 max-w-xl leading-relaxed" data-i18n="hero.desc">
+      <p class="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed" data-i18n="hero.desc">
         Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents into automated validation systems for real-time business compliance.
       </p>
       <div class="mt-9 flex flex-wrap gap-4">
         <a href="#demo" class="btn-primary text-white font-semibold px-6 py-3.5 rounded-lg transition" data-i18n="hero.cta1">Request a Demo</a>
-        <a href="#product" class="btn-ghost text-white font-medium px-6 py-3.5 rounded-lg transition" data-i18n="hero.cta2">Explore Axion Regulus</a>
-        <a href="#investors" class="text-slate-300 hover:text-white font-medium px-2 py-3.5 transition inline-flex items-center gap-1.5">
+        <a href="#product" class="btn-ghost text-slate-900 font-medium px-6 py-3.5 rounded-lg transition" data-i18n="hero.cta2">Explore Axion Regulus</a>
+        <a href="#investors" class="text-slate-600 hover:text-slate-900 font-medium px-2 py-3.5 transition inline-flex items-center gap-1.5">
           <span data-i18n="hero.cta3">Partner &amp; Invest</span> <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -208,16 +209,16 @@
           <div class="w-full grid grid-cols-3 gap-3 items-center">
             <!-- Documents in -->
             <div class="space-y-2">
-              <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-[11px] text-slate-300 flow-chip" style="animation-delay:0s">
-                <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path stroke="#67e8f9" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#67e8f9" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg>
+              <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-[11px] text-slate-600 flow-chip" style="animation-delay:0s">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path stroke="#0891b2" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#0891b2" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg>
                 Regulation.pdf
               </div>
-              <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-[11px] text-slate-300 flow-chip" style="animation-delay:1s">
-                <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path stroke="#93c5fd" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#93c5fd" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg>
+              <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-[11px] text-slate-600 flow-chip" style="animation-delay:1s">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path stroke="#2563eb" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#2563eb" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg>
                 <span data-i18n="hero.doc2">Policy Update</span>
               </div>
-              <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-[11px] text-slate-300 flow-chip" style="animation-delay:2s">
-                <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path stroke="#c4b5fd" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#c4b5fd" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg>
+              <div class="glass rounded-lg px-3 py-2 flex items-center gap-2 text-[11px] text-slate-600 flow-chip" style="animation-delay:2s">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path stroke="#7c3aed" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#7c3aed" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg>
                 <span data-i18n="hero.doc3">Guideline v2</span>
               </div>
             </div>
@@ -231,33 +232,33 @@
                   <circle cx="50" cy="50" r="34" fill="none" stroke="url(#g1)" stroke-width="1" class="flow-line"/>
                   <circle cx="50" cy="50" r="14" fill="url(#g2)"/>
                   <defs>
-                    <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
-                    <radialGradient id="g2"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#2563eb"/></radialGradient>
+                    <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0891b2"/></linearGradient>
+                    <radialGradient id="g2"><stop offset="0" stop-color="#0891b2"/><stop offset="1" stop-color="#2563eb"/></radialGradient>
                   </defs>
                 </svg>
               </div>
-              <div class="text-[11px] kicker text-cyan-300 mt-2 text-center"><span data-i18n="hero.aiEngine1">AI ANALYSIS</span><br/><span data-i18n="hero.aiEngine2">ENGINE</span></div>
+              <div class="text-[11px] kicker text-cyan-600 mt-2 text-center"><span data-i18n="hero.aiEngine1">AI ANALYSIS</span><br/><span data-i18n="hero.aiEngine2">ENGINE</span></div>
             </div>
 
             <!-- Output -->
             <div class="space-y-2">
-              <div class="glass rounded-lg px-3 py-2 flex items-center justify-between text-[11px] text-slate-300">
-                <span data-i18n="hero.scoreLabel">Compliance Score</span><span class="text-emerald-400 font-semibold">95%</span>
+              <div class="glass rounded-lg px-3 py-2 flex items-center justify-between text-[11px] text-slate-600">
+                <span data-i18n="hero.scoreLabel">Compliance Score</span><span class="text-emerald-600 font-semibold">95%</span>
               </div>
-              <div class="glass rounded-lg px-3 py-2 flex items-center justify-between text-[11px] text-slate-300">
-                <span data-i18n="hero.riskLabel">Risk Detected</span><span class="text-amber-400 font-semibold">02</span>
+              <div class="glass rounded-lg px-3 py-2 flex items-center justify-between text-[11px] text-slate-600">
+                <span data-i18n="hero.riskLabel">Risk Detected</span><span class="text-amber-600 font-semibold">02</span>
               </div>
-              <div class="glass rounded-lg px-3 py-2 flex items-center justify-between text-[11px] text-slate-300">
-                <span data-i18n="hero.rulesLabel">Rules Evaluated</span><span class="text-cyan-300 font-semibold">124</span>
+              <div class="glass rounded-lg px-3 py-2 flex items-center justify-between text-[11px] text-slate-600">
+                <span data-i18n="hero.rulesLabel">Rules Evaluated</span><span class="text-cyan-600 font-semibold">124</span>
               </div>
-              <div class="glass rounded-lg px-3 py-2 flex items-center justify-between text-[11px] text-slate-300">
-                <span data-i18n="hero.confLabel">AI Confidence</span><span class="text-violet-300 font-semibold">94%</span>
+              <div class="glass rounded-lg px-3 py-2 flex items-center justify-between text-[11px] text-slate-600">
+                <span data-i18n="hero.confLabel">AI Confidence</span><span class="text-violet-600 font-semibold">94%</span>
               </div>
             </div>
           </div>
 
-          <div class="w-full mt-5 pt-5 border-t border-white/5 grid grid-cols-5 gap-2 text-center text-[10px] text-[var(--muted)] kicker">
-            <span class="text-cyan-300" data-i18n="hero.rules">RULES</span><span>→</span><span class="text-blue-300" data-i18n="hero.validation">VALIDATION</span><span>→</span><span class="text-emerald-300" data-i18n="hero.confidenceShort">CONFIDENCE</span>
+          <div class="w-full mt-5 pt-5 border-t border-slate-900/8 grid grid-cols-5 gap-2 text-center text-[10px] text-[var(--muted)] kicker">
+            <span class="text-cyan-600" data-i18n="hero.rules">RULES</span><span>→</span><span class="text-blue-600" data-i18n="hero.validation">VALIDATION</span><span>→</span><span class="text-emerald-600" data-i18n="hero.confidenceShort">CONFIDENCE</span>
           </div>
         </div>
       </div>
@@ -266,7 +267,7 @@
 </section>
 
 <!-- HUMAN / BUSINESS EMOTIONAL SECTION -->
-<section class="section-pad bg-[var(--bg2)] border-y border-white/5">
+<section class="section-pad bg-[var(--bg2)] border-y border-slate-900/8">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <div class="order-2 lg:order-1 fade-up" data-fade>
       <div class="relative glass rounded-2xl p-5 card-hover overflow-hidden">
@@ -275,7 +276,7 @@
         <div class="relative rounded-xl overflow-hidden bg-[#0a1120] border border-white/5">
           <div class="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/5">
             <span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-emerald-400/60"></span>
-            <span class="ml-3 text-[11px] text-[var(--muted)]" data-i18n="hb.reviewLabel">Axion Regulus — Team Review</span>
+            <span class="ml-3 text-[11px] text-slate-400" data-i18n="hb.reviewLabel">Axion Regulus — Team Review</span>
           </div>
           <!-- Illustrated scene: team reviewing the dashboard together -->
           <svg viewBox="0 0 400 260" class="w-full h-auto">
@@ -326,15 +327,15 @@
       </div>
     </div>
     <div class="order-1 lg:order-2 fade-up" data-fade>
-      <p class="kicker text-cyan-400 text-xs font-semibold mb-3" data-i18n="hb.kicker">LESS MANUAL WORK. FASTER DECISIONS.</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white leading-tight" data-i18n="hb.title">Give compliance and business teams their time back</h2>
-      <p class="mt-5 text-slate-300 leading-relaxed" data-i18n="hb.desc">
+      <p class="kicker text-cyan-600 text-xs font-semibold mb-3" data-i18n="hb.kicker">LESS MANUAL WORK. FASTER DECISIONS.</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900 leading-tight" data-i18n="hb.title">Give compliance and business teams their time back</h2>
+      <p class="mt-5 text-slate-600 leading-relaxed" data-i18n="hb.desc">
         Compliance managers, risk professionals, legal and governance teams, and marketing reviewers use Axion Regulus to move through regulatory review faster — with structured evidence and a shared view of what needs attention.
       </p>
       <ul class="mt-7 space-y-4">
-        <li class="flex gap-3 text-slate-300 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li1">Structured, centralized regulatory knowledge instead of scattered documents</span></li>
-        <li class="flex gap-3 text-slate-300 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li2">Consistent evaluation criteria across reviewers and teams</span></li>
-        <li class="flex gap-3 text-slate-300 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-300 text-xs shrink-0">✓</span><span data-i18n="hb.li3">Clear evidence trails that support confident decisions</span></li>
+        <li class="flex gap-3 text-slate-600 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-600 text-xs shrink-0">✓</span><span data-i18n="hb.li1">Structured, centralized regulatory knowledge instead of scattered documents</span></li>
+        <li class="flex gap-3 text-slate-600 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-600 text-xs shrink-0">✓</span><span data-i18n="hb.li2">Consistent evaluation criteria across reviewers and teams</span></li>
+        <li class="flex gap-3 text-slate-600 rtl-row"><span class="mt-1 w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-600 text-xs shrink-0">✓</span><span data-i18n="hb.li3">Clear evidence trails that support confident decisions</span></li>
       </ul>
     </div>
   </div>
@@ -344,32 +345,32 @@
 <section class="section-pad relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <div class="fade-up" data-fade>
-      <p class="kicker text-blue-400 text-xs font-semibold mb-3" data-i18n="prob.kicker">THE COMPLIANCE PROBLEM</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white leading-tight" data-i18n="prob.title">Compliance shouldn't slow down your business</h2>
+      <p class="kicker text-blue-600 text-xs font-semibold mb-3" data-i18n="prob.kicker">THE COMPLIANCE PROBLEM</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900 leading-tight" data-i18n="prob.title">Compliance shouldn't slow down your business</h2>
       <div class="mt-8 grid grid-cols-2 gap-3 sm:gap-5">
         <div class="glass rounded-xl p-4 sm:p-5 card-hover">
-          <div class="text-blue-300 mb-2 text-lg">⟳</div>
-          <p class="text-sm text-slate-300" data-i18n="prob.c1">Regulations constantly change across jurisdictions and industries</p>
+          <div class="text-blue-600 mb-2 text-lg">⟳</div>
+          <p class="text-sm text-slate-600" data-i18n="prob.c1">Regulations constantly change across jurisdictions and industries</p>
         </div>
         <div class="glass rounded-xl p-4 sm:p-5 card-hover">
-          <div class="text-cyan-300 mb-2 text-lg">⏱</div>
-          <p class="text-sm text-slate-300" data-i18n="prob.c2">Manual document interpretation takes significant time and effort</p>
+          <div class="text-cyan-600 mb-2 text-lg">⏱</div>
+          <p class="text-sm text-slate-600" data-i18n="prob.c2">Manual document interpretation takes significant time and effort</p>
         </div>
         <div class="glass rounded-xl p-4 sm:p-5 card-hover">
-          <div class="text-violet-300 mb-2 text-lg">⚠</div>
-          <p class="text-sm text-slate-300" data-i18n="prob.c3">Business content can contain hidden regulatory risk</p>
+          <div class="text-violet-600 mb-2 text-lg">⚠</div>
+          <p class="text-sm text-slate-600" data-i18n="prob.c3">Business content can contain hidden regulatory risk</p>
         </div>
         <div class="glass rounded-xl p-4 sm:p-5 card-hover">
-          <div class="text-amber-300 mb-2 text-lg">≠</div>
-          <p class="text-sm text-slate-300" data-i18n="prob.c4">Different teams may interpret the same rules differently</p>
+          <div class="text-amber-600 mb-2 text-lg">≠</div>
+          <p class="text-sm text-slate-600" data-i18n="prob.c4">Different teams may interpret the same rules differently</p>
         </div>
         <div class="glass rounded-xl p-4 sm:p-5 card-hover">
-          <div class="text-blue-300 mb-2 text-lg">🗂</div>
-          <p class="text-sm text-slate-300" data-i18n="prob.c5">Compliance evidence is difficult to maintain and retrieve</p>
+          <div class="text-blue-600 mb-2 text-lg">🗂</div>
+          <p class="text-sm text-slate-600" data-i18n="prob.c5">Compliance evidence is difficult to maintain and retrieve</p>
         </div>
         <div class="glass rounded-xl p-4 sm:p-5 card-hover">
-          <div class="text-cyan-300 mb-2 text-lg">💸</div>
-          <p class="text-sm text-slate-300" data-i18n="prob.c6">Manual reviews increase operational cost at scale</p>
+          <div class="text-cyan-600 mb-2 text-lg">💸</div>
+          <p class="text-sm text-slate-600" data-i18n="prob.c6">Manual reviews increase operational cost at scale</p>
         </div>
       </div>
     </div>
@@ -380,30 +381,30 @@
         <div class="relative h-72 flex items-center justify-center">
           <div class="absolute w-40 h-40 rounded-full bg-red-500/10 blur-2xl"></div>
           <div class="grid grid-cols-3 gap-4 relative z-10">
-            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[-6deg] float">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#67e8f9" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#67e8f9" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg><span data-i18n="prob.pdfs">PDFs</span>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-600 rotate-[-6deg] float">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#0891b2" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#0891b2" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg><span data-i18n="prob.pdfs">PDFs</span>
             </div>
-            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[4deg] float float-delay">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#93c5fd" stroke-width="1.6" d="M3 5h18v14H3z"/><path stroke="#93c5fd" stroke-width="1.6" d="M3 6l9 7 9-7"/></svg><span data-i18n="prob.emails">Emails</span>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-600 rotate-[4deg] float float-delay">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#2563eb" stroke-width="1.6" d="M3 5h18v14H3z"/><path stroke="#2563eb" stroke-width="1.6" d="M3 6l9 7 9-7"/></svg><span data-i18n="prob.emails">Emails</span>
             </div>
-            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[-3deg] float">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#c4b5fd" stroke-width="1.6" d="M6 3h12v18H6z"/><path stroke="#c4b5fd" stroke-width="1.6" d="M9 8h6M9 12h6M9 16h3"/></svg><span data-i18n="prob.policies">Policies</span>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-600 rotate-[-3deg] float">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#7c3aed" stroke-width="1.6" d="M6 3h12v18H6z"/><path stroke="#7c3aed" stroke-width="1.6" d="M9 8h6M9 12h6M9 16h3"/></svg><span data-i18n="prob.policies">Policies</span>
             </div>
-            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[5deg] float float-delay">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#f0abfc" stroke-width="1.6" d="M3 10v4h3l7 4V6l-7 4z"/><path stroke="#f0abfc" stroke-width="1.6" d="M13 9a3 3 0 0 1 0 6"/></svg><span data-i18n="prob.marketing">Marketing</span>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-600 rotate-[5deg] float float-delay">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#c026d3" stroke-width="1.6" d="M3 10v4h3l7 4V6l-7 4z"/><path stroke="#c026d3" stroke-width="1.6" d="M13 9a3 3 0 0 1 0 6"/></svg><span data-i18n="prob.marketing">Marketing</span>
             </div>
-            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-amber-300 border-amber-400/30 rotate-[-4deg] float">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#fbbf24" stroke-width="1.6" d="M12 4l9 15H3z"/><path stroke="#fbbf24" stroke-width="1.6" d="M12 10v4"/><circle cx="12" cy="17" r="0.8" fill="#fbbf24" stroke="none"/></svg><span data-i18n="prob.risk">Risk?</span>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-amber-600 border-amber-400/30 rotate-[-4deg] float">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#d97706" stroke-width="1.6" d="M12 4l9 15H3z"/><path stroke="#d97706" stroke-width="1.6" d="M12 10v4"/><circle cx="12" cy="17" r="0.8" fill="#d97706" stroke="none"/></svg><span data-i18n="prob.risk">Risk?</span>
             </div>
-            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-300 rotate-[3deg] float float-delay">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#86efac" stroke-width="1.6" d="M4 4h16v16H4z"/><path stroke="#86efac" stroke-width="1.6" d="M4 9h16M9 9v11"/></svg><span data-i18n="prob.sheets">Sheets</span>
+            <div class="glass rounded-lg p-3 flex flex-col items-center gap-1.5 text-center text-[11px] text-slate-600 rotate-[3deg] float float-delay">
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#059669" stroke-width="1.6" d="M4 4h16v16H4z"/><path stroke="#059669" stroke-width="1.6" d="M4 9h16M9 9v11"/></svg><span data-i18n="prob.sheets">Sheets</span>
             </div>
           </div>
         </div>
         <div class="flex items-center justify-center gap-3 mt-4">
           <span class="text-[var(--muted)] text-sm" data-i18n="prob.manualReview">Manual review</span>
           <span class="text-slate-500">→</span>
-          <span class="text-cyan-300 text-sm font-semibold">Axion Regulus</span>
+          <span class="text-cyan-600 text-sm font-semibold">Axion Regulus</span>
         </div>
       </div>
     </div>
@@ -411,55 +412,55 @@
 </section>
 
 <!-- SOLUTION: 6 STEP PROCESS -->
-<section id="product" class="section-pad bg-[var(--bg2)] border-y border-white/5">
+<section id="product" class="section-pad bg-[var(--bg2)] border-y border-slate-900/8">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <p class="kicker text-cyan-400 text-xs font-semibold mb-3" data-i18n="sol.kicker">THE AXION REGULUS SOLUTION</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="sol.title">From regulatory documents to actionable compliance</h2>
+      <p class="kicker text-cyan-600 text-xs font-semibold mb-3" data-i18n="sol.kicker">THE AXION REGULUS SOLUTION</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="sol.title">From regulatory documents to actionable compliance</h2>
     </div>
 
     <div class="mt-10 lg:mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 ltr-diagram">
       <!-- Step template -->
       <div class="fade-up" data-fade>
         <div class="glass rounded-xl p-5 h-full card-hover relative">
-          <span class="text-cyan-300 font-display font-extrabold text-2xl">01</span>
-          <h3 class="text-white font-semibold mt-3" data-i18n="sol.s1t">Ingest</h3>
-          <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="sol.s1d">Upload regulatory documents, policies and guidelines.</p>
+          <span class="text-cyan-600 font-display font-extrabold text-2xl">01</span>
+          <h3 class="text-slate-900 font-semibold mt-3" data-i18n="sol.s1t">Ingest</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="sol.s1d">Upload regulatory documents, policies and guidelines.</p>
         </div>
       </div>
       <div class="fade-up" data-fade>
         <div class="glass rounded-xl p-5 h-full card-hover">
-          <span class="text-cyan-300 font-display font-extrabold text-2xl">02</span>
-          <h3 class="text-white font-semibold mt-3" data-i18n="sol.s2t">Understand</h3>
-          <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="sol.s2d">AI analyzes and structures regulatory information.</p>
+          <span class="text-cyan-600 font-display font-extrabold text-2xl">02</span>
+          <h3 class="text-slate-900 font-semibold mt-3" data-i18n="sol.s2t">Understand</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="sol.s2d">AI analyzes and structures regulatory information.</p>
         </div>
       </div>
       <div class="fade-up" data-fade>
         <div class="glass rounded-xl p-5 h-full card-hover">
-          <span class="text-cyan-300 font-display font-extrabold text-2xl">03</span>
-          <h3 class="text-white font-semibold mt-3" data-i18n="sol.s3t">Generate Rules</h3>
-          <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="sol.s3d">Requirements are transformed into structured validation rules.</p>
+          <span class="text-cyan-600 font-display font-extrabold text-2xl">03</span>
+          <h3 class="text-slate-900 font-semibold mt-3" data-i18n="sol.s3t">Generate Rules</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="sol.s3d">Requirements are transformed into structured validation rules.</p>
         </div>
       </div>
       <div class="fade-up" data-fade>
         <div class="glass rounded-xl p-5 h-full card-hover">
-          <span class="text-blue-300 font-display font-extrabold text-2xl">04</span>
-          <h3 class="text-white font-semibold mt-3" data-i18n="sol.s4t">Validate</h3>
-          <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="sol.s4d">Business content is evaluated against applicable rules.</p>
+          <span class="text-blue-600 font-display font-extrabold text-2xl">04</span>
+          <h3 class="text-slate-900 font-semibold mt-3" data-i18n="sol.s4t">Validate</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="sol.s4d">Business content is evaluated against applicable rules.</p>
         </div>
       </div>
       <div class="fade-up" data-fade>
         <div class="glass rounded-xl p-5 h-full card-hover">
-          <span class="text-violet-300 font-display font-extrabold text-2xl">05</span>
-          <h3 class="text-white font-semibold mt-3" data-i18n="sol.s5t">Detect Risk</h3>
-          <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="sol.s5d">Potential violations, gaps and risks are highlighted.</p>
+          <span class="text-violet-600 font-display font-extrabold text-2xl">05</span>
+          <h3 class="text-slate-900 font-semibold mt-3" data-i18n="sol.s5t">Detect Risk</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="sol.s5d">Potential violations, gaps and risks are highlighted.</p>
         </div>
       </div>
       <div class="fade-up" data-fade>
         <div class="glass rounded-xl p-5 h-full card-hover">
-          <span class="text-emerald-300 font-display font-extrabold text-2xl">06</span>
-          <h3 class="text-white font-semibold mt-3" data-i18n="sol.s6t">Act</h3>
-          <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="sol.s6d">Teams receive recommendations, evidence and next steps.</p>
+          <span class="text-emerald-600 font-display font-extrabold text-2xl">06</span>
+          <h3 class="text-slate-900 font-semibold mt-3" data-i18n="sol.s6t">Act</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="sol.s6d">Teams receive recommendations, evidence and next steps.</p>
         </div>
       </div>
     </div>
@@ -470,8 +471,8 @@
 <section id="features" class="section-pad">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <p class="kicker text-blue-400 text-xs font-semibold mb-3" data-i18n="feat.kicker">PRODUCT FEATURES</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="feat.title">Everything a compliance function needs, in one platform</h2>
+      <p class="kicker text-blue-600 text-xs font-semibold mb-3" data-i18n="feat.kicker">PRODUCT FEATURES</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="feat.title">Everything a compliance function needs, in one platform</h2>
     </div>
 
     <div class="mt-10 lg:mt-16 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5" id="featureGrid">
@@ -481,50 +482,50 @@
 </section>
 
 <!-- DASHBOARD VISUAL -->
-<section class="section-pad bg-[var(--bg2)] border-y border-white/5">
+<section class="section-pad bg-[var(--bg2)] border-y border-slate-900/8">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <p class="kicker text-cyan-400 text-xs font-semibold mb-3" data-i18n="dash.kicker">PRODUCT DASHBOARD</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="dash.title">Compliance intelligence, visualized</h2>
+      <p class="kicker text-cyan-600 text-xs font-semibold mb-3" data-i18n="dash.kicker">PRODUCT DASHBOARD</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="dash.title">Compliance intelligence, visualized</h2>
     </div>
 
     <div class="mt-10 lg:mt-14 glass rounded-2xl p-4 lg:p-8 fade-up" data-fade>
       <div class="rounded-xl bg-[#080d1a] border border-white/5 overflow-hidden">
         <div class="flex items-center gap-1.5 px-5 py-3 border-b border-white/5">
           <span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-emerald-400/60"></span>
-          <span class="ml-3 text-[11px] text-[var(--muted)]" data-i18n="dash.label">Axion Regulus — Compliance Dashboard</span>
+          <span class="ml-3 text-[11px] text-slate-400" data-i18n="dash.label">Axion Regulus — Compliance Dashboard</span>
         </div>
 
         <div class="p-6 grid lg:grid-cols-4 gap-4">
           <div class="lg:col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             <div class="glass rounded-lg p-3">
-              <div class="text-[10px] text-[var(--muted)] kicker" data-i18n="dash.complianceScore">COMPLIANCE SCORE</div>
+              <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.complianceScore">COMPLIANCE SCORE</div>
               <div class="text-xl font-bold text-emerald-400 mt-1 counter" data-target="95">0</div>
             </div>
             <div class="glass rounded-lg p-3">
-              <div class="text-[10px] text-[var(--muted)] kicker" data-i18n="dash.aiConfidence">AI CONFIDENCE</div>
+              <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.aiConfidence">AI CONFIDENCE</div>
               <div class="text-xl font-bold text-violet-300 mt-1 counter" data-target="94">0</div>
             </div>
             <div class="glass rounded-lg p-3">
-              <div class="text-[10px] text-[var(--muted)] kicker" data-i18n="dash.rulesEvaluated">RULES EVALUATED</div>
+              <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.rulesEvaluated">RULES EVALUATED</div>
               <div class="text-xl font-bold text-cyan-300 mt-1 counter" data-target="124" data-suffix="">0</div>
             </div>
             <div class="glass rounded-lg p-3">
-              <div class="text-[10px] text-[var(--muted)] kicker" data-i18n="dash.issuesDetected">ISSUES DETECTED</div>
+              <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.issuesDetected">ISSUES DETECTED</div>
               <div class="text-xl font-bold text-amber-300 mt-1 counter" data-target="7">0</div>
             </div>
             <div class="glass rounded-lg p-3">
-              <div class="text-[10px] text-[var(--muted)] kicker" data-i18n="dash.criticalRisks">CRITICAL RISKS</div>
+              <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.criticalRisks">CRITICAL RISKS</div>
               <div class="text-xl font-bold text-red-400 mt-1 counter" data-target="2">0</div>
             </div>
             <div class="glass rounded-lg p-3">
-              <div class="text-[10px] text-[var(--muted)] kicker" data-i18n="dash.resolved">RESOLVED</div>
+              <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.resolved">RESOLVED</div>
               <div class="text-xl font-bold text-blue-300 mt-1 counter" data-target="18">0</div>
             </div>
           </div>
 
           <div class="lg:col-span-2 glass rounded-lg p-4">
-            <div class="text-[11px] text-[var(--muted)] kicker mb-3" data-i18n="dash.trend">COMPLIANCE TREND</div>
+            <div class="text-[11px] text-slate-400 kicker mb-3" data-i18n="dash.trend">COMPLIANCE TREND</div>
             <svg viewBox="0 0 300 90" class="w-full h-24">
               <polyline points="0,70 40,60 80,64 120,45 160,50 200,30 240,35 300,15" fill="none" stroke="#22d3ee" stroke-width="2.5"/>
               <polyline points="0,70 40,60 80,64 120,45 160,50 200,30 240,35 300,15 300,90 0,90" fill="url(#trendFill)" stroke="none" opacity="0.25"/>
@@ -533,28 +534,28 @@
           </div>
 
           <div class="glass rounded-lg p-4">
-            <div class="text-[11px] text-[var(--muted)] kicker mb-3" data-i18n="dash.riskDist">RISK DISTRIBUTION</div>
+            <div class="text-[11px] text-slate-400 kicker mb-3" data-i18n="dash.riskDist">RISK DISTRIBUTION</div>
             <div class="flex items-end gap-2 h-24">
               <div class="bar flex-1 bg-red-400/70 rounded-t" style="height:30%"></div>
               <div class="bar flex-1 bg-amber-400/70 rounded-t" style="height:55%"></div>
               <div class="bar flex-1 bg-emerald-400/70 rounded-t" style="height:80%"></div>
             </div>
-            <div class="flex justify-between text-[10px] text-[var(--muted)] mt-2"><span data-i18n="dash.high">High</span><span data-i18n="dash.med">Med</span><span data-i18n="dash.low">Low</span></div>
+            <div class="flex justify-between text-[10px] text-slate-400 mt-2"><span data-i18n="dash.high">High</span><span data-i18n="dash.med">Med</span><span data-i18n="dash.low">Low</span></div>
           </div>
 
           <div class="glass rounded-lg p-4">
-            <div class="text-[11px] text-[var(--muted)] kicker mb-3" data-i18n="dash.openResolved">OPEN VS RESOLVED</div>
+            <div class="text-[11px] text-slate-400 kicker mb-3" data-i18n="dash.openResolved">OPEN VS RESOLVED</div>
             <div class="flex items-center justify-center h-24">
               <svg viewBox="0 0 36 36" class="w-20 h-20">
                 <path d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32" fill="none" stroke="#1b2438" stroke-width="4"/>
                 <path d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32" fill="none" stroke="#3b82f6" stroke-width="4" stroke-dasharray="72 100" stroke-linecap="round"/>
               </svg>
             </div>
-            <div class="text-center text-[10px] text-[var(--muted)]" data-i18n="dash.resolvedStat">72% Resolved</div>
+            <div class="text-center text-[10px] text-slate-400" data-i18n="dash.resolvedStat">72% Resolved</div>
           </div>
 
           <div class="lg:col-span-2 glass rounded-lg p-4">
-            <div class="text-[11px] text-[var(--muted)] kicker mb-3" data-i18n="dash.byUnit">COMPLIANCE BY BUSINESS UNIT</div>
+            <div class="text-[11px] text-slate-400 kicker mb-3" data-i18n="dash.byUnit">COMPLIANCE BY BUSINESS UNIT</div>
             <div class="space-y-2.5">
               <div><div class="flex justify-between text-[11px] text-slate-300 mb-1"><span data-i18n="dash.marketing">Marketing</span><span>92%</span></div><div class="h-1.5 rounded bg-white/5"><div class="h-1.5 rounded bg-blue-400" style="width:92%"></div></div></div>
               <div><div class="flex justify-between text-[11px] text-slate-300 mb-1"><span data-i18n="dash.legal">Legal</span><span>97%</span></div><div class="h-1.5 rounded bg-white/5"><div class="h-1.5 rounded bg-cyan-400" style="width:97%"></div></div></div>
@@ -571,8 +572,8 @@
 <section id="industries" class="section-pad">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <p class="kicker text-blue-400 text-xs font-semibold mb-3" data-i18n="ind.kicker">USE CASES</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="ind.title">Built for regulated, high-stakes industries</h2>
+      <p class="kicker text-blue-600 text-xs font-semibold mb-3" data-i18n="ind.kicker">USE CASES</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="ind.title">Built for regulated, high-stakes industries</h2>
     </div>
 
     <div class="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5" id="industryGrid"></div>
@@ -580,11 +581,11 @@
 </section>
 
 <!-- SEE IT IN ACTION -->
-<section class="section-pad bg-[var(--bg2)] border-y border-white/5">
+<section class="section-pad bg-[var(--bg2)] border-y border-slate-900/8">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <p class="kicker text-cyan-400 text-xs font-semibold mb-3" data-i18n="see.kicker">SEE IT IN ACTION</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="see.title">From a single claim to a compliance decision</h2>
+      <p class="kicker text-cyan-600 text-xs font-semibold mb-3" data-i18n="see.kicker">SEE IT IN ACTION</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="see.title">From a single claim to a compliance decision</h2>
     </div>
 
     <div class="mt-10 lg:mt-14 grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
@@ -599,23 +600,23 @@
           <span>→</span><span class="glass rounded-full px-3 py-1.5" data-i18n="see.step5">5. AI VALIDATION</span>
           <span>→</span><span class="glass rounded-full px-3 py-1.5" data-i18n="see.step6">6. REPORT &amp; ACTIONS</span>
         </div>
-        <p class="text-slate-300 leading-relaxed max-w-md" data-i18n="see.desc">Business content is checked against structured, regulation-derived rules — with a clear reason and a recommended next step for every flag.</p>
+        <p class="text-slate-600 leading-relaxed max-w-md" data-i18n="see.desc">Business content is checked against structured, regulation-derived rules — with a clear reason and a recommended next step for every flag.</p>
       </div>
 
       <div class="glass rounded-2xl p-6 fade-up" data-fade>
         <div class="text-[10px] kicker text-[var(--muted)] mb-2" data-i18n="see.submitted">SUBMITTED CONTENT</div>
-        <div class="rounded-lg bg-white/5 border border-white/10 p-4 text-sm text-slate-200 italic" data-i18n="see.claim">
+        <div class="rounded-lg bg-slate-900/[0.03] border border-slate-900/10 p-4 text-sm text-slate-700 italic" data-i18n="see.claim">
           "Boosts immunity and prevents illness."
         </div>
-        <div class="flex items-center justify-center my-4 text-cyan-300 text-xs kicker" data-i18n="see.aiAnalysis">AI ANALYSIS ↓</div>
+        <div class="flex items-center justify-center my-4 text-cyan-600 text-xs kicker" data-i18n="see.aiAnalysis">AI ANALYSIS ↓</div>
         <div class="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
           <div class="flex items-center justify-between mb-3">
-            <span class="text-red-300 font-semibold text-sm" data-i18n="see.riskTitle">Potential Regulatory Risk</span>
-            <span class="text-[10px] kicker px-2 py-1 rounded-full bg-red-500/20 text-red-300" data-i18n="see.riskHigh">RISK: HIGH</span>
+            <span class="text-red-600 font-semibold text-sm" data-i18n="see.riskTitle">Potential Regulatory Risk</span>
+            <span class="text-[10px] kicker px-2 py-1 rounded-full bg-red-500/20 text-red-600" data-i18n="see.riskHigh">RISK: HIGH</span>
           </div>
-          <div class="text-xs text-slate-300 space-y-2">
-            <p><span class="text-slate-400" data-i18n="see.reasonLabel">Reason: </span><span data-i18n="see.reasonText">Potentially unsupported health claim.</span></p>
-            <p><span class="text-slate-400" data-i18n="see.recLabel">Recommendation: </span><span data-i18n="see.recText">Review or modify the claim based on the applicable regulatory framework.</span></p>
+          <div class="text-xs text-slate-600 space-y-2">
+            <p><span class="text-slate-500" data-i18n="see.reasonLabel">Reason: </span><span data-i18n="see.reasonText">Potentially unsupported health claim.</span></p>
+            <p><span class="text-slate-500" data-i18n="see.recLabel">Recommendation: </span><span data-i18n="see.recText">Review or modify the claim based on the applicable regulatory framework.</span></p>
           </div>
         </div>
       </div>
@@ -627,40 +628,40 @@
 <section class="section-pad">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <p class="kicker text-blue-400 text-xs font-semibold mb-3" data-i18n="bv.kicker">BUSINESS VALUE</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="bv.title">Compliance intelligence that creates business value</h2>
+      <p class="kicker text-blue-600 text-xs font-semibold mb-3" data-i18n="bv.kicker">BUSINESS VALUE</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="bv.title">Compliance intelligence that creates business value</h2>
     </div>
     <div class="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
       <div class="glass rounded-xl p-6 text-center card-hover fade-up" data-fade>
         <div class="text-3xl mb-3">⏳</div>
-        <h3 class="text-white font-semibold" data-i18n="bv.v1t">Save Time</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="bv.v1d">Reduce repetitive manual compliance reviews.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="bv.v1t">Save Time</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="bv.v1d">Reduce repetitive manual compliance reviews.</p>
       </div>
       <div class="glass rounded-xl p-6 text-center card-hover fade-up" data-fade>
         <div class="text-3xl mb-3">⚙️</div>
-        <h3 class="text-white font-semibold" data-i18n="bv.v2t">Reduce Effort</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="bv.v2d">Automate regulatory analysis and content validation.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="bv.v2t">Reduce Effort</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="bv.v2d">Automate regulatory analysis and content validation.</p>
       </div>
       <div class="glass rounded-xl p-6 text-center card-hover fade-up" data-fade>
         <div class="text-3xl mb-3">🛡️</div>
-        <h3 class="text-white font-semibold" data-i18n="bv.v3t">Reduce Risk</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="bv.v3d">Identify potential issues before content reaches customers.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="bv.v3t">Reduce Risk</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="bv.v3d">Identify potential issues before content reaches customers.</p>
       </div>
       <div class="glass rounded-xl p-6 text-center card-hover fade-up" data-fade>
         <div class="text-3xl mb-3">📈</div>
-        <h3 class="text-white font-semibold" data-i18n="bv.v4t">Improve Confidence</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="bv.v4d">Give teams confidence in business and compliance decisions.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="bv.v4t">Improve Confidence</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="bv.v4d">Give teams confidence in business and compliance decisions.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- HUMAN SUCCESS -->
-<section class="section-pad bg-[var(--bg2)] border-y border-white/5">
+<section class="section-pad bg-[var(--bg2)] border-y border-slate-900/8">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="hs.title">Give your compliance team more time to focus on what matters</h2>
-      <p class="mt-5 text-slate-300" data-i18n="hs.desc">Designed for the teams responsible for keeping modern businesses compliant.</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="hs.title">Give your compliance team more time to focus on what matters</h2>
+      <p class="mt-5 text-slate-600" data-i18n="hs.desc">Designed for the teams responsible for keeping modern businesses compliant.</p>
     </div>
 
     <div class="mt-10 lg:mt-14 grid md:grid-cols-3 gap-4 lg:gap-6">
@@ -674,22 +675,22 @@
             <path d="M46 78l14-8M100 70l14 8" stroke="#67e8f9" stroke-width="2.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3 class="text-white font-semibold" data-i18n="hs.h1t">Control</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="hs.h1d">Teams stay in control of every compliance decision, with AI support at each step.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="hs.h1t">Control</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="hs.h1d">Teams stay in control of every compliance decision, with AI support at each step.</p>
       </div>
       <div class="glass rounded-2xl p-6 card-hover fade-up" data-fade>
-        <div class="h-36 rounded-lg bg-gradient-to-br from-cyan-500/15 to-transparent border border-white/5 flex items-center justify-center mb-4">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="none"><path stroke="#67e8f9" stroke-width="1.5" d="M4 17l5-5 3 3 7-8"/><circle cx="19" cy="7" r="2" fill="#67e8f9"/></svg>
+        <div class="h-36 rounded-lg bg-gradient-to-br from-cyan-500/15 to-transparent border border-slate-900/8 flex items-center justify-center mb-4">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none"><path stroke="#0891b2" stroke-width="1.5" d="M4 17l5-5 3 3 7-8"/><circle cx="19" cy="7" r="2" fill="#0891b2"/></svg>
         </div>
-        <h3 class="text-white font-semibold" data-i18n="hs.h2t">Productivity</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="hs.h2d">Structured workflows help teams move from review to resolution faster.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="hs.h2t">Productivity</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="hs.h2d">Structured workflows help teams move from review to resolution faster.</p>
       </div>
       <div class="glass rounded-2xl p-6 card-hover fade-up" data-fade>
-        <div class="h-36 rounded-lg bg-gradient-to-br from-violet-500/15 to-transparent border border-white/5 flex items-center justify-center mb-4">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path stroke="#c4b5fd" stroke-width="1.5" d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5z"/></svg>
+        <div class="h-36 rounded-lg bg-gradient-to-br from-violet-500/15 to-transparent border border-slate-900/8 flex items-center justify-center mb-4">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path stroke="#7c3aed" stroke-width="1.5" d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5z"/></svg>
         </div>
-        <h3 class="text-white font-semibold" data-i18n="hs.h3t">Peace of Mind</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="hs.h3d">Clear evidence and reasoning behind every compliance assessment.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="hs.h3t">Peace of Mind</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="hs.h3d">Clear evidence and reasoning behind every compliance assessment.</p>
       </div>
     </div>
   </div>
@@ -699,17 +700,17 @@
 <section class="section-pad">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <div class="fade-up" data-fade>
-      <p class="kicker text-cyan-400 text-xs font-semibold mb-3" data-i18n="sec.kicker">SECURITY &amp; ENTERPRISE TRUST</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white leading-tight" data-i18n="sec.title">Built for enterprise compliance workflows</h2>
-      <div class="mt-8 grid grid-cols-2 gap-3 sm:gap-4 text-sm text-slate-300">
-        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i1">Controlled &amp; role-based access</span></div>
-        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i2">Secure document processing</span></div>
-        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i3">Auditability &amp; compliance evidence</span></div>
-        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i4">Data governance controls</span></div>
-        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i5">Configurable workflows</span></div>
-        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i6">Enterprise deployment options</span></div>
-        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i7">AI supervision</span></div>
-        <div class="flex gap-2 rtl-row"><span class="text-blue-300">•</span><span data-i18n="sec.i8">Human review at every stage</span></div>
+      <p class="kicker text-cyan-600 text-xs font-semibold mb-3" data-i18n="sec.kicker">SECURITY &amp; ENTERPRISE TRUST</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900 leading-tight" data-i18n="sec.title">Built for enterprise compliance workflows</h2>
+      <div class="mt-8 grid grid-cols-2 gap-3 sm:gap-4 text-sm text-slate-600">
+        <div class="flex gap-2 rtl-row"><span class="text-blue-600">•</span><span data-i18n="sec.i1">Controlled &amp; role-based access</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-600">•</span><span data-i18n="sec.i2">Secure document processing</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-600">•</span><span data-i18n="sec.i3">Auditability &amp; compliance evidence</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-600">•</span><span data-i18n="sec.i4">Data governance controls</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-600">•</span><span data-i18n="sec.i5">Configurable workflows</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-600">•</span><span data-i18n="sec.i6">Enterprise deployment options</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-600">•</span><span data-i18n="sec.i7">AI supervision</span></div>
+        <div class="flex gap-2 rtl-row"><span class="text-blue-600">•</span><span data-i18n="sec.i8">Human review at every stage</span></div>
       </div>
     </div>
     <div class="relative fade-up" data-fade>
@@ -720,30 +721,30 @@
             <path stroke="url(#vaultG)" stroke-width="1.2" d="M12 2l8 3.5v6c0 5.5-4 9.5-8 10.5-4-1-8-5-8-10.5v-6z"/>
             <circle cx="12" cy="11" r="2.4" fill="none" stroke="url(#vaultG)" stroke-width="1.2"/>
             <path stroke="url(#vaultG)" stroke-width="1.2" d="M12 13.4V16"/>
-            <defs><linearGradient id="vaultG" x1="0" x2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+            <defs><linearGradient id="vaultG" x1="0" x2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs>
           </svg>
         </div>
-        <p class="text-center text-sm text-slate-300 max-w-xs" data-i18n="sec.vaultDesc">A secure environment for regulatory documents and compliance intelligence — access-controlled and fully auditable.</p>
+        <p class="text-center text-sm text-slate-600 max-w-xs" data-i18n="sec.vaultDesc">A secure environment for regulatory documents and compliance intelligence — access-controlled and fully auditable.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- AI WITH SUPERVISION -->
-<section class="section-pad bg-[var(--bg2)] border-y border-white/5">
+<section class="section-pad bg-[var(--bg2)] border-y border-slate-900/8">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-    <p class="kicker text-violet-300 text-xs font-semibold mb-3" data-i18n="ai.kicker">A CORE DIFFERENTIATOR</p>
-    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="ai.title">AI that assists. Humans that decide.</h2>
-    <p class="mt-5 text-slate-300 max-w-2xl mx-auto leading-relaxed" data-i18n="ai.desc">Axion Regulus combines AI-powered analysis with human supervision to help organizations evaluate regulatory requirements, identify risks and make informed compliance decisions.</p>
+    <p class="kicker text-violet-600 text-xs font-semibold mb-3" data-i18n="ai.kicker">A CORE DIFFERENTIATOR</p>
+    <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="ai.title">AI that assists. Humans that decide.</h2>
+    <p class="mt-5 text-slate-600 max-w-2xl mx-auto leading-relaxed" data-i18n="ai.desc">Axion Regulus combines AI-powered analysis with human supervision to help organizations evaluate regulatory requirements, identify risks and make informed compliance decisions.</p>
 
     <div class="mt-10 lg:mt-14 max-w-3xl mx-auto grid grid-cols-2 sm:flex sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 ltr-diagram">
-      <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-cyan-300 text-xs kicker mb-1" data-i18n="ai.stepLabel1">STEP 1</div><div class="text-white font-semibold text-sm" data-i18n="ai.v1">AI Analysis</div></div>
+      <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-cyan-600 text-xs kicker mb-1" data-i18n="ai.stepLabel1">STEP 1</div><div class="text-slate-900 font-semibold text-sm" data-i18n="ai.v1">AI Analysis</div></div>
       <span class="text-slate-500 hidden sm:block">→</span>
-      <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-blue-300 text-xs kicker mb-1" data-i18n="ai.stepLabel2">STEP 2</div><div class="text-white font-semibold text-sm" data-i18n="ai.v2">Risk Identification</div></div>
+      <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-blue-600 text-xs kicker mb-1" data-i18n="ai.stepLabel2">STEP 2</div><div class="text-slate-900 font-semibold text-sm" data-i18n="ai.v2">Risk Identification</div></div>
       <span class="text-slate-500 hidden sm:block">→</span>
-      <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-violet-300 text-xs kicker mb-1" data-i18n="ai.stepLabel3">STEP 3</div><div class="text-white font-semibold text-sm" data-i18n="ai.v3">Human Review</div></div>
+      <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-violet-600 text-xs kicker mb-1" data-i18n="ai.stepLabel3">STEP 3</div><div class="text-slate-900 font-semibold text-sm" data-i18n="ai.v3">Human Review</div></div>
       <span class="text-slate-500 hidden sm:block">→</span>
-      <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-emerald-300 text-xs kicker mb-1" data-i18n="ai.stepLabel4">STEP 4</div><div class="text-white font-semibold text-sm" data-i18n="ai.v4">Approval / Action</div></div>
+      <div class="glass rounded-xl px-4 sm:px-6 py-4 sm:py-5 flex-1 fade-up" data-fade><div class="text-emerald-600 text-xs kicker mb-1" data-i18n="ai.stepLabel4">STEP 4</div><div class="text-slate-900 font-semibold text-sm" data-i18n="ai.v4">Approval / Action</div></div>
     </div>
   </div>
 </section>
@@ -752,33 +753,33 @@
 <section class="section-pad">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <div class="fade-up" data-fade>
-      <p class="kicker text-blue-400 text-xs font-semibold mb-3" data-i18n="mgmt.kicker">FOR LEADERSHIP</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white leading-tight" data-i18n="mgmt.title">Compliance intelligence for leadership</h2>
-      <ul class="mt-7 space-y-3 text-sm text-slate-300">
-        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li1">Overall compliance score &amp; trends</span></li>
-        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li2">High-risk areas &amp; open issues</span></li>
-        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li3">Resolution status across teams</span></li>
-        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li4">Business-unit performance</span></li>
-        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li5">Regulatory frameworks in scope</span></li>
-        <li class="flex gap-2 rtl-row"><span class="text-cyan-300">•</span><span data-i18n="mgmt.li6">Review activity, time &amp; effort indicators</span></li>
+      <p class="kicker text-blue-600 text-xs font-semibold mb-3" data-i18n="mgmt.kicker">FOR LEADERSHIP</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900 leading-tight" data-i18n="mgmt.title">Compliance intelligence for leadership</h2>
+      <ul class="mt-7 space-y-3 text-sm text-slate-600">
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-600">•</span><span data-i18n="mgmt.li1">Overall compliance score &amp; trends</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-600">•</span><span data-i18n="mgmt.li2">High-risk areas &amp; open issues</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-600">•</span><span data-i18n="mgmt.li3">Resolution status across teams</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-600">•</span><span data-i18n="mgmt.li4">Business-unit performance</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-600">•</span><span data-i18n="mgmt.li5">Regulatory frameworks in scope</span></li>
+        <li class="flex gap-2 rtl-row"><span class="text-cyan-600">•</span><span data-i18n="mgmt.li6">Review activity, time &amp; effort indicators</span></li>
       </ul>
     </div>
     <div class="glass rounded-2xl p-6 fade-up" data-fade>
       <div class="grid grid-cols-2 gap-4">
         <div class="glass rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-emerald-400">91%</div>
+          <div class="text-2xl font-bold text-emerald-600">91%</div>
           <div class="text-[10px] text-[var(--muted)] kicker mt-1" data-i18n="mgmt.overallScore">OVERALL SCORE</div>
         </div>
         <div class="glass rounded-lg p-4 text-center">
-          <div class="text-2xl font-bold text-amber-300">5</div>
+          <div class="text-2xl font-bold text-amber-600">5</div>
           <div class="text-[10px] text-[var(--muted)] kicker mt-1" data-i18n="mgmt.highRiskAreas">HIGH-RISK AREAS</div>
         </div>
         <div class="glass rounded-lg p-4 col-span-2">
           <div class="text-[10px] text-[var(--muted)] kicker mb-2" data-i18n="mgmt.frameworkCoverage">FRAMEWORK COVERAGE</div>
           <div class="flex gap-2 flex-wrap">
-            <span class="text-[10px] px-2 py-1 rounded-full bg-blue-500/15 text-blue-300" data-i18n="mgmt.fw1">Advertising Standards</span>
-            <span class="text-[10px] px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-300" data-i18n="mgmt.fw2">Data Protection</span>
-            <span class="text-[10px] px-2 py-1 rounded-full bg-violet-500/15 text-violet-300" data-i18n="mgmt.fw3">Product Claims</span>
+            <span class="text-[10px] px-2 py-1 rounded-full bg-blue-500/15 text-blue-600" data-i18n="mgmt.fw1">Advertising Standards</span>
+            <span class="text-[10px] px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-600" data-i18n="mgmt.fw2">Data Protection</span>
+            <span class="text-[10px] px-2 py-1 rounded-full bg-violet-500/15 text-violet-600" data-i18n="mgmt.fw3">Product Claims</span>
           </div>
         </div>
       </div>
@@ -787,18 +788,18 @@
 </section>
 
 <!-- PARTNERSHIP -->
-<section id="partners" class="section-pad bg-[var(--bg2)] border-y border-white/5">
+<section id="partners" class="section-pad bg-[var(--bg2)] border-y border-slate-900/8">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-    <p class="kicker text-cyan-400 text-xs font-semibold mb-3" data-i18n="part.kicker">PARTNERSHIPS</p>
-    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="part.title">Build the future of compliance intelligence with us</h2>
-    <p class="mt-5 text-slate-300 max-w-2xl mx-auto" data-i18n="part.desc">Axion is open to strategic partnerships with technology companies, IT consulting firms, compliance consultants, system integrators, enterprise software companies and regulatory technology partners.</p>
+    <p class="kicker text-cyan-600 text-xs font-semibold mb-3" data-i18n="part.kicker">PARTNERSHIPS</p>
+    <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="part.title">Build the future of compliance intelligence with us</h2>
+    <p class="mt-5 text-slate-600 max-w-2xl mx-auto" data-i18n="part.desc">Axion is open to strategic partnerships with technology companies, IT consulting firms, compliance consultants, system integrators, enterprise software companies and regulatory technology partners.</p>
     <div class="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 text-left">
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm" data-i18n="part.p1t">Enterprise Adoption</h3><p class="text-xs text-slate-400 mt-2" data-i18n="part.p1d">Bring Axion Regulus to your enterprise customer base.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm" data-i18n="part.p2t">Technology Integration</h3><p class="text-xs text-slate-400 mt-2" data-i18n="part.p2d">Integrate compliance intelligence into existing platforms.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm" data-i18n="part.p3t">Market Expansion</h3><p class="text-xs text-slate-400 mt-2" data-i18n="part.p3d">Extend reach across new regions and industries.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm" data-i18n="part.p4t">Reseller Opportunities</h3><p class="text-xs text-slate-400 mt-2" data-i18n="part.p4d">Represent Axion Regulus in your market.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm" data-i18n="part.p5t">Implementation Partnerships</h3><p class="text-xs text-slate-400 mt-2" data-i18n="part.p5d">Deliver Axion Regulus deployments for clients.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm" data-i18n="part.p6t">Industry-Specific Solutions</h3><p class="text-xs text-slate-400 mt-2" data-i18n="part.p6d">Co-build solutions for regulated industries.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm" data-i18n="part.p1t">Enterprise Adoption</h3><p class="text-xs text-slate-500 mt-2" data-i18n="part.p1d">Bring Axion Regulus to your enterprise customer base.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm" data-i18n="part.p2t">Technology Integration</h3><p class="text-xs text-slate-500 mt-2" data-i18n="part.p2d">Integrate compliance intelligence into existing platforms.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm" data-i18n="part.p3t">Market Expansion</h3><p class="text-xs text-slate-500 mt-2" data-i18n="part.p3d">Extend reach across new regions and industries.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm" data-i18n="part.p4t">Reseller Opportunities</h3><p class="text-xs text-slate-500 mt-2" data-i18n="part.p4d">Represent Axion Regulus in your market.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm" data-i18n="part.p5t">Implementation Partnerships</h3><p class="text-xs text-slate-500 mt-2" data-i18n="part.p5d">Deliver Axion Regulus deployments for clients.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm" data-i18n="part.p6t">Industry-Specific Solutions</h3><p class="text-xs text-slate-500 mt-2" data-i18n="part.p6d">Co-build solutions for regulated industries.</p></div>
     </div>
     <a href="#contact" class="btn-primary inline-block mt-10 text-white font-semibold px-7 py-3.5 rounded-lg transition" data-i18n="part.cta">Become a Strategic Partner</a>
   </div>
@@ -809,78 +810,78 @@
   <div class="absolute inset-0 bg-radial-glow pointer-events-none"></div>
   <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <p class="kicker text-violet-300 text-xs font-semibold mb-3" data-i18n="inv.kicker">FOR INVESTORS</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="inv.title">Scaling the next generation of compliance intelligence</h2>
-      <p class="mt-5 text-slate-300 leading-relaxed" data-i18n="inv.desc">Axion Consultancy Services is actively seeking seed investment and strategic venture partners to accelerate product development, expand enterprise adoption and scale Axion Regulus into new markets.</p>
+      <p class="kicker text-violet-600 text-xs font-semibold mb-3" data-i18n="inv.kicker">FOR INVESTORS</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="inv.title">Scaling the next generation of compliance intelligence</h2>
+      <p class="mt-5 text-slate-600 leading-relaxed" data-i18n="inv.desc">Axion Consultancy Services is actively seeking seed investment and strategic venture partners to accelerate product development, expand enterprise adoption and scale Axion Regulus into new markets.</p>
     </div>
 
     <div class="mt-10 lg:mt-14 grid md:grid-cols-3 gap-4 lg:gap-6">
       <div class="glass rounded-2xl p-6 card-hover fade-up" data-fade>
-        <h3 class="text-white font-semibold" data-i18n="inv.v1t">Product Development</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="inv.v1d">Expand AI capabilities, compliance intelligence, automation and enterprise features.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="inv.v1t">Product Development</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="inv.v1d">Expand AI capabilities, compliance intelligence, automation and enterprise features.</p>
       </div>
       <div class="glass rounded-2xl p-6 card-hover fade-up" data-fade>
-        <h3 class="text-white font-semibold" data-i18n="inv.v2t">Market Expansion</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="inv.v2d">Expand across the UAE, GCC and international markets.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="inv.v2t">Market Expansion</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="inv.v2d">Expand across the UAE, GCC and international markets.</p>
       </div>
       <div class="glass rounded-2xl p-6 card-hover fade-up" data-fade>
-        <h3 class="text-white font-semibold" data-i18n="inv.v3t">Enterprise Adoption</h3>
-        <p class="text-xs text-slate-400 mt-2" data-i18n="inv.v3d">Build partnerships and accelerate adoption across regulated industries.</p>
+        <h3 class="text-slate-900 font-semibold" data-i18n="inv.v3t">Enterprise Adoption</h3>
+        <p class="text-xs text-slate-500 mt-2" data-i18n="inv.v3d">Build partnerships and accelerate adoption across regulated industries.</p>
       </div>
     </div>
 
     <!-- Investor visual: global expansion -->
     <div class="mt-10 lg:mt-14 glass rounded-2xl p-6 sm:p-8 fade-up relative overflow-hidden" data-fade>
       <svg viewBox="0 0 600 200" class="absolute inset-0 w-full h-full opacity-[0.18] pointer-events-none">
-        <ellipse cx="300" cy="100" rx="220" ry="85" fill="none" stroke="#3b82f6" stroke-width="1"/>
-        <ellipse cx="300" cy="100" rx="150" ry="85" fill="none" stroke="#3b82f6" stroke-width="1"/>
-        <ellipse cx="300" cy="100" rx="80" ry="85" fill="none" stroke="#3b82f6" stroke-width="1"/>
-        <line x1="80" y1="100" x2="520" y2="100" stroke="#3b82f6" stroke-width="1"/>
-        <ellipse cx="300" cy="100" rx="220" ry="30" fill="none" stroke="#22d3ee" stroke-width="1"/>
-        <ellipse cx="300" cy="100" rx="220" ry="60" fill="none" stroke="#22d3ee" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="220" ry="85" fill="none" stroke="#2563eb" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="150" ry="85" fill="none" stroke="#2563eb" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="80" ry="85" fill="none" stroke="#2563eb" stroke-width="1"/>
+        <line x1="80" y1="100" x2="520" y2="100" stroke="#2563eb" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="220" ry="30" fill="none" stroke="#0891b2" stroke-width="1"/>
+        <ellipse cx="300" cy="100" rx="220" ry="60" fill="none" stroke="#0891b2" stroke-width="1"/>
       </svg>
       <div class="relative text-center text-[11px] kicker text-[var(--muted)] mb-8" data-i18n="inv.seeking">SEEKING SEED INVESTORS &amp; STRATEGIC VENTURE PARTNERS</div>
       <div class="relative flex items-center justify-between max-w-2xl mx-auto ltr-diagram">
         <div class="text-center">
-          <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-cyan-300 font-semibold mx-auto">UAE</div>
+          <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-cyan-600 font-semibold mx-auto">UAE</div>
         </div>
         <div class="flex-1 h-px bg-gradient-to-r from-cyan-400/60 to-blue-400/30 mx-2 relative overflow-hidden"><div class="absolute inset-0 flow-line"></div></div>
         <div class="text-center">
-          <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-blue-300 font-semibold mx-auto">GCC</div>
+          <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-blue-600 font-semibold mx-auto">GCC</div>
         </div>
         <div class="flex-1 h-px bg-gradient-to-r from-blue-400/30 to-violet-400/40 mx-2 relative overflow-hidden"><div class="absolute inset-0 flow-line"></div></div>
         <div class="text-center">
-          <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-violet-300 font-semibold mx-auto">Europe</div>
+          <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-violet-600 font-semibold mx-auto">Europe</div>
         </div>
         <div class="flex-1 h-px bg-gradient-to-r from-violet-400/40 to-emerald-400/40 mx-2 relative overflow-hidden"><div class="absolute inset-0 flow-line"></div></div>
         <div class="text-center">
-          <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-emerald-300 font-semibold mx-auto">Global</div>
+          <div class="w-14 h-14 rounded-full glass flex items-center justify-center text-xs text-emerald-600 font-semibold mx-auto">Global</div>
         </div>
       </div>
     </div>
 
     <div class="mt-10 flex flex-wrap justify-center gap-4">
       <a href="#contact" class="btn-primary text-white font-semibold px-7 py-3.5 rounded-lg transition" data-i18n="inv.cta1">Discuss Investment Opportunities</a>
-      <a href="#contact" class="btn-ghost text-white font-medium px-7 py-3.5 rounded-lg transition" data-i18n="inv.cta2">Request Investor Deck</a>
+      <a href="#contact" class="btn-ghost text-slate-900 font-medium px-7 py-3.5 rounded-lg transition" data-i18n="inv.cta2">Request Investor Deck</a>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section-pad bg-[var(--bg2)] border-y border-white/5">
+<section id="about" class="section-pad bg-[var(--bg2)] border-y border-slate-900/8">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
-      <p class="kicker text-blue-400 text-xs font-semibold mb-3" data-i18n="about.kicker">ABOUT AXION</p>
-      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="about.title">Building practical AI for business compliance</h2>
-      <p class="mt-5 text-slate-300 leading-relaxed" data-i18n="about.desc">Axion Consultancy Services develops technology designed to help organizations interpret regulatory requirements, validate business content and improve compliance workflows through AI-assisted intelligence.</p>
+      <p class="kicker text-blue-600 text-xs font-semibold mb-3" data-i18n="about.kicker">ABOUT AXION</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="about.title">Building practical AI for business compliance</h2>
+      <p class="mt-5 text-slate-600 leading-relaxed" data-i18n="about.desc">Axion Consultancy Services develops technology designed to help organizations interpret regulatory requirements, validate business content and improve compliance workflows through AI-assisted intelligence.</p>
     </div>
     <div class="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm mb-1" data-i18n="about.a1t">Mission</h3><p class="text-xs text-slate-400" data-i18n="about.a1d">Make regulatory compliance faster, clearer and more consistent for enterprise teams.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm mb-1" data-i18n="about.a2t">Vision</h3><p class="text-xs text-slate-400" data-i18n="about.a2d">A world where compliance intelligence is built into every business decision.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm mb-1" data-i18n="about.a3t">Product</h3><p class="text-xs text-slate-400" data-i18n="about.a3d">Axion Regulus — an AI-powered enterprise compliance intelligence platform.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm mb-1" data-i18n="about.a4t">Leadership</h3><p class="text-xs text-slate-400" data-i18n="about.a4d">A focused team building for regulated industries and enterprise adoption.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm mb-1" data-i18n="about.a5t">Technology</h3><p class="text-xs text-slate-400" data-i18n="about.a5d">AI-assisted analysis paired with structured human review and oversight.</p></div>
-      <div class="glass rounded-xl p-5"><h3 class="text-white font-semibold text-sm mb-1" data-i18n="about.a6t">Partnerships</h3><p class="text-xs text-slate-400" data-i18n="about.a6d">Open to strategic partners across technology, consulting and regulated industries.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a1t">Mission</h3><p class="text-xs text-slate-500" data-i18n="about.a1d">Make regulatory compliance faster, clearer and more consistent for enterprise teams.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a2t">Vision</h3><p class="text-xs text-slate-500" data-i18n="about.a2d">A world where compliance intelligence is built into every business decision.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a3t">Product</h3><p class="text-xs text-slate-500" data-i18n="about.a3d">Axion Regulus — an AI-powered enterprise compliance intelligence platform.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a4t">Leadership</h3><p class="text-xs text-slate-500" data-i18n="about.a4d">A focused team building for regulated industries and enterprise adoption.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a5t">Technology</h3><p class="text-xs text-slate-500" data-i18n="about.a5d">AI-assisted analysis paired with structured human review and oversight.</p></div>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a6t">Partnerships</h3><p class="text-xs text-slate-500" data-i18n="about.a6d">Open to strategic partners across technology, consulting and regulated industries.</p></div>
     </div>
   </div>
 </section>
@@ -889,24 +890,24 @@
 <section id="demo" class="section-pad relative overflow-hidden">
   <div class="absolute inset-0 bg-radial-glow pointer-events-none"></div>
   <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center fade-up" data-fade>
-    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white" data-i18n="cta.title">Ready to make compliance more intelligent?</h2>
-    <p class="mt-5 text-slate-300 max-w-xl mx-auto" data-i18n="cta.desc">Discover how Axion Regulus can help your organization transform regulatory requirements into actionable compliance intelligence.</p>
+    <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="cta.title">Ready to make compliance more intelligent?</h2>
+    <p class="mt-5 text-slate-600 max-w-xl mx-auto" data-i18n="cta.desc">Discover how Axion Regulus can help your organization transform regulatory requirements into actionable compliance intelligence.</p>
     <div class="mt-10 flex flex-wrap justify-center gap-4">
       <a href="#contact" class="btn-primary text-white font-semibold px-6 py-3.5 rounded-lg transition" data-i18n="cta.b1">Request a Demo</a>
-      <a href="#contact" class="btn-ghost text-white font-medium px-6 py-3.5 rounded-lg transition" data-i18n="cta.b2">Talk to Axion</a>
-      <a href="#partners" class="btn-ghost text-white font-medium px-6 py-3.5 rounded-lg transition" data-i18n="cta.b3">Partner With Us</a>
-      <a href="#investors" class="btn-ghost text-white font-medium px-6 py-3.5 rounded-lg transition" data-i18n="cta.b4">Invest in Axion</a>
+      <a href="#contact" class="btn-ghost text-slate-900 font-medium px-6 py-3.5 rounded-lg transition" data-i18n="cta.b2">Talk to Axion</a>
+      <a href="#partners" class="btn-ghost text-slate-900 font-medium px-6 py-3.5 rounded-lg transition" data-i18n="cta.b3">Partner With Us</a>
+      <a href="#investors" class="btn-ghost text-slate-900 font-medium px-6 py-3.5 rounded-lg transition" data-i18n="cta.b4">Invest in Axion</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section-pad bg-[var(--bg2)] border-t border-white/5">
+<section id="contact" class="section-pad bg-[var(--bg2)] border-t border-slate-900/8">
   <div class="max-w-3xl mx-auto px-6 lg:px-8">
     <div class="text-center mb-10 fade-up" data-fade>
-      <p class="kicker text-cyan-400 text-xs font-semibold mb-3" data-i18n="contact.kicker">GET IN TOUCH</p>
-      <h2 class="font-display text-3xl font-bold text-white" data-i18n="contact.title">Talk to Axion</h2>
-      <p class="mt-3 text-slate-400 text-sm" data-i18n="contact.desc">Demo requests, partnership inquiries and investor conversations all start here.</p>
+      <p class="kicker text-cyan-600 text-xs font-semibold mb-3" data-i18n="contact.kicker">GET IN TOUCH</p>
+      <h2 class="font-display text-3xl font-bold text-slate-900" data-i18n="contact.title">Talk to Axion</h2>
+      <p class="mt-3 text-slate-500 text-sm" data-i18n="contact.desc">Demo requests, partnership inquiries and investor conversations all start here.</p>
     </div>
     <form id="contactForm" class="glass rounded-2xl p-8 grid sm:grid-cols-2 gap-4 fade-up" data-fade action="https://formsubmit.co/ajax/info@axionast.com" method="POST">
       <input type="hidden" name="_subject" value="New inquiry from Axion Regulus website">
@@ -916,11 +917,11 @@
       <input required name="Name" type="text" placeholder="Full name" data-i18n-placeholder="contact.name" class="rounded-lg px-4 py-3 text-sm sm:col-span-1">
       <input required name="Email" type="email" placeholder="Work email" data-i18n-placeholder="contact.email" class="rounded-lg px-4 py-3 text-sm sm:col-span-1">
       <input name="Company" type="text" placeholder="Company" data-i18n-placeholder="contact.company" class="rounded-lg px-4 py-3 text-sm sm:col-span-2">
-      <select name="Inquiry Type" class="rounded-lg px-4 py-3 text-sm sm:col-span-2 bg-[rgba(255,255,255,.03)] border border-[var(--border)]">
-        <option class="bg-[#0a0f1e]" data-i18n="contact.opt1">I'd like to request a demo</option>
-        <option class="bg-[#0a0f1e]" data-i18n="contact.opt2">I'm interested in partnership</option>
-        <option class="bg-[#0a0f1e]" data-i18n="contact.opt3">I'm an investor / venture partner</option>
-        <option class="bg-[#0a0f1e]" data-i18n="contact.opt4">General inquiry</option>
+      <select name="Inquiry Type" class="rounded-lg px-4 py-3 text-sm sm:col-span-2 bg-[rgba(15,23,42,.02)] border border-[var(--border)] text-slate-900">
+        <option class="bg-white text-slate-900" data-i18n="contact.opt1">I'd like to request a demo</option>
+        <option class="bg-white text-slate-900" data-i18n="contact.opt2">I'm interested in partnership</option>
+        <option class="bg-white text-slate-900" data-i18n="contact.opt3">I'm an investor / venture partner</option>
+        <option class="bg-white text-slate-900" data-i18n="contact.opt4">General inquiry</option>
       </select>
       <textarea name="Message" placeholder="Tell us about your compliance needs" data-i18n-placeholder="contact.message" rows="4" class="rounded-lg px-4 py-3 text-sm sm:col-span-2"></textarea>
       <button type="submit" class="btn-primary text-white font-semibold px-6 py-3.5 rounded-lg transition sm:col-span-2 disabled:opacity-60 disabled:cursor-not-allowed" data-i18n="contact.send">Send</button>
@@ -930,50 +931,50 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="border-t border-white/5 bg-[var(--bg)]">
+<footer class="border-t border-slate-900/8 bg-[var(--bg)]">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
     <div class="lg:col-span-2">
       <div class="flex items-center gap-3 mb-4">
         <img src="AxionLogo.png" alt="Axion" class="h-9 w-9 rounded-lg object-cover">
         <div>
-          <div class="font-display font-bold text-white">Axion Consultancy Services</div>
+          <div class="font-display font-bold text-slate-900">Axion Consultancy Services</div>
           <div class="text-[10px] text-[var(--muted)] kicker">AXION REGULUS</div>
         </div>
       </div>
-      <p class="text-sm text-slate-400 max-w-xs" data-i18n="footer.tagline">AI-powered Enterprise Compliance Intelligence — AI with Supervision.</p>
+      <p class="text-sm text-slate-500 max-w-xs" data-i18n="footer.tagline">AI-powered Enterprise Compliance Intelligence — AI with Supervision.</p>
     </div>
     <div>
-      <h4 class="text-white text-sm font-semibold mb-4" data-i18n="footer.productHeading">Product</h4>
-      <ul class="space-y-2 text-sm text-slate-400">
-        <li><a href="#product" class="hover:text-white" data-i18n="footer.linkRegulus">Axion Regulus</a></li>
-        <li><a href="#features" class="hover:text-white" data-i18n="nav.features">Features</a></li>
-        <li><a href="#industries" class="hover:text-white" data-i18n="nav.industries">Industries</a></li>
-        <li><a href="#" class="hover:text-white" data-i18n="footer.linkHandbook">User Handbook</a></li>
+      <h4 class="text-slate-900 text-sm font-semibold mb-4" data-i18n="footer.productHeading">Product</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="#product" class="hover:text-slate-900" data-i18n="footer.linkRegulus">Axion Regulus</a></li>
+        <li><a href="#features" class="hover:text-slate-900" data-i18n="nav.features">Features</a></li>
+        <li><a href="#industries" class="hover:text-slate-900" data-i18n="nav.industries">Industries</a></li>
+        <li><a href="#" class="hover:text-slate-900" data-i18n="footer.linkHandbook">User Handbook</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-white text-sm font-semibold mb-4" data-i18n="footer.companyHeading">Company</h4>
-      <ul class="space-y-2 text-sm text-slate-400">
-        <li><a href="#partners" class="hover:text-white" data-i18n="nav.partners">Partners</a></li>
-        <li><a href="#investors" class="hover:text-white" data-i18n="nav.investors">Investors</a></li>
-        <li><a href="#about" class="hover:text-white" data-i18n="nav.about">About</a></li>
-        <li><a href="#contact" class="hover:text-white" data-i18n="nav.contact">Contact</a></li>
+      <h4 class="text-slate-900 text-sm font-semibold mb-4" data-i18n="footer.companyHeading">Company</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="#partners" class="hover:text-slate-900" data-i18n="nav.partners">Partners</a></li>
+        <li><a href="#investors" class="hover:text-slate-900" data-i18n="nav.investors">Investors</a></li>
+        <li><a href="#about" class="hover:text-slate-900" data-i18n="nav.about">About</a></li>
+        <li><a href="#contact" class="hover:text-slate-900" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-white text-sm font-semibold mb-4" data-i18n="footer.connectHeading">Connect</h4>
-      <ul class="space-y-2 text-sm text-slate-400">
-        <li><a href="#" class="hover:text-white" data-i18n="footer.linkedin">LinkedIn</a></li>
-        <li><a href="https://axionast.com" class="hover:text-white">axionast.com</a></li>
-        <li><a href="mailto:hello@axionast.com" class="hover:text-white">hello@axionast.com</a></li>
+      <h4 class="text-slate-900 text-sm font-semibold mb-4" data-i18n="footer.connectHeading">Connect</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="#" class="hover:text-slate-900" data-i18n="footer.linkedin">LinkedIn</a></li>
+        <li><a href="https://axionast.com" class="hover:text-slate-900">axionast.com</a></li>
+        <li><a href="mailto:hello@axionast.com" class="hover:text-slate-900">hello@axionast.com</a></li>
       </ul>
       <div class="mt-5 text-[11px] kicker text-[var(--muted)]" data-i18n="footer.aiSupervision">AI WITH SUPERVISION</div>
     </div>
   </div>
-  <div class="border-t border-white/5 py-6 text-center text-xs text-[var(--muted)] flex flex-col sm:flex-row items-center justify-center gap-2 px-6">
+  <div class="border-t border-slate-900/8 py-6 text-center text-xs text-[var(--muted)] flex flex-col sm:flex-row items-center justify-center gap-2 px-6">
     <span><span data-i18n="footer.copyrightPre">© </span><span id="year"></span><span data-i18n="footer.copyrightPost"> Axion Consultancy Services. All rights reserved.</span></span>
     <span class="hidden sm:inline">·</span>
-    <a href="#" class="hover:text-white" data-i18n="footer.privacy">Privacy Policy</a><span>·</span><a href="#" class="hover:text-white" data-i18n="footer.terms">Terms</a>
+    <a href="#" class="hover:text-slate-900" data-i18n="footer.privacy">Privacy Policy</a><span>·</span><a href="#" class="hover:text-slate-900" data-i18n="footer.terms">Terms</a>
   </div>
 </footer>
 
@@ -1019,40 +1020,40 @@ const iconSvg = (key, color) => `<svg viewBox="0 0 24 24" fill="none" stroke="${
 
 // Feature grid data (title/desc resolved from translations at render time)
 const features = [
-  ["shieldCheck","feat.f1t","feat.f1d","#67e8f9"],
-  ["database","feat.f2t","feat.f2d","#93c5fd"],
-  ["cogArrow","feat.f3t","feat.f3d","#c4b5fd"],
-  ["gauge","feat.f4t","feat.f4d","#86efac"],
-  ["alertTriangle","feat.f5t","feat.f5d","#fbbf24"],
-  ["target","feat.f6t","feat.f6d","#67e8f9"],
-  ["bulb","feat.f7t","feat.f7d","#f0abfc"],
-  ["auditGlass","feat.f8t","feat.f8d","#93c5fd"],
-  ["stopwatch","feat.f9t","feat.f9d","#c4b5fd"],
-  ["scaleBalance","feat.f10t","feat.f10d","#fbbf24"],
-  ["lockUser","feat.f11t","feat.f11d","#86efac"],
-  ["barChart","feat.f12t","feat.f12d","#67e8f9"],
-  ["globe","feat.f13t","feat.f13d","#93c5fd"],
-  ["imageScan","feat.f14t","feat.f14d","#f0abfc"],
-  ["refreshDoc","feat.f15t","feat.f15d","#c4b5fd"]
+  ["shieldCheck","feat.f1t","feat.f1d","#0891b2"],
+  ["database","feat.f2t","feat.f2d","#2563eb"],
+  ["cogArrow","feat.f3t","feat.f3d","#7c3aed"],
+  ["gauge","feat.f4t","feat.f4d","#059669"],
+  ["alertTriangle","feat.f5t","feat.f5d","#d97706"],
+  ["target","feat.f6t","feat.f6d","#0891b2"],
+  ["bulb","feat.f7t","feat.f7d","#c026d3"],
+  ["auditGlass","feat.f8t","feat.f8d","#2563eb"],
+  ["stopwatch","feat.f9t","feat.f9d","#7c3aed"],
+  ["scaleBalance","feat.f10t","feat.f10d","#d97706"],
+  ["lockUser","feat.f11t","feat.f11d","#059669"],
+  ["barChart","feat.f12t","feat.f12d","#0891b2"],
+  ["globe","feat.f13t","feat.f13d","#2563eb"],
+  ["imageScan","feat.f14t","feat.f14d","#c026d3"],
+  ["refreshDoc","feat.f15t","feat.f15d","#7c3aed"]
 ];
 function renderFeatures(lang) {
   document.getElementById('featureGrid').innerHTML = features.map(([icon,tk,dk,color]) => `
     <div class="glass rounded-xl p-4 sm:p-5 card-hover fade-up" data-fade style="opacity:1;transform:none">
       <div class="icon-badge mb-4" style="background:${color}1a; border:1px solid ${color}33;">${iconSvg(icon, color)}</div>
-      <h3 class="text-white font-semibold text-sm">${t(lang, tk)}</h3>
-      <p class="text-xs text-slate-400 mt-2 leading-relaxed">${t(lang, dk)}</p>
+      <h3 class="text-slate-900 font-semibold text-sm">${t(lang, tk)}</h3>
+      <p class="text-xs text-slate-500 mt-2 leading-relaxed">${t(lang, dk)}</p>
     </div>`).join('');
 }
 
 // Industry grid data
 const industries = [
-  ["bank","ind.i1t","ind.i1d","#3b82f6"],
-  ["pulse","ind.i2t","ind.i2d","#22d3ee"],
-  ["leaf","ind.i3t","ind.i3d","#8b5cf6"],
-  ["flask","ind.i4t","ind.i4d","#f472b6"],
-  ["megaphone","ind.i5t","ind.i5d","#f59e0b"],
-  ["briefcase","ind.i6t","ind.i6d","#10b981"],
-  ["shieldNet","ind.i7t","ind.i7d","#60a5fa"]
+  ["bank","ind.i1t","ind.i1d","#2563eb"],
+  ["pulse","ind.i2t","ind.i2d","#0891b2"],
+  ["leaf","ind.i3t","ind.i3d","#7c3aed"],
+  ["flask","ind.i4t","ind.i4d","#db2777"],
+  ["megaphone","ind.i5t","ind.i5d","#d97706"],
+  ["briefcase","ind.i6t","ind.i6d","#059669"],
+  ["shieldNet","ind.i7t","ind.i7d","#2563eb"]
 ];
 function renderIndustries(lang) {
   document.getElementById('industryGrid').innerHTML = industries.map(([icon,tk,dk,c]) => `
@@ -1062,8 +1063,8 @@ function renderIndustries(lang) {
         <div class="icon-badge relative w-14 h-14" style="background:${c}1a; border:1px solid ${c}44;">${iconSvg(icon, c).replace('viewBox="0 0 24 24"', 'viewBox="0 0 24 24" width="28" height="28"')}</div>
       </div>
       <div class="p-5">
-        <h3 class="text-white font-semibold text-sm">${t(lang, tk)}</h3>
-        <p class="text-xs text-slate-400 mt-2 leading-relaxed">${t(lang, dk)}</p>
+        <h3 class="text-slate-900 font-semibold text-sm">${t(lang, tk)}</h3>
+        <p class="text-xs text-slate-500 mt-2 leading-relaxed">${t(lang, dk)}</p>
       </div>
     </div>`).join('');
 }
@@ -1739,7 +1740,7 @@ contactForm.addEventListener('submit', async (e) => {
   const btn = contactForm.querySelector('button[type="submit"]');
   btn.disabled = true;
   btn.textContent = t(currentLang, 'contact.sending');
-  status.className = 'text-sm sm:col-span-2 text-center text-slate-400';
+  status.className = 'text-sm sm:col-span-2 text-center text-slate-500';
   status.textContent = '';
   try {
     const res = await fetch(contactForm.action, {
@@ -1748,11 +1749,11 @@ contactForm.addEventListener('submit', async (e) => {
       body: new FormData(contactForm)
     });
     if (!res.ok) throw new Error('Request failed');
-    status.className = 'text-sm sm:col-span-2 text-center text-emerald-400';
+    status.className = 'text-sm sm:col-span-2 text-center text-emerald-600';
     status.textContent = t(currentLang, 'contact.success');
     contactForm.reset();
   } catch (err) {
-    status.className = 'text-sm sm:col-span-2 text-center text-red-400';
+    status.className = 'text-sm sm:col-span-2 text-center text-red-600';
     status.textContent = t(currentLang, 'contact.error');
   } finally {
     btn.disabled = false;
