@@ -197,20 +197,14 @@
         <a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="hidden md:flex items-center gap-3">
-        <select id="lang-selector" class="bg-white border border-white/40 text-slate-900 text-xs font-semibold rounded-lg pl-2 pr-1 py-2 cursor-pointer focus:outline-none focus:border-blue-400 transition" aria-label="Select language">
-          <option value="ar" class="text-slate-900">🇦🇪 AR</option>
-          <option value="de" class="text-slate-900">🇩🇪 DE</option>
-          <option value="en" class="text-slate-900">🇬🇧 EN</option>
-          <option value="es" class="text-slate-900">🇪🇸 ES</option>
-          <option value="fr" class="text-slate-900">🇫🇷 FR</option>
-          <option value="hi" class="text-slate-900">🇮🇳 HI</option>
-          <option value="it" class="text-slate-900">🇮🇹 IT</option>
-          <option value="ja" class="text-slate-900">🇯🇵 JA</option>
-          <option value="ko" class="text-slate-900">🇰🇷 KO</option>
-          <option value="pt" class="text-slate-900">🇵🇹 PT</option>
-          <option value="ru" class="text-slate-900">🇷🇺 RU</option>
-          <option value="zh" class="text-slate-900">🇨🇳 ZH</option>
-        </select>
+        <div class="relative" id="lang-dropdown">
+          <button type="button" id="lang-toggle" class="flex items-center gap-1.5 bg-white border border-white/40 text-slate-900 text-xs font-semibold rounded-lg pl-2 pr-2 py-2 cursor-pointer focus:outline-none focus:border-blue-400 transition" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <span id="lang-toggle-flag" class="shrink-0 rounded-sm overflow-hidden leading-none"></span>
+            <span id="lang-toggle-code">EN</span>
+            <svg width="10" height="10" viewBox="0 0 10 10" class="opacity-60 shrink-0"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div id="lang-panel" class="hidden absolute right-0 mt-2 w-40 max-h-72 overflow-y-auto bg-white border border-slate-200 rounded-lg shadow-xl py-1 z-50"></div>
+        </div>
         <a href="#contact" class="border border-white/40 text-white text-sm font-medium px-4 py-2 rounded-lg transition hover:bg-white/10" data-i18n="nav.talk">Talk to Axion</a>
         <a href="#demo" class="bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-lg transition hover:bg-blue-50" data-i18n="nav.demo">Request a Demo</a>
       </div>
@@ -228,20 +222,7 @@
     <a href="#about" class="block hover:text-white" data-i18n="nav.about">About</a>
     <a href="#contact" class="block hover:text-white" data-i18n="nav.contact">Contact</a>
     <a href="#demo" class="block bg-white text-blue-700 font-semibold px-4 py-2.5 rounded-lg text-center mt-2" data-i18n="nav.demo">Request a Demo</a>
-    <select id="lang-selector-mobile" class="w-full bg-white border border-white/40 text-slate-900 text-xs font-semibold rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-blue-400 transition" aria-label="Select language">
-      <option value="ar" class="text-slate-900">🇦🇪 AR</option>
-      <option value="de" class="text-slate-900">🇩🇪 DE</option>
-      <option value="en" class="text-slate-900">🇬🇧 EN</option>
-      <option value="es" class="text-slate-900">🇪🇸 ES</option>
-      <option value="fr" class="text-slate-900">🇫🇷 FR</option>
-      <option value="hi" class="text-slate-900">🇮🇳 HI</option>
-      <option value="it" class="text-slate-900">🇮🇹 IT</option>
-      <option value="ja" class="text-slate-900">🇯🇵 JA</option>
-      <option value="ko" class="text-slate-900">🇰🇷 KO</option>
-      <option value="pt" class="text-slate-900">🇵🇹 PT</option>
-      <option value="ru" class="text-slate-900">🇷🇺 RU</option>
-      <option value="zh" class="text-slate-900">🇨🇳 ZH</option>
-    </select>
+    <div id="lang-grid-mobile" class="grid grid-cols-4 gap-2 pt-1" aria-label="Select language"></div>
   </div>
 </header>
 
@@ -2473,18 +2454,87 @@ function applyLanguage(lang) {
   });
   renderFeatures(lang);
   renderIndustries(lang);
-  const sel = document.getElementById('lang-selector');
-  const selM = document.getElementById('lang-selector-mobile');
-  if (sel) sel.value = lang;
-  if (selM) selM.value = lang;
+  const current = LANGS.find(l => l.code === lang) || LANGS.find(l => l.code === 'en');
+  const toggleFlag = document.getElementById('lang-toggle-flag');
+  const toggleCode = document.getElementById('lang-toggle-code');
+  if (toggleFlag && current) toggleFlag.innerHTML = current.flag;
+  if (toggleCode && current) toggleCode.textContent = current.label;
+  document.querySelectorAll('.lang-option, .lang-option-mobile').forEach(btn => {
+    btn.setAttribute('aria-selected', String(btn.dataset.lang === lang));
+  });
   try { localStorage.setItem('axion-lang', lang); } catch (e) {}
 }
 
-document.getElementById('lang-selector').addEventListener('change', (e) => applyLanguage(e.target.value));
-document.getElementById('lang-selector-mobile').addEventListener('change', (e) => {
-  applyLanguage(e.target.value);
-  document.getElementById('mobileMenu').classList.add('hidden');
-});
+// Flag icons (hand-drawn inline SVG — no external assets/fonts needed, renders
+// identically on every OS instead of relying on flag emoji glyph support)
+const LANGS = [
+  { code: 'ar', label: 'AR', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#fff"/><rect width="20" height="4.67" fill="#00732f"/><rect y="9.33" width="20" height="4.67" fill="#000"/><rect width="6" height="14" fill="#ff0000"/></svg>' },
+  { code: 'de', label: 'DE', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="4.67" fill="#000"/><rect y="4.67" width="20" height="4.67" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg>' },
+  { code: 'en', label: 'EN', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#00247d"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="2.4"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#cf142b" stroke-width="1"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="4.4"/><path d="M10,0 V14 M0,7 H20" stroke="#cf142b" stroke-width="2.4"/></svg>' },
+  { code: 'es', label: 'ES', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg>' },
+  { code: 'fr', label: 'FR', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="6.67" height="14" fill="#0055a4"/><rect x="6.67" width="6.67" height="14" fill="#fff"/><rect x="13.33" width="6.67" height="14" fill="#ef4135"/></svg>' },
+  { code: 'hi', label: 'HI', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="4.67" fill="#ff9933"/><rect y="4.67" width="20" height="4.67" fill="#fff"/><rect y="9.33" width="20" height="4.67" fill="#138808"/><circle cx="10" cy="7" r="1.6" fill="none" stroke="#000080" stroke-width="0.4"/></svg>' },
+  { code: 'it', label: 'IT', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="6.67" height="14" fill="#009246"/><rect x="6.67" width="6.67" height="14" fill="#fff"/><rect x="13.33" width="6.67" height="14" fill="#ce2b37"/></svg>' },
+  { code: 'ja', label: 'JA', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="4" fill="#bc002d"/></svg>' },
+  { code: 'ko', label: 'KO', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="3.2" fill="#cd2e3a"/><path d="M10,3.8 a1.6,1.6 0 0 1 0,3.2 a1.6,1.6 0 0 0 0,3.2 a3.2,3.2 0 0 0 0,-6.4" fill="#0047a0"/></svg>' },
+  { code: 'pt', label: 'PT', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="8" height="14" fill="#006600"/><rect x="8" width="12" height="14" fill="#ff0000"/><circle cx="8" cy="7" r="2" fill="#ffcc00" stroke="#000" stroke-width="0.2"/></svg>' },
+  { code: 'ru', label: 'RU', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#0039a6"/><rect y="9.33" width="20" height="4.67" fill="#d52b1e"/></svg>' },
+  { code: 'zh', label: 'ZH', flag: '<svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#de2910"/><path d="M4,3 l0.7,2.1 2.2,0 -1.8,1.3 0.7,2.1 -1.8,-1.3 -1.8,1.3 0.7,-2.1 -1.8,-1.3 2.2,0 z" fill="#ffde00"/></svg>' }
+];
+
+function renderLangUI() {
+  const panel = document.getElementById('lang-panel');
+  if (panel) {
+    panel.setAttribute('role', 'listbox');
+    panel.innerHTML = LANGS.map(l =>
+      `<button type="button" data-lang="${l.code}" class="lang-option w-full flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-800 hover:bg-slate-100 transition" role="option">
+        <span class="shrink-0 rounded-sm overflow-hidden leading-none">${l.flag}</span>
+        <span>${l.label}</span>
+      </button>`
+    ).join('');
+  }
+  const gridMobile = document.getElementById('lang-grid-mobile');
+  if (gridMobile) {
+    gridMobile.innerHTML = LANGS.map(l =>
+      `<button type="button" data-lang="${l.code}" class="lang-option-mobile flex items-center justify-center gap-1.5 rounded-lg border border-white/30 px-2 py-2 text-xs font-semibold text-white hover:bg-white/10 transition">
+        <span class="shrink-0 rounded-sm overflow-hidden leading-none">${l.flag}</span>
+        <span>${l.label}</span>
+      </button>`
+    ).join('');
+  }
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLanguage(btn.dataset.lang);
+      document.getElementById('lang-panel').classList.add('hidden');
+      document.getElementById('lang-toggle').setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.querySelectorAll('.lang-option-mobile').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLanguage(btn.dataset.lang);
+      document.getElementById('mobileMenu').classList.add('hidden');
+    });
+  });
+}
+renderLangUI();
+
+const langToggle = document.getElementById('lang-toggle');
+if (langToggle) {
+  langToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const panel = document.getElementById('lang-panel');
+    const expanded = langToggle.getAttribute('aria-expanded') === 'true';
+    panel.classList.toggle('hidden');
+    langToggle.setAttribute('aria-expanded', String(!expanded));
+  });
+  document.addEventListener('click', (e) => {
+    const dropdown = document.getElementById('lang-dropdown');
+    if (dropdown && !dropdown.contains(e.target)) {
+      document.getElementById('lang-panel').classList.add('hidden');
+      langToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
 
 let savedLang = 'en';
 try { savedLang = localStorage.getItem('axion-lang') || 'en'; } catch (e) {}
