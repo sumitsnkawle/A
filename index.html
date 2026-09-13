@@ -76,34 +76,6 @@
   }
   *{box-sizing:border-box;}
   html,body{background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; scroll-behavior:smooth;}
-  @keyframes loaderFallbackTop{ to{ transform:translateY(-100%); } }
-  @keyframes loaderFallbackBottom{ to{ transform:translateY(100%); } }
-  @keyframes loaderFallbackFade{ to{ opacity:0; } }
-  #site-loader{position:fixed; inset:0; z-index:9999; overflow:hidden; pointer-events:none;}
-  #site-loader .loader-panel{
-    position:absolute; left:0; right:0; height:calc(50% + 1px);
-    background:linear-gradient(90deg,#1e3a8a 0%,#2563eb 55%,#0891b2 100%);
-    transition:transform .85s cubic-bezier(.76,0,.24,1);
-    will-change:transform;
-    /* CSS-only fallback: guarantees the overlay clears itself even if JS never runs */
-    animation:loaderFallbackTop .01s linear 3s forwards;
-  }
-  #site-loader .loader-panel-top{top:0; transform:translateY(0);}
-  #site-loader .loader-panel-bottom{bottom:0; transform:translateY(0); animation-name:loaderFallbackBottom;}
-  #site-loader.loader-open .loader-panel-top{transform:translateY(-100%);}
-  #site-loader.loader-open .loader-panel-bottom{transform:translateY(100%);}
-  #site-loader .loader-brand{
-    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    z-index:1; display:flex; align-items:center; gap:10px;
-    opacity:1; transition:opacity .35s ease;
-    animation:loaderFallbackFade .01s linear 3s forwards;
-  }
-  #site-loader .loader-brand img{height:48px; width:auto; object-fit:contain;}
-  #site-loader.loader-open .loader-brand{opacity:0;}
-  #site-loader.loader-done{display:none;}
-  @media (prefers-reduced-motion: reduce){
-    #site-loader .loader-panel, #site-loader .loader-brand{transition:none;}
-  }
   h1,h2,h3,h4,.font-display{font-family:'Manrope',sans-serif;}
   ::selection{background:rgba(59,130,246,.2);}
   ::-webkit-scrollbar{width:10px;}
@@ -204,33 +176,6 @@
 </style>
 </head>
 <body class="bg-[var(--bg)] antialiased">
-
-<div id="site-loader" aria-hidden="true">
-  <div class="loader-panel loader-panel-top"></div>
-  <div class="loader-panel loader-panel-bottom"></div>
-  <div class="loader-brand">
-    <img src="AxionLogo.png" alt="">
-    <img src="RegulusText.png" alt="" style="height:26px;">
-  </div>
-</div>
-<script>
-(function(){
-  var loader = document.getElementById('site-loader');
-  if (!loader) return;
-  document.body.style.overflow = 'hidden';
-  var opened = false;
-  function openLoader(){
-    if (opened) return;
-    opened = true;
-    loader.classList.add('loader-open');
-    setTimeout(function(){
-      loader.classList.add('loader-done');
-      document.body.style.overflow = '';
-    }, 900);
-  }
-  setTimeout(openLoader, 700);
-})();
-</script>
 
 <svg class="noise-overlay" aria-hidden="true">
   <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter>
