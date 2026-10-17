@@ -136,16 +136,21 @@
   @media (min-width:768px){ .section-pad{padding-top:3.25rem; padding-bottom:3.25rem;} }
   @media (min-width:1024px){ .section-pad{padding-top:4.5rem; padding-bottom:4.5rem;} }
   .kicker{letter-spacing:.18em;}
-  #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#demo,#contact,#faq{
+  #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq{
     scroll-margin-top:76px;
   }
   @media (min-width:768px){
-    #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#demo,#contact,#faq{
+    #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq{
       scroll-margin-top:92px;
     }
   }
 
   .avatar-ring{background:conic-gradient(from 180deg,#2563eb,#0891b2,#7c3aed,#2563eb);}
+
+  /* Founder profile */
+  .founder-profile{text-align:center; max-width:420px; margin:0 auto;}
+  .founder-photo{width:min(260px,70vw); aspect-ratio:4/5; margin:0 auto; border-radius:24px; padding:4px; box-shadow:0 30px 60px -30px rgba(15,23,42,.45);}
+  .founder-photo img{width:100%; height:100%; object-fit:cover; object-position:top; border-radius:20px; display:block;}
 
   .fade-up{opacity:0; transform:translateY(24px);}
 
@@ -1074,18 +1079,52 @@
       <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="about.title">Building practical AI for business compliance</h2>
       <p class="mt-5 text-slate-600 leading-relaxed" data-i18n="about.desc">Axion Consultancy Services is a UAE-based technology company developing practical AI solutions for regulated business environments. Axion Regulus is the company's AI-powered Enterprise Compliance Intelligence Platform, designed to help organizations structure regulatory requirements and apply them to real business content.</p>
     </div>
-    <div class="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+    <div class="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
       <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a1t">Mission</h3><p class="text-xs text-slate-500" data-i18n="about.a1d">Make regulatory compliance faster, clearer and more consistent for enterprise teams.</p></div>
       <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a2t">Vision</h3><p class="text-xs text-slate-500" data-i18n="about.a2d">A world where compliance intelligence is built into every business decision.</p></div>
       <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a3t">Product</h3><p class="text-xs text-slate-500" data-i18n="about.a3d">Axion Regulus — an AI-powered enterprise compliance intelligence platform.</p></div>
-      <div class="glass rounded-xl p-5 flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full avatar-ring p-[2px] shrink-0"><div class="w-full h-full rounded-full bg-white flex items-center justify-center text-[10px] text-slate-900 font-semibold">AB</div></div>
-        <div>
-          <h3 class="text-slate-900 font-semibold text-sm" data-i18n="about.founderName">Anastasiia Bolotna</h3>
-          <p class="text-xs text-slate-500" data-i18n="about.founderTitle">Founder &amp; General Manager, Axion Consultancy Services</p>
+      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a5t">Technology</h3><p class="text-xs text-slate-500" data-i18n="about.a5d">AI-assisted analysis paired with structured human review and oversight.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER: business card + vision story -->
+<section id="founder" class="section-pad relative overflow-hidden">
+  <div class="absolute inset-0 bg-radial-glow pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
+      <p class="kicker text-blue-600 text-xs font-semibold mb-3" data-i18n="founder.kicker">MEET THE FOUNDER</p>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-slate-900" data-i18n="founder.title">The vision behind Axion Regulus</h2>
+    </div>
+
+    <div class="mt-10 lg:mt-14 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <!-- Business card -->
+      <div class="fade-up" data-fade>
+        <div class="founder-profile">
+          <div class="founder-photo avatar-ring"><img src="anastasiia-bolotna.jpg" alt="Anastasiia Bolotna" loading="lazy"></div>
+          <h3 class="font-display text-slate-900 text-2xl sm:text-3xl font-bold mt-6">Anastasiia Bolotna</h3>
+          <p class="text-blue-600 font-medium mt-1" data-i18n="founder.cardTitle">Founder &amp; General Manager</p>
+          <p class="text-slate-500 text-sm mt-0.5">Axion Consultancy Services</p>
+          <div class="mt-6 flex justify-center">
+            <button type="button" id="bizSave" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition" data-i18n="founder.save">Save contact</button>
+          </div>
         </div>
       </div>
-      <div class="glass rounded-xl p-5"><h3 class="text-slate-900 font-semibold text-sm mb-1" data-i18n="about.a5t">Technology</h3><p class="text-xs text-slate-500" data-i18n="about.a5d">AI-assisted analysis paired with structured human review and oversight.</p></div>
+
+      <!-- Vision story -->
+      <div class="fade-up" data-fade>
+        <p class="kicker text-cyan-600 text-xs font-semibold mb-3" data-i18n="founder.storyKicker">A SHORT STORY ABOUT THE VISION</p>
+        <h3 class="font-display text-2xl font-bold text-slate-900" data-i18n="founder.storyTitle">From a 90-page regulation to a clear answer</h3>
+        <div class="mt-5 space-y-4 text-slate-600 leading-relaxed">
+          <p data-i18n="founder.p1">It is late on a Thursday. A compliance officer has a new campaign to approve by morning, and a 90-page regulatory circular open in another tab. The rules are all there — somewhere between clause 4.2 and an appendix — but turning them into a confident yes or no means hours of reading, cross-checking and second-guessing.</p>
+          <p data-i18n="founder.p2">Anastasiia Bolotna founded Axion around a simple idea: that moment should not depend on who happens to be on shift, or how tired they are. Regulations should be read once, carefully, and turned into structured rules that any team can apply the same way, every time.</p>
+          <p data-i18n="founder.p3">That idea became Axion Regulus. The officer uploads the circular; Regulus structures it into clear requirements. They paste in the campaign; Regulus highlights what may be at risk, explains why, and suggests what to change. The final decision stays with the person — now made in minutes, with every step on record.</p>
+        </div>
+        <blockquote class="mt-7 glass rounded-xl p-5 border-l-4 border-blue-600">
+          <p class="text-slate-900 font-medium leading-relaxed" data-i18n="founder.quote">“Compliance shouldn’t be the reason good ideas slow down. Our vision is a world where compliance intelligence is built into every business decision — with people always in control.”</p>
+          <footer class="mt-3 text-xs text-slate-500">— Anastasiia Bolotna, <span data-i18n="founder.cardTitle">Founder &amp; General Manager</span></footer>
+        </blockquote>
+      </div>
     </div>
   </div>
 </section>
@@ -1268,6 +1307,7 @@
         <li><a href="#partners" class="hover:text-slate-900" data-i18n="nav.partners">Partners</a></li>
         <li><a href="#investors" class="hover:text-slate-900" data-i18n="nav.investors">Investors</a></li>
         <li><a href="#about" class="hover:text-slate-900" data-i18n="nav.about">About</a></li>
+        <li><a href="#founder" class="hover:text-slate-900" data-i18n="nav.founder">Founder</a></li>
         <li><a href="#contact" class="hover:text-slate-900" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
@@ -1540,6 +1580,7 @@ en: {
 "about.a5t":"Technology","about.a5d":"AI-assisted analysis paired with structured human review and oversight.",
 "about.a6t":"Partnerships","about.a6d":"Open to strategic partners across technology, consulting and regulated industries.",
 "about.founderName":"Anastasiia Bolotna","about.founderTitle":"Founder & General Manager, Axion Consultancy Services",
+"founder.kicker":"MEET THE FOUNDER","founder.title":"The vision behind Axion Regulus","founder.cardTitle":"Founder & General Manager","founder.save":"Save contact","founder.storyKicker":"A SHORT STORY ABOUT THE VISION","founder.storyTitle":"From a 90-page regulation to a clear answer","founder.p1":"It is late on a Thursday. A compliance officer has a new campaign to approve by morning, and a 90-page regulatory circular open in another tab. The rules are all there — somewhere between clause 4.2 and an appendix — but turning them into a confident yes or no means hours of reading, cross-checking and second-guessing.","founder.p2":"Anastasiia Bolotna founded Axion around a simple idea: that moment should not depend on who happens to be on shift, or how tired they are. Regulations should be read once, carefully, and turned into structured rules that any team can apply the same way, every time.","founder.p3":"That idea became Axion Regulus. The officer uploads the circular; Regulus structures it into clear requirements. They paste in the campaign; Regulus highlights what may be at risk, explains why, and suggests what to change. The final decision stays with the person — now made in minutes, with every step on record.","founder.quote":"“Compliance shouldn’t be the reason good ideas slow down. Our vision is a world where compliance intelligence is built into every business decision — with people always in control.”","nav.founder":"Founder",
 "cta.title":"Bring Your Compliance Challenge.","cta.desc":"Bring a regulatory document, policy requirement or business-content example. We'll show you how Axion Regulus can transform the requirement into a structured compliance check and identify potential risks.",
 "cta.b1":"Request a Live Demo","cta.b2":"Talk to Axion","cta.b3":"Partner With Us","cta.b4":"Invest in Axion","cta.otherLinks":"Looking to partner or invest instead?",
 "contact.kicker":"GET IN TOUCH","contact.title":"Talk to Axion","contact.desc":"Demo requests, partnership inquiries and investor conversations all start here.",
@@ -3338,6 +3379,20 @@ applyLanguage(savedLang);
 window.addEventListener('scroll', () => {
   document.getElementById('nav').style.boxShadow = window.scrollY > 20 ? '0 8px 30px -12px rgba(0,0,0,.6)' : 'none';
 });
+
+// Founder profile: save as vCard
+(function(){
+  const save=document.getElementById('bizSave'); if(!save) return;
+  save.addEventListener('click',()=>{
+    const vcf=['BEGIN:VCARD','VERSION:3.0','N:Bolotna;Anastasiia;;;','FN:Anastasiia Bolotna',
+      'ORG:Axion Consultancy Services','TITLE:Founder & General Manager','EMAIL;TYPE=WORK:info@axionast.com',
+      'URL:https://axionast.com','ADR;TYPE=WORK:;;;;;;United Arab Emirates','END:VCARD'].join('\r\n');
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([vcf],{type:'text/vcard'}));
+    a.download='Anastasiia-Bolotna.vcf'; document.body.appendChild(a); a.click();
+    setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},0);
+  });
+})();
 
 // Contact form -> emails info@axionast.com via FormSubmit (free, no backend required)
 const contactForm = document.getElementById('contactForm');
