@@ -3394,93 +3394,179 @@ window.addEventListener('load', () => {
   }
 });
 
-// Chatbot: keyword/token-scored FAQ assistant (no backend, no external service)
+// Chatbot: stemmed/fuzzy-scored FAQ assistant (no backend, no external service)
 (function () {
   const FAQ = [
-    { id: 'what', keywords: ['what is axion regulus','what is regulus','what does axion regulus do','about axion','what is this product','tell me about axion','explain axion regulus','what is this'],
+    { id: 'what', label: 'What is Axion Regulus?', keywords: ['what is axion regulus','what is regulus','what does axion regulus do','about axion','what is this product','tell me about axion','explain axion regulus','what is this'],
       answer: "Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform. It converts regulatory documents and policy requirements into structured compliance rules, and uses them to evaluate business content for potential compliance risks, findings and recommended actions.", link: { href: '#product', label: 'See how it works' } },
-    { id: 'how_works', keywords: ['how does it work','how does axion regulus work','how it works','what is the process','workflow','how do you generate rules'],
+    { id: 'how_works', label: 'How it works', keywords: ['how does it work','how does axion regulus work','how it works','what is the process','workflow','how do you generate rules'],
       answer: "You provide the relevant regulatory documents or policy requirements. Axion Regulus uses AI to identify and structure the applicable requirements into compliance rules. Business content can then be submitted for validation against those rules, producing findings, risk information and suggested actions.", link: { href: '#tour', label: 'See it in action' } },
-    { id: 'decision', keywords: ['does ai make the decision','who makes the final decision','human review','human in the loop','final say','does a human review','who approves','is it fully automated'],
+    { id: 'decision', label: 'Who makes the final decision?', keywords: ['does ai make the decision','who makes the final decision','human review','human in the loop','final say','does a human review','who approves','is it fully automated'],
       answer: "No — Axion Regulus doesn't make the final call. It's designed to assist compliance teams with analysis and risk identification, while human reviewers remain responsible for reviewing findings and making the final business or compliance decision. AI assists. Humans decide.", link: { href: '#ai-oversight', label: 'See the workflow' } },
-    { id: 'content_types', keywords: ['what content can be checked','what can you check','what can it check','product descriptions','marketing content','social media content','website content','blog content','what do you check','types of content'],
+    { id: 'content_types', label: 'What can you check?', keywords: ['what content can be checked','what can you check','what can it check','product descriptions','marketing content','social media content','website content','blog content','what do you check','types of content'],
       answer: "Depending on your configured compliance framework, Axion Regulus can evaluate business content such as product descriptions, marketing and advertising content, social media content, website or blog content, and other supported business materials against defined regulatory requirements.", link: { href: '#check', label: 'What can you check?' } },
-    { id: 'own_documents', keywords: ['our own regulatory documents','use our own policies','upload our own documents','our own regulations','our own rules','custom documents'],
+    { id: 'own_documents', label: 'Using our own documents', keywords: ['our own regulatory documents','use our own policies','upload our own documents','our own regulations','our own rules','custom documents'],
       answer: "Yes. Axion Regulus is designed to work with organization-specific regulatory documents, policies and compliance requirements — these are processed into structured rules that are then used to validate your relevant business content." },
-    { id: 'output', keywords: ['what do we receive','what do we get','compliance score','findings','recommendations','evidence','what is the output','what results do we get'],
+    { id: 'output', label: 'What you receive', keywords: ['what do we receive','what do we get','compliance score','findings','recommendations','evidence','what is the output','what results do we get'],
       answer: "The platform can provide compliance analysis including identified findings, potential risks, applicable rule information, recommendations and supporting compliance evidence, depending on the configured workflow and available data.", link: { href: '#output', label: 'What you receive' } },
-    { id: 'guarantee', keywords: ['guarantee compliance','100 percent compliant','100% compliant','is it guaranteed','does it guarantee','can you guarantee','is content automatically compliant'],
+    { id: 'guarantee', label: 'Does it guarantee compliance?', keywords: ['guarantee compliance','100 percent compliant','100% compliant','is it guaranteed','does it guarantee','can you guarantee','is content automatically compliant'],
       answer: "No — Axion Regulus can't guarantee that content is compliant. It's a compliance intelligence and decision-support platform: its analysis helps teams identify potential issues and review content against configured requirements, but final compliance decisions should be made by your organization's appropriate human reviewers." },
-    { id: 'ai_usage', keywords: ['how is ai used','what does the ai do','role of ai','how does the ai work'],
+    { id: 'ai_usage', label: 'How AI is used', keywords: ['how is ai used','what does the ai do','role of ai','how does the ai work'],
       answer: "AI is used to help understand regulatory content, structure requirements, identify potential compliance risks and analyze submitted business content. Human oversight stays part of the workflow so your team can review findings before taking action." },
-    { id: 'security', keywords: ['security','secure','data protection','privacy','encryption','access control','role-based','audit','confidential','how is our data protected','safe'],
+    { id: 'security', label: 'Security', keywords: ['security','secure','data protection','privacy','encryption','access control','role-based','audit','confidential','how is our data protected','safe'],
       answer: "Axion Regulus uses access controls, role-based permissions and controlled document processing to support the protection of business and regulatory information. Compliance activity and workflow information can also be maintained for review and audit purposes where supported by the configured system." },
-    { id: 'legal_advice', keywords: ['legal advice','legal opinion','replace a lawyer','is this legal advice','replace our compliance team','replace legal counsel'],
+    { id: 'legal_advice', label: 'Is this legal advice?', keywords: ['legal advice','legal opinion','replace a lawyer','is this legal advice','replace our compliance team','replace legal counsel'],
       answer: "No — Axion Regulus is a compliance intelligence and decision-support platform, not legal advice. It helps structure regulatory requirements, evaluate business content and identify potential compliance risks, but it doesn't replace qualified legal, regulatory or compliance professionals." },
-    { id: 'frameworks', keywords: ['different regulatory frameworks','multiple regulations','jurisdictions','gdpr','hipaa','ccpa','specific regulator','which regulations','which laws'],
+    { id: 'frameworks', label: 'Regulatory frameworks', keywords: ['different regulatory frameworks','multiple regulations','jurisdictions','gdpr','hipaa','ccpa','specific regulator','which regulations','which laws'],
       answer: "Yes. Axion Regulus is designed to work with your organization's own regulatory documents and compliance requirements — the applicable framework and source documents are configured to your specific compliance needs rather than a single fixed regulation." },
-    { id: 'evaluate', keywords: ['demo','trial','try it','see it in action','walkthrough','evaluate axion regulus','how can we evaluate','book a demo'],
+    { id: 'evaluate', label: 'Book a demo', keywords: ['demo','trial','try it','see it in action','walkthrough','evaluate axion regulus','how can we evaluate','book a demo'],
       answer: 'The best way is to request a live demonstration and bring a regulatory document, policy requirement or suitable business-content example — our team can show you how requirements become structured compliance checks and how risks are identified.', link: { href: '#demo', label: 'Request a Live Demo' } },
-    { id: 'pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote'],
+    { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge'],
       answer: "We don't publish fixed pricing since deployments vary by organization size and requirements. The fastest way to get a quote is to request a live demo — our team will walk through your needs and pricing together.", link: { href: '#demo', label: 'Request a Live Demo' } },
-    { id: 'features', keywords: ['feature','features','capabilities','what can it do','functionality'],
+    { id: 'features', label: 'Features', keywords: ['feature','features','capabilities','what can it do','functionality'],
       answer: "Key features include AI-powered compliance validation, a regulatory knowledge base, automated rule generation, compliance scoring, risk detection, audit evidence, role-based access, dashboards & reporting, multilingual support, and regulatory change tracking.", link: { href: '#features', label: 'See all features' } },
-    { id: 'industries', keywords: ['industry','industries','sector','healthcare','pharma','financial services','cosmetics','food','nutraceutical','marketing','governance','which industries'],
+    { id: 'dashboard', label: 'Dashboard & reporting', keywords: ['dashboard','reporting','management view','visibility into compliance','trends','reports'],
+      answer: "Axion Regulus includes a compliance dashboard with management-level visibility into compliance scores, risk distribution, open vs. resolved items and performance by business unit.", link: { href: '#product', label: 'See the dashboard' } },
+    { id: 'change_tracking', label: 'Regulatory change tracking', keywords: ['regulatory change','track changes','new regulations','regulatory updates','changing regulations','rules change'],
+      answer: "Axion Regulus is designed to help identify and manage changes to regulatory requirements over time, so your structured rules can be kept aligned as the underlying regulations evolve." },
+    { id: 'dispute', label: 'Disputing a finding', keywords: ['dispute a finding','challenge a finding','disagree with the result','appeal a finding','contest a finding'],
+      answer: "Yes — Axion Regulus supports dispute management, so authorized users can challenge or review a compliance finding rather than simply accepting it." },
+    { id: 'industries', label: 'Industries', keywords: ['industry','industries','sector','healthcare','pharma','financial services','cosmetics','food','nutraceutical','marketing','governance','which industries'],
       answer: "Axion Regulus is built for regulated, high-stakes industries: Financial Services, Healthcare & Pharmaceutical, Food & Nutraceutical, Cosmetics, Marketing & Advertising, Corporate Governance, and Enterprise Risk & Compliance.", link: { href: '#industries', label: 'View industries' } },
-    { id: 'company', keywords: ['who founded','who is behind','company','who owns','team','founder','leadership','who runs axion'],
+    { id: 'company', label: 'About the company', keywords: ['who founded','who is behind','company','who owns','our team','founder','leadership','who runs axion'],
       answer: "Axion Regulus is built by Axion Consultancy Services, a UAE-based technology company. The company's founder & general manager is Anastasiia Bolotna.", link: { href: '#about', label: 'About Axion' } },
-    { id: 'partners', keywords: ['partner','partnership','integrate','integration','reseller','system integrator'],
+    { id: 'partners', label: 'Partnerships', keywords: ['partner','partnership','integrate','integration','reseller','system integrator'],
       answer: "We're open to strategic partnerships with technology companies, IT consultancies, compliance consultants, system integrators and regtech partners — for enterprise adoption, integration, market expansion or reselling.", link: { href: '#partners', label: 'Partnership details' } },
-    { id: 'invest', keywords: ['invest','investor','investment','funding','seed','venture'],
+    { id: 'invest', label: 'Investing', keywords: ['invest','investor','investment','funding','seed','venture'],
       answer: "Axion Consultancy Services is actively seeking seed investment and strategic venture partners to accelerate product development and expand into new markets. Use the contact form and select \"I'm an investor / venture partner\" and our team will follow up.", link: { href: '#investors', label: 'Investor information' } },
-    { id: 'languages', keywords: ['language','languages','translate','multilingual'],
+    { id: 'languages', label: 'Languages', keywords: ['language','languages','translate','multilingual'],
       answer: "The site and product support 12 languages: English, German, French, Spanish, Russian, Arabic, Italian, Portuguese, Chinese, Japanese, Hindi and Korean. Use the language selector in the top menu to switch." },
-    { id: 'contact', keywords: ['contact','email','phone','reach you','talk to someone','human support','get in touch','speak to someone'],
+    { id: 'contact', label: 'Contact us', keywords: ['contact','email','phone','reach you','talk to someone','human support','get in touch','speak to someone'],
       answer: "You can reach us at info@axionast.com, or fill out the contact form on this page and our team will get back to you.", link: { href: '#contact', label: 'Go to contact form' } },
-    { id: 'greeting', keywords: ['hello','hi','hey','good morning','good afternoon','good evening','howdy'],
+    { id: 'about_mira', label: 'About Mira', keywords: ['who are you','are you a bot','are you ai','are you real','are you human','is mira a real person','what are you'],
+      answer: "I'm Mira — a built-in assistant on this page, not a live person. I can answer questions about Axion Regulus directly; for anything I can't cover, the team is reachable through the contact form." },
+    { id: 'greeting', label: 'Say hi', keywords: ['hello','hi','hey','good morning','good afternoon','good evening','howdy'],
       answer: "Hi! I'm Mira, the Axion Assistant. Ask me anything about Axion Regulus — what it does, how it works, what it checks, security, industries, pricing or how to book a demo." },
-    { id: 'thanks', keywords: ['thanks','thank you','thx','appreciate it','cheers'],
+    { id: 'thanks', label: 'Thanks', keywords: ['thanks','thank you','thx','appreciate it','cheers'],
       answer: "You're welcome! Anything else you'd like to know about Axion Regulus?" },
-    { id: 'bye', keywords: ['bye','goodbye','see you','that is all','thats all','no thats it'],
+    { id: 'bye', label: 'Bye', keywords: ['bye','goodbye','see you','that is all','thats all','no thats it'],
       answer: 'Thanks for stopping by! If anything else comes up, I\'m here — or reach the team directly through the contact form.', link: { href: '#contact', label: 'Go to contact form' } }
   ];
+  const FAQ_BY_ID = Object.fromEntries(FAQ.map(item => [item.id, item]));
 
-  const STOPWORDS = new Set(['a','an','the','is','are','am','was','were','do','does','did','can','could','would','should','will','shall','i','we','you','your','yours','our','ours','my','to','of','for','in','on','at','it','its','this','that','these','those','have','has','had','be','been','being','me','us','please','tell','me','about','and','or','with','if','so','just','get','got']);
+  const STOPWORDS = new Set(['a','an','the','is','are','am','was','were','do','does','did','can','could','would','should','will','shall','i','we','you','your','yours','our','ours','my','to','of','for','in','on','at','it','its','this','that','these','those','have','has','had','be','been','being','me','us','please','tell','about','and','or','with','if','so','just','get','got','what','how','why','when','where','who','which','whom']);
+
+  // Words common across many of this bot's own keyword phrases (e.g.
+  // "human support", "compliance team") — a hit on one of these alone is
+  // too generic to trust by itself, even if the word happens to be long.
+  // They still count toward a multi-word (wordHits >= 2) match.
+  const GENERIC_WORDS = new Set(['support','service','services','content','document','documents','business','process','review','platform','requirement','requirements','information','access','system','team']);
 
   function normalize(s) {
     return s.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
   }
 
-  // Precompute per-item "signal words" (significant, non-stopword tokens drawn
-  // from all of an item's keyword phrases) once, so free-text scoring can
-  // reward partial/reworded matches, not just exact substring hits.
+  // Light stemming so "pricing"/"priced"/"prices", "secured"/"securely", etc.
+  // collapse to a common root — a few suffix rules, not a full stemmer, but
+  // enough to stop obvious morphological variants from missing a match.
+  function stem(w) {
+    if (w.length > 6 && w.endsWith('ies')) return w.slice(0, -3) + 'y';
+    if (w.length > 5 && w.endsWith('ing')) return w.slice(0, -3);
+    if (w.length > 5 && w.endsWith('ed')) return w.slice(0, -2);
+    if (w.length > 5 && w.endsWith('es')) return w.slice(0, -2);
+    if (w.length > 4 && w.endsWith('s') && !w.endsWith('ss')) return w.slice(0, -1);
+    if (w.length > 5 && w.endsWith('ly')) return w.slice(0, -2);
+    return w;
+  }
+
+  function levenshtein1or2(a, b) {
+    if (Math.abs(a.length - b.length) > 2) return 99;
+    const m = a.length, n = b.length;
+    const dp = new Array(n + 1);
+    for (let j = 0; j <= n; j++) dp[j] = j;
+    for (let i = 1; i <= m; i++) {
+      let prevDiag = dp[0];
+      dp[0] = i;
+      for (let j = 1; j <= n; j++) {
+        const tmp = dp[j];
+        dp[j] = a[i - 1] === b[j - 1] ? prevDiag : 1 + Math.min(prevDiag, dp[j], dp[j - 1]);
+        prevDiag = tmp;
+      }
+    }
+    return dp[n];
+  }
+
+  // Precompute per-item "signal words" (significant, stemmed, non-stopword
+  // tokens drawn from all of an item's keyword phrases) once, so free-text
+  // scoring can reward partial/reworded/typo'd matches, not just exact hits.
   for (const item of FAQ) {
     const words = new Set();
     for (const kw of item.keywords) {
       for (const w of normalize(kw).split(' ')) {
-        if (w.length > 2 && !STOPWORDS.has(w)) words.add(w);
+        if (w.length > 2 && !STOPWORDS.has(w)) words.add(stem(w));
       }
     }
     item._signalWords = words;
   }
 
-  function scoreMatch(text) {
+  function scoreAll(text) {
     const norm = normalize(text);
-    if (!norm) return null;
-    const words = norm.split(' ');
-    let best = null, bestScore = 0;
-    for (const item of FAQ) {
-      let score = 0;
+    if (!norm) return [];
+    // Pad with boundary spaces so phrase matching below can't match a
+    // keyword phrase across a word boundary — e.g. "our team" is NOT a hit
+    // inside "your team" just because the raw characters line up.
+    const paddedNorm = ' ' + norm + ' ';
+    const rawWords = norm.split(' ');
+    return FAQ.map(item => {
+      let score = 0, phraseHit = false, wordHits = 0, strongHit = false;
       for (const kw of item.keywords) {
         const kwNorm = normalize(kw);
-        if (kwNorm && norm.includes(kwNorm)) score += kwNorm.split(' ').length * 2;
+        if (kwNorm && paddedNorm.includes(' ' + kwNorm + ' ')) { score += kwNorm.split(' ').length * 2; phraseHit = true; }
       }
-      for (const w of words) {
-        if (item._signalWords.has(w)) score += 1;
+      for (const raw of rawWords) {
+        if (raw.length < 3 || STOPWORDS.has(raw)) continue;
+        const w = stem(raw);
+        // A hit on a long, distinctive original word (e.g. "security",
+        // "industris" as a typo for "industries") is trustworthy on its
+        // own; a hit on a short, common word (e.g. "team", "data") needs
+        // corroboration from elsewhere in the sentence before we commit —
+        // that's what tells "our team help with X" apart from "who's on
+        // the team" without hand-coding every ambiguous word.
+        const isLong = raw.length >= 6 && !GENERIC_WORDS.has(w);
+        if (item._signalWords.has(w)) { score += 1; wordHits++; if (isLong) strongHit = true; continue; }
+        if (w.length >= 5) {
+          for (const sw of item._signalWords) {
+            if (Math.abs(sw.length - w.length) <= 2 && levenshtein1or2(w, sw) <= 1) {
+              score += 0.75; wordHits++; if (isLong) strongHit = true; break;
+            }
+          }
+        }
       }
-      if (score > bestScore) { best = item; bestScore = score; }
+      return { item, score, phraseHit, wordHits, strongHit };
+    }).sort((a, b) => b.score - a.score);
+  }
+
+  // Returns one of: null (nothing usable), {combo:[item,item]} for a
+  // compound question that clearly touches two distinct topics,
+  // {suggest:[item,...]} when there's a weak signal but not enough
+  // confidence to answer outright, or a single FAQ item.
+  function scoreMatch(text) {
+    const ranked = scoreAll(text);
+    if (!ranked.length || ranked[0].score <= 0) return null;
+    const isConfident = r => r.phraseHit || r.wordHits >= 2 || (r.wordHits === 1 && (r.score >= 1.5 || r.strongHit));
+    // Highest raw score isn't always the right call — a generic word that
+    // happens to score slightly higher (e.g. "support") shouldn't outrank a
+    // lower-scored but individually confident match (e.g. a typo'd but
+    // distinctive word). Take the first confident item in score order.
+    const confidentOnes = ranked.filter(r => r.score > 0 && isConfident(r));
+    if (!confidentOnes.length) {
+      const candidates = ranked.filter(r => r.score > 0 && r.item.id !== 'greeting' && r.item.id !== 'thanks' && r.item.id !== 'bye').slice(0, 3).map(r => r.item);
+      return candidates.length ? { suggest: candidates } : null;
     }
-    return bestScore > 0 ? best : null;
+    const top = confidentOnes[0];
+    const second = confidentOnes.find(r => r.item.id !== top.item.id && r.phraseHit && r.score >= top.score * 0.6);
+    if (second) return { combo: [top.item, second.item] };
+    return top.item;
   }
 
   const FALLBACKS = [
@@ -3488,9 +3574,7 @@ window.addEventListener('load', () => {
     "I'm not sure I have that one. Try asking about features, industries, security or booking a demo — or reach the team directly below.",
     "That's outside what I can answer directly. Our team can help with specifics — try the contact form, or ask me about pricing, security or a demo."
   ];
-  const QUICK_REPLIES = [
-    ['what', 'What is Axion Regulus?'], ['evaluate', 'Book a demo'], ['features', 'Features'], ['security', 'Security'], ['contact', 'Contact us']
-  ];
+  const QUICK_REPLY_IDS = ['what', 'evaluate', 'features', 'security', 'contact'];
 
   const panel = document.getElementById('chatPanel');
   const fab = document.getElementById('chatFab');
@@ -3529,9 +3613,15 @@ window.addEventListener('load', () => {
   }
 
   function renderQuickReplies() {
-    quickRepliesEl.innerHTML = QUICK_REPLIES.map(([id, label]) =>
-      `<button type="button" data-qr="${id}" class="text-xs px-2.5 py-1.5 rounded-full border border-slate-900/10 text-slate-600 hover:border-blue-400 hover:text-blue-600 transition">${label}</button>`
+    quickRepliesEl.innerHTML = QUICK_REPLY_IDS.map(id =>
+      `<button type="button" data-qr="${id}" class="text-xs px-2.5 py-1.5 rounded-full border border-slate-900/10 text-slate-600 hover:border-blue-400 hover:text-blue-600 transition">${FAQ_BY_ID[id].label}</button>`
     ).join('');
+  }
+
+  function suggestionChips(items) {
+    return `<div class="mt-2 flex flex-wrap gap-1.5">${items.map(item =>
+      `<button type="button" data-qr="${item.id}" class="text-xs px-2.5 py-1.5 rounded-full border border-blue-300 text-blue-600 hover:bg-blue-50 transition">${item.label}</button>`
+    ).join('')}</div>`;
   }
 
   function answerFor(item) {
@@ -3542,17 +3632,31 @@ window.addEventListener('load', () => {
     return html;
   }
 
-  function respond(text) {
-    const match = scoreMatch(text);
+  function htmlFor(match) {
+    if (match.combo) {
+      return answerFor(match.combo[0]) + '<br><br>' + answerFor(match.combo[1]);
+    }
+    if (match.suggest) {
+      const intro = "I'm not fully sure what you're asking — did you mean one of these?";
+      return intro + suggestionChips(match.suggest);
+    }
+    return answerFor(match);
+  }
+
+  function respondWith(match) {
     const typingEl = showTyping();
+    const html = match ? htmlFor(match) : FALLBACKS[Math.floor(Math.random() * FALLBACKS.length)];
     // Vary the delay with reply length so longer answers feel like they took
     // a beat longer to "type" — small touch, but reads less like a lookup table.
-    const answer = match ? answerFor(match) : FALLBACKS[Math.floor(Math.random() * FALLBACKS.length)];
-    const delay = 500 + Math.min(answer.length * 6, 900) + Math.random() * 300;
+    const delay = 500 + Math.min(html.length * 4, 900) + Math.random() * 300;
     setTimeout(() => {
       typingEl.remove();
-      addMessage(answer, 'bot');
+      addMessage(html, 'bot');
     }, delay);
+  }
+
+  function respond(text) {
+    respondWith(scoreMatch(text));
   }
 
   function openChat() {
@@ -3572,14 +3676,16 @@ window.addEventListener('load', () => {
   fab.addEventListener('click', () => { panel.classList.contains('hidden') ? openChat() : closeChat(); });
   closeBtn.addEventListener('click', closeChat);
 
-  quickRepliesEl.addEventListener('click', (e) => {
+  // Quick-reply chips live in two places: the persistent row under the
+  // input, and ad hoc "did you mean" suggestions inside a fallback bubble —
+  // one delegated listener on a shared ancestor covers both.
+  document.getElementById('chatPanel').addEventListener('click', (e) => {
     const btn = e.target.closest('[data-qr]');
     if (!btn) return;
-    const item = FAQ.find(f => f.id === btn.dataset.qr);
+    const item = FAQ_BY_ID[btn.dataset.qr];
     if (!item) return;
     addMessage(btn.textContent, 'user');
-    const typingEl = showTyping();
-    setTimeout(() => { typingEl.remove(); addMessage(answerFor(item), 'bot'); }, 500 + Math.random() * 300);
+    respondWith(item);
   });
 
   form.addEventListener('submit', (e) => {
