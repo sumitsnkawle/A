@@ -1088,8 +1088,8 @@
   </div>
 </section>
 
-<!-- FOUNDER: business card + vision story -->
-<section id="founder" class="section-pad relative overflow-hidden">
+<!-- FOUNDER: business card + vision story (hidden for now; remove hidden + style to restore) -->
+<section id="founder" class="section-pad relative overflow-hidden" hidden style="display:none">
   <div class="absolute inset-0 bg-radial-glow pointer-events-none"></div>
   <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto fade-up" data-fade>
@@ -1307,7 +1307,7 @@
         <li><a href="#partners" class="hover:text-slate-900" data-i18n="nav.partners">Partners</a></li>
         <li><a href="#investors" class="hover:text-slate-900" data-i18n="nav.investors">Investors</a></li>
         <li><a href="#about" class="hover:text-slate-900" data-i18n="nav.about">About</a></li>
-        <li><a href="#founder" class="hover:text-slate-900" data-i18n="nav.founder">Founder</a></li>
+        <li hidden style="display:none"><a href="#founder" class="hover:text-slate-900" data-i18n="nav.founder">Founder</a></li>
         <li><a href="#contact" class="hover:text-slate-900" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
@@ -3500,7 +3500,7 @@ window.addEventListener('load', () => {
     { id: 'industries', label: 'Industries', keywords: ['industry','industries','sector','healthcare','pharma','financial services','cosmetics','food','nutraceutical','marketing','governance','which industries'],
       answer: "Axion Regulus is built for regulated, high-stakes industries: Financial Services, Healthcare & Pharmaceutical, Food & Nutraceutical, Cosmetics, Marketing & Advertising, Corporate Governance, and Enterprise Risk & Compliance.", link: { href: '#industries', label: 'View industries' } },
     { id: 'company', label: 'About the company', keywords: ['who founded','who is behind','company','who owns','our team','founder','leadership','who runs axion'],
-      answer: "Axion Regulus is built by Axion Consultancy Services, a UAE-based technology company. The company's founder & general manager is Anastasiia Bolotna.", link: { href: '#about', label: 'About Axion' } },
+      answer: "Axion Regulus is built by Axion Consultancy Services, a UAE-based technology company.", link: { href: '#about', label: 'About Axion' } },
     { id: 'partners', label: 'Partnerships', keywords: ['partner','partnership','integrate','integration','reseller','system integrator'],
       answer: "We're open to strategic partnerships with technology companies, IT consultancies, compliance consultants, system integrators and regtech partners — for enterprise adoption, integration, market expansion or reselling.", link: { href: '#partners', label: 'Partnership details' } },
     { id: 'invest', label: 'Investing', keywords: ['invest','investor','investment','funding','seed','venture'],
