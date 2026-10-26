@@ -70,7 +70,7 @@ SHADOW = {
 }
 BLUR = {"sm": "8px", "": "8px", "md": "12px", "lg": "16px", "xl": "24px", "2xl": "40px", "3xl": "64px"}
 LEADING = {"none": "1", "tight": "1.25", "snug": "1.375", "normal": "1.5", "relaxed": "1.625", "loose": "2"}
-WEIGHT = {"medium": "500", "semibold": "600", "bold": "700", "extrabold": "800"}
+WEIGHT = {"normal": "400", "medium": "500", "semibold": "600", "bold": "700", "extrabold": "800"}
 GRAD_DIR = {"r": "to right", "l": "to left", "b": "to bottom", "t": "to top", "br": "to bottom right",
             "bl": "to bottom left", "tr": "to top right", "tl": "to top left"}
 
@@ -121,7 +121,7 @@ SIMPLE = {
     "w-auto": "width:auto", "h-auto": "height:auto", "w-full": "width:100%", "h-full": "height:100%",
     "w-px": "width:1px", "h-px": "height:1px", "w-screen": "width:100vw",
     "mx-auto": "margin-inline:auto", "ml-auto": "margin-left:auto", "mr-auto": "margin-right:auto",
-    "ms-auto": "margin-inline-start:auto",
+    "ms-auto": "margin-inline-start:auto", "mt-auto": "margin-top:auto",
     "inset-0": "inset:0", "inset-x-0": "inset-inline:0", "top-0": "top:0", "right-0": "right:0",
     "left-0": "left:0", "bottom-0": "bottom:0",
     "right-auto": "right:auto", "left-auto": "left:auto",
