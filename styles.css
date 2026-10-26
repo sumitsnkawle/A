@@ -286,7 +286,6 @@ summary{display:list-item}
 .rounded{border-radius:0.25rem}
 .rounded-2xl{border-radius:1rem}
 .rounded-3xl{border-radius:1.5rem}
-.rounded-\[14px\]{border-radius:14px}
 .rounded-bl-sm{border-bottom-left-radius:0.25rem}
 .rounded-br-sm{border-bottom-right-radius:0.25rem}
 .rounded-full{border-radius:9999px}
@@ -389,7 +388,6 @@ summary{display:list-item}
 .group:hover .group-hover\:text-\[var\(--brand\)\]{color:var(--brand)}
 .group[open] .group-open\:rotate-45{rotate:45deg}
 .hover\:bg-\[var\(--brand-600\)\]:hover{background-color:var(--brand-600)}
-.hover\:bg-\[var\(--navy-800\)\]:hover{background-color:var(--navy-800)}
 .hover\:bg-blue-50:hover{background-color:#eff6ff}
 .hover\:bg-slate-100:hover{background-color:#f1f5f9}
 .hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}
@@ -425,7 +423,9 @@ summary{display:list-item}
 @media (min-width:48rem){.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (min-width:48rem){.md\:h-\[72px\]{height:72px}}
 @media (min-width:64rem){.lg\:block{display:block}}
+@media (min-width:64rem){.lg\:col-span-12{grid-column:span 12 / span 12}}
 @media (min-width:64rem){.lg\:col-span-2{grid-column:span 2 / span 2}}
+@media (min-width:64rem){.lg\:col-span-3{grid-column:span 3 / span 3}}
 @media (min-width:64rem){.lg\:col-span-4{grid-column:span 4 / span 4}}
 @media (min-width:64rem){.lg\:col-span-5{grid-column:span 5 / span 5}}
 @media (min-width:64rem){.lg\:col-span-6{grid-column:span 6 / span 6}}
@@ -440,7 +440,6 @@ summary{display:list-item}
 @media (min-width:64rem){.lg\:gap-6{gap:1.5rem}}
 @media (min-width:64rem){.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}}
 @media (min-width:64rem){.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:64rem){.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (min-width:64rem){.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (min-width:64rem){.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media (min-width:64rem){.lg\:grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}}

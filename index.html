@@ -650,9 +650,6 @@
       </div>
     </div>
 
-    <div class="mt-12 text-center fade-up" data-fade>
-      <a href="#contact" class="btn btn-primary" data-i18n="tour.cta">Request a Live Demo</a>
-    </div>
   </div>
 </section>
 
@@ -666,7 +663,7 @@
       </div>
     </div>
 
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="featureGrid">
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-6 gap-4" id="featureGrid">
       <!-- features rendered by renderFeatures() -->
     </div>
   </div>
@@ -812,7 +809,7 @@
       <h2 class="h2" data-i18n="ind.title">Built for regulated, high-stakes industries</h2>
     </div>
 
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="industryGrid"></div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-12 gap-4" id="industryGrid"></div>
   </div>
 </section>
 
@@ -1243,7 +1240,6 @@
       <div class="lg:sticky lg:top-28">
         <p class="eyebrow mb-4" data-i18n="faq.kicker">FAQ</p>
         <h2 class="h2" data-i18n="faq.title">Frequently Asked Questions</h2>
-        <a href="#contact" class="btn btn-primary mt-8" data-i18n="tour.cta">Request a Live Demo</a>
       </div>
     </div>
     <div class="lg:col-span-8 divide-y divide-[var(--line)] border-y border-[var(--line)] fade-up" data-fade>
@@ -1491,17 +1487,29 @@ const features = [
   ["globe","feat.f13t","feat.f13d","#2563eb"],
   ["refreshDoc","feat.f15t","feat.f15d","#7c3aed"]
 ];
+// Grid spans: desktop rows of 3 features / 4 industries; the cards of a short
+// last row widen so every row fills the full width.
+function featureSpan(i) {
+  const rest = features.length % 3;
+  if (!rest || i < features.length - rest) return 'lg:col-span-2';
+  return rest === 1 ? 'lg:col-span-6' : 'lg:col-span-3';
+}
+function industrySpan(i) {
+  const rest = industries.length % 4;
+  let span = (!rest || i < industries.length - rest) ? 'lg:col-span-3'
+    : { 1: 'lg:col-span-12', 2: 'lg:col-span-6', 3: 'lg:col-span-4' }[rest];
+  // An odd last card spans both columns on tablets
+  if (industries.length % 2 && i === industries.length - 1) span += ' sm:col-span-2';
+  return span;
+}
+
 function renderFeatures(lang) {
-  document.getElementById('featureGrid').innerHTML = features.map(([icon,tk,dk]) => `
-    <div class="card card-hover p-6 fade-up" data-fade style="opacity:1;transform:none">
+  document.getElementById('featureGrid').innerHTML = features.map(([icon,tk,dk], i) => `
+    <div class="card card-hover p-6 fade-up ${featureSpan(i)}" data-fade style="opacity:1;transform:none">
       <div class="ico mb-5">${iconSvg(icon, 'currentColor')}</div>
       <h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
       <p class="text-sm text-[var(--body)] mt-2 leading-relaxed">${t(lang, dk)}</p>
-    </div>`).join('') + `
-    <a href="#contact" class="rounded-[14px] bg-[var(--navy-900)] hover:bg-[var(--navy-800)] transition p-6 flex flex-col justify-between gap-6 text-white">
-      <span class="font-display font-semibold text-lg leading-snug">${t(lang, 'cta.title')}</span>
-      <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#9cc5ff]">${t(lang, 'nav.demo')} <span aria-hidden="true" class="inline-block rtl-flip">→</span></span>
-    </a>`;
+    </div>`).join('');
 }
 
 // Industry grid data
@@ -1515,16 +1523,12 @@ const industries = [
   ["shieldNet","ind.i7t","ind.i7d","#2563eb"]
 ];
 function renderIndustries(lang) {
-  document.getElementById('industryGrid').innerHTML = industries.map(([icon,tk,dk]) => `
-    <div class="card card-hover p-6 fade-up" data-fade style="opacity:1;transform:none">
+  document.getElementById('industryGrid').innerHTML = industries.map(([icon,tk,dk], i) => `
+    <div class="card card-hover p-6 fade-up ${industrySpan(i)}" data-fade style="opacity:1;transform:none">
       <div class="w-12 h-12 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center mb-5 [&_svg]:w-6 [&_svg]:h-6">${iconSvg(icon, 'currentColor')}</div>
       <h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
       <p class="text-sm text-[var(--body)] mt-2 leading-relaxed">${t(lang, dk)}</p>
-    </div>`).join('') + `
-    <a href="#contact" class="rounded-[14px] bg-[var(--brand)] hover:bg-[var(--brand-600)] transition p-6 flex flex-col justify-between gap-6 text-white">
-      <span class="font-display font-semibold text-lg leading-snug">${t(lang, 'cta.title')}</span>
-      <span class="inline-flex items-center gap-2 text-sm font-semibold">${t(lang, 'nav.demo')} <span aria-hidden="true" class="inline-block rtl-flip">→</span></span>
-    </a>`;
+    </div>`).join('');
 }
 
 // Internationalization: EN / DE / FR / ES / RU
