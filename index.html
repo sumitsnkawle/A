@@ -65,7 +65,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="styles.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
@@ -145,6 +145,16 @@
   .nav-link{position:relative; color:#c4d0e0; transition:color .2s;}
   .nav-link:hover{color:#fff;}
 
+  /* Accessibility */
+  .skip-link{position:absolute; left:1rem; top:-3rem; z-index:100; background:#fff; color:var(--ink); padding:.6rem 1rem; border-radius:8px; font-weight:600; box-shadow:0 10px 30px -10px rgba(0,0,0,.4); transition:top .2s;}
+  .skip-link:focus{top:1rem;}
+  :focus-visible{outline:2px solid var(--brand-400); outline-offset:3px; border-radius:4px;}
+
+  /* Active nav section */
+  .nav-link::after{content:""; position:absolute; left:0; right:0; bottom:-.55rem; height:2px; border-radius:2px; background:var(--brand-400); transform:scaleX(0); transition:transform .25s;}
+  .nav-link.is-active{color:#fff;}
+  .nav-link.is-active::after{transform:scaleX(1);}
+
   /* Tour tabs */
   .tour-tab{display:block; width:100%; text-align:start; padding:1.1rem 1.25rem; border-radius:12px; border:1px solid transparent; transition:background-color .2s, border-color .2s;}
   .tour-tab:hover{background:#fff;}
@@ -210,14 +220,15 @@
 </style>
 </head>
 <body class="bg-[var(--bg)] antialiased">
+<a href="#main" class="skip-link">Skip to content</a>
 
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-shadow duration-300">
   <div class="nav-blue border-b border-white/10">
     <div class="wrap h-16 md:h-[72px] flex items-center justify-between gap-6">
       <a href="#top" class="flex items-center gap-2.5 h-full py-2 shrink-0" aria-label="Axion Regulus home">
-        <img src="AxionLogo.png" alt="Axion" class="h-[80%] w-auto object-contain">
-        <img src="RegulusText.png" alt="Regulus" class="h-[26%] w-auto object-contain">
+        <img src="AxionLogo.png" alt="Axion" width="512" height="412" class="h-[80%] w-auto object-contain">
+        <img src="RegulusText.png" alt="Regulus" width="358" height="54" class="h-[26%] w-auto object-contain">
       </a>
       <nav class="hidden lg:flex items-center gap-7 whitespace-nowrap text-sm font-medium">
         <a href="#product" class="nav-link" data-i18n="nav.product">Product</a>
@@ -258,6 +269,7 @@
   </div>
 </header>
 
+<main id="main">
 <!-- HERO -->
 <section id="top" class="dark relative overflow-hidden pt-28 pb-16 lg:pt-40 lg:pb-28">
   <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:radial-gradient(80%_70%_at_50%_0%,#000_40%,transparent_100%)]"></div>
@@ -301,8 +313,8 @@
           <div class="flex justify-between text-[10px] text-slate-400 kicker mb-5">
             <span data-i18n="hero.regulations">REGULATIONS</span><span data-i18n="hero.confidence">BUSINESS CONFIDENCE</span>
           </div>
-          <div class="grid grid-cols-[1fr_auto_1fr] gap-3 sm:gap-5 items-center">
-            <div class="space-y-2.5 min-w-0">
+          <div class="grid grid-cols-[auto_1fr] sm:grid-cols-[1fr_auto_1fr] gap-4 sm:gap-5 items-center">
+            <div class="hidden sm:block space-y-2.5 min-w-0">
               <div class="mock-tile px-3 py-2.5 flex items-center gap-2 text-[11px] text-slate-200 flow-chip" style="animation-delay:0s">
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" class="shrink-0"><path stroke="#5aa2ff" stroke-width="1.6" d="M6 3h9l3 3v15H6z"/><path stroke="#5aa2ff" stroke-width="1.6" d="M9 12h6M9 16h6"/></svg>
                 <span class="truncate">Regulation.pdf</span>
@@ -355,13 +367,29 @@
   </div>
 </section>
 
+<!-- INDUSTRY STRIP -->
+<section aria-label="Industries" class="border-b border-[var(--line)] bg-white">
+  <div class="wrap py-7 lg:py-8 flex flex-col xl:flex-row xl:items-center gap-5 xl:gap-12">
+    <p class="text-[11px] font-semibold kicker uppercase text-[var(--muted)] shrink-0 xl:max-w-[15rem]" data-i18n="ind.title">Built for regulated, high-stakes industries</p>
+    <ul class="flex flex-wrap gap-x-8 gap-y-3 text-sm font-semibold text-[var(--ink)]">
+      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l8-5 8 5"/><rect x="5" y="10" width="14" height="8"/><path d="M3 20h18"/><path d="M8 10v8M12 10v8M16 10v8"/></svg><span data-i18n="ind.i1t">Financial Services</span></li>
+      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 3 12 2-9 2 3h5"/></svg><span data-i18n="ind.i2t">Healthcare &amp; Pharmaceutical</span></li>
+      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18C6 9 12 4 20 4c0 8-5 14-14 14z"/><path d="M6 18C9 14 12 11 16 9"/></svg><span data-i18n="ind.i3t">Food &amp; Nutraceutical</span></li>
+      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 14h8"/></svg><span data-i18n="ind.i4t">Cosmetics</span></li>
+      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l7 4V6l-7 4z"/><path d="M13 9a3 3 0 0 1 0 6"/></svg><span data-i18n="ind.i5t">Marketing &amp; Advertising</span></li>
+      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg><span data-i18n="ind.i6t">Corporate Governance</span></li>
+      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-i18n="ind.i7t">Enterprise Risk &amp; Compliance</span></li>
+    </ul>
+  </div>
+</section>
+
 <!-- WHO IT'S FOR -->
 <section class="section-pad">
   <div class="wrap grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
     <div class="order-2 lg:order-1 fade-up" data-fade>
       <div class="relative">
         <div class="rounded-2xl overflow-hidden border border-[var(--line)] shadow-[0_30px_60px_-35px_rgba(11,29,54,.45)]">
-          <img src="team-review.jpg" alt="Compliance and risk team reviewing flagged content together in a meeting room" class="w-full h-auto object-cover">
+          <img src="team-review.jpg" width="1408" height="768" loading="lazy" decoding="async" alt="Compliance and risk team reviewing flagged content together in a meeting room" class="w-full h-auto object-cover">
         </div>
         <div class="card absolute -bottom-6 left-4 right-4 sm:left-8 sm:right-auto sm:max-w-sm px-4 py-3.5 flex items-center gap-3 shadow-[0_20px_40px_-20px_rgba(11,29,54,.35)]">
           <div class="flex -space-x-2 shrink-0 ltr-diagram">
@@ -662,7 +690,7 @@
           <div class="mock-bar"><i></i><i></i><i></i><span class="ml-2 text-[11px] text-slate-400">campaign-banner.png</span></div>
           <div class="p-5 sm:p-6 grid sm:grid-cols-[150px_1fr] gap-5">
             <!-- Scanned image -->
-            <div class="relative rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-[#1a3660] to-[#0b1d36] aspect-[4/5] sm:aspect-auto sm:h-full min-h-[150px]">
+            <div class="relative rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-[#1a3660] to-[#0b1d36] aspect-[16/9] sm:aspect-auto sm:h-full min-h-[150px]">
               <div class="absolute inset-x-4 top-5 h-2 rounded bg-white/25"></div>
               <div class="absolute inset-x-4 top-9 w-2/3 h-2 rounded bg-white/15"></div>
               <div class="absolute left-4 right-4 bottom-5 h-14 rounded-md border-2 border-amber-300/80 bg-amber-300/10"></div>
@@ -708,27 +736,27 @@
         <div class="lg:col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           <div class="mock-tile p-4">
             <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.complianceScore">COMPLIANCE SCORE</div>
-            <div class="text-2xl font-bold text-emerald-400 mt-1.5 counter" data-target="95">0</div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1.5 counter" data-target="95">95%</div>
           </div>
           <div class="mock-tile p-4">
             <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.aiConfidence">AI CONFIDENCE</div>
-            <div class="text-2xl font-bold text-white mt-1.5 counter" data-target="94">0</div>
+            <div class="text-2xl font-bold text-white mt-1.5 counter" data-target="94">94%</div>
           </div>
           <div class="mock-tile p-4">
             <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.rulesEvaluated">RULES EVALUATED</div>
-            <div class="text-2xl font-bold text-[#9cc5ff] mt-1.5 counter" data-target="124" data-suffix="">0</div>
+            <div class="text-2xl font-bold text-[#9cc5ff] mt-1.5 counter" data-target="124" data-suffix="">124</div>
           </div>
           <div class="mock-tile p-4">
             <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.issuesDetected">ISSUES DETECTED</div>
-            <div class="text-2xl font-bold text-amber-300 mt-1.5 counter" data-target="7">0</div>
+            <div class="text-2xl font-bold text-amber-300 mt-1.5 counter" data-target="7">7%</div>
           </div>
           <div class="mock-tile p-4">
             <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.criticalRisks">CRITICAL RISKS</div>
-            <div class="text-2xl font-bold text-red-400 mt-1.5 counter" data-target="2">0</div>
+            <div class="text-2xl font-bold text-red-400 mt-1.5 counter" data-target="2">2%</div>
           </div>
           <div class="mock-tile p-4">
             <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.resolved">RESOLVED</div>
-            <div class="text-2xl font-bold text-[#9cc5ff] mt-1.5 counter" data-target="18">0</div>
+            <div class="text-2xl font-bold text-[#9cc5ff] mt-1.5 counter" data-target="18">18%</div>
           </div>
         </div>
 
@@ -940,21 +968,21 @@
     <div class="mt-12 grid md:grid-cols-3 gap-6">
       <div class="group fade-up" data-fade>
         <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="control-team.jpg" alt="Team reviewing compliance reports together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
+          <img src="control-team.jpg" width="1376" height="768" loading="lazy" decoding="async" alt="Team reviewing compliance reports together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
         </div>
         <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="hs.h1t">Control</h3>
         <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h1d">Teams stay in control of every compliance decision, with AI support at each step.</p>
       </div>
       <div class="group fade-up" data-fade>
         <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="productivity-infographic.png" alt="Axion Regulus turning manual compliance checks into confident, automated decisions" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.03]">
+          <img src="productivity-infographic.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Axion Regulus turning manual compliance checks into confident, automated decisions" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.03]">
         </div>
         <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="hs.h2t">Productivity</h3>
         <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h2d">Structured workflows help teams move from review to resolution faster.</p>
       </div>
       <div class="group fade-up" data-fade>
         <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="peace-of-mind-team.png" alt="Team confidently discussing compliance results together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
+          <img src="peace-of-mind-team.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Team confidently discussing compliance results together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
         </div>
         <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="hs.h3t">Peace of Mind</h3>
         <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h3d">Clear evidence and reasoning behind every compliance assessment.</p>
@@ -1355,6 +1383,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer class="bg-[var(--navy-950)] text-[#a9b8cc]">
   <div class="wrap py-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -1536,7 +1566,11 @@ function renderIndustries(lang) {
       <div class="w-12 h-12 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center mb-5 [&_svg]:w-6 [&_svg]:h-6">${iconSvg(icon, 'currentColor')}</div>
       <h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
       <p class="text-sm text-[var(--body)] mt-2 leading-relaxed">${t(lang, dk)}</p>
-    </div>`).join('');
+    </div>`).join('') + `
+    <a href="#contact" class="rounded-[14px] bg-[var(--brand)] hover:bg-[var(--brand-600)] transition p-6 flex flex-col justify-between gap-6 text-white">
+      <span class="font-display font-semibold text-lg leading-snug">${t(lang, 'cta.title')}</span>
+      <span class="inline-flex items-center gap-2 text-sm font-semibold">${t(lang, 'nav.demo')} <span aria-hidden="true" class="inline-block rtl-flip">→</span></span>
+    </a>`;
 }
 
 // Internationalization: EN / DE / FR / ES / RU
@@ -3471,6 +3505,21 @@ if (langToggle) {
 let savedLang = 'en';
 try { savedLang = localStorage.getItem('axion-lang') || 'en'; } catch (e) {}
 applyLanguage(savedLang);
+
+// Highlight the nav link of the section currently in view
+(function () {
+  const links = document.querySelectorAll('header nav .nav-link');
+  if (!('IntersectionObserver' in window) || !links.length) return;
+  const byId = {};
+  links.forEach(l => { byId[l.getAttribute('href').slice(1)] = l; });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      links.forEach(l => l.classList.toggle('is-active', l === byId[entry.target.id]));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  Object.keys(byId).forEach(id => { const el = document.getElementById(id); if (el) observer.observe(el); });
+})();
 
 // Scroll-based nav background
 window.addEventListener('scroll', () => {
