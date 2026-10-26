@@ -85,17 +85,17 @@
   ::-webkit-scrollbar-track{background:var(--bg2);}
   ::-webkit-scrollbar-thumb{background:#c5cfdc; border-radius:8px;}
 
-  .wrap{max-width:80rem; margin:0 auto; padding-left:1.25rem; padding-right:1.25rem;}
+  .wrap{max-width:80rem; margin-left:auto; margin-right:auto; padding-left:1.25rem; padding-right:1.25rem;}
   @media (min-width:1024px){ .wrap{padding-left:2rem; padding-right:2rem;} }
 
-  .section-pad{padding-top:4rem; padding-bottom:4rem;}
-  @media (min-width:768px){ .section-pad{padding-top:5rem; padding-bottom:5rem;} }
-  @media (min-width:1024px){ .section-pad{padding-top:6.5rem; padding-bottom:6.5rem;} }
+  .section-pad{padding-top:3.5rem; padding-bottom:3.5rem;}
+  @media (min-width:768px){ .section-pad{padding-top:4.25rem; padding-bottom:4.25rem;} }
+  @media (min-width:1024px){ .section-pad{padding-top:5.25rem; padding-bottom:5.25rem;} }
 
   /* Typography */
   .eyebrow{display:inline-flex; align-items:center; gap:.6rem; font-size:.75rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--brand);}
   .eyebrow::before{content:""; width:1.5rem; height:2px; border-radius:2px; background:currentColor;}
-  .h2{font-family:'Plus Jakarta Sans','Inter',sans-serif; font-weight:700; letter-spacing:-.02em; line-height:1.15; color:var(--ink); font-size:clamp(1.75rem,3.2vw,2.6rem);}
+  .h2{font-family:'Plus Jakarta Sans','Inter',sans-serif; font-weight:700; letter-spacing:-.02em; line-height:1.15; color:var(--ink); font-size:clamp(1.65rem,2.8vw,2.35rem);}
   .lead{color:var(--body); font-size:1.0625rem; line-height:1.75;}
   .kicker{letter-spacing:.14em;}
   .dark{background:var(--navy-900); color:#c4d0e0;}
@@ -248,8 +248,7 @@
           </button>
           <div id="lang-panel" class="hidden absolute right-0 mt-2 w-40 max-h-72 overflow-y-auto bg-white border border-slate-200 rounded-lg shadow-xl py-1 z-50"></div>
         </div>
-        <a href="#contact" class="btn btn-outline-light whitespace-nowrap !py-2 !px-4 !text-sm" data-i18n="nav.talk">Talk to Axion</a>
-        <a href="#demo" class="btn btn-primary whitespace-nowrap !py-2 !px-4 !text-sm" data-i18n="nav.demo">Request a Demo</a>
+        <a href="#contact" class="btn btn-primary whitespace-nowrap !py-2 !px-4 !text-sm" data-i18n="nav.demo">Request a Demo</a>
       </div>
       <button id="menuBtn" class="lg:hidden text-white p-2 -mr-2" aria-label="Open menu">
         <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -264,14 +263,14 @@
     <a href="#investors" class="block py-2 hover:text-white" data-i18n="nav.investors">Investors</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">About</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">Contact</a>
-    <a href="#demo" class="btn btn-primary w-full !mt-3" data-i18n="nav.demo">Request a Demo</a>
+    <a href="#contact" class="btn btn-primary w-full !mt-3" data-i18n="nav.demo">Request a Demo</a>
     <div id="lang-grid-mobile" class="grid grid-cols-4 gap-2 pt-3" aria-label="Select language"></div>
   </div>
 </header>
 
 <main id="main">
 <!-- HERO -->
-<section id="top" class="dark relative overflow-hidden pt-28 pb-16 lg:pt-40 lg:pb-28">
+<section id="top" class="dark relative overflow-hidden pt-28 pb-14 lg:pt-36 lg:pb-24">
   <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:radial-gradient(80%_70%_at_50%_0%,#000_40%,transparent_100%)]"></div>
   <div class="absolute -top-48 right-[-10%] w-[720px] h-[720px] rounded-full bg-[#1764d1]/25 blur-[140px] pointer-events-none"></div>
 
@@ -287,7 +286,7 @@
         Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents into automated validation systems for real-time business compliance.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
-        <a href="#demo" class="btn btn-primary" data-i18n="hero.cta1">Request a Demo</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Request a Demo</a>
         <a href="#product" class="btn btn-outline-light" data-i18n="hero.cta2">Explore Axion Regulus</a>
       </div>
       <a href="#investors" class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#c4d0e0] hover:text-white transition">
@@ -367,120 +366,20 @@
   </div>
 </section>
 
-<!-- INDUSTRY STRIP -->
-<section aria-label="Industries" class="border-b border-[var(--line)] bg-white">
-  <div class="wrap py-7 lg:py-8 flex flex-col xl:flex-row xl:items-center gap-5 xl:gap-12">
-    <p class="text-[11px] font-semibold kicker uppercase text-[var(--muted)] shrink-0 xl:max-w-[15rem]" data-i18n="ind.title">Built for regulated, high-stakes industries</p>
-    <ul class="flex flex-wrap gap-x-8 gap-y-3 text-sm font-semibold text-[var(--ink)]">
-      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l8-5 8 5"/><rect x="5" y="10" width="14" height="8"/><path d="M3 20h18"/><path d="M8 10v8M12 10v8M16 10v8"/></svg><span data-i18n="ind.i1t">Financial Services</span></li>
-      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 3 12 2-9 2 3h5"/></svg><span data-i18n="ind.i2t">Healthcare &amp; Pharmaceutical</span></li>
-      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18C6 9 12 4 20 4c0 8-5 14-14 14z"/><path d="M6 18C9 14 12 11 16 9"/></svg><span data-i18n="ind.i3t">Food &amp; Nutraceutical</span></li>
-      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 14h8"/></svg><span data-i18n="ind.i4t">Cosmetics</span></li>
-      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l7 4V6l-7 4z"/><path d="M13 9a3 3 0 0 1 0 6"/></svg><span data-i18n="ind.i5t">Marketing &amp; Advertising</span></li>
-      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg><span data-i18n="ind.i6t">Corporate Governance</span></li>
-      <li class="flex items-center gap-2.5"><svg class="w-5 h-5 text-[var(--brand)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-i18n="ind.i7t">Enterprise Risk &amp; Compliance</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- WHO IT'S FOR -->
-<section class="section-pad">
-  <div class="wrap grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-    <div class="order-2 lg:order-1 fade-up" data-fade>
-      <div class="relative">
-        <div class="rounded-2xl overflow-hidden border border-[var(--line)] shadow-[0_30px_60px_-35px_rgba(11,29,54,.45)]">
-          <img src="team-review.jpg" width="1408" height="768" loading="lazy" decoding="async" alt="Compliance and risk team reviewing flagged content together in a meeting room" class="w-full h-auto object-cover">
-        </div>
-        <div class="card absolute -bottom-6 left-4 right-4 sm:left-8 sm:right-auto sm:max-w-sm px-4 py-3.5 flex items-center gap-3 shadow-[0_20px_40px_-20px_rgba(11,29,54,.35)]">
-          <div class="flex -space-x-2 shrink-0 ltr-diagram">
-            <div class="w-8 h-8 rounded-full bg-[var(--navy-900)] text-white border-2 border-white flex items-center justify-center text-[10px] font-semibold">AK</div>
-            <div class="w-8 h-8 rounded-full bg-[var(--brand)] text-white border-2 border-white flex items-center justify-center text-[10px] font-semibold">RS</div>
-            <div class="w-8 h-8 rounded-full bg-[var(--navy-700)] text-white border-2 border-white flex items-center justify-center text-[10px] font-semibold">MJ</div>
-          </div>
-          <div class="text-xs text-[var(--body)] leading-snug flex-1" data-i18n="hb.reviewing">Reviewing this week's flagged content</div>
-          <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold shrink-0" data-i18n="hb.onTrack">On track</span>
-        </div>
-      </div>
-    </div>
-    <div class="order-1 lg:order-2 fade-up" data-fade>
-      <p class="eyebrow mb-4" data-i18n="hb.kicker">LESS MANUAL WORK. FASTER DECISIONS.</p>
-      <h2 class="h2" data-i18n="hb.title">Give compliance and business teams their time back</h2>
-      <p class="mt-5 lead" data-i18n="hb.desc">
-        Compliance managers, risk professionals, legal and governance teams, and marketing reviewers use Axion Regulus to move through regulatory review faster — with structured evidence and a shared view of what needs attention.
-      </p>
-      <ul class="mt-8 space-y-4">
-        <li class="flex gap-3 text-[var(--ink)]"><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="hb.li1">Structured, centralized regulatory knowledge instead of scattered documents</span></li>
-        <li class="flex gap-3 text-[var(--ink)]"><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="hb.li2">Consistent evaluation criteria across reviewers and teams</span></li>
-        <li class="flex gap-3 text-[var(--ink)]"><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="hb.li3">Clear evidence trails that support confident decisions</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- PROBLEM -->
-<section class="section-pad bg-soft border-y border-[var(--line)]">
-  <div class="wrap grid lg:grid-cols-12 gap-12 lg:gap-16">
-    <div class="lg:col-span-5 fade-up" data-fade>
-      <div class="lg:sticky lg:top-28">
-        <p class="eyebrow mb-4" data-i18n="prob.kicker">THE COMPLIANCE PROBLEM</p>
-        <h2 class="h2" data-i18n="prob.title">Compliance shouldn't slow down your business</h2>
-
-        <div class="mt-10 card p-6">
-          <div class="text-[10px] kicker text-[var(--muted)] font-semibold mb-5" data-i18n="prob.queue">AN OVERWHELMED REVIEW QUEUE</div>
-          <div class="grid grid-cols-3 gap-2.5">
-            <div class="rounded-lg border border-[var(--line)] bg-[var(--bg2)] p-2.5 flex flex-col items-center gap-1.5 text-center text-[11px] text-[var(--body)] float">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64748b" stroke-width="1.6"><path d="M6 3h9l3 3v15H6z"/><path d="M9 12h6M9 16h6"/></svg><span data-i18n="prob.pdfs">PDFs</span>
-            </div>
-            <div class="rounded-lg border border-[var(--line)] bg-[var(--bg2)] p-2.5 flex flex-col items-center gap-1.5 text-center text-[11px] text-[var(--body)] float float-delay">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64748b" stroke-width="1.6"><path d="M3 5h18v14H3z"/><path d="M3 6l9 7 9-7"/></svg><span data-i18n="prob.emails">Emails</span>
-            </div>
-            <div class="rounded-lg border border-[var(--line)] bg-[var(--bg2)] p-2.5 flex flex-col items-center gap-1.5 text-center text-[11px] text-[var(--body)] float">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64748b" stroke-width="1.6"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span data-i18n="prob.policies">Policies</span>
-            </div>
-            <div class="rounded-lg border border-[var(--line)] bg-[var(--bg2)] p-2.5 flex flex-col items-center gap-1.5 text-center text-[11px] text-[var(--body)] float float-delay">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64748b" stroke-width="1.6"><path d="M3 10v4h3l7 4V6l-7 4z"/><path d="M13 9a3 3 0 0 1 0 6"/></svg><span data-i18n="prob.marketing">Marketing</span>
-            </div>
-            <div class="rounded-lg border border-amber-200 bg-amber-50 p-2.5 flex flex-col items-center gap-1.5 text-center text-[11px] text-amber-700 float">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#d97706" stroke-width="1.6"><path d="M12 4l9 15H3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.8" fill="#d97706" stroke="none"/></svg><span data-i18n="prob.risk">Risk?</span>
-            </div>
-            <div class="rounded-lg border border-[var(--line)] bg-[var(--bg2)] p-2.5 flex flex-col items-center gap-1.5 text-center text-[11px] text-[var(--body)] float float-delay">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#64748b" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg><span data-i18n="prob.sheets">Sheets</span>
-            </div>
-          </div>
-          <div class="flex items-center justify-center gap-3 mt-5 pt-5 border-t border-[var(--line)] text-sm">
-            <span class="text-[var(--muted)]" data-i18n="prob.manualReview">Manual review</span>
-            <span class="inline-block text-[var(--muted)] rtl-flip">→</span>
-            <span class="text-[var(--brand)] font-semibold">Axion Regulus</span>
-          </div>
-        </div>
-      </div>
+<section class="section-pad bg-soft border-b border-[var(--line)]">
+  <div class="wrap">
+    <div class="max-w-3xl fade-up" data-fade>
+      <p class="eyebrow mb-4" data-i18n="prob.kicker">THE COMPLIANCE PROBLEM</p>
+      <h2 class="h2" data-i18n="prob.title">Compliance shouldn't slow down your business</h2>
     </div>
-
-    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 content-start">
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-4"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg></div>
-        <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="prob.c1">Regulations constantly change across jurisdictions and industries</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-4"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div>
-        <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="prob.c2">Manual document interpretation takes significant time and effort</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-4"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 15H3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div>
-        <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="prob.c3">Business content can contain hidden regulatory risk</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-4"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5M11 20c0-3 2.2-5 5-5s5 2 5 5"/></svg></div>
-        <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="prob.c4">Different teams may interpret the same rules differently</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-4"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M10 13h4"/></svg></div>
-        <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="prob.c5">Compliance evidence is difficult to maintain and retrieve</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-4"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
-        <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="prob.c6">Manual reviews increase operational cost at scale</p>
-      </div>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-7 fade-up" data-fade>
+      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c1">Regulations constantly change across jurisdictions and industries</p></div>
+      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c2">Manual document interpretation takes significant time and effort</p></div>
+      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 15H3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c3">Business content can contain hidden regulatory risk</p></div>
+      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5M11 20c0-3 2.2-5 5-5s5 2 5 5"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c4">Different teams may interpret the same rules differently</p></div>
+      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M10 13h4"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c5">Compliance evidence is difficult to maintain and retrieve</p></div>
+      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c6">Manual reviews increase operational cost at scale</p></div>
     </div>
   </div>
 </section>
@@ -495,7 +394,7 @@
 
     <div class="relative mt-12 lg:mt-16 ltr-diagram">
       <div class="step-line hidden lg:block"></div>
-      <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-6">
+      <div class="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8">
         <div class="fade-up" data-fade>
           <div class="w-11 h-11 rounded-full bg-[var(--brand)] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">01</div>
           <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="sol.s1t">Ingest</h3>
@@ -534,13 +433,13 @@
 <!-- PRODUCT TOUR: SEE IT IN ACTION (SCREENS) -->
 <section id="tour" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap">
-    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
+    <div class="max-w-3xl fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="tour.kicker">THE ACTUAL PRODUCT</p>
       <h2 class="h2" data-i18n="tour.title">See Axion Regulus in Action</h2>
       <p class="mt-5 lead" data-i18n="tour.desc">See how Axion Regulus transforms regulatory requirements into structured compliance rules and applies them to real business content.</p>
     </div>
 
-    <div class="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div class="mt-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       <div class="lg:col-span-5 space-y-2 fade-up" data-fade role="tablist" aria-label="Product tour">
         <button type="button" class="tour-tab" role="tab" aria-selected="true" aria-controls="tour-p1" id="tour-t1">
           <span class="flex gap-4"><span class="tour-num">1</span><span>
@@ -564,6 +463,12 @@
           <span class="flex gap-4"><span class="tour-num">4</span><span>
             <span class="block text-[var(--ink)] font-semibold" data-i18n="tour.s4t">Compliance Results</span>
             <span class="block text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="tour.s4d">Review findings, evidence, risks and recommended corrective actions for every submission.</span>
+          </span></span>
+        </button>
+        <button type="button" class="tour-tab" role="tab" aria-selected="false" aria-controls="tour-p5" id="tour-t5">
+          <span class="flex gap-4"><span class="tour-num">5</span><span>
+            <span class="block text-[var(--ink)] font-semibold" data-i18n="dash.title">Compliance intelligence, visualized</span>
+            <span class="block text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="dash.label">Axion Regulus — Compliance Dashboard</span>
           </span></span>
         </button>
       </div>
@@ -646,6 +551,29 @@
               <div class="mt-5 text-xs text-[#9cc5ff]" data-i18n="tour.s4link">View findings, evidence &amp; recommendations →</div>
             </div>
           </div>
+
+          <!-- Screen 5: Dashboard -->
+          <div class="tour-panel mock" role="tabpanel" id="tour-p5" aria-labelledby="tour-t5" hidden>
+            <div class="mock-bar"><i></i><i></i><i></i><span class="ml-2 text-[11px] text-slate-400" data-i18n="dash.label">Axion Regulus — Compliance Dashboard</span></div>
+            <div class="p-5 sm:p-6 min-h-[240px]">
+              <div class="grid grid-cols-3 gap-2.5">
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.complianceScore">COMPLIANCE SCORE</div><div class="text-xl font-bold text-emerald-400 mt-1">95%</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.aiConfidence">AI CONFIDENCE</div><div class="text-xl font-bold text-white mt-1">94%</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.rulesEvaluated">RULES EVALUATED</div><div class="text-xl font-bold text-[#9cc5ff] mt-1">124</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.issuesDetected">ISSUES DETECTED</div><div class="text-xl font-bold text-amber-300 mt-1">7%</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.criticalRisks">CRITICAL RISKS</div><div class="text-xl font-bold text-red-400 mt-1">2%</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.resolved">RESOLVED</div><div class="text-xl font-bold text-[#9cc5ff] mt-1">18%</div></div>
+              </div>
+              <div class="mt-3 mock-tile p-4">
+                <div class="text-[10px] text-slate-400 kicker mb-2" data-i18n="dash.trend">COMPLIANCE TREND</div>
+                <svg viewBox="0 0 300 90" class="w-full h-20" preserveAspectRatio="none">
+            <defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5aa2ff"/><stop offset="1" stop-color="#5aa2ff" stop-opacity="0"/></linearGradient></defs>
+            <polyline points="0,70 40,60 80,64 120,45 160,50 200,30 240,35 300,15 300,90 0,90" fill="url(#trendFill)" stroke="none" opacity="0.3"/>
+            <polyline points="0,70 40,60 80,64 120,45 160,50 200,30 240,35 300,15" fill="none" stroke="#5aa2ff" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+          </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -663,284 +591,101 @@
       </div>
     </div>
 
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-6 gap-4" id="featureGrid">
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-6 gap-4" id="featureGrid">
       <!-- features rendered by renderFeatures() -->
     </div>
   </div>
 </section>
 
-<!-- DASHBOARD VISUAL -->
-<section class="dark section-pad relative overflow-hidden">
-  <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:linear-gradient(to_bottom,#000,transparent)]"></div>
-  <div class="relative wrap">
-    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
-      <p class="eyebrow mb-4" data-i18n="dash.kicker">PRODUCT DASHBOARD</p>
-      <h2 class="h2" data-i18n="dash.title">Compliance intelligence, visualized</h2>
+<!-- WHY AXION -->
+<section class="section-pad">
+  <div class="wrap grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="fade-up" data-fade>
+      <p class="eyebrow mb-4" data-i18n="hb.kicker">LESS MANUAL WORK. FASTER DECISIONS.</p>
+      <h2 class="h2" data-i18n="hb.title">Give compliance and business teams their time back</h2>
+      <p class="mt-5 lead" data-i18n="hb.desc">
+        Compliance managers, risk professionals, legal and governance teams, and marketing reviewers use Axion Regulus to move through regulatory review faster — with structured evidence and a shared view of what needs attention.
+      </p>
+      <ul class="mt-8 space-y-4">
+        <li class="flex gap-3 text-[var(--ink)]"><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="hb.li1">Structured, centralized regulatory knowledge instead of scattered documents</span></li>
+        <li class="flex gap-3 text-[var(--ink)]"><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="hb.li2">Consistent evaluation criteria across reviewers and teams</span></li>
+        <li class="flex gap-3 text-[var(--ink)]"><span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-i18n="hb.li3">Clear evidence trails that support confident decisions</span></li>
+      </ul>
     </div>
-
-    <div class="mt-12 lg:mt-14 mock fade-up" data-fade>
-      <div class="mock-bar"><i></i><i></i><i></i><span class="ml-3 text-[11px] text-slate-400" data-i18n="dash.label">Axion Regulus — Compliance Dashboard</span></div>
-
-      <div class="p-4 sm:p-6 grid lg:grid-cols-4 gap-4">
-        <div class="lg:col-span-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          <div class="mock-tile p-4">
-            <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.complianceScore">COMPLIANCE SCORE</div>
-            <div class="text-2xl font-bold text-emerald-400 mt-1.5 counter" data-target="95">95%</div>
-          </div>
-          <div class="mock-tile p-4">
-            <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.aiConfidence">AI CONFIDENCE</div>
-            <div class="text-2xl font-bold text-white mt-1.5 counter" data-target="94">94%</div>
-          </div>
-          <div class="mock-tile p-4">
-            <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.rulesEvaluated">RULES EVALUATED</div>
-            <div class="text-2xl font-bold text-[#9cc5ff] mt-1.5 counter" data-target="124" data-suffix="">124</div>
-          </div>
-          <div class="mock-tile p-4">
-            <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.issuesDetected">ISSUES DETECTED</div>
-            <div class="text-2xl font-bold text-amber-300 mt-1.5 counter" data-target="7">7%</div>
-          </div>
-          <div class="mock-tile p-4">
-            <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.criticalRisks">CRITICAL RISKS</div>
-            <div class="text-2xl font-bold text-red-400 mt-1.5 counter" data-target="2">2%</div>
-          </div>
-          <div class="mock-tile p-4">
-            <div class="text-[10px] text-slate-400 kicker" data-i18n="dash.resolved">RESOLVED</div>
-            <div class="text-2xl font-bold text-[#9cc5ff] mt-1.5 counter" data-target="18">18%</div>
-          </div>
+    <div class="fade-up" data-fade>
+      <div class="relative">
+        <div class="rounded-2xl overflow-hidden border border-[var(--line)] shadow-[0_30px_60px_-35px_rgba(11,29,54,.45)]">
+          <img src="team-review.jpg" width="1408" height="768" loading="lazy" decoding="async" alt="Compliance and risk team reviewing flagged content together in a meeting room" class="w-full h-auto object-cover">
         </div>
-
-        <div class="lg:col-span-2 mock-tile p-5">
-          <div class="text-[11px] text-slate-400 kicker mb-3" data-i18n="dash.trend">COMPLIANCE TREND</div>
-          <svg viewBox="0 0 300 90" class="w-full h-28" preserveAspectRatio="none">
-            <defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5aa2ff"/><stop offset="1" stop-color="#5aa2ff" stop-opacity="0"/></linearGradient></defs>
-            <polyline points="0,70 40,60 80,64 120,45 160,50 200,30 240,35 300,15 300,90 0,90" fill="url(#trendFill)" stroke="none" opacity="0.3"/>
-            <polyline points="0,70 40,60 80,64 120,45 160,50 200,30 240,35 300,15" fill="none" stroke="#5aa2ff" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
-          </svg>
-        </div>
-
-        <div class="mock-tile p-5">
-          <div class="text-[11px] text-slate-400 kicker mb-3" data-i18n="dash.riskDist">RISK DISTRIBUTION</div>
-          <div class="flex items-end gap-3 h-24">
-            <div class="bar flex-1 bg-red-400/80 rounded-t" style="height:30%"></div>
-            <div class="bar flex-1 bg-amber-300/80 rounded-t" style="height:55%"></div>
-            <div class="bar flex-1 bg-emerald-400/80 rounded-t" style="height:80%"></div>
+        <div class="card absolute -bottom-6 left-4 right-4 sm:left-8 sm:right-auto sm:max-w-sm px-4 py-3.5 flex items-center gap-3 shadow-[0_20px_40px_-20px_rgba(11,29,54,.35)]">
+          <div class="flex -space-x-2 shrink-0 ltr-diagram">
+            <div class="w-8 h-8 rounded-full bg-[var(--navy-900)] text-white border-2 border-white flex items-center justify-center text-[10px] font-semibold">AK</div>
+            <div class="w-8 h-8 rounded-full bg-[var(--brand)] text-white border-2 border-white flex items-center justify-center text-[10px] font-semibold">RS</div>
+            <div class="w-8 h-8 rounded-full bg-[var(--navy-700)] text-white border-2 border-white flex items-center justify-center text-[10px] font-semibold">MJ</div>
           </div>
-          <div class="flex justify-between text-[10px] text-slate-400 mt-2"><span data-i18n="dash.high">High</span><span data-i18n="dash.med">Med</span><span data-i18n="dash.low">Low</span></div>
-        </div>
-
-        <div class="mock-tile p-5">
-          <div class="text-[11px] text-slate-400 kicker mb-3" data-i18n="dash.openResolved">OPEN VS RESOLVED</div>
-          <div class="flex items-center justify-center h-24">
-            <svg viewBox="0 0 36 36" class="w-20 h-20">
-              <path d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="4"/>
-              <path d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32" fill="none" stroke="#5aa2ff" stroke-width="4" stroke-dasharray="72 100" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="text-center text-[10px] text-slate-400" data-i18n="dash.resolvedStat">72% Resolved</div>
-        </div>
-
-        <div class="lg:col-span-4 mock-tile p-5">
-          <div class="text-[11px] text-slate-400 kicker mb-4" data-i18n="dash.byUnit">COMPLIANCE BY BUSINESS UNIT</div>
-          <div class="grid sm:grid-cols-3 gap-5">
-            <div><div class="flex justify-between text-xs text-slate-300 mb-1.5"><span data-i18n="dash.marketing">Marketing</span><span>92%</span></div><div class="h-1.5 rounded bg-white/5"><div class="h-1.5 rounded bg-[#5aa2ff]" style="width:92%"></div></div></div>
-            <div><div class="flex justify-between text-xs text-slate-300 mb-1.5"><span data-i18n="dash.legal">Legal</span><span>97%</span></div><div class="h-1.5 rounded bg-white/5"><div class="h-1.5 rounded bg-[#5aa2ff]" style="width:97%"></div></div></div>
-            <div><div class="flex justify-between text-xs text-slate-300 mb-1.5"><span data-i18n="dash.product">Product</span><span>88%</span></div><div class="h-1.5 rounded bg-white/5"><div class="h-1.5 rounded bg-[#5aa2ff]" style="width:88%"></div></div></div>
-          </div>
+          <div class="text-xs text-[var(--body)] leading-snug flex-1" data-i18n="hb.reviewing">Reviewing this week's flagged content</div>
+          <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold shrink-0" data-i18n="hb.onTrack">On track</span>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- WHAT CAN YOU CHECK -->
-<section id="check" class="section-pad">
-  <div class="wrap">
-    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
-      <p class="eyebrow mb-4" data-i18n="check.kicker">CONTENT COVERAGE</p>
-      <h2 class="h2" data-i18n="check.title">What Can You Check?</h2>
-      <p class="mt-5 lead" data-i18n="check.desc">Axion Regulus can evaluate business content against the regulatory requirements and policies configured in your workspace.</p>
-    </div>
-
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="check.c1t">Product Content</h3>
-        <ul class="mt-3 space-y-2 text-sm text-[var(--body)]">
-          <li data-i18n="check.c1i1">Product descriptions</li>
-          <li data-i18n="check.c1i2">Product claims</li>
-          <li data-i18n="check.c1i3">Product information</li>
-        </ul>
+  <div class="wrap mt-14 grid md:grid-cols-3 gap-6">
+      <div class="group fade-up" data-fade>
+        <div class="aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--line)]">
+          <img src="control-team.jpg" width="1376" height="768" loading="lazy" decoding="async" alt="Team reviewing compliance reports together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
+        </div>
+        <h3 class="text-[var(--ink)] font-semibold mt-4" data-i18n="hs.h1t">Control</h3>
+        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h1d">Teams stay in control of every compliance decision, with AI support at each step.</p>
       </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l7 4V6l-7 4z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="check.c2t">Marketing Content</h3>
-        <ul class="mt-3 space-y-2 text-sm text-[var(--body)]">
-          <li data-i18n="check.c2i1">Advertising copy</li>
-          <li data-i18n="check.c2i2">Promotional content</li>
-          <li data-i18n="check.c2i3">Campaign messaging</li>
-        </ul>
+      <div class="group fade-up" data-fade>
+        <div class="aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--line)]">
+          <img src="productivity-infographic.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Axion Regulus turning manual compliance checks into confident, automated decisions" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.03]">
+        </div>
+        <h3 class="text-[var(--ink)] font-semibold mt-4" data-i18n="hs.h2t">Productivity</h3>
+        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h2d">Structured workflows help teams move from review to resolution faster.</p>
       </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="check.c3t">Digital Content</h3>
-        <ul class="mt-3 space-y-2 text-sm text-[var(--body)]">
-          <li data-i18n="check.c3i1">Website content</li>
-          <li data-i18n="check.c3i2">Blog content</li>
-          <li data-i18n="check.c3i3">Social media content</li>
-        </ul>
+      <div class="group fade-up" data-fade>
+        <div class="aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--line)]">
+          <img src="peace-of-mind-team.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Team confidently discussing compliance results together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
+        </div>
+        <h3 class="text-[var(--ink)] font-semibold mt-4" data-i18n="hs.h3t">Peace of Mind</h3>
+        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h3d">Clear evidence and reasoning behind every compliance assessment.</p>
       </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="check.c4t">Business Content</h3>
-        <ul class="mt-3 space-y-2 text-sm text-[var(--body)]">
-          <li data-i18n="check.c4i1">Policy-driven documents</li>
-          <li data-i18n="check.c4i2">Internal business content</li>
-        </ul>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- USE CASES -->
+<!-- INDUSTRIES + COVERAGE -->
 <section id="industries" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap">
     <div class="max-w-3xl fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="ind.kicker">USE CASES</p>
       <h2 class="h2" data-i18n="ind.title">Built for regulated, high-stakes industries</h2>
     </div>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-12 gap-4" id="industryGrid"></div>
 
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-12 gap-4" id="industryGrid"></div>
-  </div>
-</section>
-
-<!-- SEE IT IN ACTION -->
-<section class="section-pad">
-  <div class="wrap grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-    <div class="fade-up" data-fade>
-      <p class="eyebrow mb-4" data-i18n="see.kicker">SEE IT IN ACTION</p>
-      <h2 class="h2" data-i18n="see.title">From a single claim to a compliance decision</h2>
-      <span class="inline-block mt-5 text-[10px] font-semibold kicker px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700" data-i18n="see.illustrative">ILLUSTRATIVE EXAMPLE</span>
-      <p class="mt-6 lead max-w-lg" data-i18n="see.desc">Business content is checked against structured, regulation-derived rules — with a clear reason and a recommended next step for every flag.</p>
-      <ol class="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-[var(--ink)] font-medium">
-        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[var(--brand)] shrink-0"></span><span data-i18n="see.step1">1. UPLOAD REGULATION</span></li>
-        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[var(--brand)] shrink-0"></span><span data-i18n="see.step4">4. UPLOAD CONTENT</span></li>
-        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[var(--brand)] shrink-0"></span><span data-i18n="see.step2">2. EXTRACT REQUIREMENTS</span></li>
-        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[var(--brand)] shrink-0"></span><span data-i18n="see.step5">5. AI VALIDATION</span></li>
-        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[var(--brand)] shrink-0"></span><span data-i18n="see.step3">3. RULES CREATED</span></li>
-        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-[var(--brand)] shrink-0"></span><span data-i18n="see.step6">6. REPORT &amp; ACTIONS</span></li>
-      </ol>
-    </div>
-
-    <div class="card p-6 sm:p-7 shadow-[0_30px_60px_-35px_rgba(11,29,54,.4)] fade-up" data-fade>
-      <div class="text-[10px] font-semibold kicker text-[var(--muted)] mb-2" data-i18n="see.submitted">SUBMITTED CONTENT</div>
-      <div class="rounded-lg bg-[var(--bg2)] border border-[var(--line)] p-4 text-sm text-[var(--ink)] italic" data-i18n="see.claim">
-        "Boosts immunity and prevents illness."
+    <div id="check" class="mt-6 card p-6 lg:p-8 grid lg:grid-cols-12 gap-8 fade-up" data-fade>
+      <div class="lg:col-span-4">
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="check.title">What Can You Check?</h3>
+        <p class="mt-2 text-sm text-[var(--body)] leading-relaxed" data-i18n="check.desc">Axion Regulus can evaluate business content against the regulatory requirements and policies configured in your workspace.</p>
       </div>
-      <div class="flex items-center justify-center my-4 text-[var(--brand)] text-xs font-semibold kicker" data-i18n="see.aiAnalysis">AI ANALYSIS ↓</div>
-      <div class="rounded-lg border border-red-200 bg-red-50/60 p-4">
-        <div class="flex items-center justify-between gap-3 mb-3">
-          <span class="text-red-700 font-semibold text-sm" data-i18n="see.riskTitle">Potential Regulatory Risk</span>
-          <span class="text-[10px] font-semibold kicker px-2 py-1 rounded-full bg-red-100 text-red-700 shrink-0" data-i18n="see.riskHigh">RISK: HIGH</span>
-        </div>
-        <div class="text-xs text-[var(--body)] space-y-2 leading-relaxed">
-          <p><span class="font-semibold text-[var(--ink)]" data-i18n="see.ruleLabel">Applicable Requirement: </span><span data-i18n="see.ruleText">RULE-041 · Marketing claims must be substantiated and not imply a medical or therapeutic effect.</span></p>
-          <p><span class="font-semibold text-[var(--ink)]" data-i18n="see.reasonLabel">Why it was flagged: </span><span data-i18n="see.reasonText">The statement implies a health or therapeutic benefit that is not supported by evidence on file.</span></p>
-          <p><span class="font-semibold text-[var(--ink)]" data-i18n="see.recLabel">Recommendation: </span><span data-i18n="see.recText">Review or modify the claim based on the applicable regulatory requirement.</span></p>
-        </div>
-      </div>
-      <div class="mt-5 pt-5 border-t border-[var(--line)]">
-        <div class="text-[10px] font-semibold kicker text-[var(--muted)] mb-3" data-i18n="see.decisionLabel">HUMAN DECISION</div>
-        <div class="flex flex-wrap gap-2 ltr-diagram">
-          <span class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700" data-i18n="see.approve">Approve</span>
-          <span class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-700" data-i18n="see.modify">Modify</span>
-          <span class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-red-50 border border-red-200 text-red-700" data-i18n="see.reject">Reject</span>
-          <span class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-600" data-i18n="see.requestReview">Request Review</span>
-        </div>
+      <div class="lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c1t">Product Content</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c1i1">Product descriptions</li>
+          <li data-i18n="check.c1i2">Product claims</li>
+          <li data-i18n="check.c1i3">Product information</li></ul></div>
+        <div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c2t">Marketing Content</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c2i1">Advertising copy</li>
+          <li data-i18n="check.c2i2">Promotional content</li>
+          <li data-i18n="check.c2i3">Campaign messaging</li></ul></div>
+        <div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c3t">Digital Content</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c3i1">Website content</li>
+          <li data-i18n="check.c3i2">Blog content</li>
+          <li data-i18n="check.c3i3">Social media content</li></ul></div>
+        <div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c4t">Business Content</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c4i1">Policy-driven documents</li>
+          <li data-i18n="check.c4i2">Internal business content</li></ul></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT DOES THE CUSTOMER GET -->
-<section id="output" class="section-pad bg-soft border-y border-[var(--line)]">
-  <div class="wrap grid lg:grid-cols-12 gap-12 lg:gap-16">
-    <div class="lg:col-span-4 fade-up" data-fade>
-      <div class="lg:sticky lg:top-28">
-        <p class="eyebrow mb-4" data-i18n="output.kicker">STRUCTURED OUTPUT</p>
-        <h2 class="h2" data-i18n="output.title">Know What Needs Attention Before You Publish</h2>
-        <p class="mt-5 lead" data-i18n="output.desc">Axion Regulus doesn't just flag content. It provides structured findings that help your team understand what was detected and why.</p>
-      </div>
-    </div>
-    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-4 content-start">
-      <div class="card p-6 fade-up" data-fade>
-        <div class="num">01</div>
-        <h3 class="text-[var(--ink)] font-semibold mt-2" data-i18n="output.c1t">Compliance Score</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="output.c1d">A clear indication of the submission's compliance status.</p>
-      </div>
-      <div class="card p-6 fade-up" data-fade>
-        <div class="num">02</div>
-        <h3 class="text-[var(--ink)] font-semibold mt-2" data-i18n="output.c2t">Findings</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="output.c2d">Identify potential compliance issues detected during validation.</p>
-      </div>
-      <div class="card p-6 fade-up" data-fade>
-        <div class="num">03</div>
-        <h3 class="text-[var(--ink)] font-semibold mt-2" data-i18n="output.c3t">Applicable Rules</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="output.c3d">See which configured requirement triggered the finding.</p>
-      </div>
-      <div class="card p-6 fade-up" data-fade>
-        <div class="num">04</div>
-        <h3 class="text-[var(--ink)] font-semibold mt-2" data-i18n="output.c4t">Evidence</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="output.c4d">Review the supporting regulatory requirement or evidence where available.</p>
-      </div>
-      <div class="card p-6 fade-up" data-fade>
-        <div class="num">05</div>
-        <h3 class="text-[var(--ink)] font-semibold mt-2" data-i18n="output.c5t">Recommendations</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="output.c5d">Receive suggested actions to help address identified issues.</p>
-      </div>
-      <div class="card p-6 fade-up" data-fade>
-        <div class="num">06</div>
-        <h3 class="text-[var(--ink)] font-semibold mt-2" data-i18n="output.c6t">Human Review</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="output.c6d">Authorized users can review findings and make the final decision.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HUMAN SUCCESS -->
-<section class="section-pad">
-  <div class="wrap">
-    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
-      <h2 class="h2" data-i18n="hs.title">Give your compliance team more time to focus on what matters</h2>
-      <p class="mt-5 lead" data-i18n="hs.desc">Designed for the teams responsible for keeping modern businesses compliant.</p>
-    </div>
-
-    <div class="mt-12 grid md:grid-cols-3 gap-6">
-      <div class="group fade-up" data-fade>
-        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="control-team.jpg" width="1376" height="768" loading="lazy" decoding="async" alt="Team reviewing compliance reports together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
-        </div>
-        <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="hs.h1t">Control</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h1d">Teams stay in control of every compliance decision, with AI support at each step.</p>
-      </div>
-      <div class="group fade-up" data-fade>
-        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="productivity-infographic.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Axion Regulus turning manual compliance checks into confident, automated decisions" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.03]">
-        </div>
-        <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="hs.h2t">Productivity</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h2d">Structured workflows help teams move from review to resolution faster.</p>
-      </div>
-      <div class="group fade-up" data-fade>
-        <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="peace-of-mind-team.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Team confidently discussing compliance results together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
-        </div>
-        <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="hs.h3t">Peace of Mind</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h3d">Clear evidence and reasoning behind every compliance assessment.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECURITY & ENTERPRISE TRUST -->
+<!-- SECURITY + HUMAN OVERSIGHT -->
 <section class="dark section-pad relative overflow-hidden">
   <div class="absolute -bottom-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#1764d1]/20 blur-[130px] pointer-events-none"></div>
   <div class="relative wrap grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -958,145 +703,55 @@
         <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i8">Human review at every stage before a decision is finalized</span></div>
       </div>
     </div>
-    <div class="lg:col-span-5 fade-up" data-fade>
-      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-10 flex flex-col items-center">
-        <div class="relative w-32 h-32 mb-6">
-          <div class="absolute inset-0 rounded-full bg-[#1764d1]/30 blur-2xl pulse-glow"></div>
-          <svg viewBox="0 0 24 24" fill="none" class="relative w-full h-full">
-            <path stroke="#5aa2ff" stroke-width="1" d="M12 2l8 3.5v6c0 5.5-4 9.5-8 10.5-4-1-8-5-8-10.5v-6z"/>
-            <circle cx="12" cy="11" r="2.4" fill="none" stroke="#fff" stroke-width="1"/>
-            <path stroke="#fff" stroke-width="1" d="M12 13.4V16"/>
-          </svg>
-        </div>
-        <p class="text-center text-sm text-[#c4d0e0] max-w-xs leading-relaxed" data-i18n="sec.vaultDesc">A secure environment for regulatory documents and compliance intelligence — access-controlled and fully auditable.</p>
-      </div>
+    <div id="ai-oversight" class="lg:col-span-5 rounded-2xl border border-white/10 bg-white/[0.03] p-7 sm:p-9 fade-up" data-fade>
+      <p class="eyebrow mb-3" data-i18n="ai.kicker">A CORE DIFFERENTIATOR</p>
+      <h3 class="font-display text-2xl font-bold text-white tracking-tight" data-i18n="ai.title">AI that assists. Humans that decide.</h3>
+      <p class="mt-3 text-sm text-[#a9b8cc] leading-relaxed" data-i18n="ai.desc">Axion Regulus combines AI-powered analysis with human supervision to help organizations evaluate regulatory requirements, identify risks and make informed compliance decisions.</p>
+      <ol class="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 text-sm text-white font-medium">
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full border border-white/20 text-[#9cc5ff] text-[11px] font-bold flex items-center justify-center shrink-0">1</span><span data-i18n="ai.v1">AI Analysis</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full border border-white/20 text-[#9cc5ff] text-[11px] font-bold flex items-center justify-center shrink-0">2</span><span data-i18n="ai.v2">Rule Validation</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full border border-white/20 text-[#9cc5ff] text-[11px] font-bold flex items-center justify-center shrink-0">3</span><span data-i18n="ai.v3">Risk Detection</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full border border-white/20 text-[#9cc5ff] text-[11px] font-bold flex items-center justify-center shrink-0">4</span><span data-i18n="ai.v4">Evidence</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-[#1764d1] text-white text-[11px] font-bold flex items-center justify-center shrink-0">5</span><span data-i18n="ai.v5">Human Review</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-[#1764d1] text-white text-[11px] font-bold flex items-center justify-center shrink-0">6</span><span data-i18n="ai.v6">Decision</span></li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- AI WITH SUPERVISION -->
-<section id="ai-oversight" class="section-pad">
-  <div class="wrap text-center">
-    <div class="max-w-3xl mx-auto fade-up" data-fade>
-      <p class="eyebrow mb-4" data-i18n="ai.kicker">A CORE DIFFERENTIATOR</p>
-      <h2 class="h2" data-i18n="ai.title">AI that assists. Humans that decide.</h2>
-      <p class="mt-5 lead" data-i18n="ai.desc">Axion Regulus combines AI-powered analysis with human supervision to help organizations evaluate regulatory requirements, identify risks and make informed compliance decisions.</p>
-    </div>
-
-    <div class="mt-12 max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 ltr-diagram">
-      <div class="card px-4 py-5 fade-up" data-fade><div class="num mb-1.5" data-i18n="ai.stepLabel1">STEP 1</div><div class="text-[var(--ink)] font-semibold text-sm" data-i18n="ai.v1">AI Analysis</div></div>
-      <div class="card px-4 py-5 fade-up" data-fade><div class="num mb-1.5" data-i18n="ai.stepLabel2">STEP 2</div><div class="text-[var(--ink)] font-semibold text-sm" data-i18n="ai.v2">Rule Validation</div></div>
-      <div class="card px-4 py-5 fade-up" data-fade><div class="num mb-1.5" data-i18n="ai.stepLabel3">STEP 3</div><div class="text-[var(--ink)] font-semibold text-sm" data-i18n="ai.v3">Risk Detection</div></div>
-      <div class="card px-4 py-5 fade-up" data-fade><div class="num mb-1.5" data-i18n="ai.stepLabel4">STEP 4</div><div class="text-[var(--ink)] font-semibold text-sm" data-i18n="ai.v4">Evidence</div></div>
-      <div class="card px-4 py-5 fade-up border-[var(--brand)]! bg-[var(--brand-50)]!" data-fade><div class="num mb-1.5" data-i18n="ai.stepLabel5">STEP 5</div><div class="text-[var(--ink)] font-semibold text-sm" data-i18n="ai.v5">Human Review</div></div>
-      <div class="card px-4 py-5 fade-up bg-[var(--navy-900)]! border-[var(--navy-900)]!" data-fade><div class="num mb-1.5 text-[#9cc5ff]!" data-i18n="ai.stepLabel6">STEP 6</div><div class="text-white font-semibold text-sm" data-i18n="ai.v6">Decision</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CUSTOMER BENEFITS -->
-<section class="section-pad bg-soft border-y border-[var(--line)]">
-  <div class="wrap">
-    <div class="max-w-3xl fade-up" data-fade>
-      <p class="eyebrow mb-4" data-i18n="benefit.kicker">WHAT AXION REGULUS DELIVERS</p>
-      <h2 class="h2" data-i18n="benefit.title">Built to Help Compliance Teams</h2>
-    </div>
-
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="benefit.b1t">Reduce Manual Review</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="benefit.b1d">Automate repetitive first-level compliance checks.</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v3M11 14h.01"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="benefit.b2t">Identify Risks Earlier</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="benefit.b2d">Detect potential issues before content reaches customers.</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="1.5" fill="currentColor"/><circle cx="15" cy="12" r="1.5" fill="currentColor"/><circle cx="9" cy="18" r="1.5" fill="currentColor"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="benefit.b3t">Standardize Reviews</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="benefit.b3d">Apply structured compliance rules consistently.</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9v.2h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="benefit.b4t">Understand Why Content Was Flagged</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="benefit.b4d">Connect findings with applicable rules and supporting evidence.</p>
-      </div>
-      <div class="card card-hover p-6 fade-up" data-fade>
-        <div class="ico mb-5"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <h3 class="text-[var(--ink)] font-semibold" data-i18n="benefit.b5t">Keep Humans in Control</h3>
-        <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="benefit.b5d">Give authorized reviewers the final decision.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARTNERSHIP -->
-<section id="partners" class="section-pad">
-  <div class="wrap grid lg:grid-cols-12 gap-12 lg:gap-16">
-    <div class="lg:col-span-5 fade-up" data-fade>
+<!-- PARTNERS & INVESTORS -->
+<section id="partners" class="section-pad bg-soft border-y border-[var(--line)]">
+  <div class="wrap grid lg:grid-cols-2 gap-6">
+    <div class="card p-7 sm:p-10 flex flex-col fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="part.kicker">PARTNERSHIPS</p>
-      <h2 class="h2" data-i18n="part.title">Build the future of compliance intelligence with us</h2>
-      <p class="mt-5 lead" data-i18n="part.desc">Axion is open to strategic partnerships with technology companies, IT consulting firms, compliance consultants, system integrators, enterprise software companies and regulatory technology partners.</p>
-      <a href="#contact" class="btn btn-primary mt-8" data-i18n="part.cta">Become a Strategic Partner</a>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-[var(--ink)] tracking-tight leading-tight" data-i18n="part.title">Build the future of compliance intelligence with us</h2>
+      <p class="mt-4 text-[var(--body)] leading-relaxed" data-i18n="part.desc">Axion is open to strategic partnerships with technology companies, IT consulting firms, compliance consultants, system integrators, enterprise software companies and regulatory technology partners.</p>
+      <ul class="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-4 text-sm">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><span class="block font-semibold text-[var(--ink)]" data-i18n="part.p1t">Enterprise Adoption</span><span class="block text-[var(--body)] font-normal mt-0.5 leading-relaxed" data-i18n="part.p1d">Axion Regulus를 귀사의 엔터프라이즈 고객 기반에 제공하세요.</span></span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><span class="block font-semibold text-[var(--ink)]" data-i18n="part.p2t">Technology Integration</span><span class="block text-[var(--body)] font-normal mt-0.5 leading-relaxed" data-i18n="part.p2d">컴플라이언스 인텔리전스를 기존 플랫폼에 통합합니다.</span></span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><span class="block font-semibold text-[var(--ink)]" data-i18n="part.p3t">Market Expansion</span><span class="block text-[var(--body)] font-normal mt-0.5 leading-relaxed" data-i18n="part.p3d">새로운 지역과 산업으로 범위를 확장합니다.</span></span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><span class="block font-semibold text-[var(--ink)]" data-i18n="part.p4t">Reseller Opportunities</span><span class="block text-[var(--body)] font-normal mt-0.5 leading-relaxed" data-i18n="part.p4d">귀사의 시장에서 Axion Regulus를 대리합니다.</span></span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><span class="block font-semibold text-[var(--ink)]" data-i18n="part.p5t">Implementation Partnerships</span><span class="block text-[var(--body)] font-normal mt-0.5 leading-relaxed" data-i18n="part.p5d">고객을 위해 Axion Regulus 구축을 진행합니다.</span></span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><span class="block font-semibold text-[var(--ink)]" data-i18n="part.p6t">Industry-Specific Solutions</span><span class="block text-[var(--body)] font-normal mt-0.5 leading-relaxed" data-i18n="part.p6d">규제 산업을 위한 솔루션을 공동 개발합니다.</span></span></li>
+      </ul>
+      <a href="#contact" class="link-arrow mt-auto pt-8 text-sm"><span data-i18n="part.cta">Become a Strategic Partner</span> <span aria-hidden="true" class="inline-block rtl-flip">→</span></a>
     </div>
-    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-[var(--line)] border border-[var(--line)] rounded-2xl overflow-hidden fade-up" data-fade>
-      <div class="bg-white p-6"><h3 class="text-[var(--ink)] font-semibold" data-i18n="part.p1t">Enterprise Adoption</h3><p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="part.p1d">Bring Axion Regulus to your enterprise customer base.</p></div>
-      <div class="bg-white p-6"><h3 class="text-[var(--ink)] font-semibold" data-i18n="part.p2t">Technology Integration</h3><p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="part.p2d">Integrate compliance intelligence into existing platforms.</p></div>
-      <div class="bg-white p-6"><h3 class="text-[var(--ink)] font-semibold" data-i18n="part.p3t">Market Expansion</h3><p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="part.p3d">Extend reach across new regions and industries.</p></div>
-      <div class="bg-white p-6"><h3 class="text-[var(--ink)] font-semibold" data-i18n="part.p4t">Reseller Opportunities</h3><p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="part.p4d">Represent Axion Regulus in your market.</p></div>
-      <div class="bg-white p-6"><h3 class="text-[var(--ink)] font-semibold" data-i18n="part.p5t">Implementation Partnerships</h3><p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="part.p5d">Deliver Axion Regulus deployments for clients.</p></div>
-      <div class="bg-white p-6"><h3 class="text-[var(--ink)] font-semibold" data-i18n="part.p6t">Industry-Specific Solutions</h3><p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="part.p6d">Co-build solutions for regulated industries.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SEED FUNDING -->
-<section id="investors" class="dark section-pad relative overflow-hidden">
-  <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:radial-gradient(70%_60%_at_50%_0%,#000_30%,transparent_100%)]"></div>
-  <div class="relative wrap">
-    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
-      <p class="eyebrow mb-4" data-i18n="inv.kicker">FOR INVESTORS</p>
-      <h2 class="h2" data-i18n="inv.title">Scaling the next generation of compliance intelligence</h2>
-      <p class="mt-5 lead" data-i18n="inv.desc">Axion Consultancy Services is actively seeking seed investment and strategic venture partners to accelerate product development, expand enterprise adoption and scale Axion Regulus into new markets.</p>
-    </div>
-
-    <div class="mt-12 grid md:grid-cols-3 gap-4">
-      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-7 fade-up" data-fade>
-        <div class="num text-[#9cc5ff]!">01</div>
-        <h3 class="text-white font-semibold text-lg mt-2" data-i18n="inv.v1t">Product Development</h3>
-        <p class="text-sm text-[#a9b8cc] mt-2 leading-relaxed" data-i18n="inv.v1d">Expand AI capabilities, compliance intelligence, automation and enterprise features.</p>
+    <div id="investors" class="rounded-2xl bg-[var(--navy-900)] p-7 sm:p-10 flex flex-col relative overflow-hidden fade-up" data-fade>
+      <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:radial-gradient(70%_60%_at_100%_0%,#000_30%,transparent_100%)]"></div>
+      <div class="relative flex flex-col h-full">
+        <p class="eyebrow mb-4 text-[#5aa2ff]!" data-i18n="inv.kicker">FOR INVESTORS</p>
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight" data-i18n="inv.title">Scaling the next generation of compliance intelligence</h2>
+        <p class="mt-4 text-[#a9b8cc] leading-relaxed" data-i18n="inv.desc">Axion Consultancy Services is actively seeking seed investment and strategic venture partners to accelerate product development, expand enterprise adoption and scale Axion Regulus into new markets.</p>
+        <ul class="mt-6 space-y-4">
+          <li><div class="text-white font-semibold" data-i18n="inv.v1t">Product Development</div><div class="text-sm text-[#a9b8cc] mt-1 leading-relaxed" data-i18n="inv.v1d">Expand AI capabilities, compliance intelligence, automation and enterprise features.</div></li>
+          <li><div class="text-white font-semibold" data-i18n="inv.v2t">Market Expansion</div><div class="text-sm text-[#a9b8cc] mt-1 leading-relaxed" data-i18n="inv.v2d">Expand across the UAE, GCC and international markets.</div></li>
+          <li><div class="text-white font-semibold" data-i18n="inv.v3t">Enterprise Adoption</div><div class="text-sm text-[#a9b8cc] mt-1 leading-relaxed" data-i18n="inv.v3d">Build partnerships and accelerate adoption across regulated industries.</div></li>
+        </ul>
+        <div class="mt-auto pt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href="#contact" class="link-arrow text-sm text-white! hover:text-[#9cc5ff]!"><span data-i18n="inv.cta1">Discuss Investment Opportunities</span> <span aria-hidden="true" class="inline-block rtl-flip">→</span></a>
+          <a href="#contact" class="link-arrow text-sm text-[#9cc5ff]! hover:text-white!"><span data-i18n="inv.cta2">Request Investor Deck</span> <span aria-hidden="true" class="inline-block rtl-flip">→</span></a>
+        </div>
       </div>
-      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-7 fade-up" data-fade>
-        <div class="num text-[#9cc5ff]!">02</div>
-        <h3 class="text-white font-semibold text-lg mt-2" data-i18n="inv.v2t">Market Expansion</h3>
-        <p class="text-sm text-[#a9b8cc] mt-2 leading-relaxed" data-i18n="inv.v2d">Expand across the UAE, GCC and international markets.</p>
-      </div>
-      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-7 fade-up" data-fade>
-        <div class="num text-[#9cc5ff]!">03</div>
-        <h3 class="text-white font-semibold text-lg mt-2" data-i18n="inv.v3t">Enterprise Adoption</h3>
-        <p class="text-sm text-[#a9b8cc] mt-2 leading-relaxed" data-i18n="inv.v3d">Build partnerships and accelerate adoption across regulated industries.</p>
-      </div>
-    </div>
-
-    <!-- Investor visual: global expansion -->
-    <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 fade-up" data-fade>
-      <div class="text-center text-[11px] font-semibold kicker text-[#9cc5ff] mb-8" data-i18n="inv.seeking">SEEKING SEED INVESTORS &amp; STRATEGIC VENTURE PARTNERS</div>
-      <div class="flex items-center justify-between max-w-2xl mx-auto ltr-diagram">
-        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-[#5aa2ff]/40 bg-[#1764d1]/20 flex items-center justify-center text-xs text-white font-semibold shrink-0">UAE</div>
-        <div class="flex-1 h-px bg-gradient-to-r from-[#5aa2ff]/70 to-[#5aa2ff]/30 mx-2"></div>
-        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-white/15 bg-white/5 flex items-center justify-center text-xs text-white font-semibold shrink-0">GCC</div>
-        <div class="flex-1 h-px bg-gradient-to-r from-[#5aa2ff]/30 to-white/15 mx-2"></div>
-        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-white/15 bg-white/5 flex items-center justify-center text-xs text-white font-semibold shrink-0">Europe</div>
-        <div class="flex-1 h-px bg-white/15 mx-2"></div>
-        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-white/15 bg-white/5 flex items-center justify-center text-xs text-white font-semibold shrink-0">Global</div>
-      </div>
-    </div>
-
-    <div class="mt-10 flex flex-wrap justify-center gap-3">
-      <a href="#contact" class="btn btn-primary" data-i18n="inv.cta1">Discuss Investment Opportunities</a>
-      <a href="#contact" class="btn btn-outline-light" data-i18n="inv.cta2">Request Investor Deck</a>
     </div>
   </div>
 </section>
@@ -1165,37 +820,15 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section id="demo" class="py-16 lg:py-20">
-  <div class="wrap">
-    <div class="relative overflow-hidden rounded-3xl bg-[var(--brand)] px-6 py-14 sm:px-12 lg:py-16 text-center fade-up" data-fade>
-      <div class="absolute inset-0 bg-grid-dark opacity-60 pointer-events-none"></div>
-      <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[var(--navy-900)]/40 blur-3xl pointer-events-none"></div>
-      <div class="relative max-w-3xl mx-auto">
-        <h2 class="font-display text-3xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight" data-i18n="cta.title">Bring Your Compliance Challenge.</h2>
-        <p class="mt-5 text-[#dbe8fb] text-lg leading-relaxed" data-i18n="cta.desc">Bring a regulatory document, policy requirement or business-content example. We'll show you how Axion Regulus can transform the requirement into a structured compliance check and identify potential risks.</p>
-        <div class="mt-9 flex flex-wrap justify-center gap-3">
-          <a href="#contact" class="btn btn-white" data-i18n="cta.b1">Request a Live Demo</a>
-          <a href="#contact" class="btn btn-outline-light" data-i18n="cta.b2">Talk to Axion</a>
-        </div>
-        <p class="mt-8 text-sm text-[#dbe8fb]">
-          <span data-i18n="cta.otherLinks">Looking to partner or invest instead?</span>
-          <a href="#partners" class="text-white font-semibold underline-offset-4 hover:underline" data-i18n="cta.b3">Partner With Us</a> ·
-          <a href="#investors" class="text-white font-semibold underline-offset-4 hover:underline" data-i18n="cta.b4">Invest in Axion</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap grid lg:grid-cols-12 gap-12 lg:gap-16">
     <div class="lg:col-span-5 fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="contact.kicker">GET IN TOUCH</p>
-      <h2 class="h2" data-i18n="contact.title">Talk to Axion</h2>
-      <p class="mt-5 lead" data-i18n="contact.desc">Demo requests, partnership inquiries and investor conversations all start here.</p>
-      <div class="mt-10 space-y-5">
+      <h2 class="h2" data-i18n="cta.title">Bring Your Compliance Challenge.</h2>
+      <p class="mt-5 lead" data-i18n="cta.desc">Bring a regulatory document, policy requirement or business-content example. We'll show you how Axion Regulus can transform the requirement into a structured compliance check and identify potential risks.</p>
+      <p class="mt-4 text-sm text-[var(--muted)]" data-i18n="contact.desc">Demo requests, partnership inquiries and investor conversations all start here.</p>
+      <div class="mt-8 space-y-4">
         <a href="mailto:info@axionast.com" class="flex items-center gap-4 group">
           <span class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
           <span class="text-[var(--ink)] font-semibold group-hover:text-[var(--brand)] transition">info@axionast.com</span>
@@ -1225,7 +858,7 @@
         </select>
         <textarea name="What would you like to validate" placeholder="What would you like to validate? (e.g. product descriptions, marketing content, a policy document)" data-i18n-placeholder="contact.validate" rows="2" class="rounded-lg px-4 py-3 text-sm sm:col-span-2"></textarea>
         <textarea name="Message" placeholder="Tell us about your compliance needs" data-i18n-placeholder="contact.message" rows="4" class="rounded-lg px-4 py-3 text-sm sm:col-span-2"></textarea>
-        <button type="submit" class="btn btn-primary sm:col-span-2 disabled:opacity-60 disabled:cursor-not-allowed" data-i18n="contact.send">Request a Live Demo</button>
+        <button type="submit" class="btn btn-primary sm:col-span-2 disabled:opacity-60 disabled:cursor-not-allowed" data-i18n="contact.submit">Send inquiry</button>
         <p data-status class="text-sm sm:col-span-2 text-center"></p>
         <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">We use your information only to respond to your inquiry. We don't share it with third parties.</p>
       </form>
@@ -1505,10 +1138,10 @@ function industrySpan(i) {
 
 function renderFeatures(lang) {
   document.getElementById('featureGrid').innerHTML = features.map(([icon,tk,dk], i) => `
-    <div class="card card-hover p-6 fade-up ${featureSpan(i)}" data-fade style="opacity:1;transform:none">
-      <div class="ico mb-5">${iconSvg(icon, 'currentColor')}</div>
-      <h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
-      <p class="text-sm text-[var(--body)] mt-2 leading-relaxed">${t(lang, dk)}</p>
+    <div class="card card-hover p-5 flex gap-4 fade-up ${featureSpan(i)}" data-fade style="opacity:1;transform:none">
+      <div class="ico">${iconSvg(icon, 'currentColor')}</div>
+      <div><h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed">${t(lang, dk)}</p></div>
     </div>`).join('');
 }
 
@@ -1524,10 +1157,10 @@ const industries = [
 ];
 function renderIndustries(lang) {
   document.getElementById('industryGrid').innerHTML = industries.map(([icon,tk,dk], i) => `
-    <div class="card card-hover p-6 fade-up ${industrySpan(i)}" data-fade style="opacity:1;transform:none">
-      <div class="w-12 h-12 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center mb-5 [&_svg]:w-6 [&_svg]:h-6">${iconSvg(icon, 'currentColor')}</div>
-      <h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
-      <p class="text-sm text-[var(--body)] mt-2 leading-relaxed">${t(lang, dk)}</p>
+    <div class="card card-hover p-5 flex gap-4 fade-up ${industrySpan(i)}" data-fade style="opacity:1;transform:none">
+      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5">${iconSvg(icon, 'currentColor')}</div>
+      <div><h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed">${t(lang, dk)}</p></div>
     </div>`).join('');
 }
 
@@ -1665,7 +1298,7 @@ en: {
 "contact.name":"Full name","contact.email":"Work email","contact.company":"Company","contact.industry":"Industry","contact.framework":"Regulatory framework / country (optional)",
 "contact.opt1":"I'd like to request a demo","contact.opt2":"I'm interested in partnership","contact.opt3":"I'm an investor / venture partner","contact.opt4":"General inquiry",
 "contact.validate":"What would you like to validate? (e.g. product descriptions, marketing content, a policy document)",
-"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. We don't share it with third parties.",
+"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. We don't share it with third parties.",
 "faq.kicker":"FAQ","faq.title":"Frequently Asked Questions",
 "faq.q1":"What is Axion Regulus?","faq.a1":"Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents and policy requirements into structured compliance rules and uses them to evaluate business content for potential compliance risks, findings and recommended actions.",
 "faq.q2":"How does Axion Regulus work?","faq.a2":"Organizations provide the relevant regulatory documents or policy requirements. Axion Regulus uses AI to identify and structure applicable requirements into compliance rules. Business content can then be submitted for validation against those rules, producing compliance findings, risk information and suggested actions.",
@@ -1817,7 +1450,7 @@ de: {
 "contact.name":"Vollständiger Name","contact.email":"Geschäftliche E-Mail","contact.company":"Unternehmen","contact.industry":"Branche","contact.framework":"Regulatorischer Rahmen / Land (optional)",
 "contact.opt1":"Ich möchte eine Demo anfordern","contact.opt2":"Ich interessiere mich für eine Partnerschaft","contact.opt3":"Ich bin Investor / Venture-Partner","contact.opt4":"Allgemeine Anfrage",
 "contact.validate":"Was möchten Sie prüfen lassen? (z. B. Produktbeschreibungen, Marketinginhalte, ein Richtliniendokument)",
-"contact.message":"Beschreiben Sie Ihre Compliance-Anforderungen","contact.send":"Live-Demo anfordern","contact.sending":"Wird gesendet…","contact.privacy":"Wir verwenden Ihre Angaben ausschließlich zur Beantwortung Ihrer Anfrage. Wir geben sie nicht an Dritte weiter.",
+"contact.message":"Beschreiben Sie Ihre Compliance-Anforderungen","contact.send":"Live-Demo anfordern","contact.submit":"Anfrage senden","contact.sending":"Wird gesendet…","contact.privacy":"Wir verwenden Ihre Angaben ausschließlich zur Beantwortung Ihrer Anfrage. Wir geben sie nicht an Dritte weiter.",
 "faq.kicker":"FAQ","faq.title":"Häufig gestellte Fragen",
 "faq.q1":"Was ist Axion Regulus?","faq.a1":"Axion Regulus ist eine KI-gestützte Enterprise-Compliance-Intelligence-Plattform, die regulatorische Dokumente und Richtlinienanforderungen in strukturierte Compliance-Regeln umwandelt und damit Geschäftsinhalte auf potenzielle Compliance-Risiken, Befunde und empfohlene Maßnahmen hin bewertet.",
 "faq.q2":"Wie funktioniert Axion Regulus?","faq.a2":"Organisationen stellen die relevanten regulatorischen Dokumente oder Richtlinienanforderungen bereit. Axion Regulus nutzt KI, um anwendbare Anforderungen zu identifizieren und in Compliance-Regeln zu strukturieren. Geschäftsinhalte können anschließend zur Validierung gegen diese Regeln eingereicht werden, was Compliance-Befunde, Risikoinformationen und Handlungsvorschläge liefert.",
@@ -1969,7 +1602,7 @@ fr: {
 "contact.name":"Nom complet","contact.email":"E-mail professionnel","contact.company":"Entreprise","contact.industry":"Secteur d'activité","contact.framework":"Cadre réglementaire / pays (facultatif)",
 "contact.opt1":"Je souhaite demander une démo","contact.opt2":"Je suis intéressé par un partenariat","contact.opt3":"Je suis investisseur / partenaire venture","contact.opt4":"Demande générale",
 "contact.validate":"Que souhaitez-vous vérifier ? (par ex. descriptions de produits, contenu marketing, un document de politique)",
-"contact.message":"Parlez-nous de vos besoins en matière de conformité","contact.send":"Demander une démo en direct","contact.sending":"Envoi en cours…","contact.privacy":"Nous utilisons vos informations uniquement pour répondre à votre demande. Nous ne les partageons pas avec des tiers.",
+"contact.message":"Parlez-nous de vos besoins en matière de conformité","contact.send":"Demander une démo en direct","contact.submit":"Envoyer la demande","contact.sending":"Envoi en cours…","contact.privacy":"Nous utilisons vos informations uniquement pour répondre à votre demande. Nous ne les partageons pas avec des tiers.",
 "faq.kicker":"FAQ","faq.title":"Questions fréquentes",
 "faq.q1":"Qu'est-ce qu'Axion Regulus ?","faq.a1":"Axion Regulus est une plateforme d'intelligence de conformité d'entreprise propulsée par l'IA qui convertit les documents réglementaires et les exigences de politique en règles de conformité structurées, puis les utilise pour évaluer le contenu de l'entreprise afin d'identifier des risques de conformité potentiels, des constats et des actions recommandées.",
 "faq.q2":"Comment fonctionne Axion Regulus ?","faq.a2":"Les organisations fournissent les documents réglementaires ou exigences de politique pertinents. Axion Regulus utilise l'IA pour identifier et structurer les exigences applicables en règles de conformité. Le contenu de l'entreprise peut ensuite être soumis pour validation par rapport à ces règles, produisant des constats de conformité, des informations sur les risques et des actions suggérées.",
@@ -2121,7 +1754,7 @@ es: {
 "contact.name":"Nombre completo","contact.email":"Correo profesional","contact.company":"Empresa","contact.industry":"Sector","contact.framework":"Marco regulatorio / país (opcional)",
 "contact.opt1":"Me gustaría solicitar una demo","contact.opt2":"Estoy interesado en una alianza","contact.opt3":"Soy inversor / socio de capital de riesgo","contact.opt4":"Consulta general",
 "contact.validate":"¿Qué le gustaría verificar? (p. ej. descripciones de productos, contenido de marketing, un documento de política)",
-"contact.message":"Cuéntenos sobre sus necesidades de cumplimiento","contact.send":"Solicitar una demo en vivo","contact.sending":"Enviando…","contact.privacy":"Usamos su información únicamente para responder a su consulta. No la compartimos con terceros.",
+"contact.message":"Cuéntenos sobre sus necesidades de cumplimiento","contact.send":"Solicitar una demo en vivo","contact.submit":"Enviar solicitud","contact.sending":"Enviando…","contact.privacy":"Usamos su información únicamente para responder a su consulta. No la compartimos con terceros.",
 "faq.kicker":"PREGUNTAS FRECUENTES","faq.title":"Preguntas frecuentes",
 "faq.q1":"¿Qué es Axion Regulus?","faq.a1":"Axion Regulus es una plataforma de Inteligencia de Cumplimiento Empresarial impulsada por IA que convierte documentos regulatorios y requisitos de política en reglas de cumplimiento estructuradas, y las utiliza para evaluar el contenido empresarial en busca de posibles riesgos de cumplimiento, hallazgos y acciones recomendadas.",
 "faq.q2":"¿Cómo funciona Axion Regulus?","faq.a2":"Las organizaciones proporcionan los documentos regulatorios o requisitos de política relevantes. Axion Regulus utiliza IA para identificar y estructurar los requisitos aplicables en reglas de cumplimiento. El contenido empresarial puede entonces enviarse para su validación frente a esas reglas, generando hallazgos de cumplimiento, información de riesgo y acciones sugeridas.",
@@ -2273,7 +1906,7 @@ ru: {
 "contact.name":"Полное имя","contact.email":"Рабочий email","contact.company":"Компания","contact.industry":"Отрасль","contact.framework":"Регуляторная база / страна (необязательно)",
 "contact.opt1":"Хочу запросить демо","contact.opt2":"Интересует партнёрство","contact.opt3":"Я инвестор / венчурный партнёр","contact.opt4":"Общий вопрос",
 "contact.validate":"Что бы вы хотели проверить? (например, описания продуктов, маркетинговый контент, документ политики)",
-"contact.message":"Расскажите о ваших задачах в сфере комплаенса","contact.send":"Запросить живую демонстрацию","contact.sending":"Отправка…","contact.privacy":"Мы используем вашу информацию только для ответа на ваш запрос. Мы не передаём её третьим лицам.",
+"contact.message":"Расскажите о ваших задачах в сфере комплаенса","contact.send":"Запросить живую демонстрацию","contact.submit":"Отправить запрос","contact.sending":"Отправка…","contact.privacy":"Мы используем вашу информацию только для ответа на ваш запрос. Мы не передаём её третьим лицам.",
 "faq.kicker":"ЧАСТЫЕ ВОПРОСЫ","faq.title":"Часто задаваемые вопросы",
 "faq.q1":"Что такое Axion Regulus?","faq.a1":"Axion Regulus — это платформа корпоративного комплаенс-интеллекта на основе ИИ, которая превращает регуляторные документы и требования политик в структурированные правила комплаенса и использует их для оценки бизнес-контента на предмет потенциальных рисков, замечаний и рекомендуемых действий.",
 "faq.q2":"Как работает Axion Regulus?","faq.a2":"Организации предоставляют соответствующие регуляторные документы или требования политик. Axion Regulus использует ИИ, чтобы выявить и структурировать применимые требования в правила комплаенса. Затем бизнес-контент можно отправить на проверку по этим правилам, что даёт замечания по комплаенсу, информацию о рисках и предлагаемые действия.",
@@ -2425,7 +2058,7 @@ ar: {
 "contact.name":"الاسم الكامل","contact.email":"البريد الإلكتروني للعمل","contact.company":"الشركة","contact.industry":"القطاع","contact.framework":"الإطار التنظيمي / البلد (اختياري)",
 "contact.opt1":"أرغب في طلب عرض تجريبي","contact.opt2":"مهتم بالشراكة","contact.opt3":"أنا مستثمر / شريك استثمار جريء","contact.opt4":"استفسار عام",
 "contact.validate":"ما الذي ترغب في التحقق منه؟ (مثل أوصاف المنتجات، المحتوى التسويقي، وثيقة سياسة)",
-"contact.message":"أخبرنا عن احتياجاتك في مجال الامتثال","contact.send":"اطلب عرضاً تجريبياً مباشراً","contact.sending":"جارٍ الإرسال…","contact.privacy":"نستخدم معلوماتك فقط للرد على استفسارك. لا نشاركها مع أطراف ثالثة.",
+"contact.message":"أخبرنا عن احتياجاتك في مجال الامتثال","contact.send":"اطلب عرضاً تجريبياً مباشراً","contact.submit":"إرسال الطلب","contact.sending":"جارٍ الإرسال…","contact.privacy":"نستخدم معلوماتك فقط للرد على استفسارك. لا نشاركها مع أطراف ثالثة.",
 "faq.kicker":"الأسئلة الشائعة","faq.title":"الأسئلة الشائعة",
 "faq.q1":"ما هو Axion Regulus؟","faq.a1":"‏Axion Regulus هي منصة ذكاء امتثال مؤسسي مدعومة بالذكاء الاصطناعي، تحوّل الوثائق التنظيمية ومتطلبات السياسات إلى قواعد امتثال منظَّمة، وتستخدمها لتقييم محتوى الأعمال بحثاً عن مخاطر امتثال محتملة وملاحظات وإجراءات موصى بها.",
 "faq.q2":"كيف يعمل Axion Regulus؟","faq.a2":"تقدّم المؤسسات الوثائق التنظيمية أو متطلبات السياسات ذات الصلة. يستخدم Axion Regulus الذكاء الاصطناعي لتحديد المتطلبات المعمول بها وتنظيمها في قواعد امتثال. بعد ذلك يمكن إرسال محتوى الأعمال للتحقق منه مقابل تلك القواعد، مما ينتج عنه ملاحظات امتثال ومعلومات عن المخاطر وإجراءات مقترحة.",
@@ -2577,7 +2210,7 @@ it: {
 "contact.name":"Nome completo","contact.email":"Email aziendale","contact.company":"Azienda","contact.industry":"Settore","contact.framework":"Quadro normativo / paese (opzionale)",
 "contact.opt1":"Vorrei richiedere una demo","contact.opt2":"Sono interessato a una partnership","contact.opt3":"Sono un investitore / partner venture","contact.opt4":"Richiesta generale",
 "contact.validate":"Cosa vorresti verificare? (ad es. descrizioni di prodotto, contenuti di marketing, un documento di policy)",
-"contact.message":"Raccontaci le tue esigenze di conformità","contact.send":"Richiedi una demo dal vivo","contact.sending":"Invio in corso…","contact.privacy":"Utilizziamo le tue informazioni solo per rispondere alla tua richiesta. Non le condividiamo con terze parti.",
+"contact.message":"Raccontaci le tue esigenze di conformità","contact.send":"Richiedi una demo dal vivo","contact.submit":"Invia richiesta","contact.sending":"Invio in corso…","contact.privacy":"Utilizziamo le tue informazioni solo per rispondere alla tua richiesta. Non le condividiamo con terze parti.",
 "faq.kicker":"FAQ","faq.title":"Domande frequenti",
 "faq.q1":"Cos'è Axion Regulus?","faq.a1":"Axion Regulus è una piattaforma di Intelligenza di Conformità Aziendale basata sull'IA che trasforma documenti normativi e requisiti di policy in regole di conformità strutturate e le utilizza per valutare i contenuti aziendali individuando potenziali rischi di conformità, rilievi e azioni consigliate.",
 "faq.q2":"Come funziona Axion Regulus?","faq.a2":"Le organizzazioni forniscono i documenti normativi o i requisiti di policy pertinenti. Axion Regulus utilizza l'IA per identificare e strutturare i requisiti applicabili in regole di conformità. I contenuti aziendali possono quindi essere inviati per la validazione rispetto a tali regole, producendo rilievi di conformità, informazioni sul rischio e azioni suggerite.",
@@ -2729,7 +2362,7 @@ pt: {
 "contact.name":"Nome completo","contact.email":"E-mail profissional","contact.company":"Empresa","contact.industry":"Setor","contact.framework":"Marco regulatório / país (opcional)",
 "contact.opt1":"Gostaria de solicitar uma demonstração","contact.opt2":"Tenho interesse em parceria","contact.opt3":"Sou investidor / parceiro de venture capital","contact.opt4":"Consulta geral",
 "contact.validate":"O que você gostaria de verificar? (ex.: descrições de produtos, conteúdo de marketing, um documento de política)",
-"contact.message":"Conte-nos sobre suas necessidades de conformidade","contact.send":"Solicitar uma demonstração ao vivo","contact.sending":"Enviando…","contact.privacy":"Usamos suas informações apenas para responder à sua solicitação. Não as compartilhamos com terceiros.",
+"contact.message":"Conte-nos sobre suas necessidades de conformidade","contact.send":"Solicitar uma demonstração ao vivo","contact.submit":"Enviar pedido","contact.sending":"Enviando…","contact.privacy":"Usamos suas informações apenas para responder à sua solicitação. Não as compartilhamos com terceiros.",
 "faq.kicker":"PERGUNTAS FREQUENTES","faq.title":"Perguntas frequentes",
 "faq.q1":"O que é a Axion Regulus?","faq.a1":"A Axion Regulus é uma plataforma de Inteligência de Conformidade Empresarial baseada em IA que converte documentos regulatórios e requisitos de política em regras de conformidade estruturadas, e as utiliza para avaliar conteúdo empresarial em busca de riscos de conformidade potenciais, constatações e ações recomendadas.",
 "faq.q2":"Como funciona a Axion Regulus?","faq.a2":"As organizações fornecem os documentos regulatórios ou requisitos de política relevantes. A Axion Regulus usa IA para identificar e estruturar os requisitos aplicáveis em regras de conformidade. O conteúdo empresarial pode então ser enviado para validação em relação a essas regras, gerando constatações de conformidade, informações de risco e ações sugeridas.",
@@ -2881,7 +2514,7 @@ zh: {
 "contact.name":"姓名","contact.email":"工作邮箱","contact.company":"公司","contact.industry":"行业","contact.framework":"法规框架 / 国家（可选）",
 "contact.opt1":"我想申请演示","contact.opt2":"我对合作感兴趣","contact.opt3":"我是投资者 / 风险投资合作伙伴","contact.opt4":"一般咨询",
 "contact.validate":"您想检查什么内容？（例如产品描述、营销内容、政策文件）",
-"contact.message":"请告诉我们您的合规需求","contact.send":"申请实时演示","contact.sending":"发送中…","contact.privacy":"我们仅使用您的信息来回复您的咨询，不会与第三方共享。",
+"contact.message":"请告诉我们您的合规需求","contact.send":"申请实时演示","contact.submit":"提交咨询","contact.sending":"发送中…","contact.privacy":"我们仅使用您的信息来回复您的咨询，不会与第三方共享。",
 "faq.kicker":"常见问题","faq.title":"常见问题",
 "faq.q1":"什么是 Axion Regulus？","faq.a1":"Axion Regulus 是一个基于人工智能的企业合规智能平台，能够将法规文件和政策要求转化为结构化的合规规则，并据此评估业务内容，识别潜在合规风险、发现项及建议措施。",
 "faq.q2":"Axion Regulus 是如何运作的？","faq.a2":"企业提供相关的法规文件或政策要求，Axion Regulus 使用 AI 识别适用要求并将其结构化为合规规则。随后可提交业务内容依据这些规则进行验证，生成合规发现项、风险信息及建议措施。",
@@ -3033,7 +2666,7 @@ ja: {
 "contact.name":"氏名","contact.email":"勤務先メールアドレス","contact.company":"会社名","contact.industry":"業界","contact.framework":"規制枠組み / 国（任意）",
 "contact.opt1":"デモを申し込みたい","contact.opt2":"パートナーシップに興味がある","contact.opt3":"投資家／ベンチャーパートナーです","contact.opt4":"その他のお問い合わせ",
 "contact.validate":"何を検証したいですか？（例：製品説明、マーケティングコンテンツ、ポリシー文書）",
-"contact.message":"貴社のコンプライアンスに関するニーズをお聞かせください","contact.send":"ライブデモを申し込む","contact.sending":"送信中…","contact.privacy":"お預かりした情報はお問い合わせへの対応にのみ使用し、第三者と共有することはありません。",
+"contact.message":"貴社のコンプライアンスに関するニーズをお聞かせください","contact.send":"ライブデモを申し込む","contact.submit":"お問い合わせを送信","contact.sending":"送信中…","contact.privacy":"お預かりした情報はお問い合わせへの対応にのみ使用し、第三者と共有することはありません。",
 "faq.kicker":"よくある質問","faq.title":"よくある質問",
 "faq.q1":"Axion Regulusとは何ですか？","faq.a1":"Axion Regulusは、規制文書やポリシー要件を構造化されたコンプライアンスルールに変換し、それに基づいて業務コンテンツを評価することで、潜在的なコンプライアンスリスク、検出事項、推奨アクションを提示する、AIを活用したエンタープライズ・コンプライアンス・インテリジェンス・プラットフォームです。",
 "faq.q2":"Axion Regulusはどのように機能しますか？","faq.a2":"貴社が関連する規制文書やポリシー要件を提供します。Axion Regulusは、AIを用いて適用される要件を特定し、コンプライアンスルールとして構造化します。その後、業務コンテンツをそれらのルールに照らして検証のために提出でき、コンプライアンス上の検出事項、リスク情報、推奨アクションが生成されます。",
@@ -3185,7 +2818,7 @@ hi: {
 "contact.name":"पूरा नाम","contact.email":"कार्य ईमेल","contact.company":"कंपनी","contact.industry":"उद्योग","contact.framework":"नियामक ढांचा / देश (वैकल्पिक)",
 "contact.opt1":"मैं डेमो का अनुरोध करना चाहूंगा/चाहूंगी","contact.opt2":"मुझे साझेदारी में रुचि है","contact.opt3":"मैं एक निवेशक / वेंचर पार्टनर हूं","contact.opt4":"सामान्य पूछताछ",
 "contact.validate":"आप क्या सत्यापित करवाना चाहेंगे? (जैसे उत्पाद विवरण, मार्केटिंग सामग्री, एक नीति दस्तावेज़)",
-"contact.message":"हमें अपनी कंप्लायंस आवश्यकताओं के बारे में बताएं","contact.send":"लाइव डेमो का अनुरोध करें","contact.sending":"भेजा जा रहा है…","contact.privacy":"हम आपकी जानकारी का उपयोग केवल आपकी पूछताछ का जवाब देने के लिए करते हैं। हम इसे तीसरे पक्षों के साथ साझा नहीं करते।",
+"contact.message":"हमें अपनी कंप्लायंस आवश्यकताओं के बारे में बताएं","contact.send":"लाइव डेमो का अनुरोध करें","contact.submit":"पूछताछ भेजें","contact.sending":"भेजा जा रहा है…","contact.privacy":"हम आपकी जानकारी का उपयोग केवल आपकी पूछताछ का जवाब देने के लिए करते हैं। हम इसे तीसरे पक्षों के साथ साझा नहीं करते।",
 "faq.kicker":"सामान्य प्रश्न","faq.title":"अक्सर पूछे जाने वाले प्रश्न",
 "faq.q1":"Axion Regulus क्या है?","faq.a1":"Axion Regulus एक AI-संचालित एंटरप्राइज़ कंप्लायंस इंटेलिजेंस प्लेटफ़ॉर्म है जो नियामक दस्तावेज़ों और नीति आवश्यकताओं को संरचित कंप्लायंस नियमों में बदलता है, और उनका उपयोग व्यावसायिक सामग्री में संभावित कंप्लायंस जोखिमों, निष्कर्षों और अनुशंसित कार्रवाइयों का मूल्यांकन करने के लिए करता है।",
 "faq.q2":"Axion Regulus कैसे काम करता है?","faq.a2":"संगठन प्रासंगिक नियामक दस्तावेज़ या नीति आवश्यकताएं उपलब्ध कराते हैं। Axion Regulus AI का उपयोग करके लागू आवश्यकताओं की पहचान करता है और उन्हें कंप्लायंस नियमों में संरचित करता है। इसके बाद व्यावसायिक सामग्री को उन नियमों के आधार पर सत्यापन के लिए प्रस्तुत किया जा सकता है, जिससे कंप्लायंस निष्कर्ष, जोखिम जानकारी और सुझाई गई कार्रवाइयां प्राप्त होती हैं।",
@@ -3337,7 +2970,7 @@ ko: {
 "contact.name":"성명","contact.email":"업무용 이메일","contact.company":"회사명","contact.industry":"업종","contact.framework":"규제 체계 / 국가 (선택 사항)",
 "contact.opt1":"데모를 신청하고 싶습니다","contact.opt2":"파트너십에 관심이 있습니다","contact.opt3":"투자자 / 벤처 파트너입니다","contact.opt4":"일반 문의",
 "contact.validate":"무엇을 검증하고 싶으신가요? (예: 제품 설명, 마케팅 콘텐츠, 정책 문서)",
-"contact.message":"귀사의 컴플라이언스 요구사항을 알려주세요","contact.send":"라이브 데모 신청","contact.sending":"전송 중…","contact.privacy":"귀하의 정보는 문의에 답변하는 용도로만 사용되며, 제3자와 공유되지 않습니다.",
+"contact.message":"귀사의 컴플라이언스 요구사항을 알려주세요","contact.send":"라이브 데모 신청","contact.submit":"문의 보내기","contact.sending":"전송 중…","contact.privacy":"귀하의 정보는 문의에 답변하는 용도로만 사용되며, 제3자와 공유되지 않습니다.",
 "faq.kicker":"자주 묻는 질문","faq.title":"자주 묻는 질문",
 "faq.q1":"Axion Regulus는 무엇인가요?","faq.a1":"Axion Regulus는 규제 문서와 정책 요구사항을 구조화된 컴플라이언스 규칙으로 전환하고, 이를 바탕으로 업무 콘텐츠를 평가하여 잠재적인 컴플라이언스 위험, 발견 사항, 권장 조치를 제시하는 AI 기반 엔터프라이즈 컴플라이언스 인텔리전스 플랫폼입니다.",
 "faq.q2":"Axion Regulus는 어떻게 작동하나요?","faq.a2":"기업이 관련 규제 문서나 정책 요구사항을 제공합니다. Axion Regulus는 AI를 사용하여 적용 가능한 요구사항을 파악하고 이를 컴플라이언스 규칙으로 구조화합니다. 이후 업무 콘텐츠를 해당 규칙에 따라 검증하도록 제출할 수 있으며, 이를 통해 컴플라이언스 발견 사항, 위험 정보, 권장 조치가 생성됩니다.",
@@ -3523,7 +3156,7 @@ contactForm.addEventListener('submit', async (e) => {
     status.textContent = t(currentLang, 'contact.error');
   } finally {
     btn.disabled = false;
-    btn.textContent = t(currentLang, 'contact.send');
+    btn.textContent = t(currentLang, 'contact.submit');
   }
 });
 
@@ -3567,7 +3200,7 @@ window.addEventListener('load', () => {
     { id: 'own_documents', label: 'Using our own documents', keywords: ['our own regulatory documents','use our own policies','upload our own documents','our own regulations','our own rules','custom documents'],
       answer: "Yes. Axion Regulus is designed to work with organization-specific regulatory documents, policies and compliance requirements — these are processed into structured rules that are then used to validate your relevant business content." },
     { id: 'output', label: 'What you receive', keywords: ['what do we receive','what do we get','compliance score','findings','recommendations','evidence','what is the output','what results do we get'],
-      answer: "The platform can provide compliance analysis including identified findings, potential risks, applicable rule information, recommendations and supporting compliance evidence, depending on the configured workflow and available data.", link: { href: '#output', label: 'What you receive' } },
+      answer: "The platform can provide compliance analysis including identified findings, potential risks, applicable rule information, recommendations and supporting compliance evidence, depending on the configured workflow and available data.", link: { href: '#features', label: 'What you receive' } },
     { id: 'guarantee', label: 'Does it guarantee compliance?', keywords: ['guarantee compliance','100 percent compliant','100% compliant','is it guaranteed','does it guarantee','can you guarantee','is content automatically compliant'],
       answer: "No — Axion Regulus can't guarantee that content is compliant. It's a compliance intelligence and decision-support platform: its analysis helps teams identify potential issues and review content against configured requirements, but final compliance decisions should be made by your organization's appropriate human reviewers." },
     { id: 'ai_usage', label: 'How AI is used', keywords: ['how is ai used','what does the ai do','role of ai','how does the ai work'],
@@ -3579,9 +3212,9 @@ window.addEventListener('load', () => {
     { id: 'frameworks', label: 'Regulatory frameworks', keywords: ['different regulatory frameworks','multiple regulations','jurisdictions','gdpr','hipaa','ccpa','specific regulator','which regulations','which laws'],
       answer: "Yes. Axion Regulus is designed to work with your organization's own regulatory documents and compliance requirements — the applicable framework and source documents are configured to your specific compliance needs rather than a single fixed regulation." },
     { id: 'evaluate', label: 'Book a demo', keywords: ['demo','trial','try it','see it in action','walkthrough','evaluate axion regulus','how can we evaluate','book a demo'],
-      answer: 'The best way is to request a live demonstration and bring a regulatory document, policy requirement or suitable business-content example — our team can show you how requirements become structured compliance checks and how risks are identified.', link: { href: '#demo', label: 'Request a Live Demo' } },
+      answer: 'The best way is to request a live demonstration and bring a regulatory document, policy requirement or suitable business-content example — our team can show you how requirements become structured compliance checks and how risks are identified.', link: { href: '#contact', label: 'Request a Live Demo' } },
     { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge'],
-      answer: "We don't publish fixed pricing since deployments vary by organization size and requirements. The fastest way to get a quote is to request a live demo — our team will walk through your needs and pricing together.", link: { href: '#demo', label: 'Request a Live Demo' } },
+      answer: "We don't publish fixed pricing since deployments vary by organization size and requirements. The fastest way to get a quote is to request a live demo — our team will walk through your needs and pricing together.", link: { href: '#contact', label: 'Request a Live Demo' } },
     { id: 'features', label: 'Features', keywords: ['feature','features','capabilities','what can it do','functionality'],
       answer: "Key features include AI-powered compliance validation, a regulatory knowledge base, automated rule generation, compliance scoring, risk detection, audit evidence, role-based access, dashboards & reporting, multilingual support, and regulatory change tracking.", link: { href: '#features', label: 'See all features' } },
     { id: 'dashboard', label: 'Dashboard & reporting', keywords: ['dashboard','reporting','management view','visibility into compliance','trends','reports'],
