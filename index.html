@@ -230,16 +230,15 @@
         <img src="AxionLogo.png" alt="Axion" width="512" height="412" class="h-[80%] w-auto object-contain">
         <img src="RegulusText.png" alt="Regulus" width="358" height="54" class="h-[26%] w-auto object-contain">
       </a>
-      <nav class="hidden lg:flex items-center gap-7 whitespace-nowrap text-sm font-medium">
+      <nav class="hidden xl:flex items-center gap-6 whitespace-nowrap text-sm font-medium">
         <a href="#product" class="nav-link" data-i18n="nav.product">Product</a>
         <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
         <a href="#industries" class="nav-link" data-i18n="nav.industries">Industries</a>
-        <a href="#partners" class="nav-link" data-i18n="nav.partners">Partners</a>
-        <a href="#investors" class="nav-link" data-i18n="nav.investors">Investors</a>
+        <a href="#partners" class="nav-link" data-i18n="hero.cta3">Partner &amp; Invest</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
       </nav>
-      <div class="hidden md:flex items-center gap-3">
+      <div class="hidden md:flex items-center gap-3 ms-auto">
         <div class="relative" id="lang-dropdown">
           <button type="button" id="lang-toggle" class="flex items-center gap-1.5 shrink-0 whitespace-nowrap bg-white/5 border border-white/20 text-white text-xs font-semibold rounded-lg px-2.5 py-2 cursor-pointer focus:outline-none focus:border-white/50 hover:bg-white/10 transition" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
             <span id="lang-toggle-flag" class="shrink-0 rounded-sm overflow-hidden leading-none"></span>
@@ -250,20 +249,19 @@
         </div>
         <a href="#contact" class="btn btn-primary whitespace-nowrap !py-2 !px-4 !text-sm" data-i18n="nav.demo">Request a Demo</a>
       </div>
-      <button id="menuBtn" class="lg:hidden text-white p-2 -mr-2" aria-label="Open menu">
+      <button id="menuBtn" class="xl:hidden text-white p-2 -mr-2" aria-label="Open menu">
         <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
-  <div id="mobileMenu" class="hidden lg:hidden nav-blue border-b border-white/10 px-5 py-5 space-y-1 text-[#c4d0e0] text-sm font-medium">
+  <div id="mobileMenu" class="hidden xl:hidden nav-blue border-b border-white/10 px-5 py-5 space-y-1 text-[#c4d0e0] text-sm font-medium">
     <a href="#product" class="block py-2 hover:text-white" data-i18n="nav.product">Product</a>
     <a href="#features" class="block py-2 hover:text-white" data-i18n="nav.features">Features</a>
     <a href="#industries" class="block py-2 hover:text-white" data-i18n="nav.industries">Industries</a>
-    <a href="#partners" class="block py-2 hover:text-white" data-i18n="nav.partners">Partners</a>
-    <a href="#investors" class="block py-2 hover:text-white" data-i18n="nav.investors">Investors</a>
+    <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">Partner &amp; Invest</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">About</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">Contact</a>
-    <a href="#contact" class="btn btn-primary w-full !mt-3" data-i18n="nav.demo">Request a Demo</a>
+    <a href="#contact" class="btn btn-primary w-full !mt-3 md:hidden!" data-i18n="nav.demo">Request a Demo</a>
     <div id="lang-grid-mobile" class="grid grid-cols-4 gap-2 pt-3" aria-label="Select language"></div>
   </div>
 </header>
@@ -289,7 +287,7 @@
         <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Request a Demo</a>
         <a href="#product" class="btn btn-outline-light" data-i18n="hero.cta2">Explore Axion Regulus</a>
       </div>
-      <a href="#investors" class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#c4d0e0] hover:text-white transition">
+      <a href="#partners" class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#c4d0e0] hover:text-white transition">
         <span data-i18n="hero.cta3">Partner &amp; Invest</span> <span aria-hidden="true" class="inline-block rtl-flip">→</span>
       </a>
       <div class="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-[#a9b8cc]">
@@ -989,8 +987,7 @@
     <div>
       <h4 class="text-white text-sm font-semibold mb-4" data-i18n="footer.companyHeading">Company</h4>
       <ul class="space-y-2.5 text-sm">
-        <li><a href="#partners" class="hover:text-white transition" data-i18n="nav.partners">Partners</a></li>
-        <li><a href="#investors" class="hover:text-white transition" data-i18n="nav.investors">Investors</a></li>
+        <li><a href="#partners" class="hover:text-white transition" data-i18n="hero.cta3">Partner &amp; Invest</a></li>
         <li><a href="#about" class="hover:text-white transition" data-i18n="nav.about">About</a></li>
         <li hidden style="display:none"><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">Founder</a></li>
         <li><a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Contact</a></li>
