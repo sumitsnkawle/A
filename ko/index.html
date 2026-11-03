@@ -69,7 +69,21 @@
     "@type": "ContactPoint",
     "contactType": "sales",
     "email": "info@axionast.com"
+   },
+   "founder": {
+    "@id": "https://axionast.com/#founder"
    }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://axionast.com/#founder",
+   "name": "Anastasiia Bolotna",
+   "jobTitle": "창립자 겸 총괄 매니저",
+   "image": "https://axionast.com/anastasiia-bolotna.jpg",
+   "worksFor": {
+    "@id": "https://axionast.com/#organization"
+   },
+   "url": "https://axionast.com/ko/#founder"
   },
   {
    "@type": "WebSite",
@@ -404,6 +418,7 @@
         <a href="#industries" class="nav-link" data-i18n="nav.industries">산업</a>
         <a href="#partners" class="nav-link" data-i18n="hero.cta3">파트너십 및 투자 문의</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">회사 소개</a>
+        <a href="#founder" class="nav-link" data-i18n="nav.founder">창립자</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">문의하기</a>
       </nav>
       <div class="hidden md:flex items-center gap-3 ms-auto">
@@ -428,6 +443,7 @@
     <a href="#industries" class="block py-2 hover:text-white" data-i18n="nav.industries">산업</a>
     <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">파트너십 및 투자 문의</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">회사 소개</a>
+    <a href="#founder" class="block py-2 hover:text-white" data-i18n="nav.founder">창립자</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">문의하기</a>
     <a href="#contact" class="btn btn-primary w-full !mt-3 md:hidden!" data-i18n="nav.demo">데모 신청</a>
     <div id="lang-grid-mobile" class="grid grid-cols-4 gap-2 pt-3" aria-label="Select language"></div>
@@ -1043,8 +1059,8 @@
   </div>
 </section>
 
-<!-- FOUNDER: business card + vision story (hidden for now; remove hidden + style to restore) -->
-<section id="founder" class="section-pad bg-soft border-y border-[var(--line)]" hidden style="display:none">
+<!-- FOUNDER: business card + vision story -->
+<section id="founder" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap">
     <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="founder.kicker">창립자 소개</p>
@@ -1055,7 +1071,7 @@
       <!-- Business card -->
       <div class="fade-up" data-fade>
         <div class="founder-profile">
-          <div class="founder-photo avatar-ring"><img src="/anastasiia-bolotna.jpg" alt="Anastasiia Bolotna" loading="lazy"></div>
+          <div class="founder-photo avatar-ring"><picture><source srcset="/anastasiia-bolotna.webp" type="image/webp"><img src="/anastasiia-bolotna.jpg" alt="Anastasiia Bolotna, Founder and General Manager of Axion Consultancy Services" width="1024" height="1536" loading="lazy" decoding="async"></picture></div>
           <h3 class="font-display text-[var(--ink)] text-2xl sm:text-3xl font-bold mt-6">Anastasiia Bolotna</h3>
           <p class="text-[var(--brand)] font-medium mt-1" data-i18n="founder.cardTitle">창립자 겸 총괄 매니저</p>
           <p class="text-[var(--muted)] text-sm mt-0.5">Axion Consultancy Services</p>
@@ -1074,7 +1090,7 @@
           <p data-i18n="founder.p2">아나스타시야 볼로트나는 단순한 생각에서 출발해 Axion을 창립했다. 그 순간이 누가 근무 중인지, 그가 얼마나 지쳐 있는지에 좌우되어서는 안 된다는 생각이었다. 규정은 한 번, 꼼꼼히 읽고, 어떤 팀이든 매번 동일한 방식으로 적용할 수 있는 구조화된 규칙으로 바꿔야 한다.</p>
           <p data-i18n="founder.p3">그 생각은 Axion Regulus가 되었다. 담당자가 공문을 업로드하면 Regulus는 이를 명확한 요구사항으로 구조화한다. 캠페인 내용을 붙여넣으면 Regulus는 위험이 될 수 있는 부분을 짚어내고, 그 이유를 설명하며, 무엇을 바꿔야 할지 제안한다. 최종 결정은 여전히 사람의 몫이다 — 이제는 몇 분 만에 이루어지며, 모든 단계가 기록으로 남는다.</p>
         </div>
-        <blockquote class="mt-7 card p-5 border-l-4! border-l-[var(--brand)]!">
+        <blockquote class="mt-7 card p-5 border-s-4! border-s-[var(--brand)]!">
           <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="founder.quote">"컴플라이언스가 좋은 아이디어를 더디게 만드는 이유가 되어서는 안 됩니다. 우리의 비전은 컴플라이언스 인텔리전스가 모든 비즈니스 의사결정에 녹아들면서도, 사람이 항상 주도권을 쥐는 세상입니다."</p>
           <footer class="mt-3 text-xs text-[var(--muted)]">— Anastasiia Bolotna, <span data-i18n="founder.cardTitle">창립자 겸 총괄 매니저</span></footer>
         </blockquote>
@@ -1253,7 +1269,7 @@
       <ul class="space-y-2.5 text-sm">
         <li><a href="#partners" class="hover:text-white transition" data-i18n="hero.cta3">파트너십 및 투자 문의</a></li>
         <li><a href="#about" class="hover:text-white transition" data-i18n="nav.about">회사 소개</a></li>
-        <li hidden style="display:none"><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">창립자</a></li>
+        <li><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">창립자</a></li>
         <li><a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">문의하기</a></li>
       </ul>
     </div>

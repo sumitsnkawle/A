@@ -69,7 +69,21 @@
     "@type": "ContactPoint",
     "contactType": "sales",
     "email": "info@axionast.com"
+   },
+   "founder": {
+    "@id": "https://axionast.com/#founder"
    }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://axionast.com/#founder",
+   "name": "Anastasiia Bolotna",
+   "jobTitle": "Основатель и генеральный директор",
+   "image": "https://axionast.com/anastasiia-bolotna.jpg",
+   "worksFor": {
+    "@id": "https://axionast.com/#organization"
+   },
+   "url": "https://axionast.com/ru/#founder"
   },
   {
    "@type": "WebSite",
@@ -404,6 +418,7 @@
         <a href="#industries" class="nav-link" data-i18n="nav.industries">Отрасли</a>
         <a href="#partners" class="nav-link" data-i18n="hero.cta3">Партнёрство и инвестиции</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">О компании</a>
+        <a href="#founder" class="nav-link" data-i18n="nav.founder">Основатель</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">Контакты</a>
       </nav>
       <div class="hidden md:flex items-center gap-3 ms-auto">
@@ -428,6 +443,7 @@
     <a href="#industries" class="block py-2 hover:text-white" data-i18n="nav.industries">Отрасли</a>
     <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">Партнёрство и инвестиции</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">О компании</a>
+    <a href="#founder" class="block py-2 hover:text-white" data-i18n="nav.founder">Основатель</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">Контакты</a>
     <a href="#contact" class="btn btn-primary w-full !mt-3 md:hidden!" data-i18n="nav.demo">Запросить демо</a>
     <div id="lang-grid-mobile" class="grid grid-cols-4 gap-2 pt-3" aria-label="Select language"></div>
@@ -1043,8 +1059,8 @@
   </div>
 </section>
 
-<!-- FOUNDER: business card + vision story (hidden for now; remove hidden + style to restore) -->
-<section id="founder" class="section-pad bg-soft border-y border-[var(--line)]" hidden style="display:none">
+<!-- FOUNDER: business card + vision story -->
+<section id="founder" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap">
     <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="founder.kicker">ПОЗНАКОМЬТЕСЬ С ОСНОВАТЕЛЕМ</p>
@@ -1055,7 +1071,7 @@
       <!-- Business card -->
       <div class="fade-up" data-fade>
         <div class="founder-profile">
-          <div class="founder-photo avatar-ring"><img src="/anastasiia-bolotna.jpg" alt="Anastasiia Bolotna" loading="lazy"></div>
+          <div class="founder-photo avatar-ring"><picture><source srcset="/anastasiia-bolotna.webp" type="image/webp"><img src="/anastasiia-bolotna.jpg" alt="Anastasiia Bolotna, Founder and General Manager of Axion Consultancy Services" width="1024" height="1536" loading="lazy" decoding="async"></picture></div>
           <h3 class="font-display text-[var(--ink)] text-2xl sm:text-3xl font-bold mt-6">Anastasiia Bolotna</h3>
           <p class="text-[var(--brand)] font-medium mt-1" data-i18n="founder.cardTitle">Основатель и генеральный директор</p>
           <p class="text-[var(--muted)] text-sm mt-0.5">Axion Consultancy Services</p>
@@ -1074,7 +1090,7 @@
           <p data-i18n="founder.p2">Анастасия Болотна основала Axion вокруг простой идеи: этот момент не должен зависеть от того, кто именно на смене, или от того, насколько он устал. Регуляторные требования нужно прочитать один раз, внимательно, и превратить в структурированные правила, которые любая команда сможет применять одинаково — каждый раз.</p>
           <p data-i18n="founder.p3">Эта идея стала Axion Regulus. Специалист загружает циркуляр — Regulus структурирует его в понятные требования. Вставляет кампанию — Regulus выделяет, что может быть рискованным, объясняет почему и предлагает, что изменить. Итоговое решение остаётся за человеком — теперь оно принимается за минуты, и каждый шаг фиксируется.</p>
         </div>
-        <blockquote class="mt-7 card p-5 border-l-4! border-l-[var(--brand)]!">
+        <blockquote class="mt-7 card p-5 border-s-4! border-s-[var(--brand)]!">
           <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="founder.quote">«Комплаенс не должен быть причиной, по которой хорошие идеи замедляются. Наше видение — мир, где комплаенс-интеллект встроен в каждое бизнес-решение, а люди всегда сохраняют контроль».</p>
           <footer class="mt-3 text-xs text-[var(--muted)]">— Anastasiia Bolotna, <span data-i18n="founder.cardTitle">Основатель и генеральный директор</span></footer>
         </blockquote>
@@ -1253,7 +1269,7 @@
       <ul class="space-y-2.5 text-sm">
         <li><a href="#partners" class="hover:text-white transition" data-i18n="hero.cta3">Партнёрство и инвестиции</a></li>
         <li><a href="#about" class="hover:text-white transition" data-i18n="nav.about">О компании</a></li>
-        <li hidden style="display:none"><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">Основатель</a></li>
+        <li><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">Основатель</a></li>
         <li><a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Контакты</a></li>
       </ul>
     </div>

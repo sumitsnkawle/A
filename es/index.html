@@ -69,7 +69,21 @@
     "@type": "ContactPoint",
     "contactType": "sales",
     "email": "info@axionast.com"
+   },
+   "founder": {
+    "@id": "https://axionast.com/#founder"
    }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://axionast.com/#founder",
+   "name": "Anastasiia Bolotna",
+   "jobTitle": "Fundadora y Directora General",
+   "image": "https://axionast.com/anastasiia-bolotna.jpg",
+   "worksFor": {
+    "@id": "https://axionast.com/#organization"
+   },
+   "url": "https://axionast.com/es/#founder"
   },
   {
    "@type": "WebSite",
@@ -404,6 +418,7 @@
         <a href="#industries" class="nav-link" data-i18n="nav.industries">Sectores</a>
         <a href="#partners" class="nav-link" data-i18n="hero.cta3">Asociarse e invertir</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">Acerca de</a>
+        <a href="#founder" class="nav-link" data-i18n="nav.founder">Fundadora</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a>
       </nav>
       <div class="hidden md:flex items-center gap-3 ms-auto">
@@ -428,6 +443,7 @@
     <a href="#industries" class="block py-2 hover:text-white" data-i18n="nav.industries">Sectores</a>
     <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">Asociarse e invertir</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">Acerca de</a>
+    <a href="#founder" class="block py-2 hover:text-white" data-i18n="nav.founder">Fundadora</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">Contacto</a>
     <a href="#contact" class="btn btn-primary w-full !mt-3 md:hidden!" data-i18n="nav.demo">Solicitar una demo</a>
     <div id="lang-grid-mobile" class="grid grid-cols-4 gap-2 pt-3" aria-label="Select language"></div>
@@ -1043,8 +1059,8 @@
   </div>
 </section>
 
-<!-- FOUNDER: business card + vision story (hidden for now; remove hidden + style to restore) -->
-<section id="founder" class="section-pad bg-soft border-y border-[var(--line)]" hidden style="display:none">
+<!-- FOUNDER: business card + vision story -->
+<section id="founder" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap">
     <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="founder.kicker">CONOZCA A LA FUNDADORA</p>
@@ -1055,7 +1071,7 @@
       <!-- Business card -->
       <div class="fade-up" data-fade>
         <div class="founder-profile">
-          <div class="founder-photo avatar-ring"><img src="/anastasiia-bolotna.jpg" alt="Anastasiia Bolotna" loading="lazy"></div>
+          <div class="founder-photo avatar-ring"><picture><source srcset="/anastasiia-bolotna.webp" type="image/webp"><img src="/anastasiia-bolotna.jpg" alt="Anastasiia Bolotna, Founder and General Manager of Axion Consultancy Services" width="1024" height="1536" loading="lazy" decoding="async"></picture></div>
           <h3 class="font-display text-[var(--ink)] text-2xl sm:text-3xl font-bold mt-6">Anastasiia Bolotna</h3>
           <p class="text-[var(--brand)] font-medium mt-1" data-i18n="founder.cardTitle">Fundadora y Directora General</p>
           <p class="text-[var(--muted)] text-sm mt-0.5">Axion Consultancy Services</p>
@@ -1074,7 +1090,7 @@
           <p data-i18n="founder.p2">Anastasiia Bolotna fundó Axion a partir de una idea simple: ese momento no debería depender de quién esté de turno, ni de lo cansada que esté esa persona. Las normativas deberían leerse una vez, con cuidado, y convertirse en reglas estructuradas que cualquier equipo pueda aplicar de la misma manera, cada vez.</p>
           <p data-i18n="founder.p3">Esa idea se convirtió en Axion Regulus. La responsable sube la circular; Regulus la estructura en requisitos claros. Pega la campaña; Regulus destaca lo que podría suponer un riesgo, explica por qué y sugiere qué cambiar. La decisión final sigue en manos de la persona, ahora tomada en minutos, con cada paso registrado.</p>
         </div>
-        <blockquote class="mt-7 card p-5 border-l-4! border-l-[var(--brand)]!">
+        <blockquote class="mt-7 card p-5 border-s-4! border-s-[var(--brand)]!">
           <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="founder.quote">«El cumplimiento no debería ser la razón por la que las buenas ideas se frenan. Nuestra visión es un mundo donde la inteligencia de cumplimiento esté integrada en cada decisión empresarial, con las personas siempre al mando.»</p>
           <footer class="mt-3 text-xs text-[var(--muted)]">— Anastasiia Bolotna, <span data-i18n="founder.cardTitle">Fundadora y Directora General</span></footer>
         </blockquote>
@@ -1253,7 +1269,7 @@
       <ul class="space-y-2.5 text-sm">
         <li><a href="#partners" class="hover:text-white transition" data-i18n="hero.cta3">Asociarse e invertir</a></li>
         <li><a href="#about" class="hover:text-white transition" data-i18n="nav.about">Acerca de</a></li>
-        <li hidden style="display:none"><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">Fundadora</a></li>
+        <li><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">Fundadora</a></li>
         <li><a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Contacto</a></li>
       </ul>
     </div>
