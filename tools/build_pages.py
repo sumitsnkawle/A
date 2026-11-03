@@ -86,7 +86,7 @@ def structured_data(dicts, lang, title, desc):
              "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": "info@axionast.com"},
              "founder": {"@id": f"{SITE}/#founder"}},
             {"@type": "Person", "@id": f"{SITE}/#founder", "name": "Anastasiia Bolotna",
-             "jobTitle": t(dicts, lang, "founder.cardTitle"), "image": f"{SITE}/anastasiia-bolotna.jpg",
+             "jobTitle": t(dicts, lang, "founder.cardTitle"),
              "worksFor": {"@id": org}, "url": f"{url(lang)}#founder"},
             {"@type": "WebSite", "@id": f"{url(lang)}#website", "url": url(lang), "name": "Axion Regulus",
              "inLanguage": lang, "publisher": {"@id": org}},
