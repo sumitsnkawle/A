@@ -81,7 +81,7 @@ SIDES = {
     "m": ["margin"], "mx": ["margin-inline"], "my": ["margin-block"],
     "mt": ["margin-top"], "mb": ["margin-bottom"], "ml": ["margin-left"], "mr": ["margin-right"],
     "ms": ["margin-inline-start"], "me": ["margin-inline-end"],
-    "top": ["top"], "bottom": ["bottom"], "left": ["left"], "right": ["right"],
+    "top": ["top"], "bottom": ["bottom"], "left": ["left"], "right": ["right"], "start": ["inset-inline-start"], "end": ["inset-inline-end"],
     "inset": ["inset"], "inset-x": ["inset-inline"], "inset-y": ["inset-block"],
     "w": ["width"], "h": ["height"], "min-h": ["min-height"], "min-w": ["min-width"],
     "max-h": ["max-height"], "size": ["width", "height"],
@@ -97,12 +97,12 @@ SIMPLE = {
     "flex-col": "flex-direction:column", "flex-row": "flex-direction:row",
     "flex-wrap": "flex-wrap:wrap", "flex-1": "flex:1 1 0%", "shrink-0": "flex-shrink:0", "grow": "flex-grow:1",
     "items-center": "align-items:center", "items-start": "align-items:flex-start",
-    "items-end": "align-items:flex-end", "items-stretch": "align-items:stretch",
+    "items-end": "align-items:flex-end", "items-stretch": "align-items:stretch", "items-baseline": "align-items:baseline",
     "justify-between": "justify-content:space-between", "justify-center": "justify-content:center",
     "justify-start": "justify-content:flex-start", "justify-end": "justify-content:flex-end",
     "content-start": "align-content:flex-start", "self-start": "align-self:flex-start",
     "text-center": "text-align:center", "text-left": "text-align:left", "text-right": "text-align:right",
-    "text-start": "text-align:start",
+    "text-start": "text-align:start", "text-end": "text-align:end",
     "italic": "font-style:italic", "uppercase": "text-transform:uppercase",
     "underline": "text-decoration-line:underline", "no-underline": "text-decoration-line:none",
     "truncate": "overflow:hidden;text-overflow:ellipsis;white-space:nowrap",
@@ -237,7 +237,7 @@ def decl(base):
         prop = "margin-inline-end" if m.group(1) == "x" else "margin-bottom"
         return f"{prop}:{v}", " > :not(:last-child)"
 
-    m = re.fullmatch(r"(p|px|py|pt|pb|pl|pr|ps|pe|m|mx|my|mt|mb|ml|mr|ms|me|top|bottom|left|right|inset-x|inset-y|inset|w|h|min-h|min-w|max-h|size|gap-x|gap-y|gap)-(.+)", b)
+    m = re.fullmatch(r"(p|px|py|pt|pb|pl|pr|ps|pe|m|mx|my|mt|mb|ml|mr|ms|me|top|bottom|left|right|start|end|inset-x|inset-y|inset|w|h|min-h|min-w|max-h|size|gap-x|gap-y|gap)-(.+)", b)
     if m:
         key, val = m.groups()
         if key == "max-h" and not val.startswith("["):

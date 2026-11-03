@@ -348,9 +348,9 @@
   .typing-dot:nth-child(3){animation-delay:.3s;}
   @media (prefers-reduced-motion:reduce){ .float,.pulse-glow,.flow-line,.flow-chip{animation:none;} }
 
-  #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq{scroll-margin-top:72px;}
+  #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq,#pricing{scroll-margin-top:72px;}
   @media (min-width:768px){
-    #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq{scroll-margin-top:80px;}
+    #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq,#pricing{scroll-margin-top:80px;}
   }
 
   .avatar-ring{background:linear-gradient(135deg,var(--brand),var(--navy-900));}
@@ -402,6 +402,7 @@
         <a href="#product" class="nav-link" data-i18n="nav.product">उत्पाद</a>
         <a href="#features" class="nav-link" data-i18n="nav.features">विशेषताएं</a>
         <a href="#industries" class="nav-link" data-i18n="nav.industries">उद्योग</a>
+        <a href="#pricing" class="nav-link" data-i18n="nav.pricing">मूल्य</a>
         <a href="#partners" class="nav-link" data-i18n="hero.cta3">साझेदारी और निवेश</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">हमारे बारे में</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">संपर्क करें</a>
@@ -426,6 +427,7 @@
     <a href="#product" class="block py-2 hover:text-white" data-i18n="nav.product">उत्पाद</a>
     <a href="#features" class="block py-2 hover:text-white" data-i18n="nav.features">विशेषताएं</a>
     <a href="#industries" class="block py-2 hover:text-white" data-i18n="nav.industries">उद्योग</a>
+    <a href="#pricing" class="block py-2 hover:text-white" data-i18n="nav.pricing">मूल्य</a>
     <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">साझेदारी और निवेश</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">हमारे बारे में</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">संपर्क करें</a>
@@ -982,6 +984,86 @@
   </div>
 </section>
 
+<!-- PRICING -->
+<section id="pricing" class="section-pad bg-soft border-y border-[var(--line)]">
+  <div class="wrap">
+    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
+      <p class="eyebrow mb-4" data-i18n="price.kicker">मूल्य</p>
+      <h2 class="h2" data-i18n="price.title">आपकी कंप्लायंस ज़रूरतों के साथ बढ़ने वाले प्लान</h2>
+      <p class="mt-5 lead" data-i18n="price.desc">मुफ़्त पायलट से शुरुआत करें। फिर क्लाउड सब्सक्रिप्शन चुनें, या Axion Regulus को अपने ही परिवेश में चलाएँ।</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.pilotN">पायलट</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.pilotD">अपनी ही सामग्री पर मूल्य परखें।</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="font-display text-3xl font-extrabold text-[var(--ink)]" data-i18n="price.free">मुफ़्त</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.pilotF1">1 सप्ताह</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.ws1">1 वर्कस्पेस</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.u3">3 उपयोगकर्ता</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.allFeat">प्लेटफ़ॉर्म की सभी सुविधाएँ</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.pilotF2">मार्गदर्शित सेटअप और परिणामों की समीक्षा</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full !px-4 !text-sm" data-i18n="price.p1cta">मुफ़्त पायलट शुरू करें</a></div>
+      </div>
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.starterN">Starter</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.starterD">शुरुआत करने वाली छोटी टीम के लिए।</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="flex items-baseline gap-1.5"><span class="font-display text-3xl font-extrabold text-[var(--ink)]">USD 750</span><span class="text-sm text-[var(--muted)]" data-i18n="price.perMonth">/ माह</span></div><div class="text-xs text-[var(--muted)] mt-1" data-i18n="price.billed">वार्षिक बिलिंग</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.ws1">1 वर्कस्पेस</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.u3roles">3 उपयोगकर्ता: 1 एडमिन, 1 सहयोगी, 1 अनुमोदक</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.allFeat">प्लेटफ़ॉर्म की सभी सुविधाएँ</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.supEmail">ईमेल सहायता</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full !px-4 !text-sm" data-i18n="price.cta">शुरू करें</a></div>
+      </div>
+      <div class="card border-2 border-[var(--brand)]! shadow-[0_30px_60px_-35px_rgba(23,100,209,.55)] relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <span class="absolute -top-3 start-6 text-[11px] font-semibold kicker uppercase px-3 py-1 rounded-full bg-[var(--brand)] text-white" data-i18n="price.popular">सबसे लोकप्रिय</span>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.proN">Professional</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.proD">बढ़ती कंप्लायंस टीमों के लिए।</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="flex items-baseline gap-1.5"><span class="font-display text-3xl font-extrabold text-[var(--ink)]">USD 1,500</span><span class="text-sm text-[var(--muted)]" data-i18n="price.perMonth">/ माह</span></div><div class="text-xs text-[var(--muted)] mt-1" data-i18n="price.billed">वार्षिक बिलिंग</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.ws2">2 वर्कस्पेस</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.u5roles">5 उपयोगकर्ता: 1 एडमिन, 2 सहयोगी, 2 अनुमोदक</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.allFeat">प्लेटफ़ॉर्म की सभी सुविधाएँ</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.supEmail">ईमेल सहायता</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-primary w-full !px-4 !text-sm" data-i18n="price.cta">शुरू करें</a></div>
+      </div>
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.busN">Business</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.busD">कई टीमों और व्यावसायिक इकाइयों के लिए।</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="flex items-baseline gap-1.5"><span class="font-display text-3xl font-extrabold text-[var(--ink)]">USD 4,000</span><span class="text-sm text-[var(--muted)]" data-i18n="price.perMonth">/ माह</span></div><div class="text-xs text-[var(--muted)] mt-1" data-i18n="price.billed">वार्षिक बिलिंग</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.ws5">5 वर्कस्पेस</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.u11roles">11 उपयोगकर्ता: 1 एडमिन, 5 सहयोगी, 5 अनुमोदक</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.allFeat">प्लेटफ़ॉर्म की सभी सुविधाएँ</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.supPriority">प्राथमिकता सहायता</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full !px-4 !text-sm" data-i18n="price.cta">शुरू करें</a></div>
+      </div>
+    </div>
+    <p class="mt-6 text-center text-sm text-[var(--body)]"><a href="#contact" class="link-arrow"><span data-i18n="price.more">अधिक उपयोगकर्ता या वर्कस्पेस चाहिए? हमसे संपर्क करें।</span> <span aria-hidden="true" class="inline-block rtl-flip">→</span></a></p>
+    <div class="mt-5 rounded-2xl bg-[var(--navy-900)] p-7 sm:p-9 grid lg:grid-cols-12 gap-6 lg:gap-10 items-center fade-up" data-fade>
+      <div class="lg:col-span-5">
+        <h3 class="font-display text-xl sm:text-2xl font-bold text-white" data-i18n="price.opT">ऑन-प्रिमाइस / प्राइवेट क्लाउड</h3>
+        <p class="mt-2 text-sm text-[#a9b8cc] leading-relaxed" data-i18n="price.opD">जब आपका डेटा संगठन के भीतर ही रहना ज़रूरी हो, तो Axion Regulus को अपने ही इन्फ्रास्ट्रक्चर में चलाएँ।</p>
+      </div>
+      <ul class="lg:col-span-4 space-y-2.5 text-sm text-white">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF1">अपडेट और सहायता सहित वार्षिक लाइसेंस</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF2">कार्यान्वयन, फ्रेमवर्क सेटअप और प्रशिक्षण</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF3">अनुरोध पर स्थायी लाइसेंस उपलब्ध</span></li>
+      </ul>
+      <div class="lg:col-span-3 lg:text-end">
+        <div class="font-display text-2xl font-extrabold text-white" data-i18n="price.custom">कस्टम</div>
+        <a href="#contact" class="btn btn-white mt-4" data-i18n="price.opCta">ऑन-प्रिमाइस कोटेशन माँगें</a>
+      </div>
+    </div>
+    <p class="mt-5 text-center text-xs text-[var(--muted)]" data-i18n="price.note">मूल्य USD में, कर अतिरिक्त।</p>
+  </div>
+</section>
+
 <!-- PARTNERS & INVESTORS -->
 <section id="partners" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap grid lg:grid-cols-2 gap-6">
@@ -1246,6 +1328,7 @@
         <li><a href="#product" class="hover:text-white transition" data-i18n="footer.linkRegulus">Axion Regulus</a></li>
         <li><a href="#features" class="hover:text-white transition" data-i18n="nav.features">विशेषताएं</a></li>
         <li><a href="#industries" class="hover:text-white transition" data-i18n="nav.industries">उद्योग</a></li>
+        <li><a href="#pricing" class="hover:text-white transition" data-i18n="nav.pricing">मूल्य</a></li>
       </ul>
     </div>
     <div>
@@ -1491,7 +1574,7 @@ en: {
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"User Handbook","footer.companyHeading":"Company","footer.connectHeading":"Connect","footer.linkedin":"LinkedIn",
 "footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"Privacy Policy","footer.terms":"Terms",
 "footer.disclaimer":"Axion Regulus provides AI-assisted compliance analysis and does not replace professional legal, regulatory or compliance advice. Compliance assessments should be reviewed by appropriately authorized personnel before business decisions are made.",
-"chat.title":"Mira","chat.status":"Usually replies instantly","chat.placeholder":"Ask about Axion Regulus…"
+"chat.title":"Mira","chat.status":"Usually replies instantly","chat.placeholder":"Ask about Axion Regulus…","price.kicker":"PRICING","price.title":"Plans that grow with your compliance needs","price.desc":"Start with a free pilot. Then choose a cloud subscription, or run Axion Regulus in your own environment.","price.popular":"Most popular","price.perMonth":"/ month","price.billed":"billed annually","price.free":"Free","price.custom":"Custom","price.p1cta":"Start a free pilot","price.cta":"Get started","price.ctaSales":"Contact sales","price.opT":"On-premise / private cloud","price.opD":"Run Axion Regulus inside your own infrastructure when your data must stay in-house.","price.opF1":"Annual licence including updates and support","price.opF2":"Implementation, framework setup and training","price.opF3":"Perpetual licence available on request","price.opCta":"Request an on-premise quote","price.note":"Prices in USD, excluding VAT.","nav.pricing":"Pricing","price.pilotN":"Pilot","price.pilotD":"Prove the value on your own content.","price.pilotF1":"1 week","price.pilotF2":"Guided setup and results review","price.starterN":"Starter","price.starterD":"For a small team getting started.","price.proN":"Professional","price.proD":"For growing compliance teams.","price.busN":"Business","price.busD":"For several teams and business units.","price.ws1":"1 workspace","price.ws2":"2 workspaces","price.ws5":"5 workspaces","price.u3":"3 users","price.u3roles":"3 users: 1 admin, 1 collaborator, 1 approver","price.u5roles":"5 users: 1 admin, 2 collaborators, 2 approvers","price.u11roles":"11 users: 1 admin, 5 collaborators, 5 approvers","price.allFeat":"All platform features","price.supEmail":"Email support","price.supPriority":"Priority support","price.more":"Need more users or workspaces? Contact us."
 },
 hi: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"उत्पाद","nav.features":"विशेषताएं","nav.industries":"उद्योग","nav.partners":"साझेदार","nav.investors":"निवेशक","nav.about":"हमारे बारे में","nav.contact":"संपर्क करें","nav.talk":"Axion से बात करें","nav.demo":"डेमो का अनुरोध करें",
@@ -1643,7 +1726,7 @@ hi: {
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"उपयोगकर्ता हैंडबुक","footer.companyHeading":"कंपनी","footer.connectHeading":"जुड़ें","footer.linkedin":"LinkedIn",
 "footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. सर्वाधिकार सुरक्षित।","footer.privacy":"गोपनीयता नीति","footer.terms":"नियम व शर्तें",
 "footer.disclaimer":"Axion Regulus AI-सहायता प्राप्त कंप्लायंस विश्लेषण प्रदान करता है और यह पेशेवर कानूनी, नियामक या कंप्लायंस सलाह का स्थान नहीं लेता। व्यावसायिक निर्णय लेने से पहले कंप्लायंस आकलनों की समीक्षा उपयुक्त रूप से अधिकृत कर्मियों द्वारा की जानी चाहिए।",
-"chat.title":"Mira","chat.status":"आमतौर पर तुरंत जवाब देता है","chat.placeholder":"Axion Regulus के बारे में पूछें…"
+"chat.title":"Mira","chat.status":"आमतौर पर तुरंत जवाब देता है","chat.placeholder":"Axion Regulus के बारे में पूछें…","price.kicker":"मूल्य","price.title":"आपकी कंप्लायंस ज़रूरतों के साथ बढ़ने वाले प्लान","price.desc":"मुफ़्त पायलट से शुरुआत करें। फिर क्लाउड सब्सक्रिप्शन चुनें, या Axion Regulus को अपने ही परिवेश में चलाएँ।","price.popular":"सबसे लोकप्रिय","price.perMonth":"/ माह","price.billed":"वार्षिक बिलिंग","price.free":"मुफ़्त","price.custom":"कस्टम","price.p1cta":"मुफ़्त पायलट शुरू करें","price.cta":"शुरू करें","price.ctaSales":"सेल्स से संपर्क करें","price.opT":"ऑन-प्रिमाइस / प्राइवेट क्लाउड","price.opD":"जब आपका डेटा संगठन के भीतर ही रहना ज़रूरी हो, तो Axion Regulus को अपने ही इन्फ्रास्ट्रक्चर में चलाएँ।","price.opF1":"अपडेट और सहायता सहित वार्षिक लाइसेंस","price.opF2":"कार्यान्वयन, फ्रेमवर्क सेटअप और प्रशिक्षण","price.opF3":"अनुरोध पर स्थायी लाइसेंस उपलब्ध","price.opCta":"ऑन-प्रिमाइस कोटेशन माँगें","price.note":"मूल्य USD में, कर अतिरिक्त।","nav.pricing":"मूल्य","price.pilotN":"पायलट","price.pilotD":"अपनी ही सामग्री पर मूल्य परखें।","price.pilotF1":"1 सप्ताह","price.pilotF2":"मार्गदर्शित सेटअप और परिणामों की समीक्षा","price.starterN":"Starter","price.starterD":"शुरुआत करने वाली छोटी टीम के लिए।","price.proN":"Professional","price.proD":"बढ़ती कंप्लायंस टीमों के लिए।","price.busN":"Business","price.busD":"कई टीमों और व्यावसायिक इकाइयों के लिए।","price.ws1":"1 वर्कस्पेस","price.ws2":"2 वर्कस्पेस","price.ws5":"5 वर्कस्पेस","price.u3":"3 उपयोगकर्ता","price.u3roles":"3 उपयोगकर्ता: 1 एडमिन, 1 सहयोगी, 1 अनुमोदक","price.u5roles":"5 उपयोगकर्ता: 1 एडमिन, 2 सहयोगी, 2 अनुमोदक","price.u11roles":"11 उपयोगकर्ता: 1 एडमिन, 5 सहयोगी, 5 अनुमोदक","price.allFeat":"प्लेटफ़ॉर्म की सभी सुविधाएँ","price.supEmail":"ईमेल सहायता","price.supPriority":"प्राथमिकता सहायता","price.more":"अधिक उपयोगकर्ता या वर्कस्पेस चाहिए? हमसे संपर्क करें।"
 }
 };
 
@@ -1869,8 +1952,8 @@ window.addEventListener('load', () => {
       answer: "Yes. Axion Regulus is designed to work with your organization's own regulatory documents and compliance requirements — the applicable framework and source documents are configured to your specific compliance needs rather than a single fixed regulation." },
     { id: 'evaluate', label: 'Book a demo', keywords: ['demo','trial','try it','see it in action','walkthrough','evaluate axion regulus','how can we evaluate','book a demo'],
       answer: 'The best way is to request a live demonstration and bring a regulatory document, policy requirement or suitable business-content example — our team can show you how requirements become structured compliance checks and how risks are identified.', link: { href: '#contact', label: 'Request a Live Demo' } },
-    { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge'],
-      answer: "We don't publish fixed pricing since deployments vary by organization size and requirements. The fastest way to get a quote is to request a live demo — our team will walk through your needs and pricing together.", link: { href: '#contact', label: 'Request a Live Demo' } },
+    { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge','pilot','free trial','trial','on-premise','on premise','license','licence'],
+      answer: "You can start with a free 1-week pilot (1 workspace, 3 users). Cloud plans, billed annually: Starter USD 750 per month (1 workspace, 3 users), Professional USD 1,500 per month (2 workspaces, 5 users) and Business USD 4,000 per month (5 workspaces, 11 users). Every plan includes all platform features. On-premise deployments are quoted individually. Prices are in USD, excluding VAT.", link: { href: '#pricing', label: 'See pricing' } },
     { id: 'features', label: 'Features', keywords: ['feature','features','capabilities','what can it do','functionality'],
       answer: "Key features include AI-powered compliance validation, a regulatory knowledge base, automated rule generation, compliance scoring, risk detection, audit evidence, role-based access, dashboards & reporting, multilingual support, and regulatory change tracking.", link: { href: '#features', label: 'See all features' } },
     { id: 'dashboard', label: 'Dashboard & reporting', keywords: ['dashboard','reporting','management view','visibility into compliance','trends','reports'],

@@ -348,9 +348,9 @@
   .typing-dot:nth-child(3){animation-delay:.3s;}
   @media (prefers-reduced-motion:reduce){ .float,.pulse-glow,.flow-line,.flow-chip{animation:none;} }
 
-  #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq{scroll-margin-top:72px;}
+  #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq,#pricing{scroll-margin-top:72px;}
   @media (min-width:768px){
-    #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq{scroll-margin-top:80px;}
+    #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq,#pricing{scroll-margin-top:80px;}
   }
 
   .avatar-ring{background:linear-gradient(135deg,var(--brand),var(--navy-900));}
@@ -402,6 +402,7 @@
         <a href="#product" class="nav-link" data-i18n="nav.product">Produkt</a>
         <a href="#features" class="nav-link" data-i18n="nav.features">Funktionen</a>
         <a href="#industries" class="nav-link" data-i18n="nav.industries">Branchen</a>
+        <a href="#pricing" class="nav-link" data-i18n="nav.pricing">Preise</a>
         <a href="#partners" class="nav-link" data-i18n="hero.cta3">Partner werden &amp; investieren</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">Über uns</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">Kontakt</a>
@@ -426,6 +427,7 @@
     <a href="#product" class="block py-2 hover:text-white" data-i18n="nav.product">Produkt</a>
     <a href="#features" class="block py-2 hover:text-white" data-i18n="nav.features">Funktionen</a>
     <a href="#industries" class="block py-2 hover:text-white" data-i18n="nav.industries">Branchen</a>
+    <a href="#pricing" class="block py-2 hover:text-white" data-i18n="nav.pricing">Preise</a>
     <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">Partner werden &amp; investieren</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">Über uns</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">Kontakt</a>
@@ -982,6 +984,86 @@
   </div>
 </section>
 
+<!-- PRICING -->
+<section id="pricing" class="section-pad bg-soft border-y border-[var(--line)]">
+  <div class="wrap">
+    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
+      <p class="eyebrow mb-4" data-i18n="price.kicker">PREISE</p>
+      <h2 class="h2" data-i18n="price.title">Pläne, die mit Ihren Compliance-Anforderungen wachsen</h2>
+      <p class="mt-5 lead" data-i18n="price.desc">Starten Sie mit einem kostenlosen Pilotprojekt. Wählen Sie dann ein Cloud-Abonnement oder betreiben Sie Axion Regulus in Ihrer eigenen Umgebung.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.pilotN">Pilot</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.pilotD">Belegen Sie den Nutzen anhand Ihrer eigenen Inhalte.</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="font-display text-3xl font-extrabold text-[var(--ink)]" data-i18n="price.free">Kostenlos</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.pilotF1">1 Woche</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.ws1">1 Workspace</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.u3">3 Nutzer</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.allFeat">Alle Plattformfunktionen</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.pilotF2">Begleitete Einrichtung und Auswertung der Ergebnisse</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full !px-4 !text-sm" data-i18n="price.p1cta">Pilot kostenlos starten</a></div>
+      </div>
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.starterN">Starter</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.starterD">Für ein kleines Team zum Einstieg.</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="flex items-baseline gap-1.5"><span class="font-display text-3xl font-extrabold text-[var(--ink)]">USD 750</span><span class="text-sm text-[var(--muted)]" data-i18n="price.perMonth">/ Monat</span></div><div class="text-xs text-[var(--muted)] mt-1" data-i18n="price.billed">jährliche Abrechnung</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.ws1">1 Workspace</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.u3roles">3 Nutzer: 1 Admin, 1 Mitarbeiter, 1 Freigeber</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.allFeat">Alle Plattformfunktionen</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.supEmail">Support per E-Mail</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full !px-4 !text-sm" data-i18n="price.cta">Jetzt starten</a></div>
+      </div>
+      <div class="card border-2 border-[var(--brand)]! shadow-[0_30px_60px_-35px_rgba(23,100,209,.55)] relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <span class="absolute -top-3 start-6 text-[11px] font-semibold kicker uppercase px-3 py-1 rounded-full bg-[var(--brand)] text-white" data-i18n="price.popular">Am beliebtesten</span>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.proN">Professional</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.proD">Für wachsende Compliance-Teams.</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="flex items-baseline gap-1.5"><span class="font-display text-3xl font-extrabold text-[var(--ink)]">USD 1,500</span><span class="text-sm text-[var(--muted)]" data-i18n="price.perMonth">/ Monat</span></div><div class="text-xs text-[var(--muted)] mt-1" data-i18n="price.billed">jährliche Abrechnung</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.ws2">2 Workspaces</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.u5roles">5 Nutzer: 1 Admin, 2 Mitarbeiter, 2 Freigeber</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.allFeat">Alle Plattformfunktionen</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.supEmail">Support per E-Mail</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-primary w-full !px-4 !text-sm" data-i18n="price.cta">Jetzt starten</a></div>
+      </div>
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.busN">Business</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.busD">Für mehrere Teams und Geschäftsbereiche.</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="flex items-baseline gap-1.5"><span class="font-display text-3xl font-extrabold text-[var(--ink)]">USD 4,000</span><span class="text-sm text-[var(--muted)]" data-i18n="price.perMonth">/ Monat</span></div><div class="text-xs text-[var(--muted)] mt-1" data-i18n="price.billed">jährliche Abrechnung</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.ws5">5 Workspaces</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.u11roles">11 Nutzer: 1 Admin, 5 Mitarbeiter, 5 Freigeber</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.allFeat">Alle Plattformfunktionen</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.supPriority">Bevorzugter Support</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full !px-4 !text-sm" data-i18n="price.cta">Jetzt starten</a></div>
+      </div>
+    </div>
+    <p class="mt-6 text-center text-sm text-[var(--body)]"><a href="#contact" class="link-arrow"><span data-i18n="price.more">Mehr Nutzer oder Workspaces benötigt? Kontaktieren Sie uns.</span> <span aria-hidden="true" class="inline-block rtl-flip">→</span></a></p>
+    <div class="mt-5 rounded-2xl bg-[var(--navy-900)] p-7 sm:p-9 grid lg:grid-cols-12 gap-6 lg:gap-10 items-center fade-up" data-fade>
+      <div class="lg:col-span-5">
+        <h3 class="font-display text-xl sm:text-2xl font-bold text-white" data-i18n="price.opT">On-Premise / Private Cloud</h3>
+        <p class="mt-2 text-sm text-[#a9b8cc] leading-relaxed" data-i18n="price.opD">Betreiben Sie Axion Regulus in Ihrer eigenen Infrastruktur, wenn Ihre Daten im Haus bleiben müssen.</p>
+      </div>
+      <ul class="lg:col-span-4 space-y-2.5 text-sm text-white">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF1">Jahreslizenz inklusive Updates und Support</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF2">Implementierung, Einrichtung der Rahmenwerke und Schulung</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF3">Dauerlizenz auf Anfrage</span></li>
+      </ul>
+      <div class="lg:col-span-3 lg:text-end">
+        <div class="font-display text-2xl font-extrabold text-white" data-i18n="price.custom">Individuell</div>
+        <a href="#contact" class="btn btn-white mt-4" data-i18n="price.opCta">On-Premise-Angebot anfordern</a>
+      </div>
+    </div>
+    <p class="mt-5 text-center text-xs text-[var(--muted)]" data-i18n="price.note">Preise in USD, zzgl. MwSt.</p>
+  </div>
+</section>
+
 <!-- PARTNERS & INVESTORS -->
 <section id="partners" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap grid lg:grid-cols-2 gap-6">
@@ -1246,6 +1328,7 @@
         <li><a href="#product" class="hover:text-white transition" data-i18n="footer.linkRegulus">Axion Regulus</a></li>
         <li><a href="#features" class="hover:text-white transition" data-i18n="nav.features">Funktionen</a></li>
         <li><a href="#industries" class="hover:text-white transition" data-i18n="nav.industries">Branchen</a></li>
+        <li><a href="#pricing" class="hover:text-white transition" data-i18n="nav.pricing">Preise</a></li>
       </ul>
     </div>
     <div>
@@ -1491,7 +1574,7 @@ en: {
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"User Handbook","footer.companyHeading":"Company","footer.connectHeading":"Connect","footer.linkedin":"LinkedIn",
 "footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"Privacy Policy","footer.terms":"Terms",
 "footer.disclaimer":"Axion Regulus provides AI-assisted compliance analysis and does not replace professional legal, regulatory or compliance advice. Compliance assessments should be reviewed by appropriately authorized personnel before business decisions are made.",
-"chat.title":"Mira","chat.status":"Usually replies instantly","chat.placeholder":"Ask about Axion Regulus…"
+"chat.title":"Mira","chat.status":"Usually replies instantly","chat.placeholder":"Ask about Axion Regulus…","price.kicker":"PRICING","price.title":"Plans that grow with your compliance needs","price.desc":"Start with a free pilot. Then choose a cloud subscription, or run Axion Regulus in your own environment.","price.popular":"Most popular","price.perMonth":"/ month","price.billed":"billed annually","price.free":"Free","price.custom":"Custom","price.p1cta":"Start a free pilot","price.cta":"Get started","price.ctaSales":"Contact sales","price.opT":"On-premise / private cloud","price.opD":"Run Axion Regulus inside your own infrastructure when your data must stay in-house.","price.opF1":"Annual licence including updates and support","price.opF2":"Implementation, framework setup and training","price.opF3":"Perpetual licence available on request","price.opCta":"Request an on-premise quote","price.note":"Prices in USD, excluding VAT.","nav.pricing":"Pricing","price.pilotN":"Pilot","price.pilotD":"Prove the value on your own content.","price.pilotF1":"1 week","price.pilotF2":"Guided setup and results review","price.starterN":"Starter","price.starterD":"For a small team getting started.","price.proN":"Professional","price.proD":"For growing compliance teams.","price.busN":"Business","price.busD":"For several teams and business units.","price.ws1":"1 workspace","price.ws2":"2 workspaces","price.ws5":"5 workspaces","price.u3":"3 users","price.u3roles":"3 users: 1 admin, 1 collaborator, 1 approver","price.u5roles":"5 users: 1 admin, 2 collaborators, 2 approvers","price.u11roles":"11 users: 1 admin, 5 collaborators, 5 approvers","price.allFeat":"All platform features","price.supEmail":"Email support","price.supPriority":"Priority support","price.more":"Need more users or workspaces? Contact us."
 },
 de: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"Produkt","nav.features":"Funktionen","nav.industries":"Branchen","nav.partners":"Partner","nav.investors":"Investoren","nav.about":"Über uns","nav.contact":"Kontakt","nav.talk":"Kontakt aufnehmen","nav.demo":"Demo anfordern",
@@ -1643,7 +1726,7 @@ de: {
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"Benutzerhandbuch","footer.companyHeading":"Unternehmen","footer.connectHeading":"Vernetzen","footer.linkedin":"LinkedIn",
 "footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. Alle Rechte vorbehalten.","footer.privacy":"Datenschutz","footer.terms":"AGB",
 "footer.disclaimer":"Axion Regulus bietet KI-gestützte Compliance-Analysen und ersetzt keine professionelle Rechts-, Regulierungs- oder Compliance-Beratung. Compliance-Bewertungen sollten von entsprechend autorisiertem Personal geprüft werden, bevor Geschäftsentscheidungen getroffen werden.",
-"chat.title":"Mira","chat.status":"Antwortet meist sofort","chat.placeholder":"Frag etwas zu Axion Regulus…"
+"chat.title":"Mira","chat.status":"Antwortet meist sofort","chat.placeholder":"Frag etwas zu Axion Regulus…","price.kicker":"PREISE","price.title":"Pläne, die mit Ihren Compliance-Anforderungen wachsen","price.desc":"Starten Sie mit einem kostenlosen Pilotprojekt. Wählen Sie dann ein Cloud-Abonnement oder betreiben Sie Axion Regulus in Ihrer eigenen Umgebung.","price.popular":"Am beliebtesten","price.perMonth":"/ Monat","price.billed":"jährliche Abrechnung","price.free":"Kostenlos","price.custom":"Individuell","price.p1cta":"Pilot kostenlos starten","price.cta":"Jetzt starten","price.ctaSales":"Vertrieb kontaktieren","price.opT":"On-Premise / Private Cloud","price.opD":"Betreiben Sie Axion Regulus in Ihrer eigenen Infrastruktur, wenn Ihre Daten im Haus bleiben müssen.","price.opF1":"Jahreslizenz inklusive Updates und Support","price.opF2":"Implementierung, Einrichtung der Rahmenwerke und Schulung","price.opF3":"Dauerlizenz auf Anfrage","price.opCta":"On-Premise-Angebot anfordern","price.note":"Preise in USD, zzgl. MwSt.","nav.pricing":"Preise","price.pilotN":"Pilot","price.pilotD":"Belegen Sie den Nutzen anhand Ihrer eigenen Inhalte.","price.pilotF1":"1 Woche","price.pilotF2":"Begleitete Einrichtung und Auswertung der Ergebnisse","price.starterN":"Starter","price.starterD":"Für ein kleines Team zum Einstieg.","price.proN":"Professional","price.proD":"Für wachsende Compliance-Teams.","price.busN":"Business","price.busD":"Für mehrere Teams und Geschäftsbereiche.","price.ws1":"1 Workspace","price.ws2":"2 Workspaces","price.ws5":"5 Workspaces","price.u3":"3 Nutzer","price.u3roles":"3 Nutzer: 1 Admin, 1 Mitarbeiter, 1 Freigeber","price.u5roles":"5 Nutzer: 1 Admin, 2 Mitarbeiter, 2 Freigeber","price.u11roles":"11 Nutzer: 1 Admin, 5 Mitarbeiter, 5 Freigeber","price.allFeat":"Alle Plattformfunktionen","price.supEmail":"Support per E-Mail","price.supPriority":"Bevorzugter Support","price.more":"Mehr Nutzer oder Workspaces benötigt? Kontaktieren Sie uns."
 }
 };
 
@@ -1869,8 +1952,8 @@ window.addEventListener('load', () => {
       answer: "Yes. Axion Regulus is designed to work with your organization's own regulatory documents and compliance requirements — the applicable framework and source documents are configured to your specific compliance needs rather than a single fixed regulation." },
     { id: 'evaluate', label: 'Book a demo', keywords: ['demo','trial','try it','see it in action','walkthrough','evaluate axion regulus','how can we evaluate','book a demo'],
       answer: 'The best way is to request a live demonstration and bring a regulatory document, policy requirement or suitable business-content example — our team can show you how requirements become structured compliance checks and how risks are identified.', link: { href: '#contact', label: 'Request a Live Demo' } },
-    { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge'],
-      answer: "We don't publish fixed pricing since deployments vary by organization size and requirements. The fastest way to get a quote is to request a live demo — our team will walk through your needs and pricing together.", link: { href: '#contact', label: 'Request a Live Demo' } },
+    { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge','pilot','free trial','trial','on-premise','on premise','license','licence'],
+      answer: "You can start with a free 1-week pilot (1 workspace, 3 users). Cloud plans, billed annually: Starter USD 750 per month (1 workspace, 3 users), Professional USD 1,500 per month (2 workspaces, 5 users) and Business USD 4,000 per month (5 workspaces, 11 users). Every plan includes all platform features. On-premise deployments are quoted individually. Prices are in USD, excluding VAT.", link: { href: '#pricing', label: 'See pricing' } },
     { id: 'features', label: 'Features', keywords: ['feature','features','capabilities','what can it do','functionality'],
       answer: "Key features include AI-powered compliance validation, a regulatory knowledge base, automated rule generation, compliance scoring, risk detection, audit evidence, role-based access, dashboards & reporting, multilingual support, and regulatory change tracking.", link: { href: '#features', label: 'See all features' } },
     { id: 'dashboard', label: 'Dashboard & reporting', keywords: ['dashboard','reporting','management view','visibility into compliance','trends','reports'],
