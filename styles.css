@@ -80,6 +80,8 @@ summary{display:list-item}
 .border-slate-900\/10{border-color:rgb(15 23 42 / 0.1)}
 .border-slate-900\/8{border-color:rgb(15 23 42 / 0.08)}
 .border-t{border-top-style:solid;border-top-width:1px}
+.border-t-4\!{border-top-style:solid !important;border-top-width:4px !important}
+.border-t-\[var\(--brand\)\]\!{border-top-color:var(--brand) !important}
 .border-white{border-color:#ffffff}
 .border-white\/10{border-color:rgb(255 255 255 / 0.1)}
 .border-white\/15{border-color:rgb(255 255 255 / 0.15)}
@@ -221,6 +223,7 @@ summary{display:list-item}
 .p-5{padding:1.25rem}
 .p-6{padding:1.5rem}
 .p-7{padding:1.75rem}
+.p-8{padding:2rem}
 .pb-14{padding-bottom:3.5rem}
 .pb-2{padding-bottom:0.5rem}
 .pb-5{padding-bottom:1.25rem}
@@ -270,6 +273,7 @@ summary{display:list-item}
 .shadow-\[0_30px_60px_-35px_rgba\(11\,29\,54\,\.45\)\]{box-shadow:0 30px 60px -35px rgba(11,29,54,.45)}
 .shadow-\[0_30px_60px_-35px_rgba\(23\,100\,209\,\.55\)\]{box-shadow:0 30px 60px -35px rgba(23,100,209,.55)}
 .shadow-\[0_30px_60px_-40px_rgba\(11\,29\,54\,\.4\)\]{box-shadow:0 30px 60px -40px rgba(11,29,54,.4)}
+.shadow-\[0_30px_60px_-40px_rgba\(11\,29\,54\,\.45\)\]{box-shadow:0 30px 60px -40px rgba(11,29,54,.45)}
 .shadow-xl{box-shadow:0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1)}
 .shrink-0{flex-shrink:0}
 .space-y-1 > :not(:last-child){margin-bottom:0.25rem}
