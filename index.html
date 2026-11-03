@@ -192,6 +192,7 @@
   .founder-photo{width:min(260px,70vw); aspect-ratio:4/5; margin:0 auto; border-radius:24px; padding:4px; box-shadow:0 30px 60px -30px rgba(15,23,42,.45);}
   .founder-photo img{width:100%; height:100%; object-fit:cover; object-position:top; border-radius:20px; display:block;}
 
+  picture{display:contents;}
   .fade-up{opacity:0; transform:translateY(20px);}
   .bar{transition:height 1.2s cubic-bezier(.16,1,.3,1);}
 
@@ -227,8 +228,8 @@
   <div class="nav-blue border-b border-white/10">
     <div class="wrap h-16 md:h-[72px] flex items-center justify-between gap-6">
       <a href="#top" class="flex items-center gap-2.5 h-full py-2 shrink-0" aria-label="Axion Regulus home">
-        <img src="AxionLogo.png" alt="Axion" width="512" height="412" class="h-[80%] w-auto object-contain">
-        <img src="RegulusText.png" alt="Regulus" width="358" height="54" class="h-[26%] w-auto object-contain">
+        <picture><source srcset="AxionLogo.webp" type="image/webp"><img src="AxionLogo.png" alt="Axion" width="512" height="412" fetchpriority="high" class="h-[80%] w-auto object-contain"></picture>
+        <picture><source srcset="RegulusText.webp" type="image/webp"><img src="RegulusText.png" alt="Regulus" width="358" height="54" class="h-[26%] w-auto object-contain"></picture>
       </a>
       <nav class="hidden xl:flex items-center gap-6 whitespace-nowrap text-sm font-medium">
         <a href="#product" class="nav-link" data-i18n="nav.product">Product</a>
@@ -273,7 +274,7 @@
   <div class="absolute -top-48 right-[-10%] w-[720px] h-[720px] rounded-full bg-[#1764d1]/25 blur-[140px] pointer-events-none"></div>
 
   <div class="relative wrap grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-    <div class="lg:col-span-6 fade-up" data-fade>
+    <div class="lg:col-span-6">
       <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[11px] font-semibold text-[#9cc5ff] kicker mb-7">
         <span class="w-1.5 h-1.5 rounded-full bg-[#5aa2ff]"></span> <span data-i18n="hero.badge">ENTERPRISE COMPLIANCE INTELLIGENCE</span>
       </div>
@@ -303,7 +304,7 @@
     </div>
 
     <!-- Hero visual: product window -->
-    <div class="lg:col-span-6 fade-up" data-fade>
+    <div class="lg:col-span-6">
       <div class="mock ltr-diagram">
         <div class="mock-bar"><i></i><i></i><i></i><span class="ml-3 text-[11px] text-slate-400">Axion Regulus</span></div>
         <div class="p-5 sm:p-7">
@@ -590,7 +591,76 @@
     </div>
 
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-6 gap-4" id="featureGrid">
-      <!-- features rendered by renderFeatures() -->
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"></path><path d="M9 12.5l2 2 4-4.5"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f1t">AI-Powered Compliance Validation</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f1d">Automatically evaluate business content against regulatory requirements.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f2t">Regulatory Knowledge Base</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f2d">Maintain regulatory documents and structured compliance rules in a centralized environment.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="12" r="3"></circle><path d="M10 5v2M10 17v2M3 12h2M15 12h2M5.3 6.3l1.4 1.4M13.3 16.3l1.4 1.4M5.3 17.7l1.4-1.4M13.3 7.7l1.4-1.4"></path><path d="M17 15l3 1-1 3"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f3t">Automated Rule Generation</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f3d">Convert regulatory requirements into actionable validation rules.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 0 1 16 0"></path><path d="M12 16l4-5"></path><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"></circle></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f4t">Compliance Scoring</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f4d">An understandable score showing the overall status of submitted content.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l8 14H4z"></path><path d="M12 10v4"></path><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f5t">Risk Detection</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f5d">Identify potential compliance issues and prioritize areas requiring attention.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><circle cx="12" cy="12" r="3.6"></circle><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f6t">AI Confidence Score</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f6d">Show the confidence level associated with AI-generated assessments.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9v.2h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f7t">Recommendations</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f7d">Actionable recommendations for addressing identified compliance risks.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="10" height="14" rx="1"></rect><path d="M8 7h4M8 10h4"></path><circle cx="16" cy="16" r="3"></circle><path d="M18.1 18.1L21 21"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f8t">Audit Evidence</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f8d">Maintain evidence supporting compliance decisions and reviews.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"></circle><path d="M12 13V9M9 3h6"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f9t">SLA &amp; Workflow Management</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f9d">Track compliance tasks, deadlines and resolution workflows.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 7h12"></path><path d="M4 7l-2 5a3 3 0 0 0 6 0z"></path><path d="M20 7l-2 5a3 3 0 0 0 6 0z"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f10t">Dispute Management</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f10d">Allow users to challenge or review compliance findings when necessary.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"></circle></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f11t">Role-Based Access</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f11d">Controlled access for admins, compliance teams, reviewers and business users.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="3" height="8"></rect><rect x="10.5" y="7" width="3" height="13"></rect><rect x="17" y="14" width="3" height="6"></rect></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f12t">Dashboard &amp; Reporting</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f12d">Management-level visibility into compliance performance, risks and trends.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-3">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><path d="M4 12h16"></path><path d="M12 4c3 2.5 3 13.5 0 16"></path><path d="M12 4c-3 2.5-3 13.5 0 16"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f13t">Multilingual Compliance</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f13d">Support regulatory and business content in multiple languages.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-3">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"></path><path d="M9 3v4h4"></path><path d="M9.3 15.3a2.3 2.3 0 1 1 .5 3.2"></path><path d="M9.3 13.8v1.7h1.7"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f15t">Regulatory Change Intelligence</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f15d">Identify and manage changes to regulatory requirements over time.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -613,7 +683,7 @@
     <div class="fade-up" data-fade>
       <div class="relative">
         <div class="rounded-2xl overflow-hidden border border-[var(--line)] shadow-[0_30px_60px_-35px_rgba(11,29,54,.45)]">
-          <img src="team-review.jpg" width="1408" height="768" loading="lazy" decoding="async" alt="Compliance and risk team reviewing flagged content together in a meeting room" class="w-full h-auto object-cover">
+          <picture><source srcset="team-review.webp" type="image/webp"><img src="team-review.jpg" width="1408" height="768" loading="lazy" decoding="async" alt="Compliance and risk team reviewing flagged content together in a meeting room" class="w-full h-auto object-cover"></picture>
         </div>
         <div class="card absolute -bottom-6 left-4 right-4 sm:left-8 sm:right-auto sm:max-w-sm px-4 py-3.5 flex items-center gap-3 shadow-[0_20px_40px_-20px_rgba(11,29,54,.35)]">
           <div class="flex -space-x-2 shrink-0 ltr-diagram">
@@ -630,21 +700,21 @@
   <div class="wrap mt-14 grid md:grid-cols-3 gap-6">
       <div class="group fade-up" data-fade>
         <div class="aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="control-team.jpg" width="1376" height="768" loading="lazy" decoding="async" alt="Team reviewing compliance reports together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
+          <picture><source srcset="control-team.webp" type="image/webp"><img src="control-team.jpg" width="1376" height="768" loading="lazy" decoding="async" alt="Team reviewing compliance reports together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"></picture>
         </div>
         <h3 class="text-[var(--ink)] font-semibold mt-4" data-i18n="hs.h1t">Control</h3>
         <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h1d">Teams stay in control of every compliance decision, with AI support at each step.</p>
       </div>
       <div class="group fade-up" data-fade>
         <div class="aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="productivity-infographic.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Axion Regulus turning manual compliance checks into confident, automated decisions" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.03]">
+          <picture><source srcset="productivity-infographic.webp" type="image/webp"><img src="productivity-infographic.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Axion Regulus turning manual compliance checks into confident, automated decisions" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"></picture>
         </div>
         <h3 class="text-[var(--ink)] font-semibold mt-4" data-i18n="hs.h2t">Productivity</h3>
         <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h2d">Structured workflows help teams move from review to resolution faster.</p>
       </div>
       <div class="group fade-up" data-fade>
         <div class="aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--line)]">
-          <img src="peace-of-mind-team.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Team confidently discussing compliance results together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]">
+          <picture><source srcset="peace-of-mind-team.webp" type="image/webp"><img src="peace-of-mind-team.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Team confidently discussing compliance results together in a meeting room" class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"></picture>
         </div>
         <h3 class="text-[var(--ink)] font-semibold mt-4" data-i18n="hs.h3t">Peace of Mind</h3>
         <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="hs.h3d">Clear evidence and reasoning behind every compliance assessment.</p>
@@ -659,7 +729,43 @@
       <p class="eyebrow mb-4" data-i18n="ind.kicker">USE CASES</p>
       <h2 class="h2" data-i18n="ind.title">Built for regulated, high-stakes industries</h2>
     </div>
-    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-12 gap-4" id="industryGrid"></div>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-12 gap-4" id="industryGrid">
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-3">
+      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l8-5 8 5"></path><rect x="5" y="10" width="14" height="8"></rect><path d="M3 20h18"></path><path d="M8 10v8M12 10v8M16 10v8"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="ind.i1t">Financial Services</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="ind.i1d">Regulatory requirements, financial communications, policies, AML-related workflows and governance.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-3">
+      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 3 12 2-9 2 3h5"></path><circle cx="18" cy="6" r="2.6"></circle><path d="M18 4.8v2.4M16.8 6h2.4"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="ind.i2t">Healthcare &amp; Pharmaceutical</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="ind.i2d">Validate product information, promotional content and healthcare communications.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-3">
+      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18C6 9 12 4 20 4c0 8-5 14-14 14z"></path><path d="M6 18C9 14 12 11 16 9"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="ind.i3t">Food &amp; Nutraceutical</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="ind.i3d">Evaluate advertising claims, product descriptions and regulatory requirements.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-3">
+      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"></path><path d="M8 14h8"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="ind.i4t">Cosmetics</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="ind.i4d">Validate product claims, marketing content and regulatory requirements.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-4">
+      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l7 4V6l-7 4z"></path><path d="M13 9a3 3 0 0 1 0 6"></path><path d="M6 14v4a1 1 0 0 0 1 1h1v-5"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="ind.i5t">Marketing &amp; Advertising</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="ind.i5d">Check advertisements, social posts, campaigns and promotional content.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-4">
+      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"></rect><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M3 13h18"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="ind.i6t">Corporate Governance</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="ind.i6d">Evaluate policies, procedures, contracts and internal documentation.</p></div>
+      </div>
+      <div class="card card-hover p-5 flex gap-4 lg:col-span-4 sm:col-span-2">
+      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"></path><circle cx="9" cy="11" r="1"></circle><circle cx="15" cy="11" r="1"></circle><circle cx="12" cy="15" r="1"></circle><path d="M9 11l3 4 3-4"></path></svg></div>
+      <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="ind.i7t">Enterprise Risk &amp; Compliance</h3>
+      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="ind.i7d">Centralized compliance intelligence across business units.</p></div>
+      </div>
+    </div>
 
     <div id="check" class="mt-6 card p-6 lg:p-8 grid lg:grid-cols-12 gap-8 fade-up" data-fade>
       <div class="lg:col-span-4">
@@ -762,7 +868,7 @@
       <h2 class="h2" data-i18n="about.title">Building practical AI for business compliance</h2>
       <p class="mt-5 lead" data-i18n="about.desc">Axion Consultancy Services is a UAE-based technology company developing practical AI solutions for regulated business environments. Axion Regulus is the company's AI-powered Enterprise Compliance Intelligence Platform, designed to help organizations structure regulatory requirements and apply them to real business content.</p>
       <div class="mt-8 flex items-center gap-4">
-        <img src="AxionLogo.png" alt="Axion" class="h-14 w-auto object-contain">
+        <picture><source srcset="AxionLogo.webp" type="image/webp"><img src="AxionLogo.png" alt="Axion" class="h-14 w-auto object-contain"></picture>
         <div>
           <div class="font-display font-bold text-[var(--ink)]">Axion Consultancy Services</div>
           <div class="text-[11px] text-[var(--muted)] kicker font-semibold">AXION REGULUS</div>
@@ -969,8 +1075,8 @@
   <div class="wrap py-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
     <div class="lg:col-span-2">
       <div class="flex items-center gap-3 mb-5">
-        <img src="AxionLogo.png" alt="Axion" class="h-12 w-auto object-contain">
-        <img src="RegulusText.png" alt="Regulus" class="h-4 w-auto object-contain">
+        <picture><source srcset="AxionLogo.webp" type="image/webp"><img src="AxionLogo.png" alt="Axion" class="h-12 w-auto object-contain"></picture>
+        <picture><source srcset="RegulusText.webp" type="image/webp"><img src="RegulusText.png" alt="Regulus" class="h-4 w-auto object-contain"></picture>
       </div>
       <div class="font-display font-semibold text-white">Axion Consultancy Services</div>
       <p class="text-sm mt-2 max-w-xs leading-relaxed" data-i18n="footer.tagline">AI-powered Enterprise Compliance Intelligence — AI with Supervision.</p>
@@ -981,7 +1087,6 @@
         <li><a href="#product" class="hover:text-white transition" data-i18n="footer.linkRegulus">Axion Regulus</a></li>
         <li><a href="#features" class="hover:text-white transition" data-i18n="nav.features">Features</a></li>
         <li><a href="#industries" class="hover:text-white transition" data-i18n="nav.industries">Industries</a></li>
-        <li><a href="#" class="hover:text-white transition" data-i18n="footer.linkHandbook">User Handbook</a></li>
       </ul>
     </div>
     <div>
@@ -1007,7 +1112,6 @@
   <div class="border-t border-white/10">
     <div class="wrap py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
       <span><span data-i18n="footer.copyrightPre">© </span><span id="year"></span><span data-i18n="footer.copyrightPost"> Axion Consultancy Services. All rights reserved.</span></span>
-      <span class="flex items-center gap-4"><a href="#" class="hover:text-white transition" data-i18n="footer.privacy">Privacy Policy</a><a href="#" class="hover:text-white transition" data-i18n="footer.terms">Terms</a></span>
     </div>
   </div>
   <div class="border-t border-white/10 py-5">
@@ -1073,93 +1177,6 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     document.getElementById('mobileMenu').classList.add('hidden');
   });
 });
-
-// Icon set: small, self-contained line icons (24x24) — no external assets
-const ICONS = {
-  shieldCheck: '<path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12.5l2 2 4-4.5"/>',
-  database: '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>',
-  cogArrow: '<circle cx="10" cy="12" r="3"/><path d="M10 5v2M10 17v2M3 12h2M15 12h2M5.3 6.3l1.4 1.4M13.3 16.3l1.4 1.4M5.3 17.7l1.4-1.4M13.3 7.7l1.4-1.4"/><path d="M17 15l3 1-1 3"/>',
-  gauge: '<path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/>',
-  alertTriangle: '<path d="M12 4l8 14H4z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"/>',
-  target: '<circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3.6"/><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"/>',
-  bulb: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9v.2h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/>',
-  auditGlass: '<rect x="5" y="3" width="10" height="14" rx="1"/><path d="M8 7h4M8 10h4"/><circle cx="16" cy="16" r="3"/><path d="M18.1 18.1L21 21"/>',
-  stopwatch: '<circle cx="12" cy="13" r="7"/><path d="M12 13V9M9 3h6"/>',
-  scaleBalance: '<path d="M12 3v18M6 7h12"/><path d="M4 7l-2 5a3 3 0 0 0 6 0z"/><path d="M20 7l-2 5a3 3 0 0 0 6 0z"/>',
-  lockUser: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"/>',
-  barChart: '<rect x="4" y="12" width="3" height="8"/><rect x="10.5" y="7" width="3" height="13"/><rect x="17" y="14" width="3" height="6"/>',
-  globe: '<circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path d="M12 4c3 2.5 3 13.5 0 16"/><path d="M12 4c-3 2.5-3 13.5 0 16"/>',
-  refreshDoc: '<path d="M7 3h7l4 4v14H7z"/><path d="M9 3v4h4"/><path d="M9.3 15.3a2.3 2.3 0 1 1 .5 3.2"/><path d="M9.3 13.8v1.7h1.7"/>',
-  bank: '<path d="M4 10l8-5 8 5"/><rect x="5" y="10" width="14" height="8"/><path d="M3 20h18"/><path d="M8 10v8M12 10v8M16 10v8"/>',
-  pulse: '<path d="M3 12h4l2-6 3 12 2-9 2 3h5"/><circle cx="18" cy="6" r="2.6"/><path d="M18 4.8v2.4M16.8 6h2.4"/>',
-  leaf: '<path d="M6 18C6 9 12 4 20 4c0 8-5 14-14 14z"/><path d="M6 18C9 14 12 11 16 9"/>',
-  flask: '<path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 14h8"/>',
-  megaphone: '<path d="M3 10v4h3l7 4V6l-7 4z"/><path d="M13 9a3 3 0 0 1 0 6"/><path d="M6 14v4a1 1 0 0 0 1 1h1v-5"/>',
-  briefcase: '<rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/>',
-  shieldNet: '<path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><circle cx="9" cy="11" r="1"/><circle cx="15" cy="11" r="1"/><circle cx="12" cy="15" r="1"/><path d="M9 11l3 4 3-4"/>'
-};
-const iconSvg = (key, color) => `<svg viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICONS[key]}</svg>`;
-
-// Feature grid data (title/desc resolved from translations at render time)
-const features = [
-  ["shieldCheck","feat.f1t","feat.f1d","#0891b2"],
-  ["database","feat.f2t","feat.f2d","#2563eb"],
-  ["cogArrow","feat.f3t","feat.f3d","#7c3aed"],
-  ["gauge","feat.f4t","feat.f4d","#059669"],
-  ["alertTriangle","feat.f5t","feat.f5d","#d97706"],
-  ["target","feat.f6t","feat.f6d","#0891b2"],
-  ["bulb","feat.f7t","feat.f7d","#c026d3"],
-  ["auditGlass","feat.f8t","feat.f8d","#2563eb"],
-  ["stopwatch","feat.f9t","feat.f9d","#7c3aed"],
-  ["scaleBalance","feat.f10t","feat.f10d","#d97706"],
-  ["lockUser","feat.f11t","feat.f11d","#059669"],
-  ["barChart","feat.f12t","feat.f12d","#0891b2"],
-  ["globe","feat.f13t","feat.f13d","#2563eb"],
-  ["refreshDoc","feat.f15t","feat.f15d","#7c3aed"]
-];
-// Grid spans: desktop rows of 3 features / 4 industries; the cards of a short
-// last row widen so every row fills the full width.
-function featureSpan(i) {
-  const rest = features.length % 3;
-  if (!rest || i < features.length - rest) return 'lg:col-span-2';
-  return rest === 1 ? 'lg:col-span-6' : 'lg:col-span-3';
-}
-function industrySpan(i) {
-  const rest = industries.length % 4;
-  let span = (!rest || i < industries.length - rest) ? 'lg:col-span-3'
-    : { 1: 'lg:col-span-12', 2: 'lg:col-span-6', 3: 'lg:col-span-4' }[rest];
-  // An odd last card spans both columns on tablets
-  if (industries.length % 2 && i === industries.length - 1) span += ' sm:col-span-2';
-  return span;
-}
-
-function renderFeatures(lang) {
-  document.getElementById('featureGrid').innerHTML = features.map(([icon,tk,dk], i) => `
-    <div class="card card-hover p-5 flex gap-4 fade-up ${featureSpan(i)}" data-fade style="opacity:1;transform:none">
-      <div class="ico">${iconSvg(icon, 'currentColor')}</div>
-      <div><h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
-      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed">${t(lang, dk)}</p></div>
-    </div>`).join('');
-}
-
-// Industry grid data
-const industries = [
-  ["bank","ind.i1t","ind.i1d","#2563eb"],
-  ["pulse","ind.i2t","ind.i2d","#0891b2"],
-  ["leaf","ind.i3t","ind.i3d","#7c3aed"],
-  ["flask","ind.i4t","ind.i4d","#db2777"],
-  ["megaphone","ind.i5t","ind.i5d","#d97706"],
-  ["briefcase","ind.i6t","ind.i6d","#059669"],
-  ["shieldNet","ind.i7t","ind.i7d","#2563eb"]
-];
-function renderIndustries(lang) {
-  document.getElementById('industryGrid').innerHTML = industries.map(([icon,tk,dk], i) => `
-    <div class="card card-hover p-5 flex gap-4 fade-up ${industrySpan(i)}" data-fade style="opacity:1;transform:none">
-      <div class="w-11 h-11 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center shrink-0 [&_svg]:w-5 [&_svg]:h-5">${iconSvg(icon, 'currentColor')}</div>
-      <div><h3 class="text-[var(--ink)] font-semibold">${t(lang, tk)}</h3>
-      <p class="text-sm text-[var(--body)] mt-1 leading-relaxed">${t(lang, dk)}</p></div>
-    </div>`).join('');
-}
 
 // Internationalization: EN / DE / FR / ES / RU
 let currentLang = 'en';
@@ -3006,8 +3023,6 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     el.placeholder = t(lang, el.getAttribute('data-i18n-placeholder'));
   });
-  renderFeatures(lang);
-  renderIndustries(lang);
   const current = LANGS.find(l => l.code === lang) || LANGS.find(l => l.code === 'en');
   const toggleFlag = document.getElementById('lang-toggle-flag');
   const toggleCode = document.getElementById('lang-toggle-code');
