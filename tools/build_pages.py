@@ -225,8 +225,17 @@ def keep_languages(page, spans, lang):
     return re.sub(r"\},(\n\};)", r"}\1", page)
 
 
+def drop_drafts(src):
+    """Leave out anything marked data-draft (e.g. a section that isn't ready to publish)."""
+    src, sections = re.subn(r"<!-- [^\n]*-->\n<section\b[^>]*\sdata-draft\b.*?</section>\n\n", "", src, flags=re.S)
+    src, lines = re.subn(r"\n[^\n]*<(?:a|li)\b[^>]*\sdata-draft\b[^\n]*", "", src)
+    if sections or lines:
+        print(f"left out drafts: {sections} section(s), {lines} link(s)")
+    return src
+
+
 def build():
-    src = SOURCE.read_text(encoding="utf-8")
+    src = drop_drafts(SOURCE.read_text(encoding="utf-8"))
     dicts, spans = parse_translations(src)
     for lang in LOCALES:
         page = keep_languages(src, spans, lang)
