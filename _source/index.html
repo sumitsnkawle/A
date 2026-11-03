@@ -233,7 +233,7 @@
         <a href="#product" class="nav-link" data-i18n="nav.product">Product</a>
         <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
         <a href="#industries" class="nav-link" data-i18n="nav.industries">Industries</a>
-        <a href="#pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        <a href="#pricing" data-draft class="nav-link" data-i18n="nav.pricing">Pricing</a>
         <a href="#partners" class="nav-link" data-i18n="hero.cta3">Partner &amp; Invest</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
@@ -258,7 +258,7 @@
     <a href="#product" class="block py-2 hover:text-white" data-i18n="nav.product">Product</a>
     <a href="#features" class="block py-2 hover:text-white" data-i18n="nav.features">Features</a>
     <a href="#industries" class="block py-2 hover:text-white" data-i18n="nav.industries">Industries</a>
-    <a href="#pricing" class="block py-2 hover:text-white" data-i18n="nav.pricing">Pricing</a>
+    <a href="#pricing" data-draft class="block py-2 hover:text-white" data-i18n="nav.pricing">Pricing</a>
     <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">Partner &amp; Invest</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">About</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">Contact</a>
@@ -823,8 +823,8 @@
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing" class="section-pad bg-soft border-y border-[var(--line)]">
+<!-- PRICING (draft: remove data-draft from this section and its 3 links to publish) -->
+<section id="pricing" data-draft class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap">
     <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="price.kicker">PRICING</p>
@@ -1167,7 +1167,7 @@
         <li><a href="#product" class="hover:text-white transition" data-i18n="footer.linkRegulus">Axion Regulus</a></li>
         <li><a href="#features" class="hover:text-white transition" data-i18n="nav.features">Features</a></li>
         <li><a href="#industries" class="hover:text-white transition" data-i18n="nav.industries">Industries</a></li>
-        <li><a href="#pricing" class="hover:text-white transition" data-i18n="nav.pricing">Pricing</a></li>
+        <li data-draft><a href="#pricing" class="hover:text-white transition" data-i18n="nav.pricing">Pricing</a></li>
       </ul>
     </div>
     <div>
@@ -3312,7 +3312,7 @@ window.addEventListener('load', () => {
     { id: 'evaluate', label: 'Book a demo', keywords: ['demo','trial','try it','see it in action','walkthrough','evaluate axion regulus','how can we evaluate','book a demo'],
       answer: 'The best way is to request a live demonstration and bring a regulatory document, policy requirement or suitable business-content example — our team can show you how requirements become structured compliance checks and how risks are identified.', link: { href: '#contact', label: 'Request a Live Demo' } },
     { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge','pilot','free trial','trial','on-premise','on premise','license','licence'],
-      answer: "You can start with a free 1-week pilot (1 workspace, 3 users). Cloud plans, billed annually: Starter USD 750 per month (1 workspace, 3 users), Professional USD 1,500 per month (2 workspaces, 5 users) and Business USD 4,000 per month (5 workspaces, 11 users). Every plan includes all platform features. On-premise deployments are quoted individually. Prices are in USD, excluding VAT.", link: { href: '#pricing', label: 'See pricing' } },
+      answer: "Pricing depends on the number of users and workspaces, and on whether you choose our cloud service or an on-premise deployment. The fastest way to get a quote is to request a live demo — our team will walk through your needs and pricing together.", link: { href: '#contact', label: 'Request a Live Demo' } },
     { id: 'features', label: 'Features', keywords: ['feature','features','capabilities','what can it do','functionality'],
       answer: "Key features include AI-powered compliance validation, a regulatory knowledge base, automated rule generation, compliance scoring, risk detection, audit evidence, role-based access, dashboards & reporting, multilingual support, and regulatory change tracking.", link: { href: '#features', label: 'See all features' } },
     { id: 'dashboard', label: 'Dashboard & reporting', keywords: ['dashboard','reporting','management view','visibility into compliance','trends','reports'],
