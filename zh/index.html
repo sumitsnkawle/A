@@ -4,9 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Axion Regulus | 基于 AI 的企业合规智能</title>
 <meta name="description" content="Axion Regulus 是一个基于人工智能的企业合规智能平台，可将法规文件转化为自动化验证系统，实现实时业务合规。">
 <link rel="canonical" href="https://axionast.com/zh/">
@@ -54,23 +51,179 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Axion Consultancy Services",
-  "url": "https://axionast.com/",
-  "logo": "https://axionast.com/AxionLogo.png",
-  "email": "info@axionast.com",
-  "sameAs": [],
-  "makesOffer": {
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "SoftwareApplication",
-      "name": "Axion Regulus",
-      "applicationCategory": "BusinessApplication",
-      "description": "AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents into automated validation systems for real-time business compliance.",
-      "availableLanguage": ["en","de","fr","es","ru","ar","it","pt","zh","ja","hi","ko"]
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://axionast.com/#organization",
+   "name": "Axion Consultancy Services",
+   "url": "https://axionast.com/",
+   "logo": "https://axionast.com/AxionLogo.png",
+   "email": "info@axionast.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE"
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "info@axionast.com"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://axionast.com/zh/#website",
+   "url": "https://axionast.com/zh/",
+   "name": "Axion Regulus",
+   "inLanguage": "zh",
+   "publisher": {
+    "@id": "https://axionast.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://axionast.com/zh/#webpage",
+   "url": "https://axionast.com/zh/",
+   "name": "Axion Regulus | 基于 AI 的企业合规智能",
+   "description": "Axion Regulus 是一个基于人工智能的企业合规智能平台，可将法规文件转化为自动化验证系统，实现实时业务合规。",
+   "inLanguage": "zh",
+   "isPartOf": {
+    "@id": "https://axionast.com/zh/#website"
+   },
+   "about": {
+    "@id": "https://axionast.com/#software"
+   },
+   "primaryImageOfPage": "https://axionast.com/team-review.jpg"
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://axionast.com/#software",
+   "name": "Axion Regulus",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "description": "Axion Regulus 是一个基于人工智能的企业合规智能平台，可将法规文件转化为自动化验证系统，实现实时业务合规。",
+   "publisher": {
+    "@id": "https://axionast.com/#organization"
+   },
+   "availableLanguage": [
+    "en",
+    "ar",
+    "de",
+    "fr",
+    "es",
+    "ru",
+    "it",
+    "pt",
+    "zh",
+    "ja",
+    "hi",
+    "ko"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://axionast.com/zh/#faq",
+   "inLanguage": "zh",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "什么是 Axion Regulus？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Axion Regulus 是一个基于人工智能的企业合规智能平台，能够将法规文件和政策要求转化为结构化的合规规则，并据此评估业务内容，识别潜在合规风险、发现项及建议措施。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus 是如何运作的？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "企业提供相关的法规文件或政策要求，Axion Regulus 使用 AI 识别适用要求并将其结构化为合规规则。随后可提交业务内容依据这些规则进行验证，生成合规发现项、风险信息及建议措施。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus 会做出最终的合规决策吗？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不会。Axion Regulus 旨在协助合规团队进行分析和风险识别，审核发现项并做出最终业务或合规决策的责任仍由人工审核人员承担。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "可以检查哪些类型的内容？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "根据所配置的合规框架，Axion Regulus 可对产品描述、营销与广告内容、社交媒体内容、网站或博客内容以及其他受支持的业务材料进行评估，核对其是否符合既定的监管要求。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "我们可以使用自己的法规文件吗？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "可以。Axion Regulus 支持基于企业自身的法规文件、政策和合规要求进行配置。这些要求可被处理为结构化规则，随后用于验证相关业务内容。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "完成合规检查后我们会获得什么？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "根据所配置的工作流程和可用数据，平台可提供合规分析，包括已识别的发现项、潜在风险、适用规则信息、建议措施以及支持性的合规证据。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus 能保证内容一定合规吗？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不能。Axion Regulus 是一个合规智能与决策支持平台，其分析旨在帮助团队识别潜在问题，并依据已配置的要求审核内容。最终的合规决策应由企业内具备相应权限的人工审核人员做出。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus 中的 AI 是如何被使用的？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "AI 用于协助理解法规内容、结构化要求、识别潜在合规风险以及分析提交的业务内容。人工监督仍是工作流程的一部分，使企业能够在采取行动前审核发现项。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "客户数据是如何受到保护的？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Axion Regulus 采用访问控制、基于角色的权限管理以及受控的文档处理，以支持业务信息和法规信息的保护。在所配置系统支持的情况下，合规活动及相关工作流程信息也可被保留，用于审查和审计目的。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus 是否构成法律意见？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不是。Axion Regulus 是一个合规智能与决策支持平台，帮助企业结构化法规要求、评估业务内容并识别潜在合规风险，但不能替代合格的法律、监管或合规专业人士。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus 能否支持不同的监管框架？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "可以。该平台支持基于企业自身的法规文件和合规要求进行配置，适用的框架和源文件可根据企业的合规需求进行设置。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "我们该如何评估 Axion Regulus？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "欢迎申请实时演示，并携带一份法规文件、政策要求或合适的业务内容示例。Axion 团队可为您演示如何将要求转化为结构化的合规检查，以及潜在风险是如何被识别的。"
+     }
     }
+   ]
   }
+ ]
 }
 </script>
 
@@ -969,7 +1122,7 @@
         <textarea name="Message" placeholder="请告诉我们您的合规需求" data-i18n-placeholder="请告诉我们您的合规需求" rows="4" class="rounded-lg px-4 py-3 text-sm sm:col-span-2"></textarea>
         <button type="submit" class="btn btn-primary sm:col-span-2 disabled:opacity-60 disabled:cursor-not-allowed" data-i18n="contact.submit">提交咨询</button>
         <p data-status class="text-sm sm:col-span-2 text-center"></p>
-        <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">我们仅使用您的信息来回复您的咨询，不会与第三方共享。</p>
+        <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">我们仅使用您的信息来回复您的咨询。详情请参阅我们的隐私政策。</p>
       </form>
     </div>
   </div>
@@ -1117,6 +1270,7 @@
   <div class="border-t border-white/10">
     <div class="wrap py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
       <span><span data-i18n="footer.copyrightPre">© </span><span id="year"></span><span data-i18n="footer.copyrightPost"> Axion Consultancy Services。保留所有权利。</span></span>
+      <a href="/privacy/" class="hover:text-white transition" data-i18n="footer.privacy">隐私政策</a>
     </div>
   </div>
   <div class="border-t border-white/10 py-5">
@@ -1317,7 +1471,7 @@ en: {
 "contact.name":"Full name","contact.email":"Work email","contact.company":"Company","contact.industry":"Industry","contact.framework":"Regulatory framework / country (optional)",
 "contact.opt1":"I'd like to request a demo","contact.opt2":"I'm interested in partnership","contact.opt3":"I'm an investor / venture partner","contact.opt4":"General inquiry",
 "contact.validate":"What would you like to validate? (e.g. product descriptions, marketing content, a policy document)",
-"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. We don't share it with third parties.",
+"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. See our Privacy Policy.",
 "faq.kicker":"FAQ","faq.title":"Frequently Asked Questions",
 "faq.q1":"What is Axion Regulus?","faq.a1":"Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents and policy requirements into structured compliance rules and uses them to evaluate business content for potential compliance risks, findings and recommended actions.",
 "faq.q2":"How does Axion Regulus work?","faq.a2":"Organizations provide the relevant regulatory documents or policy requirements. Axion Regulus uses AI to identify and structure applicable requirements into compliance rules. Business content can then be submitted for validation against those rules, producing compliance findings, risk information and suggested actions.",
@@ -1469,7 +1623,7 @@ zh: {
 "contact.name":"姓名","contact.email":"工作邮箱","contact.company":"公司","contact.industry":"行业","contact.framework":"法规框架 / 国家（可选）",
 "contact.opt1":"我想申请演示","contact.opt2":"我对合作感兴趣","contact.opt3":"我是投资者 / 风险投资合作伙伴","contact.opt4":"一般咨询",
 "contact.validate":"您想检查什么内容？（例如产品描述、营销内容、政策文件）",
-"contact.message":"请告诉我们您的合规需求","contact.send":"申请实时演示","contact.submit":"提交咨询","contact.sending":"发送中…","contact.privacy":"我们仅使用您的信息来回复您的咨询，不会与第三方共享。",
+"contact.message":"请告诉我们您的合规需求","contact.send":"申请实时演示","contact.submit":"提交咨询","contact.sending":"发送中…","contact.privacy":"我们仅使用您的信息来回复您的咨询。详情请参阅我们的隐私政策。",
 "faq.kicker":"常见问题","faq.title":"常见问题",
 "faq.q1":"什么是 Axion Regulus？","faq.a1":"Axion Regulus 是一个基于人工智能的企业合规智能平台，能够将法规文件和政策要求转化为结构化的合规规则，并据此评估业务内容，识别潜在合规风险、发现项及建议措施。",
 "faq.q2":"Axion Regulus 是如何运作的？","faq.a2":"企业提供相关的法规文件或政策要求，Axion Regulus 使用 AI 识别适用要求并将其结构化为合规规则。随后可提交业务内容依据这些规则进行验证，生成合规发现项、风险信息及建议措施。",

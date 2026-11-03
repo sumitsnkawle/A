@@ -4,9 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Axion Regulus | Корпоративный комплаенс-интеллект на основе ИИ</title>
 <meta name="description" content="Axion Regulus — это платформа корпоративного комплаенс-интеллекта на основе ИИ, которая превращает регуляторные документы в автоматизированные системы проверки для соответствия бизнес-процессов требованиям в реальном времени.">
 <link rel="canonical" href="https://axionast.com/ru/">
@@ -54,23 +51,179 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Axion Consultancy Services",
-  "url": "https://axionast.com/",
-  "logo": "https://axionast.com/AxionLogo.png",
-  "email": "info@axionast.com",
-  "sameAs": [],
-  "makesOffer": {
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "SoftwareApplication",
-      "name": "Axion Regulus",
-      "applicationCategory": "BusinessApplication",
-      "description": "AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents into automated validation systems for real-time business compliance.",
-      "availableLanguage": ["en","de","fr","es","ru","ar","it","pt","zh","ja","hi","ko"]
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://axionast.com/#organization",
+   "name": "Axion Consultancy Services",
+   "url": "https://axionast.com/",
+   "logo": "https://axionast.com/AxionLogo.png",
+   "email": "info@axionast.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE"
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "info@axionast.com"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://axionast.com/ru/#website",
+   "url": "https://axionast.com/ru/",
+   "name": "Axion Regulus",
+   "inLanguage": "ru",
+   "publisher": {
+    "@id": "https://axionast.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://axionast.com/ru/#webpage",
+   "url": "https://axionast.com/ru/",
+   "name": "Axion Regulus | Корпоративный комплаенс-интеллект на основе ИИ",
+   "description": "Axion Regulus — это платформа корпоративного комплаенс-интеллекта на основе ИИ, которая превращает регуляторные документы в автоматизированные системы проверки для соответствия бизнес-процессов требованиям в реальном времени.",
+   "inLanguage": "ru",
+   "isPartOf": {
+    "@id": "https://axionast.com/ru/#website"
+   },
+   "about": {
+    "@id": "https://axionast.com/#software"
+   },
+   "primaryImageOfPage": "https://axionast.com/team-review.jpg"
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://axionast.com/#software",
+   "name": "Axion Regulus",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "description": "Axion Regulus — это платформа корпоративного комплаенс-интеллекта на основе ИИ, которая превращает регуляторные документы в автоматизированные системы проверки для соответствия бизнес-процессов требованиям в реальном времени.",
+   "publisher": {
+    "@id": "https://axionast.com/#organization"
+   },
+   "availableLanguage": [
+    "en",
+    "ar",
+    "de",
+    "fr",
+    "es",
+    "ru",
+    "it",
+    "pt",
+    "zh",
+    "ja",
+    "hi",
+    "ko"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://axionast.com/ru/#faq",
+   "inLanguage": "ru",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Что такое Axion Regulus?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Axion Regulus — это платформа корпоративного комплаенс-интеллекта на основе ИИ, которая превращает регуляторные документы и требования политик в структурированные правила комплаенса и использует их для оценки бизнес-контента на предмет потенциальных рисков, замечаний и рекомендуемых действий."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Как работает Axion Regulus?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Организации предоставляют соответствующие регуляторные документы или требования политик. Axion Regulus использует ИИ, чтобы выявить и структурировать применимые требования в правила комплаенса. Затем бизнес-контент можно отправить на проверку по этим правилам, что даёт замечания по комплаенсу, информацию о рисках и предлагаемые действия."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Принимает ли Axion Regulus окончательное решение по комплаенсу?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. Axion Regulus предназначен для того, чтобы помогать командам комплаенса в анализе и выявлении рисков. Ответственность за проверку замечаний и принятие окончательного бизнес- или комплаенс-решения остаётся за проверяющими людьми."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Какие типы контента можно проверять?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "В зависимости от настроенной комплаенс-структуры Axion Regulus может оценивать бизнес-контент, такой как описания продуктов, маркетинговый и рекламный контент, контент социальных сетей, содержимое веб-сайтов или блогов и другие поддерживаемые бизнес-материалы, на соответствие определённым нормативным требованиям."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Можем ли мы использовать собственные регуляторные документы?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Да. Axion Regulus разработан для работы со специфичными для организации регуляторными документами, политиками и требованиями комплаенса. Эти требования можно преобразовать в структурированные правила, которые затем используются при проверке соответствующего бизнес-контента."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Что мы получаем после проверки на соответствие?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Платформа может предоставить анализ комплаенса, включающий выявленные замечания, потенциальные риски, информацию о применимых правилах, рекомендации и подтверждающие доказательства комплаенса — в зависимости от настроенного рабочего процесса и доступных данных."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Может ли Axion Regulus гарантировать соответствие контента требованиям?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. Axion Regulus — это платформа комплаенс-интеллекта и поддержки принятия решений. Её анализ призван помогать командам выявлять потенциальные проблемы и проверять контент на соответствие настроенным требованиям. Окончательные решения по комплаенсу должны приниматься уполномоченными проверяющими людьми организации."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Как ИИ используется в Axion Regulus?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ИИ используется для помощи в понимании регуляторного контента, структурировании требований, выявлении потенциальных рисков комплаенса и анализе отправленного бизнес-контента. Человеческий контроль остаётся частью процесса, чтобы организации могли проверять замечания перед принятием мер."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Как защищаются данные клиентов?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Axion Regulus использует контроль доступа, ролевые разрешения и контролируемую обработку документов для поддержки защиты бизнес- и регуляторной информации. Данные о комплаенс-активности и соответствующая информация о рабочем процессе также могут сохраняться для целей проверки и аудита, если это поддерживается настроенной системой."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Является ли Axion Regulus юридической консультацией?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. Axion Regulus — это платформа комплаенс-интеллекта и поддержки принятия решений. Она помогает организациям структурировать регуляторные требования, оценивать бизнес-контент и выявлять потенциальные риски комплаенса. Она не заменяет квалифицированных специалистов в области права, регулирования или комплаенса."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Может ли Axion Regulus поддерживать разные нормативные структуры?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Да. Платформа разработана для работы со специфичными для организации регуляторными документами и требованиями комплаенса. Применимую структуру и исходные документы можно настроить в соответствии с потребностями организации в области комплаенса."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Как мы можем оценить Axion Regulus?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Запросите живую демонстрацию и принесите регуляторный документ, требование политики или подходящий пример бизнес-контента. Команда Axion может показать, как требования превращаются в структурированные проверки на соответствие и как выявляются потенциальные риски."
+     }
     }
+   ]
   }
+ ]
 }
 </script>
 
@@ -969,7 +1122,7 @@
         <textarea name="Message" placeholder="Расскажите о ваших задачах в сфере комплаенса" data-i18n-placeholder="Расскажите о ваших задачах в сфере комплаенса" rows="4" class="rounded-lg px-4 py-3 text-sm sm:col-span-2"></textarea>
         <button type="submit" class="btn btn-primary sm:col-span-2 disabled:opacity-60 disabled:cursor-not-allowed" data-i18n="contact.submit">Отправить запрос</button>
         <p data-status class="text-sm sm:col-span-2 text-center"></p>
-        <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">Мы используем вашу информацию только для ответа на ваш запрос. Мы не передаём её третьим лицам.</p>
+        <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">Мы используем вашу информацию только для ответа на ваш запрос. Подробнее — в нашей политике конфиденциальности.</p>
       </form>
     </div>
   </div>
@@ -1117,6 +1270,7 @@
   <div class="border-t border-white/10">
     <div class="wrap py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
       <span><span data-i18n="footer.copyrightPre">© </span><span id="year"></span><span data-i18n="footer.copyrightPost"> Axion Consultancy Services. Все права защищены.</span></span>
+      <a href="/privacy/" class="hover:text-white transition" data-i18n="footer.privacy">Политика конфиденциальности</a>
     </div>
   </div>
   <div class="border-t border-white/10 py-5">
@@ -1317,7 +1471,7 @@ en: {
 "contact.name":"Full name","contact.email":"Work email","contact.company":"Company","contact.industry":"Industry","contact.framework":"Regulatory framework / country (optional)",
 "contact.opt1":"I'd like to request a demo","contact.opt2":"I'm interested in partnership","contact.opt3":"I'm an investor / venture partner","contact.opt4":"General inquiry",
 "contact.validate":"What would you like to validate? (e.g. product descriptions, marketing content, a policy document)",
-"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. We don't share it with third parties.",
+"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. See our Privacy Policy.",
 "faq.kicker":"FAQ","faq.title":"Frequently Asked Questions",
 "faq.q1":"What is Axion Regulus?","faq.a1":"Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents and policy requirements into structured compliance rules and uses them to evaluate business content for potential compliance risks, findings and recommended actions.",
 "faq.q2":"How does Axion Regulus work?","faq.a2":"Organizations provide the relevant regulatory documents or policy requirements. Axion Regulus uses AI to identify and structure applicable requirements into compliance rules. Business content can then be submitted for validation against those rules, producing compliance findings, risk information and suggested actions.",
@@ -1469,7 +1623,7 @@ ru: {
 "contact.name":"Полное имя","contact.email":"Рабочий email","contact.company":"Компания","contact.industry":"Отрасль","contact.framework":"Регуляторная база / страна (необязательно)",
 "contact.opt1":"Хочу запросить демо","contact.opt2":"Интересует партнёрство","contact.opt3":"Я инвестор / венчурный партнёр","contact.opt4":"Общий вопрос",
 "contact.validate":"Что бы вы хотели проверить? (например, описания продуктов, маркетинговый контент, документ политики)",
-"contact.message":"Расскажите о ваших задачах в сфере комплаенса","contact.send":"Запросить живую демонстрацию","contact.submit":"Отправить запрос","contact.sending":"Отправка…","contact.privacy":"Мы используем вашу информацию только для ответа на ваш запрос. Мы не передаём её третьим лицам.",
+"contact.message":"Расскажите о ваших задачах в сфере комплаенса","contact.send":"Запросить живую демонстрацию","contact.submit":"Отправить запрос","contact.sending":"Отправка…","contact.privacy":"Мы используем вашу информацию только для ответа на ваш запрос. Подробнее — в нашей политике конфиденциальности.",
 "faq.kicker":"ЧАСТЫЕ ВОПРОСЫ","faq.title":"Часто задаваемые вопросы",
 "faq.q1":"Что такое Axion Regulus?","faq.a1":"Axion Regulus — это платформа корпоративного комплаенс-интеллекта на основе ИИ, которая превращает регуляторные документы и требования политик в структурированные правила комплаенса и использует их для оценки бизнес-контента на предмет потенциальных рисков, замечаний и рекомендуемых действий.",
 "faq.q2":"Как работает Axion Regulus?","faq.a2":"Организации предоставляют соответствующие регуляторные документы или требования политик. Axion Regulus использует ИИ, чтобы выявить и структурировать применимые требования в правила комплаенса. Затем бизнес-контент можно отправить на проверку по этим правилам, что даёт замечания по комплаенсу, информацию о рисках и предлагаемые действия.",

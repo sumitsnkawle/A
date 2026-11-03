@@ -4,9 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Axion Regulus | AIを活用したエンタープライズ・コンプライアンス・インテリジェンス</title>
 <meta name="description" content="Axion Regulusは、規制文書をリアルタイムの業務コンプライアンスのための自動検証システムに変換する、AIを活用したエンタープライズ・コンプライアンス・インテリジェンス・プラットフォームです。">
 <link rel="canonical" href="https://axionast.com/ja/">
@@ -54,23 +51,179 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Axion Consultancy Services",
-  "url": "https://axionast.com/",
-  "logo": "https://axionast.com/AxionLogo.png",
-  "email": "info@axionast.com",
-  "sameAs": [],
-  "makesOffer": {
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "SoftwareApplication",
-      "name": "Axion Regulus",
-      "applicationCategory": "BusinessApplication",
-      "description": "AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents into automated validation systems for real-time business compliance.",
-      "availableLanguage": ["en","de","fr","es","ru","ar","it","pt","zh","ja","hi","ko"]
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://axionast.com/#organization",
+   "name": "Axion Consultancy Services",
+   "url": "https://axionast.com/",
+   "logo": "https://axionast.com/AxionLogo.png",
+   "email": "info@axionast.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE"
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "info@axionast.com"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://axionast.com/ja/#website",
+   "url": "https://axionast.com/ja/",
+   "name": "Axion Regulus",
+   "inLanguage": "ja",
+   "publisher": {
+    "@id": "https://axionast.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://axionast.com/ja/#webpage",
+   "url": "https://axionast.com/ja/",
+   "name": "Axion Regulus | AIを活用したエンタープライズ・コンプライアンス・インテリジェンス",
+   "description": "Axion Regulusは、規制文書をリアルタイムの業務コンプライアンスのための自動検証システムに変換する、AIを活用したエンタープライズ・コンプライアンス・インテリジェンス・プラットフォームです。",
+   "inLanguage": "ja",
+   "isPartOf": {
+    "@id": "https://axionast.com/ja/#website"
+   },
+   "about": {
+    "@id": "https://axionast.com/#software"
+   },
+   "primaryImageOfPage": "https://axionast.com/team-review.jpg"
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://axionast.com/#software",
+   "name": "Axion Regulus",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "description": "Axion Regulusは、規制文書をリアルタイムの業務コンプライアンスのための自動検証システムに変換する、AIを活用したエンタープライズ・コンプライアンス・インテリジェンス・プラットフォームです。",
+   "publisher": {
+    "@id": "https://axionast.com/#organization"
+   },
+   "availableLanguage": [
+    "en",
+    "ar",
+    "de",
+    "fr",
+    "es",
+    "ru",
+    "it",
+    "pt",
+    "zh",
+    "ja",
+    "hi",
+    "ko"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://axionast.com/ja/#faq",
+   "inLanguage": "ja",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Axion Regulusとは何ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Axion Regulusは、規制文書やポリシー要件を構造化されたコンプライアンスルールに変換し、それに基づいて業務コンテンツを評価することで、潜在的なコンプライアンスリスク、検出事項、推奨アクションを提示する、AIを活用したエンタープライズ・コンプライアンス・インテリジェンス・プラットフォームです。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulusはどのように機能しますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "貴社が関連する規制文書やポリシー要件を提供します。Axion Regulusは、AIを用いて適用される要件を特定し、コンプライアンスルールとして構造化します。その後、業務コンテンツをそれらのルールに照らして検証のために提出でき、コンプライアンス上の検出事項、リスク情報、推奨アクションが生成されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulusが最終的なコンプライアンス判断を下しますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "いいえ。Axion Regulusは、分析とリスク特定においてコンプライアンスチームを支援するために設計されています。検出事項を確認し、最終的な業務上またはコンプライアンス上の判断を下す責任は、引き続き人によるレビュー担当者にあります。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "どのような種類のコンテンツをチェックできますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "設定されたコンプライアンス・フレームワークに応じて、Axion Regulusは製品説明、マーケティング・広告コンテンツ、ソーシャルメディアコンテンツ、ウェブサイトやブログのコンテンツ、その他対応する業務資料を、定義された規制要件に照らして評価できます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "自社の規制文書を使用できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい。Axion Regulusは、貴社固有の規制文書、ポリシー、コンプライアンス要件と連携できるよう設計されています。これらの要件は構造化されたルールに処理され、関連する業務コンテンツの検証に使用されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "コンプライアンスチェック後に何が得られますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "設定されたワークフローと利用可能なデータに応じて、本プラットフォームは、特定された検出事項、潜在的リスク、適用ルール情報、推奨事項、裏付けとなるコンプライアンス証拠を含むコンプライアンス分析を提供できます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulusはコンテンツが確実にコンプライアンスに適合していることを保証できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "いいえ。Axion Regulusはコンプライアンス・インテリジェンスおよび意思決定支援プラットフォームです。その分析は、チームが潜在的な問題を特定し、設定された要件に照らしてコンテンツを確認する助けとなることを目的としています。最終的なコンプライアンス判断は、組織内の適切な人によるレビュー担当者が行う必要があります。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion RegulusではAIはどのように使用されていますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "AIは、規制内容の理解、要件の構造化、潜在的なコンプライアンスリスクの特定、提出された業務コンテンツの分析を支援するために使用されます。組織が対応を取る前に検出事項を確認できるよう、人による監督が引き続きワークフローの一部として維持されます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "顧客データはどのように保護されますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Axion Regulusは、業務情報および規制情報の保護を支えるために、アクセス制御、ロールベースの権限、管理された文書処理を使用します。設定されたシステムが対応している場合には、コンプライアンス活動や関連するワークフロー情報を、レビューおよび監査の目的で保持することもできます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulusは法的助言に該当しますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "いいえ。Axion Regulusはコンプライアンス・インテリジェンスおよび意思決定支援プラットフォームです。組織が規制要件を構造化し、業務コンテンツを評価し、潜在的なコンプライアンスリスクを特定する助けとなりますが、資格を有する法務、規制、またはコンプライアンスの専門家に代わるものではありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulusは異なる規制フレームワークに対応できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい。本プラットフォームは、貴社固有の規制文書やコンプライアンス要件と連携できるよう設計されています。適用されるフレームワークと元となる文書は、組織のコンプライアンスニーズに応じて設定できます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulusをどのように評価すればよいですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ライブデモをご依頼のうえ、規制文書、ポリシー要件、または適切な業務コンテンツの例をご用意ください。Axionチームが、要件がどのように構造化されたコンプライアンスチェックに変換され、潜在的リスクがどのように特定されるかをご紹介します。"
+     }
     }
+   ]
   }
+ ]
 }
 </script>
 
@@ -969,7 +1122,7 @@
         <textarea name="Message" placeholder="貴社のコンプライアンスに関するニーズをお聞かせください" data-i18n-placeholder="貴社のコンプライアンスに関するニーズをお聞かせください" rows="4" class="rounded-lg px-4 py-3 text-sm sm:col-span-2"></textarea>
         <button type="submit" class="btn btn-primary sm:col-span-2 disabled:opacity-60 disabled:cursor-not-allowed" data-i18n="contact.submit">お問い合わせを送信</button>
         <p data-status class="text-sm sm:col-span-2 text-center"></p>
-        <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">お預かりした情報はお問い合わせへの対応にのみ使用し、第三者と共有することはありません。</p>
+        <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">お預かりした情報はお問い合わせへの対応にのみ使用します。詳しくはプライバシーポリシーをご覧ください。</p>
       </form>
     </div>
   </div>
@@ -1117,6 +1270,7 @@
   <div class="border-t border-white/10">
     <div class="wrap py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
       <span><span data-i18n="footer.copyrightPre">© </span><span id="year"></span><span data-i18n="footer.copyrightPost"> Axion Consultancy Services. All rights reserved.</span></span>
+      <a href="/privacy/" class="hover:text-white transition" data-i18n="footer.privacy">プライバシーポリシー</a>
     </div>
   </div>
   <div class="border-t border-white/10 py-5">
@@ -1317,7 +1471,7 @@ en: {
 "contact.name":"Full name","contact.email":"Work email","contact.company":"Company","contact.industry":"Industry","contact.framework":"Regulatory framework / country (optional)",
 "contact.opt1":"I'd like to request a demo","contact.opt2":"I'm interested in partnership","contact.opt3":"I'm an investor / venture partner","contact.opt4":"General inquiry",
 "contact.validate":"What would you like to validate? (e.g. product descriptions, marketing content, a policy document)",
-"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. We don't share it with third parties.",
+"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. See our Privacy Policy.",
 "faq.kicker":"FAQ","faq.title":"Frequently Asked Questions",
 "faq.q1":"What is Axion Regulus?","faq.a1":"Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents and policy requirements into structured compliance rules and uses them to evaluate business content for potential compliance risks, findings and recommended actions.",
 "faq.q2":"How does Axion Regulus work?","faq.a2":"Organizations provide the relevant regulatory documents or policy requirements. Axion Regulus uses AI to identify and structure applicable requirements into compliance rules. Business content can then be submitted for validation against those rules, producing compliance findings, risk information and suggested actions.",
@@ -1469,7 +1623,7 @@ ja: {
 "contact.name":"氏名","contact.email":"勤務先メールアドレス","contact.company":"会社名","contact.industry":"業界","contact.framework":"規制枠組み / 国（任意）",
 "contact.opt1":"デモを申し込みたい","contact.opt2":"パートナーシップに興味がある","contact.opt3":"投資家／ベンチャーパートナーです","contact.opt4":"その他のお問い合わせ",
 "contact.validate":"何を検証したいですか？（例：製品説明、マーケティングコンテンツ、ポリシー文書）",
-"contact.message":"貴社のコンプライアンスに関するニーズをお聞かせください","contact.send":"ライブデモを申し込む","contact.submit":"お問い合わせを送信","contact.sending":"送信中…","contact.privacy":"お預かりした情報はお問い合わせへの対応にのみ使用し、第三者と共有することはありません。",
+"contact.message":"貴社のコンプライアンスに関するニーズをお聞かせください","contact.send":"ライブデモを申し込む","contact.submit":"お問い合わせを送信","contact.sending":"送信中…","contact.privacy":"お預かりした情報はお問い合わせへの対応にのみ使用します。詳しくはプライバシーポリシーをご覧ください。",
 "faq.kicker":"よくある質問","faq.title":"よくある質問",
 "faq.q1":"Axion Regulusとは何ですか？","faq.a1":"Axion Regulusは、規制文書やポリシー要件を構造化されたコンプライアンスルールに変換し、それに基づいて業務コンテンツを評価することで、潜在的なコンプライアンスリスク、検出事項、推奨アクションを提示する、AIを活用したエンタープライズ・コンプライアンス・インテリジェンス・プラットフォームです。",
 "faq.q2":"Axion Regulusはどのように機能しますか？","faq.a2":"貴社が関連する規制文書やポリシー要件を提供します。Axion Regulusは、AIを用いて適用される要件を特定し、コンプライアンスルールとして構造化します。その後、業務コンテンツをそれらのルールに照らして検証のために提出でき、コンプライアンス上の検出事項、リスク情報、推奨アクションが生成されます。",
