@@ -204,4 +204,8 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://axionast.com/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://axionast.com/"/>
   </url>
+  <url>
+    <loc>https://axionast.com/privacy/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
 </urlset>

@@ -4,9 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Axion Regulus | Intelligence de conformité d'entreprise propulsée par l'IA</title>
 <meta name="description" content="Axion Regulus est une plateforme d&#x27;intelligence de conformité d&#x27;entreprise propulsée par l&#x27;IA qui convertit les documents réglementaires en systèmes de validation automatisés pour une conformité métier en temps réel.">
 <link rel="canonical" href="https://axionast.com/fr/">
@@ -54,23 +51,179 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Axion Consultancy Services",
-  "url": "https://axionast.com/",
-  "logo": "https://axionast.com/AxionLogo.png",
-  "email": "info@axionast.com",
-  "sameAs": [],
-  "makesOffer": {
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "SoftwareApplication",
-      "name": "Axion Regulus",
-      "applicationCategory": "BusinessApplication",
-      "description": "AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents into automated validation systems for real-time business compliance.",
-      "availableLanguage": ["en","de","fr","es","ru","ar","it","pt","zh","ja","hi","ko"]
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://axionast.com/#organization",
+   "name": "Axion Consultancy Services",
+   "url": "https://axionast.com/",
+   "logo": "https://axionast.com/AxionLogo.png",
+   "email": "info@axionast.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE"
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "info@axionast.com"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://axionast.com/fr/#website",
+   "url": "https://axionast.com/fr/",
+   "name": "Axion Regulus",
+   "inLanguage": "fr",
+   "publisher": {
+    "@id": "https://axionast.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://axionast.com/fr/#webpage",
+   "url": "https://axionast.com/fr/",
+   "name": "Axion Regulus | Intelligence de conformité d'entreprise propulsée par l'IA",
+   "description": "Axion Regulus est une plateforme d'intelligence de conformité d'entreprise propulsée par l'IA qui convertit les documents réglementaires en systèmes de validation automatisés pour une conformité métier en temps réel.",
+   "inLanguage": "fr",
+   "isPartOf": {
+    "@id": "https://axionast.com/fr/#website"
+   },
+   "about": {
+    "@id": "https://axionast.com/#software"
+   },
+   "primaryImageOfPage": "https://axionast.com/team-review.jpg"
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://axionast.com/#software",
+   "name": "Axion Regulus",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "description": "Axion Regulus est une plateforme d'intelligence de conformité d'entreprise propulsée par l'IA qui convertit les documents réglementaires en systèmes de validation automatisés pour une conformité métier en temps réel.",
+   "publisher": {
+    "@id": "https://axionast.com/#organization"
+   },
+   "availableLanguage": [
+    "en",
+    "ar",
+    "de",
+    "fr",
+    "es",
+    "ru",
+    "it",
+    "pt",
+    "zh",
+    "ja",
+    "hi",
+    "ko"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://axionast.com/fr/#faq",
+   "inLanguage": "fr",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Qu'est-ce qu'Axion Regulus ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Axion Regulus est une plateforme d'intelligence de conformité d'entreprise propulsée par l'IA qui convertit les documents réglementaires et les exigences de politique en règles de conformité structurées, puis les utilise pour évaluer le contenu de l'entreprise afin d'identifier des risques de conformité potentiels, des constats et des actions recommandées."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Comment fonctionne Axion Regulus ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Les organisations fournissent les documents réglementaires ou exigences de politique pertinents. Axion Regulus utilise l'IA pour identifier et structurer les exigences applicables en règles de conformité. Le contenu de l'entreprise peut ensuite être soumis pour validation par rapport à ces règles, produisant des constats de conformité, des informations sur les risques et des actions suggérées."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus prend-il la décision finale de conformité ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non. Axion Regulus est conçu pour assister les équipes conformité dans l'analyse et l'identification des risques. Les relecteurs humains restent responsables de l'examen des constats et de la décision finale, commerciale ou de conformité."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Quels types de contenu peuvent être vérifiés ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Selon le cadre de conformité configuré, Axion Regulus peut évaluer du contenu d'entreprise tel que des descriptions de produits, du contenu marketing et publicitaire, du contenu de réseaux sociaux, du contenu de site web ou de blog, et d'autres supports d'entreprise pris en charge, au regard d'exigences réglementaires définies."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Pouvons-nous utiliser nos propres documents réglementaires ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. Axion Regulus est conçu pour fonctionner avec des documents réglementaires, politiques et exigences de conformité propres à votre organisation. Ces exigences peuvent être transformées en règles structurées, ensuite utilisées pour valider le contenu d'entreprise concerné."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Que recevons-nous après un contrôle de conformité ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La plateforme peut fournir une analyse de conformité comprenant les constats identifiés, les risques potentiels, les informations sur les règles applicables, des recommandations et des preuves de conformité à l'appui, selon le workflow configuré et les données disponibles."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus peut-il garantir qu'un contenu est conforme ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non. Axion Regulus est une plateforme d'intelligence de conformité et d'aide à la décision. Son analyse vise à aider les équipes à identifier des problèmes potentiels et à examiner le contenu au regard des exigences configurées. Les décisions finales de conformité doivent être prises par les relecteurs humains compétents de l'organisation."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Comment l'IA est-elle utilisée dans Axion Regulus ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "L'IA est utilisée pour aider à comprendre le contenu réglementaire, structurer les exigences, identifier des risques de conformité potentiels et analyser le contenu d'entreprise soumis. La supervision humaine reste partie intégrante du processus afin que les organisations puissent examiner les constats avant d'agir."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Comment les données des clients sont-elles protégées ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Axion Regulus utilise des contrôles d'accès, des permissions basées sur les rôles et un traitement contrôlé des documents pour soutenir la protection des informations d'entreprise et réglementaires. L'activité de conformité et les informations de workflow pertinentes peuvent également être conservées à des fins de revue et d'audit, lorsque le système configuré le permet."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus constitue-t-il un conseil juridique ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non. Axion Regulus est une plateforme d'intelligence de conformité et d'aide à la décision. Elle aide les organisations à structurer les exigences réglementaires, à évaluer le contenu d'entreprise et à identifier des risques de conformité potentiels. Elle ne remplace pas des professionnels qualifiés du droit, de la réglementation ou de la conformité."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Axion Regulus peut-il prendre en charge différents cadres réglementaires ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. La plateforme est conçue pour fonctionner avec des documents réglementaires et exigences de conformité propres à votre organisation. Le cadre applicable et les documents source peuvent être configurés selon les besoins de conformité de l'organisation."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Comment pouvons-nous évaluer Axion Regulus ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Demandez une démonstration en direct et apportez un document réglementaire, une exigence de politique ou un exemple de contenu d'entreprise approprié. L'équipe Axion peut vous montrer comment les exigences peuvent être transformées en contrôles de conformité structurés et comment les risques potentiels sont identifiés."
+     }
     }
+   ]
   }
+ ]
 }
 </script>
 
@@ -969,7 +1122,7 @@
         <textarea name="Message" placeholder="Parlez-nous de vos besoins en matière de conformité" data-i18n-placeholder="Parlez-nous de vos besoins en matière de conformité" rows="4" class="rounded-lg px-4 py-3 text-sm sm:col-span-2"></textarea>
         <button type="submit" class="btn btn-primary sm:col-span-2 disabled:opacity-60 disabled:cursor-not-allowed" data-i18n="contact.submit">Envoyer la demande</button>
         <p data-status class="text-sm sm:col-span-2 text-center"></p>
-        <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">Nous utilisons vos informations uniquement pour répondre à votre demande. Nous ne les partageons pas avec des tiers.</p>
+        <p class="text-[11px] text-slate-400 sm:col-span-2 text-center" data-i18n="contact.privacy">Nous utilisons vos informations uniquement pour répondre à votre demande. Voir notre politique de confidentialité.</p>
       </form>
     </div>
   </div>
@@ -1117,6 +1270,7 @@
   <div class="border-t border-white/10">
     <div class="wrap py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
       <span><span data-i18n="footer.copyrightPre">© </span><span id="year"></span><span data-i18n="footer.copyrightPost"> Axion Consultancy Services. Tous droits réservés.</span></span>
+      <a href="/privacy/" class="hover:text-white transition" data-i18n="footer.privacy">Politique de confidentialité</a>
     </div>
   </div>
   <div class="border-t border-white/10 py-5">
@@ -1317,7 +1471,7 @@ en: {
 "contact.name":"Full name","contact.email":"Work email","contact.company":"Company","contact.industry":"Industry","contact.framework":"Regulatory framework / country (optional)",
 "contact.opt1":"I'd like to request a demo","contact.opt2":"I'm interested in partnership","contact.opt3":"I'm an investor / venture partner","contact.opt4":"General inquiry",
 "contact.validate":"What would you like to validate? (e.g. product descriptions, marketing content, a policy document)",
-"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. We don't share it with third parties.",
+"contact.message":"Tell us about your compliance needs","contact.send":"Request a Live Demo","contact.submit":"Send inquiry","contact.sending":"Sending…","contact.privacy":"We use your information only to respond to your inquiry. See our Privacy Policy.",
 "faq.kicker":"FAQ","faq.title":"Frequently Asked Questions",
 "faq.q1":"What is Axion Regulus?","faq.a1":"Axion Regulus is an AI-powered Enterprise Compliance Intelligence Platform that converts regulatory documents and policy requirements into structured compliance rules and uses them to evaluate business content for potential compliance risks, findings and recommended actions.",
 "faq.q2":"How does Axion Regulus work?","faq.a2":"Organizations provide the relevant regulatory documents or policy requirements. Axion Regulus uses AI to identify and structure applicable requirements into compliance rules. Business content can then be submitted for validation against those rules, producing compliance findings, risk information and suggested actions.",
@@ -1469,7 +1623,7 @@ fr: {
 "contact.name":"Nom complet","contact.email":"E-mail professionnel","contact.company":"Entreprise","contact.industry":"Secteur d'activité","contact.framework":"Cadre réglementaire / pays (facultatif)",
 "contact.opt1":"Je souhaite demander une démo","contact.opt2":"Je suis intéressé par un partenariat","contact.opt3":"Je suis investisseur / partenaire venture","contact.opt4":"Demande générale",
 "contact.validate":"Que souhaitez-vous vérifier ? (par ex. descriptions de produits, contenu marketing, un document de politique)",
-"contact.message":"Parlez-nous de vos besoins en matière de conformité","contact.send":"Demander une démo en direct","contact.submit":"Envoyer la demande","contact.sending":"Envoi en cours…","contact.privacy":"Nous utilisons vos informations uniquement pour répondre à votre demande. Nous ne les partageons pas avec des tiers.",
+"contact.message":"Parlez-nous de vos besoins en matière de conformité","contact.send":"Demander une démo en direct","contact.submit":"Envoyer la demande","contact.sending":"Envoi en cours…","contact.privacy":"Nous utilisons vos informations uniquement pour répondre à votre demande. Voir notre politique de confidentialité.",
 "faq.kicker":"FAQ","faq.title":"Questions fréquentes",
 "faq.q1":"Qu'est-ce qu'Axion Regulus ?","faq.a1":"Axion Regulus est une plateforme d'intelligence de conformité d'entreprise propulsée par l'IA qui convertit les documents réglementaires et les exigences de politique en règles de conformité structurées, puis les utilise pour évaluer le contenu de l'entreprise afin d'identifier des risques de conformité potentiels, des constats et des actions recommandées.",
 "faq.q2":"Comment fonctionne Axion Regulus ?","faq.a2":"Les organisations fournissent les documents réglementaires ou exigences de politique pertinents. Axion Regulus utilise l'IA pour identifier et structurer les exigences applicables en règles de conformité. Le contenu de l'entreprise peut ensuite être soumis pour validation par rapport à ces règles, produisant des constats de conformité, des informations sur les risques et des actions suggérées.",
