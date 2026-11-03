@@ -74,8 +74,8 @@ summary{display:list-item}
 .border-b{border-bottom-style:solid;border-bottom-width:1px}
 .border-blue-300{border-color:#93c5fd}
 .border-emerald-200{border-color:#a7f3d0}
-.border-l-4\!{border-left-style:solid !important;border-left-width:4px !important}
-.border-l-\[var\(--brand\)\]\!{border-left-color:var(--brand) !important}
+.border-s-4\!{border-inline-start-style:solid !important;border-inline-start-width:4px !important}
+.border-s-\[var\(--brand\)\]\!{border-inline-start-color:var(--brand) !important}
 .border-slate-200{border-color:#e2e8f0}
 .border-slate-900\/10{border-color:rgb(15 23 42 / 0.1)}
 .border-slate-900\/8{border-color:rgb(15 23 42 / 0.08)}

@@ -133,6 +133,7 @@ SIMPLE = {
     "border-r": "border-right-style:solid;border-right-width:1px",
     "border-y": "border-block-style:solid;border-block-width:1px",
     "border-l-4": "border-left-style:solid;border-left-width:4px",
+    "border-s-4": "border-inline-start-style:solid;border-inline-start-width:4px",
     "border-t-2": "border-top-style:solid;border-top-width:2px",
     "transition": "transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,translate,scale,rotate,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms",
     "transition-shadow": "transition-property:box-shadow;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms",
@@ -319,10 +320,10 @@ def decl(base):
         c = color(m.group(1))
         return (f"background-color:{c}", "") if c else None
 
-    m = re.fullmatch(r"border-(t|b|l|r|x|y)-(.+)", b)
+    m = re.fullmatch(r"border-(t|b|l|r|x|y|s|e)-(.+)", b)
     if m:
         c = color(m.group(2))
-        side = {"t": "top", "b": "bottom", "l": "left", "r": "right", "x": "inline", "y": "block"}[m.group(1)]
+        side = {"t": "top", "b": "bottom", "l": "left", "r": "right", "x": "inline", "y": "block", "s": "inline-start", "e": "inline-end"}[m.group(1)]
         return (f"border-{side}-color:{c}", "") if c else None
     m = re.fullmatch(r"border-(.+)", b)
     if m:
