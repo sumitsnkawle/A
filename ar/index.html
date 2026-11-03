@@ -348,9 +348,9 @@
   .typing-dot:nth-child(3){animation-delay:.3s;}
   @media (prefers-reduced-motion:reduce){ .float,.pulse-glow,.flow-line,.flow-chip{animation:none;} }
 
-  #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq{scroll-margin-top:72px;}
+  #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq,#pricing{scroll-margin-top:72px;}
   @media (min-width:768px){
-    #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq{scroll-margin-top:80px;}
+    #product,#tour,#check,#output,#ai-oversight,#features,#industries,#partners,#investors,#about,#founder,#demo,#contact,#faq,#pricing{scroll-margin-top:80px;}
   }
 
   .avatar-ring{background:linear-gradient(135deg,var(--brand),var(--navy-900));}
@@ -402,6 +402,7 @@
         <a href="#product" class="nav-link" data-i18n="nav.product">المنتج</a>
         <a href="#features" class="nav-link" data-i18n="nav.features">المزايا</a>
         <a href="#industries" class="nav-link" data-i18n="nav.industries">القطاعات</a>
+        <a href="#pricing" class="nav-link" data-i18n="nav.pricing">الأسعار</a>
         <a href="#partners" class="nav-link" data-i18n="hero.cta3">الشراكة والاستثمار</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">من نحن</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">تواصل معنا</a>
@@ -426,6 +427,7 @@
     <a href="#product" class="block py-2 hover:text-white" data-i18n="nav.product">المنتج</a>
     <a href="#features" class="block py-2 hover:text-white" data-i18n="nav.features">المزايا</a>
     <a href="#industries" class="block py-2 hover:text-white" data-i18n="nav.industries">القطاعات</a>
+    <a href="#pricing" class="block py-2 hover:text-white" data-i18n="nav.pricing">الأسعار</a>
     <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">الشراكة والاستثمار</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">من نحن</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">تواصل معنا</a>
@@ -982,6 +984,88 @@
   </div>
 </section>
 
+<!-- PRICING -->
+<section id="pricing" class="section-pad bg-soft border-y border-[var(--line)]">
+  <div class="wrap">
+    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
+      <p class="eyebrow mb-4" data-i18n="price.kicker">الأسعار</p>
+      <h2 class="h2" data-i18n="price.title">باقات تنمو مع احتياجات الامتثال لديك</h2>
+      <p class="mt-5 lead" data-i18n="price.desc">ابدأ بتجربة مجانية، ثم اختر اشتراكاً سحابياً أو شغّل Axion Regulus داخل بيئتك الخاصة.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.p1n">التجربة</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.p1d">تحقّق من القيمة على محتواك الخاص.</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="font-display text-3xl font-extrabold text-[var(--ink)]" data-i18n="price.free">مجاناً</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p1f1">4 أسابيع</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p1f2">إطار تنظيمي واحد</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p1f3">حتى 100 عملية تحقق</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p1f4">حتى 5 مستخدمين</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p1f5">إعداد بمرافقة الفريق ومراجعة النتائج</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full" data-i18n="price.p1cta">ابدأ تجربة مجانية</a></div>
+      </div>
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.p2n">Professional</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.p2d">لفريق واحد ولائحة تنظيمية واحدة.</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="flex items-baseline gap-1.5"><span class="font-display text-3xl font-extrabold text-[var(--ink)]">USD 1,500</span><span class="text-sm text-[var(--muted)]" data-i18n="price.perMonth">/ شهرياً</span></div><div class="text-xs text-[var(--muted)] mt-1" data-i18n="price.billed">تُدفع سنوياً</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p2f1">إطار تنظيمي واحد</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p2f2">حتى 500 عملية تحقق شهرياً</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p2f3">حتى 10 مستخدمين</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p2f4">التحقق والتقييم واكتشاف المخاطر والتوصيات</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p2f5">دعم عبر البريد الإلكتروني</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full" data-i18n="price.cta">ابدأ الآن</a></div>
+      </div>
+      <div class="card border-2 border-[var(--brand)]! shadow-[0_30px_60px_-35px_rgba(23,100,209,.55)] relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <span class="absolute -top-3 start-6 text-[11px] font-semibold kicker uppercase px-3 py-1 rounded-full bg-[var(--brand)] text-white" data-i18n="price.popular">الأكثر اختياراً</span>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.p3n">Business</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.p3d">لعدة فرق ولوائح تنظيمية.</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="flex items-baseline gap-1.5"><span class="font-display text-3xl font-extrabold text-[var(--ink)]">USD 4,000</span><span class="text-sm text-[var(--muted)]" data-i18n="price.perMonth">/ شهرياً</span></div><div class="text-xs text-[var(--muted)] mt-1" data-i18n="price.billed">تُدفع سنوياً</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p3f1">حتى 5 أطر تنظيمية</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p3f2">حتى 2,500 عملية تحقق شهرياً</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p3f3">حتى 25 مستخدماً</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p3f4">كل ما في Professional، بالإضافة إلى إدارة اتفاقيات مستوى الخدمة وسير العمل وإدارة الاعتراضات ولوحات المعلومات</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p3f5">دعم ذو أولوية</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-primary w-full" data-i18n="price.cta">ابدأ الآن</a></div>
+      </div>
+      <div class="card  relative p-6 sm:p-7 flex flex-col fade-up" data-fade>
+        <h3 class="font-display text-xl font-bold text-[var(--ink)]" data-i18n="price.p4n">Enterprise</h3>
+        <p class="mt-1.5 text-sm text-[var(--body)] leading-relaxed min-h-[2.75rem]" data-i18n="price.p4d">للمؤسسات الكبيرة والخاضعة لتنظيم صارم.</p>
+        <div class="mt-5 pb-5 border-b border-[var(--line)] min-h-[5.25rem]"><div class="font-display text-3xl font-extrabold text-[var(--ink)]" data-i18n="price.custom">حسب الطلب</div></div>
+        <ul class="mt-5 space-y-3 text-sm text-[var(--ink)]">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p4f1">أطر تنظيمية غير محدودة</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p4f2">حجم تحقق حسب الطلب</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p4f3">مستخدمون بلا حدود</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p4f4">تكاملات حسب الطلب</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[var(--brand)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.p4f5">مدير حساب مخصّص</span></li>
+        </ul>
+        <div class="mt-auto pt-8"><a href="#contact" class="btn btn-secondary w-full" data-i18n="price.ctaSales">تواصل مع المبيعات</a></div>
+      </div>
+    </div>
+    <div class="mt-5 rounded-2xl bg-[var(--navy-900)] p-7 sm:p-9 grid lg:grid-cols-12 gap-6 lg:gap-10 items-center fade-up" data-fade>
+      <div class="lg:col-span-5">
+        <h3 class="font-display text-xl sm:text-2xl font-bold text-white" data-i18n="price.opT">داخل مقرّك / سحابة خاصة</h3>
+        <p class="mt-2 text-sm text-[#a9b8cc] leading-relaxed" data-i18n="price.opD">شغّل Axion Regulus داخل بنيتك التحتية عندما يجب أن تبقى بياناتك داخل المؤسسة.</p>
+      </div>
+      <ul class="lg:col-span-4 space-y-2.5 text-sm text-white">
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF1">ترخيص سنوي يشمل التحديثات والدعم</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF2">التنفيذ وإعداد الأطر التنظيمية والتدريب</span></li>
+          <li class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="price.opF3">ترخيص دائم متاح عند الطلب</span></li>
+      </ul>
+      <div class="lg:col-span-3 lg:text-end">
+        <div class="font-display text-2xl font-extrabold text-white" data-i18n="price.custom">حسب الطلب</div>
+        <a href="#contact" class="btn btn-white mt-4" data-i18n="price.opCta">اطلب عرض سعر للتشغيل داخل مقرّك</a>
+      </div>
+    </div>
+    <p class="mt-5 text-center text-xs text-[var(--muted)]" data-i18n="price.note">الأسعار بالدولار الأمريكي، غير شاملة ضريبة القيمة المضافة.</p>
+  </div>
+</section>
+
 <!-- PARTNERS & INVESTORS -->
 <section id="partners" class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap grid lg:grid-cols-2 gap-6">
@@ -1246,6 +1330,7 @@
         <li><a href="#product" class="hover:text-white transition" data-i18n="footer.linkRegulus">Axion Regulus</a></li>
         <li><a href="#features" class="hover:text-white transition" data-i18n="nav.features">المزايا</a></li>
         <li><a href="#industries" class="hover:text-white transition" data-i18n="nav.industries">القطاعات</a></li>
+        <li><a href="#pricing" class="hover:text-white transition" data-i18n="nav.pricing">الأسعار</a></li>
       </ul>
     </div>
     <div>
@@ -1491,7 +1576,7 @@ en: {
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"User Handbook","footer.companyHeading":"Company","footer.connectHeading":"Connect","footer.linkedin":"LinkedIn",
 "footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. All rights reserved.","footer.privacy":"Privacy Policy","footer.terms":"Terms",
 "footer.disclaimer":"Axion Regulus provides AI-assisted compliance analysis and does not replace professional legal, regulatory or compliance advice. Compliance assessments should be reviewed by appropriately authorized personnel before business decisions are made.",
-"chat.title":"Mira","chat.status":"Usually replies instantly","chat.placeholder":"Ask about Axion Regulus…"
+"chat.title":"Mira","chat.status":"Usually replies instantly","chat.placeholder":"Ask about Axion Regulus…","price.kicker":"PRICING","price.title":"Plans that grow with your compliance needs","price.desc":"Start with a free pilot. Then choose a cloud subscription, or run Axion Regulus in your own environment.","price.popular":"Most popular","price.perMonth":"/ month","price.billed":"billed annually","price.free":"Free","price.custom":"Custom","price.p1n":"Pilot","price.p1d":"Prove the value on your own content.","price.p1f1":"4 weeks","price.p1f2":"1 regulatory framework","price.p1f3":"Up to 100 validations","price.p1f4":"Up to 5 users","price.p1f5":"Guided setup and results review","price.p1cta":"Start a free pilot","price.p2n":"Professional","price.p2d":"For one team and one regulation.","price.p2f1":"1 regulatory framework","price.p2f2":"Up to 500 validations / month","price.p2f3":"Up to 10 users","price.p2f4":"Validation, scoring, risk detection and recommendations","price.p2f5":"Email support","price.p3n":"Business","price.p3d":"For several teams and regulations.","price.p3f1":"Up to 5 regulatory frameworks","price.p3f2":"Up to 2,500 validations / month","price.p3f3":"Up to 25 users","price.p3f4":"Everything in Professional, plus SLA & workflow management, dispute management and dashboards","price.p3f5":"Priority support","price.p4n":"Enterprise","price.p4d":"For large and highly regulated organizations.","price.p4f1":"Unlimited regulatory frameworks","price.p4f2":"Custom validation volume","price.p4f3":"Unlimited users","price.p4f4":"Custom integrations","price.p4f5":"Dedicated account manager","price.cta":"Get started","price.ctaSales":"Contact sales","price.opT":"On-premise / private cloud","price.opD":"Run Axion Regulus inside your own infrastructure when your data must stay in-house.","price.opF1":"Annual licence including updates and support","price.opF2":"Implementation, framework setup and training","price.opF3":"Perpetual licence available on request","price.opCta":"Request an on-premise quote","price.note":"Prices in USD, excluding VAT.","nav.pricing":"Pricing"
 },
 ar: {
 "nav.tagline":"AXION CONSULTANCY SERVICES","nav.product":"المنتج","nav.features":"المزايا","nav.industries":"القطاعات","nav.partners":"الشركاء","nav.investors":"المستثمرون","nav.about":"من نحن","nav.contact":"تواصل معنا","nav.talk":"تحدث مع Axion","nav.demo":"اطلب عرضاً تجريبياً",
@@ -1643,7 +1728,7 @@ ar: {
 "footer.linkRegulus":"Axion Regulus","footer.linkHandbook":"دليل المستخدم","footer.companyHeading":"الشركة","footer.connectHeading":"تواصل","footer.linkedin":"LinkedIn",
 "footer.copyrightPre":"© ","footer.copyrightPost":" Axion Consultancy Services. جميع الحقوق محفوظة.","footer.privacy":"سياسة الخصوصية","footer.terms":"الشروط",
 "footer.disclaimer":"يقدّم Axion Regulus تحليل امتثال مدعوماً بالذكاء الاصطناعي ولا يحل محل الاستشارة القانونية أو التنظيمية أو المتعلقة بالامتثال المتخصصة. ينبغي أن يراجع الموظفون المخوَّلون تقييمات الامتثال قبل اتخاذ القرارات التجارية.",
-"chat.title":"Mira","chat.status":"عادةً ما يرد فورًا","chat.placeholder":"اسأل عن Axion Regulus…"
+"chat.title":"Mira","chat.status":"عادةً ما يرد فورًا","chat.placeholder":"اسأل عن Axion Regulus…","price.kicker":"الأسعار","price.title":"باقات تنمو مع احتياجات الامتثال لديك","price.desc":"ابدأ بتجربة مجانية، ثم اختر اشتراكاً سحابياً أو شغّل Axion Regulus داخل بيئتك الخاصة.","price.popular":"الأكثر اختياراً","price.perMonth":"/ شهرياً","price.billed":"تُدفع سنوياً","price.free":"مجاناً","price.custom":"حسب الطلب","price.p1n":"التجربة","price.p1d":"تحقّق من القيمة على محتواك الخاص.","price.p1f1":"4 أسابيع","price.p1f2":"إطار تنظيمي واحد","price.p1f3":"حتى 100 عملية تحقق","price.p1f4":"حتى 5 مستخدمين","price.p1f5":"إعداد بمرافقة الفريق ومراجعة النتائج","price.p1cta":"ابدأ تجربة مجانية","price.p2n":"Professional","price.p2d":"لفريق واحد ولائحة تنظيمية واحدة.","price.p2f1":"إطار تنظيمي واحد","price.p2f2":"حتى 500 عملية تحقق شهرياً","price.p2f3":"حتى 10 مستخدمين","price.p2f4":"التحقق والتقييم واكتشاف المخاطر والتوصيات","price.p2f5":"دعم عبر البريد الإلكتروني","price.p3n":"Business","price.p3d":"لعدة فرق ولوائح تنظيمية.","price.p3f1":"حتى 5 أطر تنظيمية","price.p3f2":"حتى 2,500 عملية تحقق شهرياً","price.p3f3":"حتى 25 مستخدماً","price.p3f4":"كل ما في Professional، بالإضافة إلى إدارة اتفاقيات مستوى الخدمة وسير العمل وإدارة الاعتراضات ولوحات المعلومات","price.p3f5":"دعم ذو أولوية","price.p4n":"Enterprise","price.p4d":"للمؤسسات الكبيرة والخاضعة لتنظيم صارم.","price.p4f1":"أطر تنظيمية غير محدودة","price.p4f2":"حجم تحقق حسب الطلب","price.p4f3":"مستخدمون بلا حدود","price.p4f4":"تكاملات حسب الطلب","price.p4f5":"مدير حساب مخصّص","price.cta":"ابدأ الآن","price.ctaSales":"تواصل مع المبيعات","price.opT":"داخل مقرّك / سحابة خاصة","price.opD":"شغّل Axion Regulus داخل بنيتك التحتية عندما يجب أن تبقى بياناتك داخل المؤسسة.","price.opF1":"ترخيص سنوي يشمل التحديثات والدعم","price.opF2":"التنفيذ وإعداد الأطر التنظيمية والتدريب","price.opF3":"ترخيص دائم متاح عند الطلب","price.opCta":"اطلب عرض سعر للتشغيل داخل مقرّك","price.note":"الأسعار بالدولار الأمريكي، غير شاملة ضريبة القيمة المضافة.","nav.pricing":"الأسعار"
 }
 };
 
@@ -1869,8 +1954,8 @@ window.addEventListener('load', () => {
       answer: "Yes. Axion Regulus is designed to work with your organization's own regulatory documents and compliance requirements — the applicable framework and source documents are configured to your specific compliance needs rather than a single fixed regulation." },
     { id: 'evaluate', label: 'Book a demo', keywords: ['demo','trial','try it','see it in action','walkthrough','evaluate axion regulus','how can we evaluate','book a demo'],
       answer: 'The best way is to request a live demonstration and bring a regulatory document, policy requirement or suitable business-content example — our team can show you how requirements become structured compliance checks and how risks are identified.', link: { href: '#contact', label: 'Request a Live Demo' } },
-    { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge'],
-      answer: "We don't publish fixed pricing since deployments vary by organization size and requirements. The fastest way to get a quote is to request a live demo — our team will walk through your needs and pricing together.", link: { href: '#contact', label: 'Request a Live Demo' } },
+    { id: 'pricing', label: 'Pricing', keywords: ['price','pricing','cost','how much','plans','subscription','quote','fee','charge','pilot','free trial','trial','on-premise','on premise','license','licence'],
+      answer: "You can start with a free 4-week pilot (1 regulatory framework, up to 100 validations). Cloud plans start at USD 1,500 per month for Professional and USD 4,000 per month for Business, billed annually. Enterprise and on-premise deployments are quoted individually. Prices are in USD, excluding VAT.", link: { href: '#pricing', label: 'See pricing' } },
     { id: 'features', label: 'Features', keywords: ['feature','features','capabilities','what can it do','functionality'],
       answer: "Key features include AI-powered compliance validation, a regulatory knowledge base, automated rule generation, compliance scoring, risk detection, audit evidence, role-based access, dashboards & reporting, multilingual support, and regulatory change tracking.", link: { href: '#features', label: 'See all features' } },
     { id: 'dashboard', label: 'Dashboard & reporting', keywords: ['dashboard','reporting','management view','visibility into compliance','trends','reports'],
