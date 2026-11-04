@@ -3163,7 +3163,7 @@ function renderLangUI() {
   document.querySelectorAll('.lang-option, .lang-option-mobile').forEach(link => {
     link.addEventListener('click', () => {
       try { localStorage.setItem('axion-lang', link.dataset.lang); } catch (e) {}
-      link.href = langUrl(link.dataset.lang) + location.hash;
+      link.href = langUrl(link.dataset.lang) + location.search + location.hash;
     });
   });
 }
@@ -3193,7 +3193,7 @@ if (PAGE_LANG === 'en') {
   // Returning visitors who picked another language go straight to that page
   let saved = null;
   try { saved = localStorage.getItem('axion-lang'); } catch (e) {}
-  if (saved && saved !== 'en' && LANGS.some(l => l.code === saved)) location.replace(langUrl(saved) + location.hash);
+  if (saved && saved !== 'en' && LANGS.some(l => l.code === saved)) location.replace(langUrl(saved) + location.search + location.hash);
 }
 applyLanguage(PAGE_LANG);
 
