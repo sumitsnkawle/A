@@ -69,7 +69,7 @@ def t(dicts, lang, key):
     return dicts[lang].get(key, dicts["en"].get(key, key))
 
 
-def structured_data(dicts, lang, title, desc):
+def structured_data(dicts, lang, title, desc, founder=True):
     """schema.org JSON-LD for the page: company, website, page, product and FAQ."""
     org, app = f"{SITE}/#organization", f"{SITE}/#software"
     faq = []
@@ -83,11 +83,7 @@ def structured_data(dicts, lang, title, desc):
             {"@type": "Organization", "@id": org, "name": "Axion Consultancy Services", "url": f"{SITE}/",
              "logo": f"{SITE}/AxionLogo.png", "email": "info@axionast.com",
              "address": {"@type": "PostalAddress", "addressCountry": "AE"},
-             "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": "info@axionast.com"},
-             "founder": {"@id": f"{SITE}/#founder"}},
-            {"@type": "Person", "@id": f"{SITE}/#founder", "name": "Anastasiia Bolotna",
-             "jobTitle": t(dicts, lang, "founder.cardTitle"),
-             "worksFor": {"@id": org}, "url": f"{url(lang)}#founder"},
+             "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": "info@axionast.com"}},
             {"@type": "WebSite", "@id": f"{url(lang)}#website", "url": url(lang), "name": "Axion Regulus",
              "inLanguage": lang, "publisher": {"@id": org}},
             {"@type": "WebPage", "@id": f"{url(lang)}#webpage", "url": url(lang), "name": title, "description": desc,
@@ -99,6 +95,11 @@ def structured_data(dicts, lang, title, desc):
             {"@type": "FAQPage", "@id": f"{url(lang)}#faq", "inLanguage": lang, "mainEntity": faq},
         ],
     }
+    if founder:
+        graph["@graph"][0]["founder"] = {"@id": f"{SITE}/#founder"}
+        graph["@graph"].insert(1, {"@type": "Person", "@id": f"{SITE}/#founder", "name": "Anastasiia Bolotna",
+                                   "jobTitle": t(dicts, lang, "founder.cardTitle"),
+                                   "worksFor": {"@id": org}, "url": f"{url(lang)}#founder"})
     # Escape "<" so no value can close the <script> element early
     return json.dumps(graph, ensure_ascii=False, indent=1).replace("<", "\\u003c")
 
@@ -167,7 +168,7 @@ def set_meta(page, dicts, lang):
     desc = t(dicts, lang, "hero.desc")
 
     page = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title, quote=False)}</title>", page, count=1)
-    ld = structured_data(dicts, lang, title, desc)
+    ld = structured_data(dicts, lang, title, desc, founder="founder" not in HIDDEN)
     page, n = re.subn(r'<script type="application/ld\+json">.*?</script>',
                       lambda m: f'<script type="application/ld+json">\n{ld}\n</script>', page, count=1, flags=re.S)
     if n != 1:
@@ -230,16 +231,32 @@ def keep_languages(page, spans, lang):
 
 
 def drop_drafts(src):
-    """Leave out anything marked data-draft (e.g. a section that isn't ready to publish)."""
+    """Leave out anything marked data-draft (e.g. a section that isn't ready to publish).
+
+    For a hidden <section id="x" data-draft>, also leave out its script code
+    (between "// draft:x" and "// end draft:x") and its translations
+    ("x.*" and "nav.x"), so none of its content is in the published page.
+    Returns the source and the ids of the hidden sections.
+    """
+    hidden = re.findall(r'<section id="([\w-]+)"[^>]*\sdata-draft\b', src)
     src, sections = re.subn(r"<!-- [^\n]*-->\n<section\b[^>]*\sdata-draft\b.*?</section>\n\n", "", src, flags=re.S)
     src, lines = re.subn(r"\n[^\n]*<(?:a|li)\b[^>]*\sdata-draft\b[^\n]*", "", src)
+    for sid in hidden:
+        src = re.sub(rf"\n// draft:{sid}\n.*?\n// end draft:{sid}\n", "\n", src, flags=re.S)
+        entry = rf'"(?:{sid}\.[A-Za-z0-9_]+|nav\.{sid})":"(?:[^"\\]|\\.)*"'
+        src = re.sub(rf"(?m)^{entry},?", "", src)
+        src = re.sub(rf",{entry}", "", src)
     if sections or lines:
-        print(f"left out drafts: {sections} section(s), {lines} link(s)")
-    return src
+        print(f"left out drafts: {sections} section(s) {hidden}, {lines} link(s)")
+    return src, set(hidden)
+
+
+HIDDEN = set()  # ids of sections left out of this build
 
 
 def build():
-    src = drop_drafts(SOURCE.read_text(encoding="utf-8"))
+    global HIDDEN
+    src, HIDDEN = drop_drafts(SOURCE.read_text(encoding="utf-8"))
     dicts, spans = parse_translations(src)
     for lang in LOCALES:
         page = keep_languages(src, spans, lang)

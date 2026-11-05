@@ -236,7 +236,7 @@
         <a href="#pricing" data-draft class="nav-link" data-i18n="nav.pricing">Pricing</a>
         <a href="#partners" class="nav-link" data-i18n="hero.cta3">Partner &amp; Invest</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
-        <a href="#founder" class="nav-link" data-i18n="nav.founder">Founder</a>
+        <a href="#founder" data-draft class="nav-link" data-i18n="nav.founder">Founder</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="hidden md:flex items-center gap-3 ms-auto">
@@ -262,7 +262,7 @@
     <a href="#pricing" data-draft class="block py-2 hover:text-white" data-i18n="nav.pricing">Pricing</a>
     <a href="#partners" class="block py-2 hover:text-white" data-i18n="hero.cta3">Partner &amp; Invest</a>
     <a href="#about" class="block py-2 hover:text-white" data-i18n="nav.about">About</a>
-    <a href="#founder" class="block py-2 hover:text-white" data-i18n="nav.founder">Founder</a>
+    <a href="#founder" data-draft class="block py-2 hover:text-white" data-i18n="nav.founder">Founder</a>
     <a href="#contact" class="block py-2 hover:text-white" data-i18n="nav.contact">Contact</a>
     <a href="#contact" class="btn btn-primary w-full !mt-3 md:hidden!" data-i18n="nav.demo">Request a Demo</a>
     <div id="lang-grid-mobile" class="grid grid-cols-4 gap-2 pt-3" aria-label="Select language"></div>
@@ -955,8 +955,8 @@
   </div>
 </section>
 
-<!-- FOUNDER: business card + vision story -->
-<section id="founder" class="section-pad bg-soft border-y border-[var(--line)]">
+<!-- FOUNDER (hidden: remove data-draft here and on its 3 links to publish) -->
+<section id="founder" data-draft class="section-pad bg-soft border-y border-[var(--line)]">
   <div class="wrap">
     <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="founder.kicker">MEET THE FOUNDER</p>
@@ -1166,7 +1166,7 @@
       <ul class="space-y-2.5 text-sm">
         <li><a href="#partners" class="hover:text-white transition" data-i18n="hero.cta3">Partner &amp; Invest</a></li>
         <li><a href="#about" class="hover:text-white transition" data-i18n="nav.about">About</a></li>
-        <li><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">Founder</a></li>
+        <li data-draft><a href="#founder" class="hover:text-white transition" data-i18n="nav.founder">Founder</a></li>
         <li><a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
@@ -3206,6 +3206,7 @@ window.addEventListener('scroll', () => {
   document.getElementById('nav').style.boxShadow = window.scrollY > 20 ? '0 10px 30px -15px rgba(6,17,31,.6)' : 'none';
 });
 
+// draft:founder
 // Founder profile: save as vCard
 (function(){
   const save=document.getElementById('bizSave'); if(!save) return;
@@ -3219,6 +3220,7 @@ window.addEventListener('scroll', () => {
     setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},0);
   });
 })();
+// end draft:founder
 
 // Contact form -> emails info@axionast.com via FormSubmit (free, no backend required)
 const contactForm = document.getElementById('contactForm');
