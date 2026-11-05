@@ -297,7 +297,6 @@ summary{display:list-item}
 .text-\[var\(--body\)\]{color:var(--body)}
 .text-\[var\(--brand\)\]{color:var(--brand)}
 .text-\[var\(--ink\)\]{color:var(--ink)}
-.text-\[var\(--line\)\]{color:var(--line)}
 .text-\[var\(--muted\)\]{color:var(--muted)}
 .text-amber-300{color:#fcd34d}
 .text-blue-100\/80{color:rgb(219 234 254 / 0.8)}
