@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6e5"/><stop offset="1" stop-color="#fde7bf"/></linearGradient>
+    <linearGradient id="bottle" x1="0" x2="1"><stop offset="0" stop-color="#fdba74"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+  </defs>
+  <rect width="320" height="180" fill="url(#fbg)"/>
+  <circle cx="262" cy="42" r="44" fill="#ffffff" opacity=".45"/>
+  <circle cx="48" cy="152" r="36" fill="#ffffff" opacity=".35"/>
+  <!-- cereal box -->
+  <rect x="92" y="44" width="78" height="118" rx="6" fill="#16a34a"/>
+  <rect x="92" y="44" width="78" height="22" rx="6" fill="#15803d"/>
+  <rect x="104" y="80" width="54" height="40" rx="8" fill="#fef3c7"/>
+  <!-- wheat -->
+  <path d="M131 116V86" stroke="#d97706" stroke-width="2.5"/>
+  <g fill="#f59e0b"><ellipse cx="126" cy="92" rx="4" ry="7" transform="rotate(-25 126 92)"/><ellipse cx="136" cy="92" rx="4" ry="7" transform="rotate(25 136 92)"/><ellipse cx="126" cy="103" rx="4" ry="7" transform="rotate(-25 126 103)"/><ellipse cx="136" cy="103" rx="4" ry="7" transform="rotate(25 136 103)"/></g>
+  <rect x="104" y="130" width="40" height="5" rx="2.5" fill="#bbf7d0"/>
+  <rect x="104" y="140" width="28" height="5" rx="2.5" fill="#bbf7d0"/>
+  <!-- juice bottle -->
+  <rect x="198" y="40" width="24" height="12" rx="3" fill="#ea580c"/>
+  <path d="M196 56h28l8 22v76c0 5-4 8-8 8h-28c-4 0-8-3-8-8V78z" fill="url(#bottle)"/>
+  <rect x="188" y="96" width="44" height="34" fill="#ffffff" opacity=".9"/>
+  <circle cx="210" cy="113" r="10" fill="#fb923c"/>
+  <path d="M210 103v20M200 113h20M203 106l14 14M217 106l-14 14" stroke="#fff7ed" stroke-width="1.5"/>
+  <!-- fruit -->
+  <circle cx="262" cy="146" r="16" fill="#ef4444"/>
+  <path d="M262 130c2-6 8-8 12-7-2 5-7 8-12 7z" fill="#22c55e"/>
+  <circle cx="62" cy="132" r="12" fill="#facc15"/>
+  <circle cx="58" cy="128" r="3" fill="#fef9c3"/>
+  <!-- check badge -->
+  <circle cx="172" cy="56" r="15" fill="#1764d1" stroke="#ffffff" stroke-width="3"/>
+  <path d="M165 56l5 5 9-10" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

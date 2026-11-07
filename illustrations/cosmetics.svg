@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fdeef4"/><stop offset="1" stop-color="#f9d7e6"/></linearGradient>
+    <linearGradient id="tube" x1="0" x2="1"><stop offset="0" stop-color="#f472b6"/><stop offset="1" stop-color="#db2777"/></linearGradient>
+    <linearGradient id="jar" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6e3ec"/></linearGradient>
+  </defs>
+  <rect width="320" height="180" fill="url(#cbg)"/>
+  <circle cx="70" cy="40" r="44" fill="#ffffff" opacity=".45"/>
+  <circle cx="270" cy="150" r="40" fill="#ffffff" opacity=".35"/>
+  <!-- tube -->
+  <g transform="rotate(-18 210 100)">
+    <path d="M176 70h70l-6 70c0 4-3 6-7 6h-44c-4 0-7-2-7-6z" fill="url(#tube)"/>
+    <rect x="172" y="60" width="78" height="12" rx="3" fill="#be185d"/>
+    <rect x="196" y="146" width="30" height="20" rx="4" fill="#fbcfe8"/>
+    <rect x="190" y="92" width="42" height="5" rx="2.5" fill="#ffffff" opacity=".85"/>
+    <rect x="194" y="102" width="34" height="5" rx="2.5" fill="#ffffff" opacity=".6"/>
+  </g>
+  <!-- jar -->
+  <rect x="78" y="78" width="96" height="20" rx="6" fill="#e11d74"/>
+  <rect x="84" y="96" width="84" height="62" rx="12" fill="url(#jar)" stroke="#f1c4d8" stroke-width="2"/>
+  <rect x="98" y="114" width="56" height="26" rx="6" fill="#fce7f3"/>
+  <path d="M118 127c4-7 10-9 15-8-1 6-7 10-15 8z" fill="#ec4899"/>
+  <!-- drops and sparkles -->
+  <path d="M54 118c0-8 8-16 8-16s8 8 8 16a8 8 0 0 1-16 0z" fill="#f9a8d4"/>
+  <path d="M266 44l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#ffffff"/>
+  <path d="M40 70l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#ffffff"/>
+  <!-- check badge -->
+  <circle cx="176" cy="84" r="15" fill="#1764d1" stroke="#ffffff" stroke-width="3"/>
+  <path d="M169 84l5 5 9-10" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

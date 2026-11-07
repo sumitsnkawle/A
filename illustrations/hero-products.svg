@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="hb" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3f1ee"/></linearGradient>
+    <linearGradient id="hj" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6e3ec"/></linearGradient>
+    <linearGradient id="ho" x1="0" x2="1"><stop offset="0" stop-color="#fdba74"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+    <radialGradient id="sh"><stop offset="0" stop-color="#000" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="150" cy="186" rx="140" ry="12" fill="url(#sh)"/>
+  <!-- juice bottle (back left) -->
+  <rect x="52" y="42" width="24" height="12" rx="3" fill="#ea580c"/>
+  <path d="M50 58h28l8 22v92c0 5-4 8-8 8H50c-4 0-8-3-8-8V80z" fill="url(#ho)"/>
+  <rect x="42" y="104" width="44" height="36" fill="#ffffff" opacity=".92"/>
+  <circle cx="64" cy="122" r="10" fill="#fb923c"/>
+  <path d="M64 112v20M54 122h20" stroke="#fff7ed" stroke-width="1.5"/>
+  <!-- supplement bottle (center, tallest) -->
+  <rect x="122" y="20" width="56" height="22" rx="5" fill="#0f9f8a"/>
+  <rect x="118" y="40" width="64" height="8" rx="3" fill="#0b7d6c"/>
+  <path d="M112 54c0-4 3-7 7-7h62c4 0 7 3 7 7v118c0 6-5 10-10 10h-56c-5 0-10-4-10-10z" fill="url(#hb)"/>
+  <rect x="112" y="84" width="76" height="52" fill="#14b8a6"/>
+  <circle cx="150" cy="110" r="14" fill="#ffffff" opacity=".92"/>
+  <path d="M143 111c4-9 11-11 15-10-1 7-7 12-15 10z" fill="#14b8a6"/>
+  <rect x="124" y="148" width="42" height="5" rx="2.5" fill="#bfe3db"/>
+  <rect x="124" y="158" width="28" height="5" rx="2.5" fill="#bfe3db"/>
+  <!-- cream jar (front right) -->
+  <rect x="200" y="118" width="84" height="18" rx="6" fill="#e11d74"/>
+  <rect x="205" y="134" width="74" height="48" rx="11" fill="url(#hj)"/>
+  <rect x="218" y="146" width="48" height="22" rx="6" fill="#fce7f3"/>
+  <path d="M235 157c4-6 9-8 13-7-1 5-6 9-13 7z" fill="#ec4899"/>
+  <!-- check badge -->
+  <circle cx="190" cy="56" r="16" fill="#1764d1" stroke="#ffffff" stroke-width="3"/>
+  <path d="M182.5 56l5.5 5.5 9.5-10.5" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

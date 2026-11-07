@@ -29,7 +29,7 @@ icon-badge num check mock mock-bar mock-tile nav-blue nav-link tour-tab tour-num
 tour-panel step-line float float-delay pulse-glow flow-line flow-chip typing-dot
 avatar-ring founder-profile founder-photo fade-up bar chat-panel-h rtl-row rtl-flip
 ltr-diagram group lang-option lang-option-mobile counter font-display noise-overlay
-stat stat-num logo-strip section-head kpi to-top skip-link nav-scrolled is-active home policy
+stat stat-num logo-strip section-head kpi to-top skip-link nav-scrolled is-active home policy ico-amber ico-teal ico-rose
 """.split())
 
 SPACING = 0.25  # rem per step
@@ -359,6 +359,10 @@ def decl(base):
     m = re.fullmatch(r"ring-(.+)", b)
     if m and color(m.group(1)):
         return f"--tw-ring-color:{color(m.group(1))}", ""
+
+    m = re.fullmatch(r"drop-shadow-\[(.+)\]", b)
+    if m:
+        return f"filter:drop-shadow({m.group(1).replace('_', ' ')})", ""
 
     m = re.fullmatch(r"blur(?:-(.+))?", b)
     if m:

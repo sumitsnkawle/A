@@ -295,6 +295,10 @@
   .card-hover:hover{transform:translateY(-3px); border-color:#c4d3e8; box-shadow:0 18px 40px -22px rgba(11,29,54,.28);}
   .ico{width:2.75rem; height:2.75rem; border-radius:.7rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; background:var(--brand-50); color:var(--brand); border:1px solid var(--brand-100);}
   .ico svg{width:1.35rem; height:1.35rem;}
+  /* Niche accent colours: food (amber), supplements (teal), cosmetics (rose) */
+  .ico-amber{background:#fff4e0; color:#d97706; border-color:#fde3b0;}
+  .ico-teal{background:#e3f6f2; color:#0f9f8a; border-color:#c3ebe2;}
+  .ico-rose{background:#fdebf3; color:#db2777; border-color:#f8cfe1;}
   .icon-badge{width:2.75rem; height:2.75rem; border-radius:.7rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
   .icon-badge svg{width:1.35rem; height:1.35rem;}
   .num{font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:.8rem; letter-spacing:.06em; color:var(--brand);}
@@ -468,8 +472,9 @@
       </div>
     </div>
 
-    <!-- Hero visual: product window -->
-    <div class="lg:col-span-6">
+    <!-- Hero visual: product window with the three product types -->
+    <div class="lg:col-span-6 relative">
+      <img src="/illustrations/hero-products.svg" alt="" width="300" height="200" fetchpriority="low" class="hidden lg:block absolute -bottom-20 -end-12 w-64 z-10 pointer-events-none drop-shadow-[0_20px_30px_rgba(0,0,0,.35)]">
       <div class="mock ltr-diagram">
         <div class="mock-bar"><i></i><i></i><i></i><span class="ml-3 text-[11px] text-slate-400">Axion Regulus</span></div>
         <div class="p-5 sm:p-7">
@@ -538,12 +543,12 @@
       <h2 class="h2" data-i18n="prob.title">Die Prüfung von Aussagen sollte Ihre Markteinführungen nicht bremsen</h2>
     </div>
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-7 fade-up" data-fade>
-      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c1">Die Regeln für Aussagen unterscheiden sich je nach Markt und Produktkategorie</p></div>
-      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c2">Jedes Etikett, jede Produktseite und jede Anzeige manuell zu prüfen kostet Zeit</p></div>
-      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 15H3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c3">Ein falsches Wort kann eine Produktaussage zu einer Heilaussage machen</p></div>
-      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5M11 20c0-3 2.2-5 5-5s5 2 5 5"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c4">Marketing-, Regulatory- und Rechtsteams lesen dieselben Regeln unterschiedlich</p></div>
-      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M10 13h4"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c5">Monate später zu belegen, warum eine Aussage freigegeben wurde, ist schwierig</p></div>
-      <div class="flex gap-4"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c6">Manuelle Prüfungen von Aussagen verzögern Markteinführungen und Kampagnen</p></div>
+      <div class="flex gap-4"><div class="ico ico-amber"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c1">Die Regeln für Aussagen unterscheiden sich je nach Markt und Produktkategorie</p></div>
+      <div class="flex gap-4"><div class="ico ico-teal"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c2">Jedes Etikett, jede Produktseite und jede Anzeige manuell zu prüfen kostet Zeit</p></div>
+      <div class="flex gap-4"><div class="ico ico-rose"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 15H3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c3">Ein falsches Wort kann eine Produktaussage zu einer Heilaussage machen</p></div>
+      <div class="flex gap-4"><div class="ico ico-amber"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5M11 20c0-3 2.2-5 5-5s5 2 5 5"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c4">Marketing-, Regulatory- und Rechtsteams lesen dieselben Regeln unterschiedlich</p></div>
+      <div class="flex gap-4"><div class="ico ico-teal"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M10 13h4"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c5">Monate später zu belegen, warum eine Aussage freigegeben wurde, ist schwierig</p></div>
+      <div class="flex gap-4"><div class="ico ico-rose"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><p class="text-[var(--ink)] font-medium leading-relaxed pt-1.5" data-i18n="prob.c6">Manuelle Prüfungen von Aussagen verzögern Markteinführungen und Kampagnen</p></div>
     </div>
   </div>
 </section>
@@ -889,20 +894,26 @@
       <h2 class="h2" data-i18n="ind.focusTitle">Für Marken aus Lebensmitteln, Nahrungsergänzung und Kosmetik</h2>
     </div>
     <div class="mt-10 grid md:grid-cols-3 gap-5" id="industryGrid">
-      <div class="card card-hover p-6 sm:p-7 fade-up" data-fade>
-        <div class="w-12 h-12 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.5 12h-9z"/><path d="M9 4l1 4M14 4h3"/></svg></div>
-        <h3 class="mt-5 font-display text-lg font-bold text-[var(--ink)]" data-i18n="ind.f4t">Lebensmittel &amp; Getränke</h3>
-        <p class="mt-2 text-sm text-[var(--body)] leading-relaxed" data-i18n="ind.f4d">Prüfen Sie Nährwert- und Gesundheitsangaben auf Etiketten, Verpackungen und in Kampagnen für Lebensmittel und Getränke anhand der geltenden Regeln.</p>
+      <div class="card card-hover overflow-hidden flex flex-col fade-up" data-fade>
+        <img src="/illustrations/food.svg" alt="" width="320" height="180" loading="lazy" decoding="async" class="w-full h-auto">
+        <div class="p-6 sm:p-7">
+          <h3 class="font-display text-lg font-bold text-[var(--ink)]" data-i18n="ind.f4t">Lebensmittel &amp; Getränke</h3>
+          <p class="mt-2 text-sm text-[var(--body)] leading-relaxed" data-i18n="ind.f4d">Prüfen Sie Nährwert- und Gesundheitsangaben auf Etiketten, Verpackungen und in Kampagnen für Lebensmittel und Getränke anhand der geltenden Regeln.</p>
+        </div>
       </div>
-      <div class="card card-hover p-6 sm:p-7 fade-up" data-fade>
-        <div class="w-12 h-12 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18C6 9 12 4 20 4c0 8-5 14-14 14z"/><path d="M6 18C9 14 12 11 16 9"/></svg></div>
-        <h3 class="mt-5 font-display text-lg font-bold text-[var(--ink)]" data-i18n="ind.n1t">Nahrungsergänzungsmittel &amp; Nutrazeutika</h3>
-        <p class="mt-2 text-sm text-[var(--body)] leading-relaxed" data-i18n="ind.n1d">Prüfen Sie Gesundheits- und Nährwertangaben auf Etiketten, Produktseiten und in der Werbung anhand der Regeln für Nahrungsergänzungsmittel.</p>
+      <div class="card card-hover overflow-hidden flex flex-col fade-up" data-fade>
+        <img src="/illustrations/supplements.svg" alt="" width="320" height="180" loading="lazy" decoding="async" class="w-full h-auto">
+        <div class="p-6 sm:p-7">
+          <h3 class="font-display text-lg font-bold text-[var(--ink)]" data-i18n="ind.n1t">Nahrungsergänzungsmittel &amp; Nutrazeutika</h3>
+          <p class="mt-2 text-sm text-[var(--body)] leading-relaxed" data-i18n="ind.n1d">Prüfen Sie Gesundheits- und Nährwertangaben auf Etiketten, Produktseiten und in der Werbung anhand der Regeln für Nahrungsergänzungsmittel.</p>
+        </div>
       </div>
-      <div class="card card-hover p-6 sm:p-7 fade-up" data-fade>
-        <div class="w-12 h-12 rounded-xl bg-[var(--navy-900)] text-[#9cc5ff] flex items-center justify-center"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v3H9z"/><path d="M8 6h8l1 4v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-9z"/><path d="M7.5 12h9"/></svg></div>
-        <h3 class="mt-5 font-display text-lg font-bold text-[var(--ink)]" data-i18n="ind.c2t">Kosmetik &amp; Hautpflege</h3>
-        <p class="mt-2 text-sm text-[var(--body)] leading-relaxed" data-i18n="ind.c2d">Prüfen Sie Aussagen wie „Anti-Aging“ oder „dermatologisch getestet“ anhand kosmetikspezifischer Regeln, bevor Kampagnen starten.</p>
+      <div class="card card-hover overflow-hidden flex flex-col fade-up" data-fade>
+        <img src="/illustrations/cosmetics.svg" alt="" width="320" height="180" loading="lazy" decoding="async" class="w-full h-auto">
+        <div class="p-6 sm:p-7">
+          <h3 class="font-display text-lg font-bold text-[var(--ink)]" data-i18n="ind.c2t">Kosmetik &amp; Hautpflege</h3>
+          <p class="mt-2 text-sm text-[var(--body)] leading-relaxed" data-i18n="ind.c2d">Prüfen Sie Aussagen wie „Anti-Aging“ oder „dermatologisch getestet“ anhand kosmetikspezifischer Regeln, bevor Kampagnen starten.</p>
+        </div>
       </div>
     </div>
 
@@ -912,16 +923,16 @@
         <p class="mt-2 text-sm text-[var(--body)] leading-relaxed" data-i18n="check.desc">Axion Regulus prüft Aussagen überall dort, wo sie erscheinen – anhand der in Ihrem Workspace hinterlegten Vorschriften und Leitlinien.</p>
       </div>
       <div class="lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-6">
-        <div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c1t">Etiketten &amp; Verpackung</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c1i1">Aussagen auf der Verpackung</li>
+        <div><div class="ico ico-amber !w-9 !h-9 mb-3 [&_svg]:!w-[1.1rem] [&_svg]:!h-[1.1rem]"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></svg></div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c1t">Etiketten &amp; Verpackung</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c1i1">Aussagen auf der Verpackung</li>
           <li data-i18n="check.c1i2">Nährwert- und Zutatenangaben</li>
           <li data-i18n="check.c1i3">Produktnamen und Slogans</li></ul></div>
-        <div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c2t">Produktseiten</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c2i1">E-Commerce-Beschreibungen</li>
+        <div><div class="ico ico-teal !w-9 !h-9 mb-3 [&_svg]:!w-[1.1rem] [&_svg]:!h-[1.1rem]"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg></div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c2t">Produktseiten</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c2i1">E-Commerce-Beschreibungen</li>
           <li data-i18n="check.c2i2">Marktplatz-Angebote</li>
           <li data-i18n="check.c2i3">Nutzenversprechen</li></ul></div>
-        <div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c3t">Werbung &amp; Social Media</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c3i1">Anzeigen und Kampagnen</li>
+        <div><div class="ico ico-rose !w-9 !h-9 mb-3 [&_svg]:!w-[1.1rem] [&_svg]:!h-[1.1rem]"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l7 4V6l-7 4z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg></div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c3t">Werbung &amp; Social Media</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c3i1">Anzeigen und Kampagnen</li>
           <li data-i18n="check.c3i2">Social-Media-Beiträge</li>
           <li data-i18n="check.c3i3">Influencer-Inhalte</li></ul></div>
-        <div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c4t">Marken- &amp; Vertriebsmaterial</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c4i1">Broschüren und Flyer</li>
+        <div><div class="ico !w-9 !h-9 mb-3 [&_svg]:!w-[1.1rem] [&_svg]:!h-[1.1rem]"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></div><h4 class="text-[var(--ink)] font-semibold text-sm" data-i18n="check.c4t">Marken- &amp; Vertriebsmaterial</h4><ul class="mt-2.5 space-y-1.5 text-sm text-[var(--body)]"><li data-i18n="check.c4i1">Broschüren und Flyer</li>
           <li data-i18n="check.c4i2">Verkaufspräsentationen</li></ul></div>
       </div>
     </div>
