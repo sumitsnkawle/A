@@ -127,6 +127,7 @@
   .ico{width:2.75rem; height:2.75rem; border-radius:.7rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; background:var(--brand-50); color:var(--brand); border:1px solid var(--brand-100);}
   .ico svg{width:1.35rem; height:1.35rem;}
   /* Niche accent colours: food (amber), supplements (teal), cosmetics (rose) */
+  .niche-bar{height:3px; background:linear-gradient(90deg,#f59e0b,#14b8a6 50%,#ec4899);}
   .ico-amber{background:#fff4e0; color:#d97706; border-color:#fde3b0;}
   .ico-teal{background:#e3f6f2; color:#0f9f8a; border-color:#c3ebe2;}
   .ico-rose{background:#fdebf3; color:#db2777; border-color:#f8cfe1;}
@@ -166,7 +167,7 @@
   .tour-panel[hidden]{display:none;}
 
   /* Steps timeline */
-  .step-line{position:absolute; top:1.35rem; left:1.35rem; right:1.35rem; height:2px; background:linear-gradient(90deg,var(--brand-100),var(--brand) 50%,var(--brand-100));}
+  .step-line{position:absolute; top:1.35rem; left:1.35rem; right:1.35rem; height:2px; background:linear-gradient(90deg,#f59e0b,#14b8a6 50%,#ec4899);}
 
   @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
   .float{animation:float 6s ease-in-out infinite;}
@@ -227,7 +228,7 @@
 
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-shadow duration-300">
-  <div class="nav-blue border-b border-white/10">
+  <div class="nav-blue">
     <div class="wrap h-16 md:h-[72px] flex items-center justify-between gap-6">
       <a href="#top" class="flex items-center gap-2.5 h-full py-2 shrink-0" aria-label="Axion Regulus home">
         <picture><source srcset="AxionLogo.webp" type="image/webp"><img src="AxionLogo.png" alt="Axion" width="512" height="412" fetchpriority="high" class="h-[80%] w-auto object-contain"></picture>
@@ -259,6 +260,7 @@
       </button>
     </div>
   </div>
+  <div class="niche-bar" aria-hidden="true"></div>
   <div id="mobileMenu" class="hidden xl:hidden nav-blue border-b border-white/10 px-5 py-5 space-y-1 text-[#c4d0e0] text-sm font-medium">
     <a href="#product" class="block py-2 hover:text-white" data-i18n="nav.product">Product</a>
     <a href="#features" class="block py-2 hover:text-white" data-i18n="nav.features">Features</a>
@@ -278,6 +280,9 @@
 <section id="top" class="dark relative overflow-hidden pt-28 pb-14 lg:pt-36 lg:pb-24">
   <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:radial-gradient(80%_70%_at_50%_0%,#000_40%,transparent_100%)]"></div>
   <div class="absolute -top-48 right-[-10%] w-[720px] h-[720px] rounded-full bg-[#1764d1]/25 blur-[140px] pointer-events-none"></div>
+  <div class="absolute -bottom-64 -left-40 w-[560px] h-[560px] rounded-full bg-[#14b8a6]/15 blur-[140px] pointer-events-none"></div>
+  <div class="absolute top-[45%] left-[42%] w-[340px] h-[340px] rounded-full bg-[#ec4899]/10 blur-[130px] pointer-events-none"></div>
+  <div class="absolute -top-32 left-[15%] w-[320px] h-[320px] rounded-full bg-[#f59e0b]/10 blur-[130px] pointer-events-none"></div>
 
   <div class="relative wrap grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
     <div class="lg:col-span-6">
@@ -307,9 +312,8 @@
       </div>
     </div>
 
-    <!-- Hero visual: product window with the three product types -->
-    <div class="lg:col-span-6 relative">
-      <img src="illustrations/hero-products.svg" alt="" width="300" height="200" fetchpriority="low" class="hidden lg:block absolute -bottom-20 -end-12 w-64 z-10 pointer-events-none drop-shadow-[0_20px_30px_rgba(0,0,0,.35)]">
+    <!-- Hero visual: product window -->
+    <div class="lg:col-span-6">
       <div class="mock ltr-diagram">
         <div class="mock-bar"><i></i><i></i><i></i><span class="ml-3 text-[11px] text-slate-400">Axion Regulus</span></div>
         <div class="p-5 sm:p-7">
@@ -389,7 +393,8 @@
 </section>
 
 <!-- SOLUTION: 6 STEP PROCESS -->
-<section id="product" class="section-pad">
+<section id="product" class="section-pad relative overflow-hidden">
+  <div class="absolute -top-32 left-1/3 w-[480px] h-[300px] rounded-full bg-[#f59e0b]/8 blur-[120px] pointer-events-none"></div>
   <div class="wrap">
     <div class="max-w-3xl fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="sol.kicker">THE AXION REGULUS SOLUTION</p>
@@ -400,32 +405,32 @@
       <div class="step-line hidden lg:block"></div>
       <div class="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8">
         <div class="fade-up" data-fade>
-          <div class="w-11 h-11 rounded-full bg-[var(--brand)] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">01</div>
+          <div class="w-11 h-11 rounded-full bg-[#d97706] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">01</div>
           <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="sol.s1t">Ingest</h3>
           <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="sol.s1d">Upload food, supplement or cosmetics regulations and your own claim guidelines.</p>
         </div>
         <div class="fade-up" data-fade>
-          <div class="w-11 h-11 rounded-full bg-[var(--brand)] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">02</div>
+          <div class="w-11 h-11 rounded-full bg-[#0f9f8a] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">02</div>
           <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="sol.s2t">Understand</h3>
           <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="sol.s2d">AI analyzes and structures regulatory information.</p>
         </div>
         <div class="fade-up" data-fade>
-          <div class="w-11 h-11 rounded-full bg-[var(--brand)] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">03</div>
+          <div class="w-11 h-11 rounded-full bg-[#db2777] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">03</div>
           <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="sol.s3t">Generate Rules</h3>
           <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="sol.s3d">Requirements become structured rules for permitted and prohibited claims.</p>
         </div>
         <div class="fade-up" data-fade>
-          <div class="w-11 h-11 rounded-full bg-[var(--brand)] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">04</div>
+          <div class="w-11 h-11 rounded-full bg-[#d97706] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">04</div>
           <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="sol.s4t">Validate</h3>
           <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="sol.s4d">Labels, product pages and ads are checked against the applicable rules.</p>
         </div>
         <div class="fade-up" data-fade>
-          <div class="w-11 h-11 rounded-full bg-[var(--brand)] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">05</div>
+          <div class="w-11 h-11 rounded-full bg-[#0f9f8a] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">05</div>
           <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="sol.s5t">Detect Risk</h3>
           <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="sol.s5d">Unsupported, prohibited or risky claims are highlighted.</p>
         </div>
         <div class="fade-up" data-fade>
-          <div class="w-11 h-11 rounded-full bg-[var(--navy-900)] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">06</div>
+          <div class="w-11 h-11 rounded-full bg-[#db2777] text-white flex items-center justify-center font-display font-bold text-sm ring-8 ring-white">06</div>
           <h3 class="text-[var(--ink)] font-semibold text-lg mt-5" data-i18n="sol.s6t">Act</h3>
           <p class="text-sm text-[var(--body)] mt-2 leading-relaxed" data-i18n="sol.s6d">Teams receive recommendations, evidence and next steps.</p>
         </div>
@@ -586,7 +591,9 @@
 </section>
 
 <!-- FEATURES -->
-<section id="features" class="section-pad">
+<section id="features" class="section-pad relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-[#14b8a6]/10 blur-[110px] pointer-events-none"></div>
+  <div class="absolute -bottom-32 -left-24 w-[420px] h-[420px] rounded-full bg-[#f59e0b]/10 blur-[110px] pointer-events-none"></div>
   <div class="wrap">
     <div class="grid lg:grid-cols-12 gap-6 items-end fade-up" data-fade>
       <div class="lg:col-span-7">
@@ -597,72 +604,72 @@
 
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-6 gap-4" id="featureGrid">
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"></path><path d="M9 12.5l2 2 4-4.5"></path></svg></div>
+      <div class="ico ico-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"></path><path d="M9 12.5l2 2 4-4.5"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f1t">AI-Powered Claims Validation</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f1d">Automatically check product claims against the applicable regulations.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path></svg></div>
+      <div class="ico ico-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f2t">Regulatory Knowledge Base</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f2d">Keep claim regulations, guidelines and structured rules in one place.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="12" r="3"></circle><path d="M10 5v2M10 17v2M3 12h2M15 12h2M5.3 6.3l1.4 1.4M13.3 16.3l1.4 1.4M5.3 17.7l1.4-1.4M13.3 7.7l1.4-1.4"></path><path d="M17 15l3 1-1 3"></path></svg></div>
+      <div class="ico ico-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="12" r="3"></circle><path d="M10 5v2M10 17v2M3 12h2M15 12h2M5.3 6.3l1.4 1.4M13.3 16.3l1.4 1.4M5.3 17.7l1.4-1.4M13.3 7.7l1.4-1.4"></path><path d="M17 15l3 1-1 3"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f3t">Automated Rule Generation</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f3d">Turn claim regulations into rules for permitted and prohibited claims.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 0 1 16 0"></path><path d="M12 16l4-5"></path><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"></circle></svg></div>
+      <div class="ico ico-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 0 1 16 0"></path><path d="M12 16l4-5"></path><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"></circle></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f4t">Compliance Scoring</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f4d">An understandable score showing the overall status of submitted content.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l8 14H4z"></path><path d="M12 10v4"></path><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
+      <div class="ico ico-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l8 14H4z"></path><path d="M12 10v4"></path><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f5t">Risk Detection</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f5d">Identify potential compliance issues and prioritize areas requiring attention.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><circle cx="12" cy="12" r="3.6"></circle><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
+      <div class="ico ico-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><circle cx="12" cy="12" r="3.6"></circle><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f6t">AI Confidence Score</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f6d">Show the confidence level associated with AI-generated assessments.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9v.2h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"></path></svg></div>
+      <div class="ico ico-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9v.2h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f7t">Recommendations</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f7d">Actionable recommendations for addressing identified compliance risks.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="10" height="14" rx="1"></rect><path d="M8 7h4M8 10h4"></path><circle cx="16" cy="16" r="3"></circle><path d="M18.1 18.1L21 21"></path></svg></div>
+      <div class="ico ico-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="10" height="14" rx="1"></rect><path d="M8 7h4M8 10h4"></path><circle cx="16" cy="16" r="3"></circle><path d="M18.1 18.1L21 21"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f8t">Audit Evidence</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f8d">Maintain evidence supporting compliance decisions and reviews.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"></circle><path d="M12 13V9M9 3h6"></path></svg></div>
+      <div class="ico ico-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"></circle><path d="M12 13V9M9 3h6"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f9t">SLA &amp; Workflow Management</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f9d">Track compliance tasks, deadlines and resolution workflows.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 7h12"></path><path d="M4 7l-2 5a3 3 0 0 0 6 0z"></path><path d="M20 7l-2 5a3 3 0 0 0 6 0z"></path></svg></div>
+      <div class="ico ico-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 7h12"></path><path d="M4 7l-2 5a3 3 0 0 0 6 0z"></path><path d="M20 7l-2 5a3 3 0 0 0 6 0z"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f10t">Dispute Management</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f10d">Allow users to challenge or review compliance findings when necessary.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"></circle></svg></div>
+      <div class="ico ico-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"></circle></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f11t">Role-Based Access</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f11d">Controlled access for admins, compliance teams, reviewers and business users.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-2">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="3" height="8"></rect><rect x="10.5" y="7" width="3" height="13"></rect><rect x="17" y="14" width="3" height="6"></rect></svg></div>
+      <div class="ico ico-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="3" height="8"></rect><rect x="10.5" y="7" width="3" height="13"></rect><rect x="17" y="14" width="3" height="6"></rect></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f12t">Dashboard &amp; Reporting</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f12d">Management-level visibility into compliance performance, risks and trends.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-3">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><path d="M4 12h16"></path><path d="M12 4c3 2.5 3 13.5 0 16"></path><path d="M12 4c-3 2.5-3 13.5 0 16"></path></svg></div>
+      <div class="ico ico-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><path d="M4 12h16"></path><path d="M12 4c3 2.5 3 13.5 0 16"></path><path d="M12 4c-3 2.5-3 13.5 0 16"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f13t">Multilingual Compliance</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f13d">Support regulatory and business content in multiple languages.</p></div>
       </div>
       <div class="card card-hover p-5 flex gap-4 lg:col-span-3">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"></path><path d="M9 3v4h4"></path><path d="M9.3 15.3a2.3 2.3 0 1 1 .5 3.2"></path><path d="M9.3 13.8v1.7h1.7"></path></svg></div>
+      <div class="ico ico-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"></path><path d="M9 3v4h4"></path><path d="M9.3 15.3a2.3 2.3 0 1 1 .5 3.2"></path><path d="M9.3 13.8v1.7h1.7"></path></svg></div>
       <div><h3 class="text-[var(--ink)] font-semibold" data-i18n="feat.f15t">Regulatory Change Intelligence</h3>
       <p class="text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="feat.f15d">Identify and manage changes to regulatory requirements over time.</p></div>
       </div>
@@ -671,7 +678,9 @@
 </section>
 
 <!-- WHY AXION -->
-<section class="section-pad">
+<section class="section-pad relative overflow-hidden">
+  <div class="absolute top-10 -right-32 w-[460px] h-[460px] rounded-full bg-[#ec4899]/8 blur-[120px] pointer-events-none"></div>
+  <div class="absolute -bottom-40 -left-32 w-[420px] h-[420px] rounded-full bg-[#14b8a6]/8 blur-[120px] pointer-events-none"></div>
   <div class="wrap grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
     <div class="fade-up" data-fade>
       <p class="eyebrow mb-4" data-i18n="hb.kicker">LESS MANUAL WORK. FASTER DECISIONS.</p>
@@ -1141,6 +1150,7 @@
 
 <!-- FOOTER -->
 <footer class="bg-[var(--navy-950)] text-[#a9b8cc]">
+  <div class="niche-bar" aria-hidden="true"></div>
   <div class="wrap py-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
     <div class="lg:col-span-2">
       <div class="flex items-center gap-3 mb-5">
