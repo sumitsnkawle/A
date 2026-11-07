@@ -375,11 +375,92 @@
       <h2 class="h2" data-i18n="why.cmpTitle">सिर्फ़ ChatGPT, Claude या Gemini क्यों नहीं?</h2>
       <p class="mt-5 lead" data-i18n="why.cmpDesc">सामान्य AI असिस्टेंट रिसर्च और ड्राफ़्टिंग के लिए बेहतरीन हैं। लेकिन जिस दावा समीक्षा को आपकी कंपनी मंज़ूर करती है, उसके लिए ज़्यादा नियंत्रण चाहिए।</p>
     </div>
-    <div class="mt-10 card overflow-x-auto fade-up" data-fade>
-      <table class="w-full min-w-[640px] text-sm">
+    <!-- Phones: one card per comparison point -->
+    <div class="mt-8 space-y-3 md:hidden">
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r1">किसके लिए बना</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">सामान्य AI असिस्टेंट</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r1g">किसी भी विषय पर सवाल</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r1a">खाद्य, सप्लीमेंट और कॉस्मेटिक्स उत्पादों के दावे</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r2">इस्तेमाल होने वाले नियम</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">सामान्य AI असिस्टेंट</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r2g">जो भी हर व्यक्ति अपने प्रॉम्प्ट में लिखे</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r2a">आपके नियमों और दिशानिर्देशों से बनी साझा लाइब्रेरी</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r3">एकरूपता</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">सामान्य AI असिस्टेंट</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r3g">लोगों और सत्रों के बीच जवाब बदल सकते हैं</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r3a">हर दावा वही नियमों से जाँचा जाता है</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r4">साक्ष्य</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">सामान्य AI असिस्टेंट</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r4g">कंप्लायंस ऑडिट ट्रेल रखने के लिए नहीं बना</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r4a">हर निष्कर्ष उसके नियम से जुड़ा और ऑडिट के लिए सुरक्षित</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r5">मंज़ूरी</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">सामान्य AI असिस्टेंट</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r5g">दावों के लिए कोई मंज़ूरी प्रक्रिया नहीं</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r5a">एडमिन, सहयोगी और अनुमोदक भूमिकाएँ, मानवीय मंज़ूरी के साथ</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r6">नियामक बदलाव</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">सामान्य AI असिस्टेंट</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r6g">पिछले जवाब आपको खुद दोबारा जाँचने होते हैं</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r6a">बदलाव आपकी नियम लाइब्रेरी में ट्रैक होते हैं</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r7">रिपोर्टिंग</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">सामान्य AI असिस्टेंट</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r7g">कोई कंप्लायंस डैशबोर्ड नहीं</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r7a">दावों की स्थिति, जोखिम और रुझानों पर डैशबोर्ड</span></p>
+        </div>
+      </div>
+    </div>
+    <!-- Tablets and larger: comparison table -->
+    <div class="mt-10 card overflow-hidden hidden md:block fade-up" data-fade>
+      <table class="w-full text-sm">
         <thead>
           <tr>
-            <th scope="col" class="py-4 px-6"><span class="sr-only">—</span></th>
+            <td class="py-4 px-6"></td>
             <th scope="col" class="py-4 pe-4 text-start font-semibold text-[var(--muted)]" data-i18n="why.colGeneral">सामान्य AI असिस्टेंट</th>
             <th scope="col" class="py-4 ps-4 text-start font-display font-bold text-[var(--ink)] bg-[#e3f6f2]/40" data-i18n="why.colAxion">Axion Regulus</th>
           </tr>
