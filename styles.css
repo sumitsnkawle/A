@@ -68,6 +68,7 @@ summary{display:list-item}
 .bg-\[\#5aa2ff\]{background-color:#5aa2ff}
 .bg-\[\#d97706\]{background-color:#d97706}
 .bg-\[\#db2777\]{background-color:#db2777}
+.bg-\[\#e3f6f2\]{background-color:#e3f6f2}
 .bg-\[\#e3f6f2\]\/40{background-color:rgb(227 246 242 / 0.4)}
 .bg-\[\#ec4899\]\/10{background-color:rgb(236 72 153 / 0.1)}
 .bg-\[\#ec4899\]\/15{background-color:rgb(236 72 153 / 0.15)}
@@ -75,6 +76,7 @@ summary{display:list-item}
 .bg-\[\#f59e0b\]\/10{background-color:rgb(245 158 11 / 0.1)}
 .bg-\[\#f59e0b\]\/8{background-color:rgb(245 158 11 / 0.08)}
 .bg-\[var\(--bg\)\]{background-color:var(--bg)}
+.bg-\[var\(--bg2\)\]{background-color:var(--bg2)}
 .bg-\[var\(--brand\)\]{background-color:var(--brand)}
 .bg-\[var\(--navy-700\)\]{background-color:var(--navy-700)}
 .bg-\[var\(--navy-900\)\]{background-color:var(--navy-900)}
@@ -99,6 +101,7 @@ summary{display:list-item}
 .border{border-style:solid;border-width:1px}
 .border-2{border-style:solid;border-width:2px}
 .border-\[\#5aa2ff\]\/25{border-color:rgb(90 162 255 / 0.25)}
+.border-\[\#c3ebe2\]{border-color:#c3ebe2}
 .border-\[var\(--brand\)\]\!{border-color:var(--brand) !important}
 .border-\[var\(--line\)\]{border-color:var(--line)}
 .border-b{border-bottom-style:solid;border-bottom-width:1px}
@@ -233,7 +236,6 @@ summary{display:list-item}
 .min-h-\[240px\]{min-height:240px}
 .min-h-\[5\.25rem\]{min-height:5.25rem}
 .min-w-0{min-width:0}
-.min-w-\[640px\]{min-width:640px}
 .ml-2{margin-left:0.5rem}
 .ml-3{margin-left:0.75rem}
 .ml-auto{margin-left:auto}
@@ -261,7 +263,6 @@ summary{display:list-item}
 .opacity-60{opacity:0.6}
 .opacity-70{opacity:0.7}
 .overflow-hidden{overflow:hidden}
-.overflow-x-auto{overflow-x:auto}
 .overflow-y-auto{overflow-y:auto}
 .p-1{padding:0.25rem}
 .p-2{padding:0.5rem}
@@ -320,6 +321,7 @@ summary{display:list-item}
 .rounded-full{border-radius:9999px}
 .rounded-lg{border-radius:0.5rem}
 .rounded-sm{border-radius:0.25rem}
+.rounded-xl{border-radius:0.75rem}
 .scroll-smooth{scroll-behavior:smooth}
 .self-center{align-self:center}
 .shadow-2xl{box-shadow:0 25px 50px -12px rgb(0 0 0 / .25)}
@@ -337,11 +339,11 @@ summary{display:list-item}
 .space-y-2\.5 > :not(:last-child){margin-bottom:0.625rem}
 .space-y-3 > :not(:last-child){margin-bottom:0.75rem}
 .space-y-4 > :not(:last-child){margin-bottom:1rem}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
 .start-1\/4{inset-inline-start:25%}
 .start-6{inset-inline-start:1.5rem}
 .text-2xl{font-size:1.5rem;line-height:2rem}
 .text-3xl{font-size:1.875rem;line-height:2.25rem}
+.text-\[\#0b7d6c\]{color:#0b7d6c}
 .text-\[\#0f9f8a\]{color:#0f9f8a}
 .text-\[\#5aa2ff\]{color:#5aa2ff}
 .text-\[\#5aa2ff\]\!{color:#5aa2ff !important}
@@ -470,10 +472,12 @@ summary{display:list-item}
 @media (min-width:40rem){.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}}
 @media (min-width:40rem){.sm\:w-24{width:6rem}}
 @media (min-width:40rem){.sm\:w-\[92vw\]{width:92vw}}
+@media (min-width:48rem){.md\:block{display:block}}
 @media (min-width:48rem){.md\:flex{display:flex}}
 @media (min-width:48rem){.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (min-width:48rem){.md\:grid-cols-\[1fr_minmax\(0\,380px\)\]{grid-template-columns:1fr minmax(0,380px)}}
 @media (min-width:48rem){.md\:h-\[72px\]{height:72px}}
+@media (min-width:48rem){.md\:hidden{display:none}}
 @media (min-width:48rem){.md\:hidden\!{display:none !important}}
 @media (min-width:48rem){.md\:mx-0{margin-inline:0}}
 @media (min-width:48rem){.md\:py-12{padding-block:3rem}}

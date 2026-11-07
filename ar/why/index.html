@@ -375,11 +375,92 @@
       <h2 class="h2" data-i18n="why.cmpTitle">لماذا لا نستخدم ChatGPT أو Claude أو Gemini فحسب؟</h2>
       <p class="mt-5 lead" data-i18n="why.cmpDesc">مساعدو الذكاء الاصطناعي العامّون ممتازون للبحث والصياغة. لكن مراجعة الادعاءات التي تعتمدها شركتك تحتاج إلى قدر أكبر من التحكّم.</p>
     </div>
-    <div class="mt-10 card overflow-x-auto fade-up" data-fade>
-      <table class="w-full min-w-[640px] text-sm">
+    <!-- Phones: one card per comparison point -->
+    <div class="mt-8 space-y-3 md:hidden">
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r1">مصمَّم لـ</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">مساعدو الذكاء الاصطناعي العامّون</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r1g">أسئلة في أي موضوع</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r1a">ادعاءات منتجات الأغذية والمكمّلات ومستحضرات التجميل</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r2">القواعد المستخدمة</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">مساعدو الذكاء الاصطناعي العامّون</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r2g">ما يكتبه كل شخص في طلبه</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r2a">مكتبة مشتركة مبنية على لوائحك وإرشاداتك</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r3">الاتساق</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">مساعدو الذكاء الاصطناعي العامّون</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r3g">قد تختلف الإجابات بين الأشخاص والجلسات</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r3a">كل ادعاء يُفحص وفق القواعد نفسها</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r4">الأدلة</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">مساعدو الذكاء الاصطناعي العامّون</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r4g">غير مصمَّم للاحتفاظ بسجلّ تدقيق للامتثال</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r4a">كل ملاحظة مرتبطة بقاعدتها ومحفوظة للتدقيق</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r5">الاعتماد</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">مساعدو الذكاء الاصطناعي العامّون</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r5g">لا يوجد سير عمل لاعتماد الادعاءات</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r5a">أدوار المسؤول والمتعاون والمعتمِد، مع اعتماد بشري</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r6">التغييرات التنظيمية</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">مساعدو الذكاء الاصطناعي العامّون</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r6g">تعيد أنت فحص الإجابات السابقة</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r6a">تتبّع التغييرات في مكتبة قواعدك</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r7">التقارير</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">مساعدو الذكاء الاصطناعي العامّون</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r7g">لا توجد لوحات معلومات للامتثال</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r7a">لوحات معلومات عن حالة الادعاءات ومخاطرها واتجاهاتها</span></p>
+        </div>
+      </div>
+    </div>
+    <!-- Tablets and larger: comparison table -->
+    <div class="mt-10 card overflow-hidden hidden md:block fade-up" data-fade>
+      <table class="w-full text-sm">
         <thead>
           <tr>
-            <th scope="col" class="py-4 px-6"><span class="sr-only">—</span></th>
+            <td class="py-4 px-6"></td>
             <th scope="col" class="py-4 pe-4 text-start font-semibold text-[var(--muted)]" data-i18n="why.colGeneral">مساعدو الذكاء الاصطناعي العامّون</th>
             <th scope="col" class="py-4 ps-4 text-start font-display font-bold text-[var(--ink)] bg-[#e3f6f2]/40" data-i18n="why.colAxion">Axion Regulus</th>
           </tr>

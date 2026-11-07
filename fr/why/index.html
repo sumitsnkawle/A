@@ -375,11 +375,92 @@
       <h2 class="h2" data-i18n="why.cmpTitle">Pourquoi ne pas simplement utiliser ChatGPT, Claude ou Gemini ?</h2>
       <p class="mt-5 lead" data-i18n="why.cmpDesc">Les assistants IA généralistes sont excellents pour la recherche et la rédaction. Une revue des allégations validée par votre entreprise exige davantage de contrôle.</p>
     </div>
-    <div class="mt-10 card overflow-x-auto fade-up" data-fade>
-      <table class="w-full min-w-[640px] text-sm">
+    <!-- Phones: one card per comparison point -->
+    <div class="mt-8 space-y-3 md:hidden">
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r1">Conçu pour</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">Assistants IA généralistes</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r1g">Des questions sur tous les sujets</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r1a">Les allégations sur les aliments, compléments et cosmétiques</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r2">Règles utilisées</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">Assistants IA généralistes</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r2g">Ce que chaque personne inclut dans son prompt</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r2a">Une bibliothèque partagée issue de vos réglementations et lignes directrices</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r3">Cohérence</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">Assistants IA généralistes</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r3g">Les réponses peuvent varier selon les personnes et les sessions</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r3a">Chaque allégation vérifiée selon les mêmes règles</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r4">Preuves</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">Assistants IA généralistes</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r4g">Pas conçu pour conserver une piste d'audit de conformité</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r4a">Chaque constat relié à sa règle et conservé pour l'audit</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r5">Validation</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">Assistants IA généralistes</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r5g">Pas de processus d'approbation des allégations</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r5a">Rôles administrateur, collaborateur et approbateur, avec validation humaine</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r6">Évolutions réglementaires</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">Assistants IA généralistes</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r6g">Vous revérifiez vous-même les réponses passées</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r6a">Évolutions suivies dans votre bibliothèque de règles</span></p>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-display font-bold text-[var(--ink)]" data-i18n="why.r7">Rapports</h3>
+        <div class="mt-3 rounded-xl bg-[var(--bg2)] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[var(--muted)]" data-i18n="why.colGeneral">Assistants IA généralistes</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--body)] leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[var(--muted)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M6 12h12"/></svg><span data-i18n="why.r7g">Pas de tableaux de bord de conformité</span></p>
+        </div>
+        <div class="mt-2 rounded-xl bg-[#e3f6f2] border border-[#c3ebe2] px-4 py-3">
+          <div class="text-[11px] font-semibold kicker uppercase text-[#0b7d6c]" data-i18n="why.colAxion">Axion Regulus</div>
+          <p class="mt-1.5 flex gap-2 text-sm text-[var(--ink)] font-medium leading-relaxed"><svg class="w-4 h-4 mt-0.5 text-[#0f9f8a] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="why.r7a">Tableaux de bord sur le statut, les risques et les tendances des allégations</span></p>
+        </div>
+      </div>
+    </div>
+    <!-- Tablets and larger: comparison table -->
+    <div class="mt-10 card overflow-hidden hidden md:block fade-up" data-fade>
+      <table class="w-full text-sm">
         <thead>
           <tr>
-            <th scope="col" class="py-4 px-6"><span class="sr-only">—</span></th>
+            <td class="py-4 px-6"></td>
             <th scope="col" class="py-4 pe-4 text-start font-semibold text-[var(--muted)]" data-i18n="why.colGeneral">Assistants IA généralistes</th>
             <th scope="col" class="py-4 ps-4 text-start font-display font-bold text-[var(--ink)] bg-[#e3f6f2]/40" data-i18n="why.colAxion">Axion Regulus</th>
           </tr>
