@@ -140,6 +140,7 @@ SIMPLE = {
     "transition-shadow": "transition-property:box-shadow;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms",
     "transition-transform": "transition-property:transform,translate,scale,rotate;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms",
     "transition-colors": "transition-property:color,background-color,border-color;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms",
+    "align-top": "vertical-align:top", "translate-x-1": "translate:0.25rem 0",
     "rotate-45": "rotate:45deg", "rotate-180": "rotate:180deg",
     "order-1": "order:1", "order-2": "order:2",
     "col-span-full": "grid-column:1/-1",
