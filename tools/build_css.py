@@ -141,6 +141,7 @@ SIMPLE = {
     "transition-transform": "transition-property:transform,translate,scale,rotate;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms",
     "transition-colors": "transition-property:color,background-color,border-color;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms",
     "align-top": "vertical-align:top", "translate-x-1": "translate:0.25rem 0",
+    "-translate-y-1": "translate:0 -0.25rem", "self-center": "align-self:center",
     "rotate-45": "rotate:45deg", "rotate-180": "rotate:180deg",
     "order-1": "order:1", "order-2": "order:2",
     "col-span-full": "grid-column:1/-1",

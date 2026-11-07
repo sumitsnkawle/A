@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="shirt" x1="0" x2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0f9f8a"/></linearGradient>
+    <linearGradient id="sleeve" x1="0" x2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#0b7d6c"/></linearGradient>
+  </defs>
+  <!-- soft background shapes -->
+  <circle cx="118" cy="150" r="96" fill="#ffffff" opacity=".06"/>
+  <circle cx="290" cy="170" r="70" fill="#ffffff" opacity=".04"/>
+  <!-- person: body -->
+  <path d="M48 260c0-52 26-80 70-80s70 28 70 80z" fill="url(#shirt)"/>
+  <path d="M103 182l15 20 15-20z" fill="#ffffff" opacity=".9"/>
+  <rect x="106" y="156" width="24" height="28" rx="8" fill="#e3a77e"/>
+  <!-- head -->
+  <circle cx="118" cy="128" r="36" fill="#eab48c"/>
+  <ellipse cx="82" cy="132" rx="6" ry="9" fill="#e3a77e"/>
+  <ellipse cx="154" cy="132" rx="6" ry="9" fill="#e3a77e"/>
+  <!-- hair -->
+  <path d="M80 130c-6-34 14-56 40-56 28 0 46 20 40 52-6-12-16-20-30-24-12 10-30 16-50 16z" fill="#2a1f3d"/>
+  <!-- curious face: one raised eyebrow -->
+  <path d="M98 117c5-4 11-4 16-1" stroke="#2a1f3d" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M124 113c5-5 12-6 18-3" stroke="#2a1f3d" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="106" cy="128" r="3.4" fill="#2a1f3d"/>
+  <circle cx="132" cy="127" r="3.4" fill="#2a1f3d"/>
+  <path d="M112 147c4 2 9 2 13-1" stroke="#a5583a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <!-- thinking hand at the chin -->
+  <path d="M176 216c10-22 0-44-22-52l-8 12c14 6 18 18 12 32z" fill="url(#sleeve)"/>
+  <circle cx="146" cy="160" r="11" fill="#eab48c"/>
+  <path d="M141 152c4-3 9-3 13 0" stroke="#d29873" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- thought bubble with a question mark -->
+  <circle cx="168" cy="96" r="5" fill="#ffffff" opacity=".85"/>
+  <circle cx="182" cy="78" r="8" fill="#ffffff" opacity=".9"/>
+  <circle cx="214" cy="48" r="30" fill="#ffffff"/>
+  <text x="214" y="62" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#f59e0b">?</text>
+  <!-- card 1: a general AI chat, full of question marks -->
+  <rect x="236" y="104" width="112" height="58" rx="12" fill="#ffffff" fill-opacity=".1" stroke="#ffffff" stroke-opacity=".25"/>
+  <circle cx="256" cy="124" r="9" fill="#ffffff" fill-opacity=".18"/>
+  <text x="256" y="129" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#cbd5e1">?</text>
+  <rect x="272" y="118" width="62" height="5" rx="2.5" fill="#ffffff" fill-opacity=".35"/>
+  <rect x="272" y="128" width="44" height="5" rx="2.5" fill="#ffffff" fill-opacity=".25"/>
+  <rect x="248" y="142" width="86" height="5" rx="2.5" fill="#ffffff" fill-opacity=".18"/>
+  <!-- arrow -->
+  <path d="M292 166v14" stroke="#5aa2ff" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <path d="M286 176l6 7 6-7" stroke="#5aa2ff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- card 2: Axion Regulus, structured and checked -->
+  <rect x="236" y="190" width="112" height="58" rx="12" fill="#ffffff"/>
+  <circle cx="256" cy="210" r="10" fill="#1764d1"/>
+  <path d="M251 210l3.5 3.5 6.5-7" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="272" y="204" width="60" height="5" rx="2.5" fill="#14b8a6"/>
+  <rect x="272" y="214" width="40" height="5" rx="2.5" fill="#99e1d6"/>
+  <rect x="248" y="230" width="38" height="8" rx="4" fill="#dcfce7"/>
+  <rect x="292" y="230" width="42" height="8" rx="4" fill="#fde7f1"/>
+</svg>
