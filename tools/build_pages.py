@@ -18,8 +18,8 @@ header, footer, scripts and translations. Each page is built in every language
 
 Each page gets its translated text written into the HTML, its own <html lang>
 and text direction, a translated <title> and description, a canonical link,
-hreflang links to every other language, and only its own translations (plus
-English as fallback) instead of all 12. sitemap.xml lists every page.
+hreflang links to every other language, and only the few translated strings its
+script still needs (instead of all 12 languages' text). sitemap.xml lists every page.
 
 Usage:  python3 tools/build_pages.py     (also rebuilds styles.css first)
 
@@ -279,19 +279,18 @@ def root_relative_assets(page):
                    for p in parts)
 
 
-def keep_languages(page, spans, lang):
-    """Drop the other languages' translations from the page's script."""
-    keep = {"en", lang}
-    for code, (a, b) in sorted(spans.items(), key=lambda kv: -kv[1][0]):
-        if code in keep:
-            continue
-        # Remove the block and the comma that separates it from its neighbour
-        before = page[:a]
-        if before.endswith(","):
-            before = before[:-1]
-        page = before + page[b:]
-    # Tidy a trailing comma left before the closing brace
-    return re.sub(r"\},(\n\};)", r"}\1", page)
+# Translations the page's script still needs in the browser (contact form messages).
+# All other text is written into the HTML by bake_text(), so it isn't shipped twice.
+RUNTIME_KEYS = ("contact.sending", "contact.success", "contact.error", "contact.submit")
+
+
+def runtime_translations(page, dicts, lang):
+    """Replace the source's translations dictionary with this language's runtime strings only."""
+    start = page.index("const translations = {")
+    end = page.index("\n};", start) + len("\n};")
+    strings = {k: t(dicts, lang, k) for k in RUNTIME_KEYS}
+    table = json.dumps({lang: strings}, ensure_ascii=False).replace("<", "\\u003c")
+    return page[:start] + f"const translations = {table};" + page[end:]
 
 
 def drop_drafts(src, hidden=()):
@@ -362,9 +361,7 @@ def link_pages(page, lang, path):
 
 
 def build_page(page_src, spans, dicts, lang, path):
-    if spans is None:
-        spans = parse_translations(page_src)[1]
-    page = keep_languages(page_src, spans, lang)
+    page = runtime_translations(page_src, dicts, lang)
     page = bake_text(page, dicts, lang)
     page = set_meta(page, dicts, lang, path)
     page = link_pages(page, lang, path)
