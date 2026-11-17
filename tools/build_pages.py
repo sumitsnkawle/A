@@ -70,6 +70,7 @@ PAGES = {
     "industries/": ("industries.html", "ind.focusTitle", "check.desc", "nav.industries"),
     "partners/": ("partners.html", "page.partnersTitle", "page.partnersDesc", "hero.cta3"),
     "about/": ("about.html", "about.title", "about.desc", "nav.about"),
+    "founder/": ("founder.html", ("about.founderName", "founder.title"), "founder.metaDesc", "nav.founder"),
     "contact/": ("contact.html", ("nav.contact", "nav.demo"), "cta.desc", "nav.contact"),
     "faq/": ("faq.html", "faq.metaTitle", "faq.desc", "nav.faq"),
 }
@@ -139,6 +140,9 @@ def structured_data(dicts, lang, title, desc, founder=True, path=""):
             page["@type"] = "ContactPage"
         elif path == "about/":
             page["@type"] = "AboutPage"
+        elif path == "founder/":
+            page["@type"] = "ProfilePage"
+            page["mainEntity"] = {"@id": f"{SITE}/#founder"}
         page["breadcrumb"] = {"@id": f"{page_url}#breadcrumb"}
         nodes += [page, {"@type": "BreadcrumbList", "@id": f"{page_url}#breadcrumb", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Axion Regulus", "item": url(lang)},
@@ -152,7 +156,7 @@ def structured_data(dicts, lang, title, desc, founder=True, path=""):
         nodes[0]["founder"] = {"@id": f"{SITE}/#founder"}
         nodes.insert(1, {"@type": "Person", "@id": f"{SITE}/#founder", "name": "Anastasiia Bolotna",
                          "jobTitle": t(dicts, lang, "founder.cardTitle"),
-                         "worksFor": {"@id": org}, "url": f"{url(lang, 'about/')}#founder"})
+                         "worksFor": {"@id": org}, "url": url(lang, "founder/")})
     graph = {"@context": "https://schema.org", "@graph": nodes}
     # Escape "<" so no value can close the <script> element early
     return json.dumps(graph, ensure_ascii=False, indent=1).replace("<", "\\u003c")
@@ -228,7 +232,7 @@ def set_meta(page, dicts, lang, path=""):
     desc = t(dicts, lang, desc_key)
 
     page = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title, quote=False)}</title>", page, count=1)
-    ld = structured_data(dicts, lang, title, desc, founder="founder" not in HIDDEN and path in ("", "about/"), path=path)
+    ld = structured_data(dicts, lang, title, desc, founder="founder" not in HIDDEN and path in ("", "about/", "founder/"), path=path)
     page, n = re.subn(r'<script type="application/ld\+json">.*?</script>',
                       lambda m: f'<script type="application/ld+json">\n{ld}\n</script>', page, count=1, flags=re.S)
     if n != 1:
