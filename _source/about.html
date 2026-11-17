@@ -1,0 +1,55 @@
+<!-- Content of the "About" page (its <main>). tools/build_pages.py wraps it in the site header, footer and scripts. -->
+<!-- Page header -->
+<section class="dark relative overflow-hidden pt-28 pb-14 lg:pt-36 lg:pb-20">
+  <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:radial-gradient(80%_70%_at_50%_0%,#000_40%,transparent_100%)]"></div>
+  <div class="absolute -top-48 right-[-10%] w-[620px] h-[620px] rounded-full bg-[#1764d1]/25 blur-[140px] pointer-events-none"></div>
+  <div class="absolute -bottom-64 -left-40 w-[520px] h-[520px] rounded-full bg-[#14b8a6]/15 blur-[140px] pointer-events-none"></div>
+  <div class="relative wrap">
+    <p class="eyebrow mb-5" data-i18n="about.kicker"></p>
+    <h1 class="font-display text-[2.3rem] sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.08] text-white tracking-tight max-w-4xl" data-i18n="about.title"></h1>
+    <p class="mt-6 text-lg text-[#a9b8cc] leading-relaxed max-w-3xl" data-i18n="about.desc"></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-pad">
+  <div class="wrap grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-6 fade-up" data-fade>
+      <div class="flex items-center gap-4">
+        <picture><source srcset="AxionLogo.webp" type="image/webp"><img src="AxionLogo.png" alt="Axion" class="h-14 w-auto object-contain"></picture>
+        <div>
+          <div class="font-display font-bold text-[var(--ink)]">Axion Consultancy Services</div>
+          <div class="text-[11px] text-[var(--muted)] kicker font-semibold">AXION REGULUS</div>
+        </div>
+      </div>
+      <a href="founder/" class="card card-hover mt-8 p-5 flex items-center justify-between gap-4 group">
+        <span>
+          <span class="block text-[11px] text-[var(--brand)] kicker font-semibold uppercase" data-i18n="founder.kicker">MEET THE FOUNDER</span>
+          <span class="block mt-1 font-display font-bold text-[var(--ink)]">Anastasiia Bolotna</span>
+          <span class="block text-sm text-[var(--body)]" data-i18n="founder.cardTitle">Founder &amp; General Manager</span>
+        </span>
+        <span aria-hidden="true" class="text-[var(--brand)] text-xl inline-block rtl-flip transition-transform group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+    <div class="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+      <div class="card p-6 fade-up" data-fade><div class="w-8 h-1 rounded bg-[var(--brand)] mb-4"></div><h3 class="text-[var(--ink)] font-semibold mb-2" data-i18n="about.a1t">Mission</h3><p class="text-sm text-[var(--body)] leading-relaxed" data-i18n="about.a1d">Make claims compliance faster, clearer and more consistent for food, supplement and cosmetics brands.</p></div>
+      <div class="card p-6 fade-up" data-fade><div class="w-8 h-1 rounded bg-[var(--brand)] mb-4"></div><h3 class="text-[var(--ink)] font-semibold mb-2" data-i18n="about.a2t">Vision</h3><p class="text-sm text-[var(--body)] leading-relaxed" data-i18n="about.a2d">A world where compliance intelligence is built into every business decision.</p></div>
+      <div class="card p-6 fade-up" data-fade><div class="w-8 h-1 rounded bg-[var(--brand)] mb-4"></div><h3 class="text-[var(--ink)] font-semibold mb-2" data-i18n="about.a3t">Product</h3><p class="text-sm text-[var(--body)] leading-relaxed" data-i18n="about.a3d">Axion Regulus — AI-powered claims compliance for food, supplements and cosmetics.</p></div>
+      <div class="card p-6 fade-up" data-fade><div class="w-8 h-1 rounded bg-[var(--brand)] mb-4"></div><h3 class="text-[var(--ink)] font-semibold mb-2" data-i18n="about.a5t">Technology</h3><p class="text-sm text-[var(--body)] leading-relaxed" data-i18n="about.a5d">AI-assisted analysis paired with structured human review and oversight.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to action -->
+<section class="py-16 lg:py-20">
+  <div class="wrap">
+    <div class="relative overflow-hidden rounded-3xl bg-[var(--brand)] px-6 py-12 sm:px-12 text-center fade-up" data-fade>
+      <div class="absolute inset-0 bg-grid-dark opacity-60 pointer-events-none"></div>
+      <div class="relative max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl lg:text-[2.4rem] font-bold text-white tracking-tight leading-tight" data-i18n="cta.title">Bring Your Compliance Challenge.</h2>
+        <p class="mt-5 text-[#dbe8fb] text-lg leading-relaxed" data-i18n="cta.desc">Bring a label, product page or ad, and the regulation it needs to meet.</p>
+        <div class="mt-8"><a href="contact/" class="btn btn-white" data-i18n="nav.demo">Request a Demo</a></div>
+      </div>
+    </div>
+  </div>
+</section>
