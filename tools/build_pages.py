@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build one static page per language from _source/index.html.
+"""Build the site's pages, one copy per language, from _source/.
 
 Search engines index the text that is in a page's HTML, at the page's own
 address. The source page holds the text of all 12 languages in its
@@ -9,6 +9,12 @@ could ever be indexed. This script writes a real page for each language:
     index.html        English  (https://axionast.com/)
     ar/index.html     Arabic   (https://axionast.com/ar/)
     de/index.html     German   ... and so on
+
+The site has several pages (see PAGES): the homepage, whose content is in
+_source/index.html, and pages such as /product/ or /faq/, whose <main> is in
+_source/product.html, _source/faq.html ... and which share the homepage's
+header, footer, scripts and translations. Each page is built in every language
+(/faq/, /de/faq/, /ar/faq/ ...).
 
 Each page gets its translated text written into the HTML, its own <html lang>
 and text direction, a translated <title> and description, a canonical link,
@@ -52,8 +58,25 @@ def home(lang):
     return "/" if lang == "en" else f"/{lang}/"
 
 
-# Pages built for every language: path -> (main content source, title key, description key)
-PAGES = {"": (None, None, "hero.desc"), "why/": ("why.html", "why.metaTitle", "why.metaDesc")}
+# Pages built for every language:
+#   path -> (source of its <main>, title key(s), description key, menu/breadcrumb label key)
+# The homepage's <main> is in index.html itself. A title that doesn't already
+# name the product gets " | Axion Regulus" added.
+PAGES = {
+    "": (None, None, "hero.desc", None),
+    "product/": ("product.html", "tour.title", "tour.desc", "nav.product"),
+    "features/": ("features.html", "feat.title", "page.featuresDesc", "nav.features"),
+    "why/": ("why.html", "why.metaTitle", "why.metaDesc", "nav.why"),
+    "industries/": ("industries.html", "ind.focusTitle", "check.desc", "nav.industries"),
+    "partners/": ("partners.html", "page.partnersTitle", "page.partnersDesc", "hero.cta3"),
+    "about/": ("about.html", "about.title", "about.desc", "nav.about"),
+    "contact/": ("contact.html", ("nav.contact", "nav.demo"), "cta.desc", "nav.contact"),
+    "faq/": ("faq.html", "faq.metaTitle", "faq.desc", "nav.faq"),
+}
+# Links between pages are written in the sources as href="faq/", href="contact/#x" ...
+# (and as href: 'faq/' in script code); the build points them at the page in the
+# same language. href="/" is the homepage.
+PAGE_LINK = "|".join(p.rstrip("/") for p in PAGES if p)
 
 
 def parse_translations(src):
@@ -78,42 +101,59 @@ def t(dicts, lang, key):
     return dicts[lang].get(key, dicts["en"].get(key, key))
 
 
+def faq_items(dicts, lang):
+    """The FAQ page's questions: general claims questions (gq), then product questions (q)."""
+    items = []
+    for prefix, count in (("g", 10), ("", 12)):
+        for n in range(1, count + 1):
+            q, a = f"faq.{prefix}q{n}", f"faq.{prefix}a{n}"
+            if q in dicts["en"]:
+                items.append((t(dicts, lang, q), t(dicts, lang, a)))
+    return items
+
+
 def structured_data(dicts, lang, title, desc, founder=True, path=""):
-    """schema.org JSON-LD for the page: company, website, page, product and FAQ."""
-    org, app = f"{SITE}/#organization", f"{SITE}/#software"
-    faq = []
-    for n in range(1, 13):
-        q, a = t(dicts, lang, f"faq.q{n}"), t(dicts, lang, f"faq.a{n}")
-        if q != f"faq.q{n}":
-            faq.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
-    graph = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {"@type": "Organization", "@id": org, "name": "Axion Consultancy Services", "url": f"{SITE}/",
-             "logo": f"{SITE}/AxionLogo.png", "email": "info@axionast.com",
-             "address": {"@type": "PostalAddress", "addressCountry": "AE"},
-             "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": "info@axionast.com"}},
-            {"@type": "WebSite", "@id": f"{url(lang)}#website", "url": url(lang), "name": "Axion Regulus",
+    """schema.org JSON-LD for the page: company, website/page, product, breadcrumb and FAQ."""
+    org, app, site = f"{SITE}/#organization", f"{SITE}/#software", f"{url(lang)}#website"
+    page_url = url(lang, path)
+    nodes = [
+        {"@type": "Organization", "@id": org, "name": "Axion Consultancy Services", "url": f"{SITE}/",
+         "logo": f"{SITE}/AxionLogo.png", "email": "info@axionast.com",
+         "address": {"@type": "PostalAddress", "addressCountry": "AE"},
+         "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": "info@axionast.com"}},
+    ]
+    page = {"@type": "WebPage", "@id": f"{page_url}#webpage", "url": page_url, "name": title, "description": desc,
+            "inLanguage": lang, "isPartOf": {"@id": site}, "about": {"@id": app}}
+    if not path:
+        page["primaryImageOfPage"] = f"{SITE}/team-review.jpg"
+        nodes += [
+            {"@type": "WebSite", "@id": site, "url": url(lang), "name": "Axion Regulus",
              "inLanguage": lang, "publisher": {"@id": org}},
-            {"@type": "WebPage", "@id": f"{url(lang)}#webpage", "url": url(lang), "name": title, "description": desc,
-             "inLanguage": lang, "isPartOf": {"@id": f"{url(lang)}#website"}, "about": {"@id": app},
-             "primaryImageOfPage": f"{SITE}/team-review.jpg"},
+            page,
             {"@type": "SoftwareApplication", "@id": app, "name": "Axion Regulus",
-             "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": desc,
+             "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": t(dicts, lang, "hero.desc"),
              "publisher": {"@id": org}, "availableLanguage": list(LOCALES)},
-            {"@type": "FAQPage", "@id": f"{url(lang)}#faq", "inLanguage": lang, "mainEntity": faq},
-        ],
-    }
-    if path:
-        graph["@graph"] = [graph["@graph"][0],
-                           {"@type": "WebPage", "@id": f"{url(lang, path)}#webpage", "url": url(lang, path), "name": title,
-                            "description": desc, "inLanguage": lang, "isPartOf": {"@id": f"{url(lang)}#website"},
-                            "about": {"@id": app}}]
+        ]
+    else:
+        if path == "contact/":
+            page["@type"] = "ContactPage"
+        elif path == "about/":
+            page["@type"] = "AboutPage"
+        page["breadcrumb"] = {"@id": f"{page_url}#breadcrumb"}
+        nodes += [page, {"@type": "BreadcrumbList", "@id": f"{page_url}#breadcrumb", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Axion Regulus", "item": url(lang)},
+            {"@type": "ListItem", "position": 2, "name": t(dicts, lang, PAGES[path][3]), "item": page_url}]}]
+    if path == "faq/":
+        nodes.append({"@type": "FAQPage", "@id": f"{page_url}#faq", "url": page_url, "inLanguage": lang,
+                      "isPartOf": {"@id": f"{page_url}#webpage"},
+                      "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                                     for q, a in faq_items(dicts, lang)]})
     if founder:
-        graph["@graph"][0]["founder"] = {"@id": f"{SITE}/#founder"}
-        graph["@graph"].insert(1, {"@type": "Person", "@id": f"{SITE}/#founder", "name": "Anastasiia Bolotna",
-                                   "jobTitle": t(dicts, lang, "founder.cardTitle"),
-                                   "worksFor": {"@id": org}, "url": f"{url(lang)}#founder"})
+        nodes[0]["founder"] = {"@id": f"{SITE}/#founder"}
+        nodes.insert(1, {"@type": "Person", "@id": f"{SITE}/#founder", "name": "Anastasiia Bolotna",
+                         "jobTitle": t(dicts, lang, "founder.cardTitle"),
+                         "worksFor": {"@id": org}, "url": f"{url(lang, 'about/')}#founder"})
+    graph = {"@context": "https://schema.org", "@graph": nodes}
     # Escape "<" so no value can close the <script> element early
     return json.dumps(graph, ensure_ascii=False, indent=1).replace("<", "\\u003c")
 
@@ -174,7 +214,10 @@ def set_meta(page, dicts, lang, path=""):
 
     title_key, desc_key = PAGES[path][1], PAGES[path][2]
     if title_key:
-        title = t(dicts, lang, title_key)
+        keys = title_key if isinstance(title_key, tuple) else (title_key,)
+        title = " | ".join(t(dicts, lang, k) for k in keys)
+        if "Axion Regulus" not in title:
+            title += " | Axion Regulus"
     elif lang == "en":
         title = re.search(r"<title>(.*?)</title>", page).group(1)
         title = html.unescape(title)
@@ -185,7 +228,7 @@ def set_meta(page, dicts, lang, path=""):
     desc = t(dicts, lang, desc_key)
 
     page = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title, quote=False)}</title>", page, count=1)
-    ld = structured_data(dicts, lang, title, desc, founder="founder" not in HIDDEN and not path, path=path)
+    ld = structured_data(dicts, lang, title, desc, founder="founder" not in HIDDEN and path in ("", "about/"), path=path)
     page, n = re.subn(r'<script type="application/ld\+json">.*?</script>',
                       lambda m: f'<script type="application/ld+json">\n{ld}\n</script>', page, count=1, flags=re.S)
     if n != 1:
@@ -247,15 +290,17 @@ def keep_languages(page, spans, lang):
     return re.sub(r"\},(\n\};)", r"}\1", page)
 
 
-def drop_drafts(src):
+def drop_drafts(src, hidden=()):
     """Leave out anything marked data-draft (e.g. a section that isn't ready to publish).
 
     For a hidden <section id="x" data-draft>, also leave out its script code
     (between "// draft:x" and "// end draft:x") and its translations
     ("x.*" and "nav.x"), so none of its content is in the published page.
+    `hidden` adds the ids of draft sections that are on other pages, so their
+    script code and translations are left out of every page.
     Returns the source and the ids of the hidden sections.
     """
-    hidden = re.findall(r'<section id="([\w-]+)"[^>]*\sdata-draft\b', src)
+    hidden = sorted(set(hidden) | set(re.findall(r'<section id="([\w-]+)"[^>]*\sdata-draft\b', src)))
     src, sections = re.subn(r"<!-- [^\n]*-->\n<section\b[^>]*\sdata-draft\b.*?</section>\n\n", "", src, flags=re.S)
     src, lines = re.subn(r"\n[^\n]*<(?:a|li)\b[^>]*\sdata-draft\b[^\n]*", "", src)
     for sid in hidden:
@@ -263,8 +308,6 @@ def drop_drafts(src):
         entry = rf'"(?:{sid}\.[A-Za-z0-9_]+|nav\.{sid})":"(?:[^"\\]|\\.)*"'
         src = re.sub(rf"(?m)^{entry},?", "", src)
         src = re.sub(rf",{entry}", "", src)
-    if sections or lines:
-        print(f"left out drafts: {sections} section(s) {hidden}, {lines} link(s)")
     return src, set(hidden)
 
 
@@ -273,18 +316,45 @@ HIDDEN = set()  # ids of sections left out of this build
 
 def build():
     global HIDDEN
-    src, HIDDEN = drop_drafts(SOURCE.read_text(encoding="utf-8"))
-    dicts, spans = parse_translations(src)
-    for path, (content, _, _) in PAGES.items():
+    src = SOURCE.read_text(encoding="utf-8")
+    mains = {path: (ROOT / "_source" / content).read_text(encoding="utf-8")
+             for path, (content, *_) in PAGES.items() if content}
+    # Draft sections on any page: their scripts and translations are left out everywhere
+    HIDDEN = set(re.findall(r'<section id="([\w-]+)"[^>]*\sdata-draft\b', src + "".join(mains.values())))
+    if HIDDEN:
+        print(f"left out drafts: {sorted(HIDDEN)}")
+    dicts, _ = parse_translations(drop_drafts(src, HIDDEN)[0])
+    for path in PAGES:
         page_src = src
-        if content:
+        if path:
             # Same header, footer and scripts as the homepage, with this page's own <main>
-            main = (ROOT / "_source" / content).read_text(encoding="utf-8")
-            main = re.sub(r"\A<!--.*?-->\n", "", main, flags=re.S)
+            main = re.sub(r"\A<!--.*?-->\n", "", mains[path], flags=re.S)
             a = page_src.index('<main id="main">\n') + len('<main id="main">\n')
             page_src = page_src[:a] + main + page_src[page_src.index("</main>", a):]
+        page_src = drop_drafts(page_src, HIDDEN)[0]
         for lang in LOCALES:
-            build_page(page_src, spans if not content else None, dicts, lang, path)
+            build_page(page_src, None, dicts, lang, path)
+
+
+def link_pages(page, lang, path):
+    """Point links between pages at the page in this language, and mark the current page in the menus."""
+    pages = rf"(?:{PAGE_LINK})/"
+    page = re.sub(rf'href="({pages})', lambda m: f'href="{home(lang)}{m.group(1)}', page)
+    page = re.sub(rf"href: '({pages})", lambda m: f"href: '{home(lang)}{m.group(1)}", page)
+    page = page.replace('href="/"', f'href="{home(lang)}"')
+    if path:
+        # Homepage sections linked from another page
+        page = re.sub(r'href="#(?!main")', f'href="{home(lang)}#', page)
+        here = f'href="{home(lang)}{path}"'
+
+        def mark(m):
+            tag = m.group(0)
+            if here not in tag:
+                return tag
+            tag = tag.replace(' class="nav-link"', ' class="nav-link is-active"')
+            return tag.replace(here, here + ' aria-current="page"')
+        page = re.sub(r'<a href="[^"]*"[^>]*class="(?:nav-link|block py-2)[^"]*"[^>]*>', mark, page)
+    return page
 
 
 def build_page(page_src, spans, dicts, lang, path):
@@ -293,11 +363,7 @@ def build_page(page_src, spans, dicts, lang, path):
     page = keep_languages(page_src, spans, lang)
     page = bake_text(page, dicts, lang)
     page = set_meta(page, dicts, lang, path)
-    # Links to other pages: the Why page in this language, and homepage sections from other pages
-    page = page.replace('href="why/"', f'href="{home(lang)}why/"')
-    if path:
-        page = re.sub(r'href="#(?!main")', f'href="{home(lang)}#', page)
-        page = re.sub(r"href: '#", f"href: '{home(lang)}#", page)
+    page = link_pages(page, lang, path)
     if lang != "en" or path:
         page = root_relative_assets(page)
     page = page.replace("<!DOCTYPE html>\n", f"<!DOCTYPE html>\n{GENERATED_NOTE}\n", 1)

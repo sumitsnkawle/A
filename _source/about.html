@@ -1,0 +1,87 @@
+<!-- Content of the "About" page (its <main>). tools/build_pages.py wraps it in the site header, footer and scripts. -->
+<!-- Page header -->
+<section class="dark relative overflow-hidden pt-28 pb-14 lg:pt-36 lg:pb-20">
+  <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:radial-gradient(80%_70%_at_50%_0%,#000_40%,transparent_100%)]"></div>
+  <div class="absolute -top-48 right-[-10%] w-[620px] h-[620px] rounded-full bg-[#1764d1]/25 blur-[140px] pointer-events-none"></div>
+  <div class="absolute -bottom-64 -left-40 w-[520px] h-[520px] rounded-full bg-[#14b8a6]/15 blur-[140px] pointer-events-none"></div>
+  <div class="relative wrap">
+    <p class="eyebrow mb-5" data-i18n="about.kicker"></p>
+    <h1 class="font-display text-[2.3rem] sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.08] text-white tracking-tight max-w-4xl" data-i18n="about.title"></h1>
+    <p class="mt-6 text-lg text-[#a9b8cc] leading-relaxed max-w-3xl" data-i18n="about.desc"></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-pad">
+  <div class="wrap grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-6 fade-up" data-fade>
+      <div class="flex items-center gap-4">
+        <picture><source srcset="AxionLogo.webp" type="image/webp"><img src="AxionLogo.png" alt="Axion" class="h-14 w-auto object-contain"></picture>
+        <div>
+          <div class="font-display font-bold text-[var(--ink)]">Axion Consultancy Services</div>
+          <div class="text-[11px] text-[var(--muted)] kicker font-semibold">AXION REGULUS</div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+      <div class="card p-6 fade-up" data-fade><div class="w-8 h-1 rounded bg-[var(--brand)] mb-4"></div><h3 class="text-[var(--ink)] font-semibold mb-2" data-i18n="about.a1t">Mission</h3><p class="text-sm text-[var(--body)] leading-relaxed" data-i18n="about.a1d">Make claims compliance faster, clearer and more consistent for food, supplement and cosmetics brands.</p></div>
+      <div class="card p-6 fade-up" data-fade><div class="w-8 h-1 rounded bg-[var(--brand)] mb-4"></div><h3 class="text-[var(--ink)] font-semibold mb-2" data-i18n="about.a2t">Vision</h3><p class="text-sm text-[var(--body)] leading-relaxed" data-i18n="about.a2d">A world where compliance intelligence is built into every business decision.</p></div>
+      <div class="card p-6 fade-up" data-fade><div class="w-8 h-1 rounded bg-[var(--brand)] mb-4"></div><h3 class="text-[var(--ink)] font-semibold mb-2" data-i18n="about.a3t">Product</h3><p class="text-sm text-[var(--body)] leading-relaxed" data-i18n="about.a3d">Axion Regulus — AI-powered claims compliance for food, supplements and cosmetics.</p></div>
+      <div class="card p-6 fade-up" data-fade><div class="w-8 h-1 rounded bg-[var(--brand)] mb-4"></div><h3 class="text-[var(--ink)] font-semibold mb-2" data-i18n="about.a5t">Technology</h3><p class="text-sm text-[var(--body)] leading-relaxed" data-i18n="about.a5d">AI-assisted analysis paired with structured human review and oversight.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER (hidden: remove data-draft here and on its 3 links to publish) -->
+<section id="founder" data-draft class="section-pad bg-soft border-y border-[var(--line)]">
+  <div class="wrap">
+    <div class="max-w-3xl mx-auto text-center fade-up" data-fade>
+      <p class="eyebrow mb-4" data-i18n="founder.kicker">MEET THE FOUNDER</p>
+      <h2 class="h2" data-i18n="founder.title">The vision behind Axion Regulus</h2>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <!-- Business card -->
+      <div class="fade-up" data-fade>
+        <div class="founder-profile card p-8 sm:p-10 border-t-4! border-t-[var(--brand)]! shadow-[0_30px_60px_-40px_rgba(11,29,54,.45)]">
+          <picture><source srcset="AxionLogo.webp" type="image/webp"><img src="AxionLogo.png" alt="Axion" width="512" height="412" loading="lazy" decoding="async" class="h-14 w-auto mx-auto object-contain"></picture>
+          <h3 class="font-display text-[var(--ink)] text-2xl sm:text-3xl font-bold mt-6">Anastasiia Bolotna</h3>
+          <p class="text-[var(--brand)] font-medium mt-1" data-i18n="founder.cardTitle">Founder &amp; General Manager</p>
+          <p class="text-[var(--muted)] text-sm mt-0.5">Axion Consultancy Services</p>
+          <div class="mt-6 flex justify-center">
+            <button type="button" id="bizSave" class="btn btn-primary" data-i18n="founder.save">Save contact</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision story -->
+      <div class="fade-up" data-fade>
+        <p class="eyebrow mb-4" data-i18n="founder.storyKicker">A SHORT STORY ABOUT THE VISION</p>
+        <h3 class="font-display text-2xl font-bold text-[var(--ink)]" data-i18n="founder.storyTitle">From a 90-page regulation to a clear answer</h3>
+        <div class="mt-5 space-y-4 lead">
+          <p data-i18n="founder.p1">It is late on a Thursday. A compliance officer has a new campaign to approve by morning, and a 90-page regulatory circular open in another tab. The rules are all there — somewhere between clause 4.2 and an appendix — but turning them into a confident yes or no means hours of reading, cross-checking and second-guessing.</p>
+          <p data-i18n="founder.p2">Anastasiia Bolotna founded Axion around a simple idea: that moment should not depend on who happens to be on shift, or how tired they are. Regulations should be read once, carefully, and turned into structured rules that any team can apply the same way, every time.</p>
+          <p data-i18n="founder.p3">That idea became Axion Regulus. The officer uploads the circular; Regulus structures it into clear requirements. They paste in the campaign; Regulus highlights what may be at risk, explains why, and suggests what to change. The final decision stays with the person — now made in minutes, with every step on record.</p>
+        </div>
+        <blockquote class="mt-7 card p-5 border-s-4! border-s-[var(--brand)]!">
+          <p class="text-[var(--ink)] font-medium leading-relaxed" data-i18n="founder.quote">“Compliance shouldn’t be the reason good ideas slow down. Our vision is a world where compliance intelligence is built into every business decision — with people always in control.”</p>
+          <footer class="mt-3 text-xs text-[var(--muted)]">— Anastasiia Bolotna, <span data-i18n="founder.cardTitle">Founder &amp; General Manager</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to action -->
+<section class="py-16 lg:py-20">
+  <div class="wrap">
+    <div class="relative overflow-hidden rounded-3xl bg-[var(--brand)] px-6 py-12 sm:px-12 text-center fade-up" data-fade>
+      <div class="absolute inset-0 bg-grid-dark opacity-60 pointer-events-none"></div>
+      <div class="relative max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl lg:text-[2.4rem] font-bold text-white tracking-tight leading-tight" data-i18n="cta.title">Bring Your Compliance Challenge.</h2>
+        <p class="mt-5 text-[#dbe8fb] text-lg leading-relaxed" data-i18n="cta.desc">Bring a label, product page or ad, and the regulation it needs to meet.</p>
+        <div class="mt-8"><a href="contact/" class="btn btn-white" data-i18n="nav.demo">Request a Demo</a></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,205 @@
+<!-- Content of the "Product" page (its <main>). tools/build_pages.py wraps it in the site header, footer and scripts. -->
+<!-- Page header -->
+<section class="dark relative overflow-hidden pt-28 pb-14 lg:pt-36 lg:pb-20">
+  <div class="absolute inset-0 bg-grid-dark pointer-events-none [mask-image:radial-gradient(80%_70%_at_50%_0%,#000_40%,transparent_100%)]"></div>
+  <div class="absolute -top-48 right-[-10%] w-[620px] h-[620px] rounded-full bg-[#1764d1]/25 blur-[140px] pointer-events-none"></div>
+  <div class="absolute -bottom-64 -left-40 w-[520px] h-[520px] rounded-full bg-[#14b8a6]/15 blur-[140px] pointer-events-none"></div>
+  <div class="relative wrap">
+    <p class="eyebrow mb-5" data-i18n="tour.kicker"></p>
+    <h1 class="font-display text-[2.3rem] sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.08] text-white tracking-tight max-w-4xl" data-i18n="tour.title"></h1>
+    <p class="mt-6 text-lg text-[#a9b8cc] leading-relaxed max-w-3xl" data-i18n="tour.desc"></p>
+  </div>
+</section>
+
+<!-- PRODUCT TOUR: SEE IT IN ACTION (SCREENS) -->
+<section id="tour" class="section-pad bg-soft border-y border-[var(--line)]">
+  <div class="wrap">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-5 space-y-2 fade-up" data-fade role="tablist" aria-label="Product tour">
+        <button type="button" class="tour-tab" role="tab" aria-selected="true" aria-controls="tour-p1" id="tour-t1">
+          <span class="flex gap-4"><span class="tour-num">1</span><span>
+            <span class="block text-[var(--ink)] font-semibold" data-i18n="tour.s1t">Regulatory Document</span>
+            <span class="block text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="tour.s1d">Upload a food, supplement or cosmetics regulation and let Axion Regulus convert it into structured requirements.</span>
+          </span></span>
+        </button>
+        <button type="button" class="tour-tab" role="tab" aria-selected="false" aria-controls="tour-p2" id="tour-t2">
+          <span class="flex gap-4"><span class="tour-num">2</span><span>
+            <span class="block text-[var(--ink)] font-semibold" data-i18n="tour.s2t">Rules &amp; Policies</span>
+            <span class="block text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="tour.s2d">Review the structured, configurable rules generated from your regulatory requirements.</span>
+          </span></span>
+        </button>
+        <button type="button" class="tour-tab" role="tab" aria-selected="false" aria-controls="tour-p3" id="tour-t3">
+          <span class="flex gap-4"><span class="tour-num">3</span><span>
+            <span class="block text-[var(--ink)] font-semibold" data-i18n="tour.s3t">Submission</span>
+            <span class="block text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="tour.s3d">Submit a label, packaging text, product page or ad for claims validation.</span>
+          </span></span>
+        </button>
+        <button type="button" class="tour-tab" role="tab" aria-selected="false" aria-controls="tour-p4" id="tour-t4">
+          <span class="flex gap-4"><span class="tour-num">4</span><span>
+            <span class="block text-[var(--ink)] font-semibold" data-i18n="tour.s4t">Compliance Results</span>
+            <span class="block text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="tour.s4d">Review findings, evidence, risks and recommended corrective actions for every submission.</span>
+          </span></span>
+        </button>
+        <button type="button" class="tour-tab" role="tab" aria-selected="false" aria-controls="tour-p5" id="tour-t5">
+          <span class="flex gap-4"><span class="tour-num">5</span><span>
+            <span class="block text-[var(--ink)] font-semibold" data-i18n="dash.title">Compliance intelligence, visualized</span>
+            <span class="block text-sm text-[var(--body)] mt-1 leading-relaxed" data-i18n="dash.label">Axion Regulus — Compliance Dashboard</span>
+          </span></span>
+        </button>
+      </div>
+
+      <div id="tour-screens-home" class="hidden lg:block lg:col-span-7 fade-up" data-fade>
+        <div id="tour-screens" class="rounded-2xl bg-[var(--navy-900)] p-4 sm:p-8 bg-grid-dark">
+          <!-- Screen 1: Regulatory Document -->
+          <div class="tour-panel mock" role="tabpanel" id="tour-p1" aria-labelledby="tour-t1">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="ml-2 text-[11px] text-slate-400" data-i18n="tour.s1label">Regulatory Intake</span></div>
+            <div class="p-6 sm:p-8 min-h-[240px]">
+              <div class="flex items-center gap-3 mock-tile p-4">
+                <div class="w-10 h-10 rounded-lg bg-[#1764d1]/20 border border-[#5aa2ff]/25 flex items-center justify-center shrink-0">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#5aa2ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-sm text-slate-100 font-medium truncate" data-i18n="tour.s1doc">Food_Supplement_Claims_Regulation.pdf</div>
+                  <div class="text-xs text-slate-400 mt-0.5" data-i18n="tour.s1status">Processed — requirements extracted</div>
+                </div>
+                <svg class="ml-auto w-5 h-5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              </div>
+              <div class="mt-4 h-1.5 rounded-full bg-white/5 overflow-hidden"><div class="h-full w-full bg-[#1764d1] rounded-full"></div></div>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-[10px] kicker px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300" data-i18n="tour.s1tag1">42 PAGES</span>
+                <span class="text-[10px] kicker px-2.5 py-1 rounded-full bg-[#1764d1]/20 border border-[#5aa2ff]/25 text-[#9cc5ff]" data-i18n="tour.s1tag2">18 REQUIREMENTS EXTRACTED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 2: Rules & Policies -->
+          <div class="tour-panel mock" role="tabpanel" id="tour-p2" aria-labelledby="tour-t2" hidden>
+            <div class="mock-bar"><i></i><i></i><i></i><span class="ml-2 text-[11px] text-slate-400" data-i18n="tour.s2label">Rules &amp; Policies</span></div>
+            <div class="p-6 sm:p-8 space-y-2.5 min-h-[240px]">
+              <div class="flex items-center justify-between gap-3 mock-tile px-4 py-3">
+                <span class="text-sm text-slate-200" data-i18n="tour.s2r1">RULE-012 · Permitted nutrition claims</span>
+                <span class="text-[10px] kicker px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 shrink-0" data-i18n="tour.active">ACTIVE</span>
+              </div>
+              <div class="flex items-center justify-between gap-3 mock-tile px-4 py-3">
+                <span class="text-sm text-slate-200" data-i18n="tour.s2r2">RULE-027 · Cosmetic claim substantiation</span>
+                <span class="text-[10px] kicker px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 shrink-0" data-i18n="tour.active">ACTIVE</span>
+              </div>
+              <div class="flex items-center justify-between gap-3 mock-tile px-4 py-3">
+                <span class="text-sm text-slate-200" data-i18n="tour.s2r3">RULE-041 · No medicinal claims on foods &amp; supplements</span>
+                <span class="text-[10px] kicker px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 shrink-0" data-i18n="tour.active">ACTIVE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 3: Submission -->
+          <div class="tour-panel mock" role="tabpanel" id="tour-p3" aria-labelledby="tour-t3" hidden>
+            <div class="mock-bar"><i></i><i></i><i></i><span class="ml-2 text-[11px] text-slate-400" data-i18n="tour.s3label">Content Submission</span></div>
+            <div class="p-6 sm:p-8 min-h-[240px]">
+              <div class="text-[10px] text-slate-400 kicker mb-3" data-i18n="tour.s3type">CONTENT TYPE: SUPPLEMENT LABEL</div>
+              <div class="mock-tile p-4 text-sm text-slate-200 italic" data-i18n="tour.s3text">
+                "Our new formula boosts immunity and prevents illness."
+              </div>
+              <div class="mt-4 inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-lg bg-[#1764d1] text-white" data-i18n="tour.s3cta">
+                Submit for Validation →
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 4: Compliance Results -->
+          <div class="tour-panel mock" role="tabpanel" id="tour-p4" aria-labelledby="tour-t4" hidden>
+            <div class="mock-bar"><i></i><i></i><i></i><span class="ml-2 text-[11px] text-slate-400" data-i18n="tour.s4label">Compliance Results</span></div>
+            <div class="p-6 sm:p-8 min-h-[240px]">
+              <div class="grid grid-cols-3 gap-3">
+                <div class="mock-tile p-3 text-center">
+                  <div class="text-[9px] text-slate-400 kicker" data-i18n="tour.s4m1">SCORE</div>
+                  <div class="text-2xl font-bold text-emerald-400 mt-1" data-i18n="tour.s4v1">87%</div>
+                </div>
+                <div class="mock-tile p-3 text-center">
+                  <div class="text-[9px] text-slate-400 kicker" data-i18n="tour.s4m2">FINDINGS</div>
+                  <div class="text-2xl font-bold text-amber-300 mt-1" data-i18n="tour.s4v2">3</div>
+                </div>
+                <div class="mock-tile p-3 text-center">
+                  <div class="text-[9px] text-slate-400 kicker" data-i18n="tour.s4m3">HIGH RISK</div>
+                  <div class="text-2xl font-bold text-red-400 mt-1" data-i18n="tour.s4v3">1</div>
+                </div>
+              </div>
+              <div class="mt-5 text-xs text-[#9cc5ff]" data-i18n="tour.s4link">View findings, evidence &amp; recommendations →</div>
+            </div>
+          </div>
+
+          <!-- Screen 5: Dashboard -->
+          <div class="tour-panel mock" role="tabpanel" id="tour-p5" aria-labelledby="tour-t5" hidden>
+            <div class="mock-bar"><i></i><i></i><i></i><span class="ml-2 text-[11px] text-slate-400" data-i18n="dash.label">Axion Regulus — Compliance Dashboard</span></div>
+            <div class="p-5 sm:p-6 min-h-[240px]">
+              <div class="grid grid-cols-3 gap-2.5">
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.complianceScore">COMPLIANCE SCORE</div><div class="text-xl font-bold text-emerald-400 mt-1">95%</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.aiConfidence">AI CONFIDENCE</div><div class="text-xl font-bold text-white mt-1">94%</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.rulesEvaluated">RULES EVALUATED</div><div class="text-xl font-bold text-[#9cc5ff] mt-1">124</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.issuesDetected">ISSUES DETECTED</div><div class="text-xl font-bold text-amber-300 mt-1">7%</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.criticalRisks">CRITICAL RISKS</div><div class="text-xl font-bold text-red-400 mt-1">2%</div></div>
+                <div class="mock-tile p-3"><div class="text-[9px] text-slate-400 kicker" data-i18n="dash.resolved">RESOLVED</div><div class="text-xl font-bold text-[#9cc5ff] mt-1">18%</div></div>
+              </div>
+              <div class="mt-3 mock-tile p-4">
+                <div class="text-[10px] text-slate-400 kicker mb-2" data-i18n="dash.trend">COMPLIANCE TREND</div>
+                <svg viewBox="0 0 300 90" class="w-full h-20" preserveAspectRatio="none">
+            <defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5aa2ff"/><stop offset="1" stop-color="#5aa2ff" stop-opacity="0"/></linearGradient></defs>
+            <polyline points="0,70 40,60 80,64 120,45 160,50 200,30 240,35 300,15 300,90 0,90" fill="url(#trendFill)" stroke="none" opacity="0.3"/>
+            <polyline points="0,70 40,60 80,64 120,45 160,50 200,30 240,35 300,15" fill="none" stroke="#5aa2ff" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+          </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECURITY + HUMAN OVERSIGHT -->
+<section class="dark section-pad relative overflow-hidden">
+  <div class="absolute -bottom-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#1764d1]/20 blur-[130px] pointer-events-none"></div>
+  <div class="relative wrap grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-7 fade-up" data-fade>
+      <p class="eyebrow mb-4" data-i18n="sec.kicker">SECURITY &amp; ENTERPRISE TRUST</p>
+      <h2 class="h2" data-i18n="sec.title">Built for enterprise compliance workflows</h2>
+      <div class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-5 text-sm text-[#c4d0e0]">
+        <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i1">Role-based access for admins, compliance teams, reviewers and business users</span></div>
+        <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i2">Authentication required to access your workspace</span></div>
+        <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i9">Workspace-level separation of your organization's content</span></div>
+        <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i3">Auditability &amp; compliance evidence for every finding</span></div>
+        <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i4">Data governance controls over regulatory and business content</span></div>
+        <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i5">Configurable workflows and permissions</span></div>
+        <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i10">Structured processing of documents and business content within the platform</span></div>
+        <div class="flex gap-3"><svg class="w-5 h-5 text-[#5aa2ff] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="sec.i8">Human review at every stage before a decision is finalized</span></div>
+      </div>
+    </div>
+    <div id="ai-oversight" class="lg:col-span-5 rounded-2xl border border-white/10 bg-white/[0.03] p-7 sm:p-9 fade-up" data-fade>
+      <p class="eyebrow mb-3" data-i18n="ai.kicker">A CORE DIFFERENTIATOR</p>
+      <h3 class="font-display text-2xl font-bold text-white tracking-tight" data-i18n="ai.title">AI that assists. Humans that decide.</h3>
+      <p class="mt-3 text-sm text-[#a9b8cc] leading-relaxed" data-i18n="ai.desc">Axion Regulus combines AI-powered analysis with human supervision to help organizations evaluate regulatory requirements, identify risks and make informed compliance decisions.</p>
+      <ol class="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 text-sm text-white font-medium">
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full border border-white/20 text-[#9cc5ff] text-[11px] font-bold flex items-center justify-center shrink-0">1</span><span data-i18n="ai.v1">AI Analysis</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full border border-white/20 text-[#9cc5ff] text-[11px] font-bold flex items-center justify-center shrink-0">2</span><span data-i18n="ai.v2">Rule Validation</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full border border-white/20 text-[#9cc5ff] text-[11px] font-bold flex items-center justify-center shrink-0">3</span><span data-i18n="ai.v3">Risk Detection</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full border border-white/20 text-[#9cc5ff] text-[11px] font-bold flex items-center justify-center shrink-0">4</span><span data-i18n="ai.v4">Evidence</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-[#1764d1] text-white text-[11px] font-bold flex items-center justify-center shrink-0">5</span><span data-i18n="ai.v5">Human Review</span></li>
+          <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-[#1764d1] text-white text-[11px] font-bold flex items-center justify-center shrink-0">6</span><span data-i18n="ai.v6">Decision</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Call to action -->
+<section class="py-16 lg:py-20">
+  <div class="wrap">
+    <div class="relative overflow-hidden rounded-3xl bg-[var(--brand)] px-6 py-12 sm:px-12 text-center fade-up" data-fade>
+      <div class="absolute inset-0 bg-grid-dark opacity-60 pointer-events-none"></div>
+      <div class="relative max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl lg:text-[2.4rem] font-bold text-white tracking-tight leading-tight" data-i18n="cta.title">Bring Your Compliance Challenge.</h2>
+        <p class="mt-5 text-[#dbe8fb] text-lg leading-relaxed" data-i18n="cta.desc">Bring a label, product page or ad, and the regulation it needs to meet.</p>
+        <div class="mt-8"><a href="contact/" class="btn btn-white" data-i18n="nav.demo">Request a Demo</a></div>
+      </div>
+    </div>
+  </div>
+</section>
